@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngành: Công Nghệ Thông Tin</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tùy chỉnh font chữ Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Keyframes cho hiệu ứng fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Áp dụng hiệu ứng fade-in cho các phần chính */
+        .fade-in-section {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0; /* Khởi tạo ẩn để animation có thể hiện thị */
+        }
+        /* Delay cho từng phần */
+        .fade-in-section:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in-section:nth-child(2) { animation-delay: 0.3s; }
+        .fade-in-section:nth-child(3) { animation-delay: 0.5s; }
+        .fade-in-section:nth-child(4) { animation-delay: 0.7s; }
+        .fade-in-section:nth-child(5) { animation-delay: 0.9s; }
+        .fade-in-section:nth-child(6) { animation-delay: 1.1s; }
+
+
+        /* Nút cuộn lên đầu trang */
+        #backToTopBtn {
+            display: none; /* Ẩn mặc định */
+            position: fixed; /* Giữ vị trí cố định */
+            bottom: 20px; /* Cách dưới 20px */
+            right: 20px; /* Cách phải 20px */
+            z-index: 99; /* Đảm bảo nằm trên các phần tử khác */
+            background-color: #4F46E5; /* Màu indigo đậm */
+            color: white;
+            border: none;
+            border-radius: 9999px; /* Hình tròn */
+            padding: 12px 16px; /* Kích thước nút */
+            font-size: 1.5rem; /* Kích thước icon */
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn */
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Hiệu ứng chuyển động */
+        }
+
+        #backToTopBtn:hover {
+            background-color: #4338CA; /* Màu đậm hơn khi hover */
+            transform: translateY(-4px) scale(1.05); /* Nhấc nhẹ lên và phóng to khi hover */
+        }
+
+        /* Custom scrollbar for embedded iframes (for better aesthetics) */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Keyframes for spin animation (for random picker) */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            animation: spin 0.8s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-indigo-100 p-4 sm:p-6 lg:p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-3xl overflow-hidden transform transition-all duration-500 hover:scale-[1.005] hover:shadow-4xl">
+        <!-- Phần Tiêu đề Ngành học -->
+        <header class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white p-8 rounded-t-3xl fade-in-section">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-center mb-2 drop-shadow-lg animate-bounce-in">Ngành: Công Nghệ Thông Tin</h1>
+            <p class="text-lg sm:text-xl text-center opacity-95">Tổng quan các môn học và tài nguyên ngành</p>
+            <p class="text-md sm:text-lg text-center opacity-90 mt-4">
+                Khám phá các môn học đa dạng trong ngành Công Nghệ Thông Tin, từ lập trình, cơ sở dữ liệu đến phát triển ứng dụng và an ninh mạng.
+            </p>
+        </header>
+
+        <!-- Phần Nội dung Các Môn học -->
+        <section class="p-6 sm:p-8 md:p-10 fade-in-section bg-gray-50">
+            <div class="mb-8 p-6 bg-white rounded-2xl shadow-xl border border-gray-100 transform transition-transform duration-300 hover:scale-[1.005]">
+                <h2 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-6 border-b-4 pb-3 border-blue-400 text-center">Danh sách các Môn học</h2>
+
+                <!-- Môn học 1: Lập Trình Web Nâng Cao -->
+                <div class="flex flex-col sm:flex-row items-center bg-blue-50 border-l-4 border-blue-400 rounded-lg p-4 mb-4 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-x-1">
+                    <div class="flex-shrink-0 text-blue-600 text-4xl font-extrabold mr-4 mb-2 sm:mb-0">01</div>
+                    <div class="flex-grow text-center sm:text-left">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-1">Lập Trình Web Nâng Cao</h3>
+                        <p class="text-gray-700 text-sm sm:text-base">Học cách xây dựng các ứng dụng web phức tạp với các framework hiện đại.</p>
+                    </div>
+                    <a href="/Users/magiang/Library/CloudStorage/OneDrive-HochiminhCityUniversityofEducation/2. Nghiên cứu/6. LMSWeb/Lecture.html" target="_blank"
+                       class="mt-3 sm:mt-0 ml-0 sm:ml-4 inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full transition duration-300 ease-in-out shadow-md hover:shadow-lg text-sm">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Xem môn học
+                    </a>
+                </div>
+
+                <!-- Môn học 2: Cơ Sở Dữ Liệu Nâng Cao -->
+                <div class="flex flex-col sm:flex-row items-center bg-blue-50 border-l-4 border-blue-400 rounded-lg p-4 mb-4 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-x-1">
+                    <div class="flex-shrink-0 text-blue-600 text-4xl font-extrabold mr-4 mb-2 sm:mb-0">02</div>
+                    <div class="flex-grow text-center sm:text-left">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-1">Cơ Sở Dữ Liệu Nâng Cao</h3>
+                        <p class="text-gray-700 text-sm sm:text-base">Tìm hiểu về thiết kế, quản lý và tối ưu hóa cơ sở dữ liệu quan hệ và NoSQL.</p>
+                    </div>
+                    <a href="URL_CUA_TRANG_MON_HOC_CO_SO_DU_LIEU.html" target="_blank"
+                       class="mt-3 sm:mt-0 ml-0 sm:ml-4 inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full transition duration-300 ease-in-out shadow-md hover:shadow-lg text-sm">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Xem môn học
+                    </a>
+                    
+                </div>
+
+                <!-- Môn học 3: Nhập môn Trí Tuệ Nhân Tạo -->
+                <div class="flex flex-col sm:flex-row items-center bg-blue-50 border-l-4 border-blue-400 rounded-lg p-4 mb-4 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-x-1">
+                    <div class="flex-shrink-0 text-blue-600 text-4xl font-extrabold mr-4 mb-2 sm:mb-0">03</div>
+                    <div class="flex-grow text-center sm:text-left">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-1">Nhập môn Trí Tuệ Nhân Tạo</h3>
+                        <p class="text-gray-700 text-sm sm:text-base">Giới thiệu các khái niệm cơ bản về AI, Machine Learning và ứng dụng.</p>
+                    </div>
+                    <a href="URL_CUA_TRANG_MON_HOC_TRI_TUE_NHAN_TAO.html" target="_blank"
+                       class="mt-3 sm:mt-0 ml-0 sm:ml-4 inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full transition duration-300 ease-in-out shadow-md hover:shadow-lg text-sm">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Xem môn học
+                    </a>
+                </div>
+
+                <!-- Bạn có thể thêm các môn học khác tại đây theo cấu trúc tương tự -->
+
+            </div>
+        </section>
+
+
+
+            <!-- Khu vực Diễn đàn/Thảo luận (chung cho ngành) -->
+            <div class="p-6 bg-white rounded-2xl shadow-xl border border-blue-200 transform transition-transform duration-300 hover:scale-[1.01]">
+                <h3 class="text-xl lg:text-2xl font-bold text-blue-700 mb-4 flex items-center justify-center sm:justify-start text-center sm:text-left">
+                    <svg class="w-7 h-7 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    Diễn đàn Thảo luận (Ngành)
+                </h3>
+                <p class="text-gray-700 text-base sm:text-lg mb-4 text-center sm:text-left">
+                    Đây là diễn đàn chung cho sinh viên toàn ngành để trao đổi, đặt câu hỏi hoặc chia sẻ tài liệu.
+                </p>
+                <div class="flex justify-center sm:justify-start">
+                    <a href="https://groups.google.com/g/YOUR_GOOGLE_GROUP_ID_NGANH" target="_blank"
+                       class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10m-9 4h4m-3 8h6c.552 0 1-.448 1-1V3c0-.552-.448-1-1-1H4c-.552 0-1 .448-1 1v18c0 .552.448 1 1 1z"></path></svg>
+                        Truy cập Diễn đàn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút Cuộn Lên Đầu Trang -->
+    <button id="backToTopBtn" title="Cuộn lên đầu trang">
+        &#8593; <!-- Mũi tên lên -->
+    </button>
+
+    <script>
+        // Hiển thị/ẩn nút "Cuộn lên đầu trang" khi cuộn
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+
+        // Cuộn lên đầu trang khi nhấp nút
+        document.getElementById("backToTopBtn").addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===========================================
+        // Logic cho tính năng Quay số ngẫu nhiên
+        // ===========================================
+        const studentNamesInput = document.getElementById('studentNames');
+        const drawButton = document.getElementById('drawButton');
+        const resetButton = document.getElementById('resetButton');
+        const resultDisplay = document.getElementById('resultDisplay');
+
+        // Logic cho phần tải danh sách từ Google Sheet
+        const googleSheetUrlInput = document.getElementById('googleSheetUrl');
+        const loadFromSheetButton = document.getElementById('loadFromSheetButton');
+
+        loadFromSheetButton.addEventListener('click', async () => {
+            const sheetUrl = googleSheetUrlInput.value.trim();
+            if (!sheetUrl) {
+                resultDisplay.textContent = 'Vui lòng dán liên kết Google Sheet!';
+                resultDisplay.classList.remove('bg-green-100', 'text-green-800');
+                resultDisplay.classList.add('bg-red-100', 'text-red-800');
+                return;
+            }
+
+            // Regex để kiểm tra định dạng URL Google Sheet và trích xuất ID và GID
+            const sheetRegex = /https:\/\/docs\.google\.com\/spreadsheets\/d\/([a-zA-Z0-9-_]+)(?:\/edit#gid=(\d+))?/;
+            const match = sheetUrl.match(sheetRegex);
+
+            if (!match) {
+                resultDisplay.textContent = 'Liên kết Google Sheet không hợp lệ. Vui lòng kiểm tra lại!';
+                resultDisplay.classList.remove('bg-green-100', 'text-green-800');
+                resultDisplay.classList.add('bg-red-100', 'text-red-800');
+                return;
+            }
+
+            const sheetId = match[1];
+            // Nếu không có gid trong URL, mặc định là sheet đầu tiên (gid=0)
+            const gid = match[2] || '0';
+            // Sử dụng Google Visualization API để tải dữ liệu CSV (cross-origin friendly)
+            const exportUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&gid=${gid}`;
+
+            resultDisplay.textContent = 'Đang tải danh sách...';
+            resultDisplay.classList.remove('bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            resultDisplay.classList.add('bg-yellow-100', 'text-yellow-800');
+
+            try {
+                const response = await fetch(exportUrl);
+                if (!response.ok) {
+                    throw new Error(`Không thể tải sheet: ${response.statusText}. Đảm bảo sheet được chia sẻ công khai.`);
+                }
+                const csvText = await response.text();
+                
+                // Parse CSV - lấy mỗi dòng là một tên
+                // Loại bỏ dòng tiêu đề nếu có (ví dụ, nếu sheet có header "Tên Sinh Viên")
+                const names = csvText.split('\n')
+                                     .map(name => name.trim())
+                                     .filter(name => name !== ''); // Lọc bỏ các dòng trống
+
+                if (names.length > 0) {
+                    // Assuming the first column contains names. If the sheet has a header row,
+                    // you might want to slice(1) to remove it: names.slice(1).join('\n')
+                    studentNamesInput.value = names.join('\n');
+                    resultDisplay.textContent = `Đã tải ${names.length} tên từ Google Sheet!`;
+                    resultDisplay.classList.remove('bg-red-100', 'text-red-800', 'bg-yellow-100', 'text-yellow-800');
+                    resultDisplay.classList.add('bg-green-100', 'text-green-800');
+                } else {
+                    studentNamesInput.value = '';
+                    resultDisplay.textContent = 'Không tìm thấy tên nào trong sheet. Vui lòng kiểm tra lại nội dung sheet!';
+                    resultDisplay.classList.remove('bg-green-100', 'text-green-800');
+                    resultDisplay.classList.add('bg-red-100', 'text-red-800');
+                }
+
+            } catch (error) {
+                console.error("Lỗi khi tải Google Sheet:", error);
+                resultDisplay.textContent = `Lỗi: ${error.message}`;
+                resultDisplay.classList.remove('bg-green-100', 'text-green-800');
+                resultDisplay.classList.add('bg-red-100', 'text-red-800');
+            }
+        });
+
+
+        // Hàm xử lý khi nhấn nút "Quay số"
+        drawButton.addEventListener('click', () => {
+            // Lấy danh sách tên từ textarea, loại bỏ dòng trống và khoảng trắng thừa
+            const names = studentNamesInput.value
+                                          .split('\n') // Chia theo dấu xuống dòng
+                                          .map(name => name.trim()) // Xóa khoảng trắng ở đầu và cuối mỗi tên
+                                          .filter(name => name !== ''); // Loại bỏ các dòng trống
+
+            if (names.length === 0) {
+                resultDisplay.textContent = 'Vui lòng nhập danh sách tên sinh viên hoặc tải từ Google Sheet!';
+                resultDisplay.classList.remove('bg-green-100', 'text-green-800');
+                resultDisplay.classList.add('bg-red-100', 'text-red-800');
+                return;
+            }
+
+            // Hiệu ứng "quay số" giả lập
+            let counter = 0;
+            const animationInterval = setInterval(() => {
+                // Hiển thị tên ngẫu nhiên tạm thời
+                const randomIndex = Math.floor(Math.random() * names.length);
+                resultDisplay.textContent = names[randomIndex];
+                resultDisplay.classList.add('spinner'); // Thêm class spinner để tạo hiệu ứng quay
+                counter++;
+                // Dừng hiệu ứng sau một khoảng thời gian (ví dụ: 2 giây)
+                if (counter > 20) { // 20 * 100ms = 2 giây
+                    clearInterval(animationInterval);
+                    resultDisplay.classList.remove('spinner'); // Xóa class spinner
+                    // Chọn tên cuối cùng
+                    const finalIndex = Math.floor(Math.random() * names.length);
+                    resultDisplay.textContent = `🎉 ${names[finalIndex]} 🎉`;
+                    resultDisplay.classList.remove('bg-red-100', 'text-red-800', 'bg-yellow-100', 'text-yellow-800');
+                    resultDisplay.classList.add('bg-green-100', 'text-green-800');
+                }
+            }, 100); // Mỗi 100ms cập nhật một lần
+        });
+
+        // Hàm xử lý khi nhấn nút "Reset"
+        resetButton.addEventListener('click', () => {
+            studentNamesInput.value = ''; // Xóa nội dung textarea
+            googleSheetUrlInput.value = ''; // Xóa nội dung URL input
+            resultDisplay.textContent = 'Nhấn "Quay số" để bắt đầu!'; // Đặt lại văn bản hiển thị kết quả
+            resultDisplay.classList.remove('bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            resultDisplay.classList.add('bg-yellow-100', 'text-yellow-800');
+        });
+    </script>
+</body>
+</html>
