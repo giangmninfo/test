@@ -54,6 +54,7 @@
         <li><a href="#input-types">Các loại input</a></li>
         <li><a href="#attributes">Thuộc tính quan trọng</a></li>
         <li><a href="#demo">Form demo (thử ngay)</a></li>
+        <li><a href="#example-full">Ví dụ form hoàn chỉnh</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
@@ -202,6 +203,32 @@
         <ul id="resultList"></ul>
       </div>
 
+      <h2 id="example-full">Ví dụ: Form thu thập thông tin cá nhân</h2>
+      <p>
+        Biểu mẫu HTML này thu thập thông tin cá nhân của người dùng, gồm <strong>họ tên, email, mật
+        khẩu, giới tính, ngày sinh và địa chỉ</strong>. Nó được tạo kiểu (CSS) chỉn chu cho các ô
+        nhập liệu và nút gửi. Bạn có thể chỉnh sửa mã bên trái và xem kết quả ngay bên phải.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>🧪 HTML Form Editor</span>
+          <span>
+            <button onclick="runExample()">▶ Chạy</button>
+            <button onclick="resetExample()">↺ Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="exInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="exPreview" title="Kết quả ví dụ form"></iframe>
+          </div>
+        </div>
+      </div>
+
       <h2 id="summary">Tóm tắt</h2>
       <p>
         HTML Form là công cụ thu thập dữ liệu người dùng trên web, được tạo bằng thẻ
@@ -345,6 +372,119 @@
     form.addEventListener('reset', () => {
       result.classList.remove('show');
     });
+
+    // ----- Editor ví dụ form hoàn chỉnh -----
+    const exampleCode = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Form</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    form {
+      width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 0;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 6px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 4px;
+      font-size: 14px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .gender { margin-top: 6px; }
+    button {
+      margin-top: 14px;
+      width: 100%;
+      padding: 10px;
+      background-color: #1a73e8;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #1557b0; }
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Thông tin cá nhân</legend>
+
+      <label for="name">Họ và tên:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Mật khẩu:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label>Giới tính:</label>
+      <div class="gender">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male" style="display:inline">Nam</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female" style="display:inline">Nữ</label>
+      </div>
+
+      <label for="dob">Ngày sinh:</label>
+      <input type="date" id="dob" name="dob">
+
+      <label for="address">Địa chỉ:</label>
+      <textarea id="address" name="address" rows="3"></textarea>
+
+      <button type="submit">Gửi</button>
+    </fieldset>
+  </form>
+</body>
+</html>`;
+
+    const exInput = document.getElementById('exInput');
+    const exPreview = document.getElementById('exPreview');
+
+    function runExample() { exPreview.srcdoc = exInput.value; }
+    function resetExample() { exInput.value = exampleCode; runExample(); }
+
+    let exTimer;
+    exInput.addEventListener('input', () => {
+      clearTimeout(exTimer);
+      exTimer = setTimeout(runExample, 300);
+    });
+
+    resetExample();
   </script>
 </body>
 </html>
