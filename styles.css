@@ -753,6 +753,25 @@ footer.site {
 .card h3 { font-size: 1.1rem; color: var(--gfg-heading); margin: 8px 0 6px; }
 .card p { font-size: 0.9rem; color: var(--gfg-muted); margin: 0; }
 
+.empty-note {
+  border: 1px dashed var(--gfg-border);
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  color: var(--gfg-muted);
+  background: var(--gfg-bg-alt);
+}
+.empty-note .badge-soon {
+  display: inline-block;
+  background: var(--gfg-green-light);
+  color: var(--gfg-green-dark);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
 /* ---------- Try-it: trình soạn HTML trực tiếp ---------- */
 .tryit {
   border: 1px solid var(--gfg-border);
