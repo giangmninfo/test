@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML Basics - Kiến thức cơ bản về HTML - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#" class="active">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">HTML là gì?</a></li>
+        <li><a href="#structure">Cấu trúc tài liệu HTML</a></li>
+        <li><a href="#example">Ví dụ cơ bản</a></li>
+        <li><a href="#elements">Phần tử &amp; Thẻ</a></li>
+        <li><a href="#attributes">Thuộc tính (Attributes)</a></li>
+        <li><a href="#common">Các thẻ thường dùng</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » HTML Basics</div>
+      <h1>HTML Basics — Kiến thức cơ bản về HTML</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>📅 Cập nhật: 15/06/2026</span>
+        <span>👁 320K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">👍 Like</button>
+          <button>🔖 Lưu</button>
+          <button>✏️ Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>HTML (HyperText Markup Language)</strong> là ngôn ngữ đánh dấu chuẩn dùng để tạo và
+        cấu trúc nội dung trên các trang web. HTML mô tả cấu trúc của một trang bằng một loạt các
+        <strong>phần tử (elements)</strong> — cho trình duyệt biết cách hiển thị văn bản, hình ảnh,
+        liên kết, bảng, biểu mẫu... HTML là <strong>nền tảng của mọi website</strong>, thường kết hợp
+        với CSS (trình bày) và JavaScript (tương tác).
+      </p>
+
+      <div class="note">
+        <strong>Lưu ý:</strong> "HyperText" là văn bản chứa liên kết tới văn bản khác; "Markup" là
+        cách dùng các thẻ để đánh dấu và định nghĩa các phần của tài liệu.
+      </div>
+
+      <h2 id="structure">Cấu trúc của một tài liệu HTML</h2>
+      <p>Mọi trang HTML đều có cấu trúc cơ bản gồm các phần sau:</p>
+      <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code> — khai báo loại tài liệu là HTML5.</li>
+        <li><code>&lt;html&gt;</code> — phần tử gốc, bao bọc toàn bộ trang.</li>
+        <li><code>&lt;head&gt;</code> — chứa thông tin meta: tiêu đề, charset, liên kết CSS...</li>
+        <li><code>&lt;title&gt;</code> — tiêu đề hiển thị trên tab trình duyệt.</li>
+        <li><code>&lt;body&gt;</code> — chứa toàn bộ nội dung hiển thị của trang.</li>
+      </ul>
+
+      <h2 id="example">Ví dụ HTML cơ bản</h2>
+      <p>Đây là một trang HTML hoàn chỉnh đơn giản nhất:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Trang đầu tiên của tôi&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Xin chào thế giới!&lt;/h1&gt;
+    &lt;p&gt;Đây là đoạn văn đầu tiên của tôi.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h2 id="elements">Phần tử (Element) và Thẻ (Tag)</h2>
+      <p>
+        Một <strong>phần tử HTML</strong> thường gồm <strong>thẻ mở</strong>, <strong>nội dung</strong>
+        và <strong>thẻ đóng</strong>:
+      </p>
+      <pre><code>&lt;p&gt;Đây là một đoạn văn.&lt;/p&gt;
+   ↑         ↑          ↑
+thẻ mở    nội dung   thẻ đóng</code></pre>
+      <p>
+        Một số phần tử là <strong>thẻ rỗng (empty)</strong> — không có nội dung và không cần thẻ đóng,
+        ví dụ <code>&lt;br&gt;</code> (xuống dòng), <code>&lt;img&gt;</code> (hình ảnh),
+        <code>&lt;hr&gt;</code> (đường kẻ ngang).
+      </p>
+
+      <h2 id="attributes">Thuộc tính (Attributes)</h2>
+      <p>
+        <strong>Thuộc tính</strong> cung cấp thông tin bổ sung cho phần tử, được viết trong thẻ mở
+        theo dạng <code>tên="giá trị"</code>. Ví dụ thẻ liên kết với thuộc tính <code>href</code>:
+      </p>
+      <pre><code>&lt;a href="https://hitech.com"&gt;Truy cập HITech&lt;/a&gt;
+&lt;img src="logo.png" alt="Logo HITech" width="120"&gt;</code></pre>
+      <ul>
+        <li><code>href</code> — địa chỉ đích của liên kết.</li>
+        <li><code>src</code> — đường dẫn tệp hình ảnh.</li>
+        <li><code>alt</code> — văn bản thay thế khi ảnh không tải được.</li>
+        <li><code>id</code>, <code>class</code> — định danh để tạo kiểu (CSS) hoặc thao tác (JS).</li>
+      </ul>
+
+      <h2 id="common">Các thẻ HTML thường dùng</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Thẻ</th><th>Chức năng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;h1&gt;</code> … <code>&lt;h6&gt;</code></td><td>Tiêu đề, từ lớn nhất (h1) đến nhỏ nhất (h6).</td></tr>
+          <tr><td><code>&lt;p&gt;</code></td><td>Đoạn văn bản.</td></tr>
+          <tr><td><code>&lt;a&gt;</code></td><td>Liên kết (hyperlink).</td></tr>
+          <tr><td><code>&lt;img&gt;</code></td><td>Chèn hình ảnh.</td></tr>
+          <tr><td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> / <code>&lt;li&gt;</code></td><td>Danh sách không thứ tự / có thứ tự / mục danh sách.</td></tr>
+          <tr><td><code>&lt;div&gt;</code></td><td>Khối chứa nội dung (block).</td></tr>
+          <tr><td><code>&lt;span&gt;</code></td><td>Khối chứa nội dung nội tuyến (inline).</td></tr>
+          <tr><td><code>&lt;table&gt;</code></td><td>Bảng dữ liệu.</td></tr>
+          <tr><td><code>&lt;form&gt;</code></td><td>Biểu mẫu nhập liệu.</td></tr>
+          <tr><td><code>&lt;br&gt;</code> / <code>&lt;hr&gt;</code></td><td>Xuống dòng / đường kẻ ngang.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>🧪 HTML Editor</span>
+          <span>
+            <button onclick="runCode()">▶ Chạy</button>
+            <button onclick="resetCode()">↺ Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        HTML là ngôn ngữ đánh dấu nền tảng của web, dùng các phần tử và thẻ để cấu trúc nội dung.
+        Một tài liệu HTML gồm <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>,
+        <code>&lt;head&gt;</code> và <code>&lt;body&gt;</code>. Nắm vững các thẻ, thuộc tính cơ bản và
+        luyện tập viết mã là bước đầu tiên để trở thành lập trình viên web.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Sau khi nắm HTML, hãy học <strong>CSS</strong> để tạo kiểu và
+        <strong>JavaScript</strong> để thêm tương tác cho trang web.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="#">Thẻ HTML là gì?</a></li>
+          <li><a href="#">Thuộc tính trong HTML</a></li>
+          <li><a href="#">Semantic HTML</a></li>
+          <li><a href="web-browser.html">Trình duyệt web là gì?</a></li>
+          <li><a href="httpsworkinggfg.html">Cách hoạt động của HTTPS</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? '✅ Đã thích' : '👍 Like';
+    }
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trang của tôi</title>
+  </head>
+  <body>
+    <h1>Xin chào thế giới!</h1>
+    <p>Đây là đoạn văn <b>HTML</b> đầu tiên của tôi.</p>
+    <ul>
+      <li>Mục 1</li>
+      <li>Mục 2</li>
+    </ul>
+    <a href="#">Một liên kết</a>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    // Cập nhật trực tiếp khi gõ (debounce nhẹ)
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    // Khởi tạo
+    resetCode();
+  </script>
+</body>
+</html>
