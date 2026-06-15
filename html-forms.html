@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML Forms - Biểu mẫu trong HTML - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#" class="active">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">HTML Form là gì?</a></li>
+        <li><a href="#form-tag">Thẻ &lt;form&gt; &amp; thuộc tính</a></li>
+        <li><a href="#elements">Các phần tử của form</a></li>
+        <li><a href="#input-types">Các loại input</a></li>
+        <li><a href="#attributes">Thuộc tính quan trọng</a></li>
+        <li><a href="#demo">Form demo (thử ngay)</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » HTML Forms</div>
+      <h1>HTML Forms — Biểu mẫu trong HTML</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>📅 Cập nhật: 15/06/2026</span>
+        <span>👁 280K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">👍 Like</button>
+          <button>🔖 Lưu</button>
+          <button>✏️ Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>HTML Form (biểu mẫu)</strong> là phần của trang web dùng để <strong>thu thập dữ liệu
+        nhập từ người dùng</strong> và gửi tới máy chủ để xử lý. Form được dùng ở khắp mọi nơi: đăng
+        nhập, đăng ký, tìm kiếm, đặt hàng, khảo sát... Một biểu mẫu được tạo bằng thẻ
+        <code>&lt;form&gt;</code> chứa các phần tử nhập liệu như ô văn bản, nút radio, checkbox, danh
+        sách thả xuống và nút gửi.
+      </p>
+
+      <div class="note">
+        <strong>Lưu ý:</strong> Mỗi phần tử nhập liệu cần một thuộc tính <code>name</code> để dữ liệu
+        của nó được gửi đi kèm. Dữ liệu form gửi theo cặp <code>name=value</code>.
+      </div>
+
+      <h2 id="form-tag">Thẻ &lt;form&gt; và các thuộc tính</h2>
+      <p>Thẻ <code>&lt;form&gt;</code> bao bọc toàn bộ biểu mẫu. Hai thuộc tính quan trọng nhất:</p>
+      <ul>
+        <li><code>action</code> — URL nơi dữ liệu form được gửi tới để xử lý.</li>
+        <li><code>method</code> — phương thức gửi: <code>GET</code> (gắn dữ liệu vào URL) hoặc <code>POST</code> (gửi trong thân yêu cầu).</li>
+      </ul>
+      <pre><code>&lt;form action="/dang-ky" method="POST"&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+  &lt;button type="submit"&gt;Gửi&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+      <h2 id="elements">Các phần tử của form</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Phần tử</th><th>Chức năng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;input&gt;</code></td><td>Ô nhập liệu, đa dạng kiểu (text, email, checkbox...).</td></tr>
+          <tr><td><code>&lt;label&gt;</code></td><td>Nhãn mô tả cho một trường nhập, tăng khả năng truy cập.</td></tr>
+          <tr><td><code>&lt;textarea&gt;</code></td><td>Ô nhập văn bản nhiều dòng.</td></tr>
+          <tr><td><code>&lt;select&gt;</code> / <code>&lt;option&gt;</code></td><td>Danh sách thả xuống và các lựa chọn.</td></tr>
+          <tr><td><code>&lt;button&gt;</code></td><td>Nút bấm (gửi, đặt lại, hoặc tùy chỉnh).</td></tr>
+          <tr><td><code>&lt;fieldset&gt;</code> / <code>&lt;legend&gt;</code></td><td>Nhóm các trường liên quan kèm tiêu đề.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="input-types">Các loại &lt;input&gt; phổ biến</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>type</th><th>Mô tả</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>text</code></td><td>Ô văn bản một dòng.</td></tr>
+          <tr><td><code>password</code></td><td>Ô mật khẩu (ký tự bị che).</td></tr>
+          <tr><td><code>email</code></td><td>Ô email, có kiểm tra định dạng.</td></tr>
+          <tr><td><code>number</code></td><td>Ô nhập số.</td></tr>
+          <tr><td><code>radio</code></td><td>Nút chọn một trong nhiều phương án.</td></tr>
+          <tr><td><code>checkbox</code></td><td>Ô chọn nhiều phương án.</td></tr>
+          <tr><td><code>date</code></td><td>Bộ chọn ngày.</td></tr>
+          <tr><td><code>file</code></td><td>Tải tệp lên.</td></tr>
+          <tr><td><code>submit</code></td><td>Nút gửi biểu mẫu.</td></tr>
+          <tr><td><code>reset</code></td><td>Nút đặt lại các trường về mặc định.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="attributes">Thuộc tính quan trọng của input</h2>
+      <ul>
+        <li><code>name</code> — tên trường, dùng làm khóa khi gửi dữ liệu.</li>
+        <li><code>value</code> — giá trị của trường.</li>
+        <li><code>placeholder</code> — gợi ý hiển thị mờ trong ô.</li>
+        <li><code>required</code> — bắt buộc nhập trước khi gửi.</li>
+        <li><code>readonly</code> / <code>disabled</code> — chỉ đọc / vô hiệu hóa.</li>
+        <li><code>maxlength</code>, <code>min</code>, <code>max</code> — giới hạn độ dài/giá trị.</li>
+      </ul>
+
+      <h2 id="demo">Form demo — thử ngay</h2>
+      <p>
+        Đây là một biểu mẫu <strong>hoạt động thật</strong>. Điền thông tin rồi bấm <strong>Gửi</strong>,
+        dữ liệu bạn nhập sẽ được thu thập và hiển thị bên dưới (không gửi đi đâu cả).
+      </p>
+
+      <form class="demo-form" id="demoForm" novalidate>
+        <div class="field">
+          <label for="fullname">Họ và tên</label>
+          <input type="text" id="fullname" name="Họ và tên" placeholder="Nguyễn Văn A" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" placeholder="ban@example.com" required />
+        </div>
+        <div class="field">
+          <label for="age">Tuổi</label>
+          <input type="number" id="age" name="Tuổi" min="1" max="120" placeholder="18" />
+        </div>
+        <div class="field">
+          <label>Giới tính</label>
+          <div class="choices">
+            <label><input type="radio" name="Giới tính" value="Nam" /> Nam</label>
+            <label><input type="radio" name="Giới tính" value="Nữ" /> Nữ</label>
+            <label><input type="radio" name="Giới tính" value="Khác" /> Khác</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Sở thích</label>
+          <div class="choices">
+            <label><input type="checkbox" name="Sở thích" value="Lập trình" /> Lập trình</label>
+            <label><input type="checkbox" name="Sở thích" value="Đọc sách" /> Đọc sách</label>
+            <label><input type="checkbox" name="Sở thích" value="Thể thao" /> Thể thao</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="country">Quốc gia</label>
+          <select id="country" name="Quốc gia">
+            <option value="">-- Chọn quốc gia --</option>
+            <option value="Việt Nam">Việt Nam</option>
+            <option value="Hoa Kỳ">Hoa Kỳ</option>
+            <option value="Nhật Bản">Nhật Bản</option>
+            <option value="Khác">Khác</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Lời nhắn</label>
+          <textarea id="message" name="Lời nhắn" placeholder="Nhập lời nhắn của bạn..."></textarea>
+        </div>
+        <div class="btns">
+          <button type="submit">Gửi</button>
+          <button type="reset">Đặt lại</button>
+        </div>
+      </form>
+
+      <div class="form-result" id="formResult">
+        <h4>✅ Dữ liệu đã gửi</h4>
+        <ul id="resultList"></ul>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        HTML Form là công cụ thu thập dữ liệu người dùng trên web, được tạo bằng thẻ
+        <code>&lt;form&gt;</code> với các thuộc tính <code>action</code> và <code>method</code>. Bên
+        trong form có nhiều phần tử nhập liệu (<code>input</code>, <code>select</code>,
+        <code>textarea</code>...) với đa dạng kiểu và thuộc tính. Nắm vững form là kỹ năng thiết yếu
+        để xây dựng các trang đăng nhập, đăng ký và tương tác với người dùng.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tìm hiểu cách <strong>kiểm tra dữ liệu (form validation)</strong>
+        và xử lý dữ liệu form bằng <strong>JavaScript</strong> hoặc ngôn ngữ phía máy chủ.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Thực hành xây dựng biểu mẫu và giao diện web tương tác.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+          <li><a href="#">Form Validation trong HTML</a></li>
+          <li><a href="#">Các thuộc tính của input</a></li>
+          <li><a href="httpsworkinggfg.html">Cách hoạt động của HTTPS</a></li>
+          <li><a href="web-browser.html">Trình duyệt web là gì?</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? '✅ Đã thích' : '👍 Like';
+    }
+
+    // ----- Xử lý form demo -----
+    const form = document.getElementById('demoForm');
+    const result = document.getElementById('formResult');
+    const resultList = document.getElementById('resultList');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Kiểm tra trường bắt buộc
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+      const grouped = {};
+      for (const [key, value] of data.entries()) {
+        if (value === '') continue;
+        if (grouped[key]) grouped[key].push(value);
+        else grouped[key] = [value];
+      }
+
+      resultList.innerHTML = '';
+      for (const key in grouped) {
+        const li = document.createElement('li');
+        li.innerHTML = '<span class="k">' + key + ':</span> ' + grouped[key].join(', ');
+        resultList.appendChild(li);
+      }
+      result.classList.add('show');
+      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    form.addEventListener('reset', () => {
+      result.classList.remove('show');
+    });
+  </script>
+</body>
+</html>

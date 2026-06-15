@@ -451,6 +451,84 @@ footer.site {
   color: #9a9a9a;
 }
 
+/* ---------- Form demo (trang HTML Forms) ---------- */
+.demo-form {
+  border: 1px solid var(--gfg-border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  background: var(--gfg-bg-alt);
+  margin: 18px 0;
+}
+.demo-form .field { margin-bottom: 16px; }
+.demo-form label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--gfg-heading);
+}
+.demo-form input[type="text"],
+.demo-form input[type="email"],
+.demo-form input[type="password"],
+.demo-form input[type="number"],
+.demo-form input[type="date"],
+.demo-form select,
+.demo-form textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--gfg-border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--gfg-text);
+  outline: none;
+}
+.demo-form input:focus,
+.demo-form select:focus,
+.demo-form textarea:focus {
+  border-color: var(--gfg-green);
+  box-shadow: 0 0 0 3px var(--gfg-green-light);
+}
+.demo-form textarea { resize: vertical; min-height: 90px; }
+.demo-form .choices { display: flex; flex-wrap: wrap; gap: 14px; }
+.demo-form .choices label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.demo-form .choices input { width: auto; }
+.demo-form .btns { display: flex; gap: 10px; margin-top: 4px; }
+.demo-form button {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.demo-form button[type="submit"] { background: var(--gfg-green); color: #fff; }
+.demo-form button[type="submit"]:hover { background: var(--gfg-green-dark); }
+.demo-form button[type="reset"] { background: #fff; color: var(--gfg-text); border: 1px solid var(--gfg-border); }
+.demo-form button[type="reset"]:hover { border-color: var(--gfg-green); color: var(--gfg-green); }
+.form-result {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--gfg-green);
+  background: var(--gfg-green-light);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  display: none;
+}
+.form-result.show { display: block; }
+.form-result h4 { color: var(--gfg-green-dark); margin-bottom: 8px; }
+.form-result ul { list-style: none; margin: 0; }
+.form-result li { padding: 3px 0; }
+.form-result .k { font-weight: 700; color: var(--gfg-heading); }
+
 /* ---------- Trang chủ: hero & nhóm bài viết ---------- */
 .home {
   max-width: 1100px;
