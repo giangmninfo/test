@@ -640,11 +640,11 @@ footer.site {
   outline: none;
   resize: vertical;
   width: 100%;
-  min-height: 260px;
-  padding: 12px;
+  min-height: 70vh;
+  padding: 14px;
   font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: #2d2d2d;
   background: #fff;
   border-right: 1px solid var(--gfg-border);
@@ -652,7 +652,7 @@ footer.site {
 .tryit iframe {
   border: none;
   width: 100%;
-  min-height: 260px;
+  min-height: 70vh;
   background: #fff;
 }
 @media (max-width: 700px) {
