@@ -65,12 +65,12 @@
       <h1>Semantic Elements trong HTML5</h1>
       <div class="meta">
         <span class="lvl">Cấp độ: Cơ bản</span>
-        <span>📅 Cập nhật: 15/06/2026</span>
-        <span>👁 240K lượt đọc</span>
+        <span>Cập nhật: 15/06/2026</span>
+        <span>240K lượt đọc</span>
         <div class="actions">
-          <button onclick="toggleLike(this)">👍 Like</button>
-          <button>🔖 Lưu</button>
-          <button>✏️ Cải thiện</button>
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
         </div>
       </div>
 
@@ -100,7 +100,7 @@
       <h2 id="vs">Semantic và Non-semantic</h2>
       <table class="cmp">
         <thead>
-          <tr><th>Không ngữ nghĩa 🚫</th><th>Có ngữ nghĩa ✅</th></tr>
+          <tr><th>Không ngữ nghĩa</th><th>Có ngữ nghĩa</th></tr>
         </thead>
         <tbody>
           <tr><td><code>&lt;div id="header"&gt;</code></td><td><code>&lt;header&gt;</code></td></tr>
@@ -162,10 +162,10 @@
       </p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>🧪 Semantic Layout Editor</span>
+          <span>Semantic Layout Editor</span>
           <span>
-            <button onclick="runCode()">▶ Chạy</button>
-            <button onclick="resetCode()">↺ Đặt lại</button>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
           </span>
         </div>
         <div class="tryit-panes">
@@ -285,7 +285,7 @@
 
     function toggleLike(btn) {
       btn.classList.toggle('liked');
-      btn.textContent = btn.classList.contains('liked') ? '✅ Đã thích' : '👍 Like';
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
 
     // ----- Trình soạn HTML trực tiếp -----
@@ -411,7 +411,7 @@
       wrap.innerHTML =
         '<div class="mini-bar">' +
           '<span>' + (i + 1) + '. <code>' + ex.tag.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</code></span>' +
-          '<span><button data-run>▶ Chạy</button><button data-reset>↺ Đặt lại</button></span>' +
+          '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span>' +
         '</div>' +
         '<div class="mini-panes">' +
           '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +

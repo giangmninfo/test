@@ -64,12 +64,12 @@
       <h1>Giải thích cách hoạt động của HTTPS</h1>
       <div class="meta">
         <span class="lvl">Cấp độ: Trung bình</span>
-        <span>📅 Cập nhật: 15/06/2026</span>
-        <span>👁 152K lượt đọc</span>
+        <span>Cập nhật: 15/06/2026</span>
+        <span>152K lượt đọc</span>
         <div class="actions">
-          <button onclick="toggleLike(this)">👍 Like</button>
-          <button>🔖 Lưu</button>
-          <button>✏️ Cải thiện</button>
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
         </div>
       </div>
 
@@ -83,7 +83,7 @@
 
       <div class="note">
         <strong>Lưu ý:</strong> HTTPS mặc định chạy trên cổng <code>443</code>, trong khi HTTP chạy
-        trên cổng <code>80</code>. Bạn có thể nhận biết một trang dùng HTTPS qua biểu tượng ổ khóa 🔒
+        trên cổng <code>80</code>. Bạn có thể nhận biết một trang dùng HTTPS qua biểu tượng ổ khóa 
         trên thanh địa chỉ trình duyệt.
       </div>
 
@@ -170,7 +170,7 @@ openssl req -newkey rsa:2048 -nodes \
         Nó bổ sung một lớp bảo mật <strong>SSL/TLS</strong> bên dưới HTTP để mã hóa toàn bộ dữ liệu
         trao đổi. Nhờ đó, ngay cả khi gói tin bị chặn, kẻ tấn công cũng không thể đọc hay sửa nội dung.
         HTTPS hoạt động trên cổng <code>443</code> và URL bắt đầu bằng <code>https://</code> kèm biểu tượng
-        ổ khóa 🔒.
+        ổ khóa .
       </p>
 
       <h3>Bảng so sánh chi tiết</h3>
@@ -197,7 +197,7 @@ openssl req -newkey rsa:2048 -nodes \
       <h3>Ưu điểm của HTTPS</h3>
       <ul>
         <li><strong>Bảo mật dữ liệu:</strong> Mã hóa thông tin nhạy cảm như mật khẩu, thẻ tín dụng, tránh bị nghe lén.</li>
-        <li><strong>Xác thực &amp; tin cậy:</strong> Chứng chỉ SSL xác nhận danh tính website, tăng niềm tin của người dùng (ổ khóa 🔒).</li>
+        <li><strong>Xác thực &amp; tin cậy:</strong> Chứng chỉ SSL xác nhận danh tính website, tăng niềm tin của người dùng (ổ khóa ).</li>
         <li><strong>Toàn vẹn dữ liệu:</strong> Ngăn dữ liệu bị thay đổi hay chèn mã độc trên đường truyền.</li>
         <li><strong>Lợi thế SEO:</strong> Google ưu tiên các trang HTTPS, giúp cải thiện thứ hạng tìm kiếm.</li>
         <li><strong>Tuân thủ tiêu chuẩn:</strong> Nhiều tính năng trình duyệt hiện đại (geolocation, service worker, HTTP/2) yêu cầu HTTPS.</li>
@@ -314,7 +314,7 @@ openssl req -newkey rsa:2048 -nodes \
     // Nút Like
     function toggleLike(btn) {
       btn.classList.toggle('liked');
-      btn.textContent = btn.classList.contains('liked') ? '✅ Đã thích' : '👍 Like';
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
   </script>
 </body>

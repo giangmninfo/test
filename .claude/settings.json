@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(git config user.email noreply@anthropic.com)",
+      "PowerShell(git config user.name Claude)",
+      "PowerShell(git add httpsworkinggfg.html)",
+      "PowerShell(git push origin main)",
+      "PowerShell(git add dns-application-layer.html)",
+      "PowerShell(git add styles.css httpsworkinggfg.html dns-application-layer.html)",
+      "PowerShell(git add web-hosting.html)",
+      "PowerShell(git add web-browser.html)",
+      "PowerShell(git add styles.css html-basics.html index.html)",
+      "Bash(perl -CSD -i -pe 's|\\\\s*<div class=\"ico\">[^<]*</div>\\\\n?||g; s/[\\\\x{1F4D8}\\\\x{1F4C5}\\\\x{1F4C2}\\\\x{23F1}\\\\x{1F3AF}\\\\x{1F441}\\\\x{1F512}\\\\x{1F44D}\\\\x{1F44E}\\\\x{1F516}\\\\x{270F}\\\\x{2705}\\\\x{1F9EA}\\\\x{1F310}\\\\x{1F5A5}\\\\x{1F9ED}\\\\x{1F4C4}\\\\x{1F4DD}\\\\x{1F3F7}\\\\x{1F50E}\\\\x{1F4F1}\\\\x{1F5BC}\\\\x{1F389}\\\\x{25B6}\\\\x{21BA}\\\\x{FE0F}]+ ?//g' index.html httpsworkinggfg.html dns-application-layer.html web-hosting.html web-browser.html html-basics.html html-forms.html html-semantic-elements.html html-meta-tags-seo.html)",
+      "Bash(perl -CSD -ne 'while \\(/\\([\\\\x{1F000}-\\\\x{1FAFF}\\\\x{2190}-\\\\x{21FF}\\\\x{2300}-\\\\x{27BF}\\\\x{2B00}-\\\\x{2BFF}\\\\x{FE0F}]\\)/g\\) { printf \"%s:%d  U+%04X  %s\\\\n\", $ARGV, $., ord\\($1\\), $1 }' *.html)"
+    ]
+  }
+}
