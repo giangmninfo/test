@@ -451,6 +451,24 @@ footer.site {
   color: #9a9a9a;
 }
 
+/* ---------- Ví dụ từng phần tử: hộp kết quả render ---------- */
+.ex-out {
+  border: 1px solid var(--gfg-border);
+  border-left: 4px solid var(--gfg-green);
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fff;
+  margin: 0 0 18px;
+}
+.ex-out .lbl-out {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gfg-muted);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 /* ---------- Form demo (trang HTML Forms) ---------- */
 .demo-form {
   border: 1px solid var(--gfg-border);
