@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Web Hosting là gì? - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#" class="active">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Web Hosting là gì?</a></li>
+        <li><a href="#how">Web Hosting hoạt động thế nào</a></li>
+        <li><a href="#types">Các loại Web Hosting</a></li>
+        <li><a href="#features">Tính năng cần lưu ý</a></li>
+        <li><a href="#advantages">Ưu điểm</a></li>
+        <li><a href="#choose">Cách chọn nhà cung cấp</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » Web Technologies » What is Web Hosting</div>
+      <h1>Web Hosting (Lưu trữ web) là gì?</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>📅 Cập nhật: 15/06/2026</span>
+        <span>👁 178K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">👍 Like</button>
+          <button>🔖 Lưu</button>
+          <button>✏️ Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Web Hosting (lưu trữ web)</strong> là dịch vụ cho phép cá nhân và tổ chức đưa
+        website hoặc ứng dụng web của họ lên Internet. Một <strong>nhà cung cấp hosting</strong>
+        (web host) sẽ cung cấp không gian lưu trữ trên một <strong>máy chủ (server)</strong> — nơi
+        chứa toàn bộ tệp tin của website (HTML, CSS, hình ảnh, cơ sở dữ liệu...). Khi người dùng gõ
+        tên miền vào trình duyệt, máy chủ này sẽ gửi các tệp đó về để hiển thị trang web.
+      </p>
+
+      <div class="note">
+        <strong>Ví dụ dễ hiểu:</strong> Nếu tên miền (domain) giống như <em>địa chỉ nhà</em>, thì
+        web hosting chính là <em>mảnh đất và ngôi nhà</em> nơi bạn cất giữ mọi đồ đạc (dữ liệu
+        website).
+      </div>
+
+      <h2 id="how">Web Hosting hoạt động như thế nào?</h2>
+      <p>
+        Khi một website được lưu trữ, các tệp của nó nằm trên máy chủ luôn bật và kết nối Internet.
+        Quá trình một người truy cập website diễn ra như sau:
+      </p>
+
+      <div class="diagram">
+        <div class="resolve">
+          <div class="rv-step"><span class="num">1</span><div>Người dùng gõ tên miền (vd <code>www.hitech.com</code>) vào trình duyệt.</div></div>
+          <div class="rv-step"><span class="num">2</span><div><strong>DNS</strong> phân giải tên miền thành địa chỉ IP của máy chủ hosting.</div></div>
+          <div class="rv-step"><span class="num">3</span><div>Trình duyệt gửi yêu cầu (HTTP/HTTPS) tới máy chủ hosting tại IP đó.</div></div>
+          <div class="rv-step"><span class="num">4</span><div>Máy chủ xử lý yêu cầu và gửi các tệp website (HTML, CSS, JS...) về trình duyệt.</div></div>
+          <div class="rv-step"><span class="num">5</span><div>Trình duyệt dựng (render) và hiển thị trang web cho người dùng.</div></div>
+        </div>
+        <p class="cap">Hình 1: Luồng hoạt động khi truy cập một website được hosting</p>
+      </div>
+
+      <h2 id="types">Các loại Web Hosting</h2>
+      <p>Có nhiều loại hosting phù hợp với quy mô và nhu cầu khác nhau:</p>
+      <table class="cmp">
+        <thead>
+          <tr><th>Loại hosting</th><th>Đặc điểm</th><th>Phù hợp với</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Shared Hosting</strong></td>
+            <td>Nhiều website dùng chung tài nguyên của một máy chủ. Rẻ nhất, dễ dùng nhưng hiệu năng hạn chế.</td>
+            <td>Blog, website nhỏ, người mới bắt đầu.</td>
+          </tr>
+          <tr>
+            <td><strong>VPS Hosting</strong></td>
+            <td>Máy chủ ảo riêng — một server vật lý chia thành nhiều máy ảo độc lập, tài nguyên đảm bảo hơn.</td>
+            <td>Website vừa, có lượng truy cập tăng dần.</td>
+          </tr>
+          <tr>
+            <td><strong>Dedicated Hosting</strong></td>
+            <td>Thuê trọn một máy chủ vật lý, toàn quyền kiểm soát, hiệu năng cao nhất, chi phí lớn.</td>
+            <td>Website lớn, lưu lượng cao, yêu cầu bảo mật cao.</td>
+          </tr>
+          <tr>
+            <td><strong>Cloud Hosting</strong></td>
+            <td>Website chạy trên cụm nhiều máy chủ (cloud), co giãn linh hoạt, độ sẵn sàng cao.</td>
+            <td>Ứng dụng cần mở rộng nhanh, chống quá tải.</td>
+          </tr>
+          <tr>
+            <td><strong>Managed Hosting</strong></td>
+            <td>Nhà cung cấp lo việc quản trị, cập nhật, sao lưu, bảo mật giúp bạn.</td>
+            <td>Người không rành kỹ thuật (vd Managed WordPress).</td>
+          </tr>
+          <tr>
+            <td><strong>Reseller Hosting</strong></td>
+            <td>Mua hosting rồi bán lại cho khách hàng khác dưới thương hiệu riêng.</td>
+            <td>Agency, freelancer làm dịch vụ web.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="features">Tính năng cần lưu ý khi chọn hosting</h2>
+      <ul>
+        <li><strong>Dung lượng lưu trữ (Storage):</strong> Không gian chứa tệp website, ưu tiên ổ SSD/NVMe cho tốc độ.</li>
+        <li><strong>Băng thông (Bandwidth):</strong> Lượng dữ liệu truyền tải mỗi tháng — càng nhiều truy cập càng cần lớn.</li>
+        <li><strong>Thời gian hoạt động (Uptime):</strong> Tỷ lệ máy chủ luôn online, nên chọn cam kết ≥ 99.9%.</li>
+        <li><strong>Chứng chỉ SSL:</strong> Bật HTTPS để bảo mật, nhiều nhà cung cấp tặng SSL miễn phí.</li>
+        <li><strong>Sao lưu (Backup):</strong> Tự động sao lưu định kỳ để phục hồi khi sự cố.</li>
+        <li><strong>Hỗ trợ kỹ thuật:</strong> Hỗ trợ 24/7 qua chat, email, điện thoại.</li>
+        <li><strong>Khả năng mở rộng:</strong> Dễ nâng cấp gói khi website phát triển.</li>
+      </ul>
+
+      <h2 id="advantages">Ưu điểm của việc dùng dịch vụ Web Hosting</h2>
+      <ul>
+        <li><strong>Tiết kiệm chi phí:</strong> Không cần tự mua và vận hành máy chủ riêng đắt đỏ.</li>
+        <li><strong>Độ tin cậy cao:</strong> Hạ tầng chuyên nghiệp, uptime cao, có dự phòng.</li>
+        <li><strong>Bảo mật:</strong> Tường lửa, chống DDoS, SSL, cập nhật bảo mật thường xuyên.</li>
+        <li><strong>Hỗ trợ kỹ thuật:</strong> Có đội ngũ xử lý sự cố thay bạn.</li>
+        <li><strong>Dễ quản lý:</strong> Bảng điều khiển (cPanel/Plesk) trực quan, cài đặt nhanh.</li>
+      </ul>
+
+      <h2 id="choose">Cách chọn nhà cung cấp Web Hosting</h2>
+      <ol>
+        <li><strong>Xác định nhu cầu:</strong> Loại website, lượng truy cập dự kiến, ngân sách.</li>
+        <li><strong>So sánh tài nguyên:</strong> Dung lượng, băng thông, RAM/CPU giữa các gói.</li>
+        <li><strong>Kiểm tra uptime &amp; tốc độ:</strong> Đọc đánh giá thực tế từ người dùng.</li>
+        <li><strong>Xem chính sách hỗ trợ:</strong> Có hỗ trợ 24/7 và tài liệu rõ ràng không.</li>
+        <li><strong>Cân nhắc khả năng mở rộng:</strong> Dễ nâng cấp khi cần.</li>
+      </ol>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Web hosting là nền tảng để đưa website ra Internet — cung cấp máy chủ lưu trữ tệp và phục vụ
+        dữ liệu cho người dùng. Tùy quy mô và nhu cầu, bạn có thể chọn shared, VPS, dedicated, cloud,
+        managed hay reseller hosting. Khi chọn, hãy cân nhắc dung lượng, băng thông, uptime, bảo mật
+        và khả năng mở rộng để website vận hành nhanh, ổn định và an toàn.
+      </p>
+
+      <div class="note">
+        <strong>Kết luận:</strong> Một website tốt cần cả ba yếu tố: <strong>tên miền</strong> dễ nhớ,
+        <strong>hosting</strong> ổn định, và <strong>HTTPS</strong> để bảo mật.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học Web Development</h4>
+        <p>Học cách xây dựng, triển khai và vận hành website từ A đến Z.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="dns-application-layer.html">Hệ thống tên miền (DNS)</a></li>
+          <li><a href="httpsworkinggfg.html">Cách hoạt động của HTTPS</a></li>
+          <li><a href="#">Sự khác nhau giữa Domain và Hosting</a></li>
+          <li><a href="#">Cloud Computing là gì?</a></li>
+          <li><a href="#">Cách triển khai website lên server</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">Web Technologies</a></li>
+          <li><a href="#">Computer Networks</a></li>
+          <li><a href="#">Cloud Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // Đánh dấu mục lục đang xem khi cuộn
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Cuộn mượt khi bấm mục lục
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    // Nút Like
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? '✅ Đã thích' : '👍 Like';
+    }
+  </script>
+</body>
+</html>
