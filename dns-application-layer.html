@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hệ thống tên miền (DNS) trong tầng ứng dụng - HITech</title>
+<style>
+  :root {
+    --gfg-green: #1a73e8;
+    --gfg-green-dark: #1557b0;
+    --gfg-green-light: #e8f0fe;
+    --gfg-text: #333;
+    --gfg-heading: #111;
+    --gfg-muted: #707070;
+    --gfg-border: #e0e0e0;
+    --gfg-bg: #ffffff;
+    --gfg-bg-alt: #f7f7f7;
+    --gfg-code-bg: #f4f4f4;
+    --gfg-link: #0b7dda;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--gfg-text);
+    background: var(--gfg-bg-alt);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  a { color: var(--gfg-link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- Top Navbar ---------- */
+  header.navbar {
+    background: #fff;
+    border-bottom: 1px solid var(--gfg-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .navbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 18px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--gfg-green);
+    white-space: nowrap;
+  }
+  .brand:hover { text-decoration: none; }
+  .brand .logo-mark {
+    width: 34px; height: 34px;
+    background: var(--gfg-green);
+    color: #fff;
+    border-radius: 8px;
+    display: grid; place-items: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+  .nav-search {
+    flex: 1;
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+    background: var(--gfg-bg-alt);
+    border: 1px solid var(--gfg-border);
+    border-radius: 22px;
+    padding: 6px 16px;
+  }
+  .nav-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+    color: var(--gfg-text);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin-left: auto;
+  }
+  .nav-links a {
+    color: var(--gfg-text);
+    padding: 8px 12px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+  .nav-links a:hover { color: var(--gfg-green); text-decoration: none; }
+  .nav-cta {
+    background: var(--gfg-green);
+    color: #fff !important;
+    border-radius: 6px;
+  }
+  .nav-cta:hover { background: var(--gfg-green-dark); }
+
+  /* ---------- Sub category bar ---------- */
+  .subbar {
+    background: var(--gfg-green);
+    color: #fff;
+  }
+  .subbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+  }
+  .subbar-inner a {
+    color: #eaf2fe;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .subbar-inner a:hover, .subbar-inner a.active {
+    background: var(--gfg-green-dark);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    max-width: 1280px;
+    margin: 18px auto;
+    display: grid;
+    grid-template-columns: 240px minmax(0,1fr) 300px;
+    gap: 18px;
+    padding: 0 18px;
+    align-items: start;
+  }
+
+  /* ---------- Left TOC sidebar ---------- */
+  aside.toc {
+    background: #fff;
+    border: 1px solid var(--gfg-border);
+    border-radius: 8px;
+    padding: 16px;
+    position: sticky;
+    top: 72px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+  aside.toc h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gfg-muted);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gfg-border);
+  }
+  aside.toc ul { list-style: none; }
+  aside.toc li { margin-bottom: 2px; }
+  aside.toc a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 5px;
+    color: var(--gfg-text);
+    font-size: 0.88rem;
+    border-left: 3px solid transparent;
+  }
+  aside.toc a:hover { background: var(--gfg-green-light); text-decoration: none; }
+  aside.toc a.active {
+    background: var(--gfg-green-light);
+    border-left-color: var(--gfg-green);
+    color: var(--gfg-green-dark);
+    font-weight: 700;
+  }
+
+  /* ---------- Main article ---------- */
+  main.article {
+    background: #fff;
+    border: 1px solid var(--gfg-border);
+    border-radius: 8px;
+    padding: 28px 34px 40px;
+    min-width: 0;
+  }
+  .crumbs {
+    font-size: 0.82rem;
+    color: var(--gfg-muted);
+    margin-bottom: 14px;
+  }
+  main.article h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    color: var(--gfg-heading);
+    margin-bottom: 14px;
+    font-weight: 800;
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.85rem;
+    color: var(--gfg-muted);
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--gfg-border);
+  }
+  .meta .lvl {
+    background: var(--gfg-green-light);
+    color: var(--gfg-green-dark);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+  }
+  .meta .actions { margin-left: auto; display: flex; gap: 10px; }
+  .meta .actions button {
+    border: 1px solid var(--gfg-border);
+    background: #fff;
+    border-radius: 6px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--gfg-text);
+  }
+  .meta .actions button:hover { border-color: var(--gfg-green); color: var(--gfg-green); }
+
+  main.article h2 {
+    font-size: 1.5rem;
+    color: var(--gfg-heading);
+    margin: 32px 0 12px;
+    font-weight: 800;
+    scroll-margin-top: 80px;
+  }
+  main.article h3 {
+    font-size: 1.18rem;
+    color: var(--gfg-heading);
+    margin: 22px 0 10px;
+    font-weight: 700;
+  }
+  main.article p { margin-bottom: 16px; }
+  main.article ul, main.article ol { margin: 0 0 16px 24px; }
+  main.article li { margin-bottom: 8px; }
+  main.article strong { color: var(--gfg-heading); }
+
+  .note {
+    background: var(--gfg-green-light);
+    border-left: 4px solid var(--gfg-green);
+    padding: 14px 18px;
+    border-radius: 0 6px 6px 0;
+    margin: 20px 0;
+  }
+  .note strong { color: var(--gfg-green-dark); }
+
+  /* diagram */
+  .diagram {
+    border: 1px dashed var(--gfg-border);
+    background: var(--gfg-bg-alt);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 22px 0;
+    text-align: center;
+  }
+  .resolve {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    counter-reset: step;
+  }
+  .rv-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--gfg-border);
+    border-left: 4px solid var(--gfg-green);
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+  .rv-step .num {
+    flex: 0 0 26px;
+    width: 26px; height: 26px;
+    background: var(--gfg-green);
+    color: #fff;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .diagram .cap { font-size: 0.82rem; color: var(--gfg-muted); margin-top: 14px; }
+
+  /* code */
+  pre {
+    background: var(--gfg-code-bg);
+    border: 1px solid var(--gfg-border);
+    border-left: 4px solid var(--gfg-green);
+    border-radius: 6px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 16px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    background: var(--gfg-code-bg);
+    color: #c0341d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  pre code { background: none; color: #2d2d2d; padding: 0; }
+
+  table.cmp {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 0.92rem;
+  }
+  table.cmp th, table.cmp td {
+    border: 1px solid var(--gfg-border);
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.cmp th { background: var(--gfg-green); color: #fff; font-weight: 700; }
+  table.cmp tr:nth-child(even) td { background: var(--gfg-bg-alt); }
+
+  /* ---------- Right sidebar ---------- */
+  aside.rail {
+    position: sticky;
+    top: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .rail-card {
+    background: #fff;
+    border: 1px solid var(--gfg-border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .rail-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: var(--gfg-heading);
+  }
+  .rail-card ul { list-style: none; }
+  .rail-card li { padding: 7px 0; border-bottom: 1px solid var(--gfg-border); font-size: 0.9rem; }
+  .rail-card li:last-child { border-bottom: none; }
+  .ad {
+    background: linear-gradient(135deg, var(--gfg-green), var(--gfg-green-dark));
+    color: #fff;
+    border-radius: 8px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .ad h4 { color: #fff; font-size: 1.05rem; margin-bottom: 8px; }
+  .ad p { font-size: 0.85rem; opacity: 0.92; margin-bottom: 14px; }
+  .ad button {
+    background: #fff;
+    color: var(--gfg-green-dark);
+    border: none;
+    border-radius: 6px;
+    padding: 9px 20px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site {
+    background: #1a1a1a;
+    color: #cfcfcf;
+    margin-top: 28px;
+    padding: 40px 18px 24px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+  }
+  .footer-inner h5 { color: #fff; margin-bottom: 12px; font-size: 0.95rem; }
+  .footer-inner ul { list-style: none; }
+  .footer-inner li { padding: 4px 0; font-size: 0.87rem; }
+  .footer-inner a { color: #cfcfcf; }
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 24px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid #383838;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #9a9a9a;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1080px) {
+    .layout { grid-template-columns: minmax(0,1fr) 280px; }
+    aside.toc { display: none; }
+  }
+  @media (max-width: 820px) {
+    .layout { grid-template-columns: 1fr; }
+    aside.rail { display: none; }
+    .nav-search { display: none; }
+    .nav-links { display: none; }
+    main.article { padding: 20px 18px 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Security</a>
+      <a href="#" class="active">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">DNS là gì?</a></li>
+        <li><a href="#why">Tại sao cần DNS?</a></li>
+        <li><a href="#components">Thành phần của DNS</a></li>
+        <li><a href="#servers">Các loại DNS Server</a></li>
+        <li><a href="#how">Quy trình phân giải DNS</a></li>
+        <li><a href="#queries">Các loại truy vấn DNS</a></li>
+        <li><a href="#records">Các loại bản ghi DNS</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » Computer Networks » Application Layer » Domain Name System (DNS)</div>
+      <h1>Hệ thống tên miền (DNS) trong tầng ứng dụng</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Trung bình</span>
+        <span>📅 Cập nhật: 15/06/2026</span>
+        <span>👁 210K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">👍 Like</button>
+          <button>🔖 Lưu</button>
+          <button>✏️ Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>DNS (Domain Name System)</strong> là một dịch vụ ở <strong>tầng ứng dụng</strong>
+        (application layer) hoạt động như một "danh bạ điện thoại" của Internet. Nó có nhiệm vụ
+        <strong>dịch tên miền dễ nhớ</strong> mà con người sử dụng (ví dụ
+        <code>www.hitech.com</code>) thành <strong>địa chỉ IP</strong> mà máy tính dùng để định danh
+        nhau trên mạng (ví dụ <code>142.250.180.4</code>). Nhờ DNS, người dùng không cần ghi nhớ các
+        dãy số IP phức tạp.
+      </p>
+
+      <div class="note">
+        <strong>Lưu ý:</strong> DNS chủ yếu sử dụng giao thức <code>UDP</code> trên cổng
+        <code>53</code> cho các truy vấn thông thường, và chuyển sang <code>TCP</code> khi dữ liệu
+        phản hồi lớn (ví dụ truyền vùng - zone transfer).
+      </div>
+
+      <h2 id="why">Tại sao cần DNS?</h2>
+      <p>
+        Mỗi thiết bị trên Internet được định danh bằng một địa chỉ IP. Tuy nhiên, việc ghi nhớ hàng
+        nghìn địa chỉ IP là bất khả thi với con người. DNS giải quyết vấn đề này bằng cách:
+      </p>
+      <ul>
+        <li><strong>Ánh xạ tên ↔ IP:</strong> Cho phép dùng tên miền thân thiện thay cho địa chỉ số.</li>
+        <li><strong>Phân cấp &amp; phân tán:</strong> Không phụ thuộc một máy chủ duy nhất, tăng độ tin cậy.</li>
+        <li><strong>Linh hoạt:</strong> Một website có thể đổi IP máy chủ mà tên miền vẫn giữ nguyên.</li>
+        <li><strong>Cân bằng tải:</strong> Một tên miền có thể trỏ tới nhiều IP khác nhau.</li>
+      </ul>
+
+      <h2 id="components">Các thành phần của DNS</h2>
+      <p>Hệ thống DNS gồm ba thành phần chính:</p>
+      <ul>
+        <li><strong>Không gian tên miền (Namespace):</strong> Cấu trúc cây phân cấp chứa tất cả tên miền, bắt đầu từ gốc (root).</li>
+        <li><strong>Máy chủ tên (Name Servers):</strong> Các máy chủ lưu trữ thông tin về tên miền và trả lời truy vấn.</li>
+        <li><strong>Trình phân giải (Resolver):</strong> Phần mềm phía client gửi truy vấn và nhận kết quả phân giải.</li>
+      </ul>
+
+      <h3>Cấu trúc phân cấp của tên miền</h3>
+      <p>
+        Tên miền được tổ chức theo cây phân cấp từ phải sang trái. Ví dụ với
+        <code>www.hitech.com</code>:
+      </p>
+      <pre><code>                    . (Root)
+                    |
+                  .com           ← Tên miền cấp cao nhất (TLD)
+                    |
+                hitech.com       ← Tên miền cấp hai (domain)
+                    |
+            www.hitech.com       ← Tên miền phụ (subdomain / host)</code></pre>
+
+      <h2 id="servers">Các loại DNS Server</h2>
+      <p>Quá trình phân giải DNS có sự tham gia của bốn loại máy chủ:</p>
+      <ul>
+        <li><strong>DNS Resolver (Recursive Resolver):</strong> Máy chủ trung gian (thường của ISP) nhận yêu cầu từ client và đi tìm câu trả lời.</li>
+        <li><strong>Root Name Server:</strong> Cấp cao nhất, chỉ đường tới máy chủ TLD phù hợp.</li>
+        <li><strong>TLD Name Server:</strong> Quản lý các tên miền cấp cao nhất như <code>.com</code>, <code>.org</code>, <code>.vn</code>.</li>
+        <li><strong>Authoritative Name Server:</strong> Máy chủ "có thẩm quyền", lưu bản ghi thực sự và trả về địa chỉ IP cuối cùng.</li>
+      </ul>
+
+      <h2 id="how">Quy trình phân giải tên miền (DNS Resolution)</h2>
+      <p>
+        Khi bạn gõ <code>www.hitech.com</code> vào trình duyệt, các bước sau diễn ra (giả sử chưa có
+        cache):
+      </p>
+
+      <div class="diagram">
+        <div class="resolve">
+          <div class="rv-step"><span class="num">1</span><div>Trình duyệt kiểm tra <strong>cache</strong> (trình duyệt, hệ điều hành). Nếu chưa có, gửi truy vấn tới <strong>Recursive Resolver</strong>.</div></div>
+          <div class="rv-step"><span class="num">2</span><div>Resolver hỏi <strong>Root Server</strong>: "IP của www.hitech.com là gì?" → Root trả về địa chỉ máy chủ <strong>TLD .com</strong>.</div></div>
+          <div class="rv-step"><span class="num">3</span><div>Resolver hỏi <strong>TLD .com Server</strong> → trả về địa chỉ <strong>Authoritative Server</strong> của hitech.com.</div></div>
+          <div class="rv-step"><span class="num">4</span><div>Resolver hỏi <strong>Authoritative Server</strong> → trả về <strong>địa chỉ IP</strong> thực của www.hitech.com.</div></div>
+          <div class="rv-step"><span class="num">5</span><div>Resolver trả IP về cho trình duyệt và <strong>lưu cache</strong> để dùng cho lần sau.</div></div>
+          <div class="rv-step"><span class="num">6</span><div>Trình duyệt kết nối tới IP đó và tải trang web.</div></div>
+        </div>
+        <p class="cap">Hình 1: Quy trình phân giải DNS qua các máy chủ phân cấp</p>
+      </div>
+
+      <h2 id="queries">Các loại truy vấn DNS</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Loại truy vấn</th><th>Mô tả</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Truy vấn đệ quy (Recursive)</strong></td><td>Client yêu cầu resolver trả về câu trả lời cuối cùng; resolver chịu trách nhiệm đi hỏi toàn bộ chuỗi máy chủ.</td></tr>
+          <tr><td><strong>Truy vấn lặp (Iterative)</strong></td><td>Máy chủ trả về câu trả lời tốt nhất nó biết (thường là địa chỉ máy chủ kế tiếp), client tự đi hỏi tiếp.</td></tr>
+          <tr><td><strong>Truy vấn không đệ quy (Non-recursive)</strong></td><td>Resolver đã có sẵn câu trả lời trong cache hoặc là máy chủ có thẩm quyền, trả về ngay.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="records">Các loại bản ghi DNS (DNS Records)</h2>
+      <p>Máy chủ DNS lưu thông tin dưới dạng các bản ghi. Một số loại phổ biến:</p>
+      <table class="cmp">
+        <thead>
+          <tr><th>Bản ghi</th><th>Chức năng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>A</code></td><td>Ánh xạ tên miền tới địa chỉ IPv4.</td></tr>
+          <tr><td><code>AAAA</code></td><td>Ánh xạ tên miền tới địa chỉ IPv6.</td></tr>
+          <tr><td><code>CNAME</code></td><td>Bí danh (alias) trỏ tên miền này tới tên miền khác.</td></tr>
+          <tr><td><code>MX</code></td><td>Chỉ định máy chủ thư điện tử (mail server) cho tên miền.</td></tr>
+          <tr><td><code>NS</code></td><td>Chỉ định máy chủ tên có thẩm quyền cho tên miền.</td></tr>
+          <tr><td><code>PTR</code></td><td>Phân giải ngược: từ IP về tên miền.</td></tr>
+          <tr><td><code>TXT</code></td><td>Lưu thông tin văn bản (xác thực SPF, DKIM...).</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Thử tra cứu DNS</h3>
+      <p>Bạn có thể tự kiểm tra phân giải DNS bằng các lệnh dòng lệnh sau:</p>
+      <pre><code># Tra cứu địa chỉ IP của một tên miền
+nslookup www.hitech.com
+
+# Hoặc dùng dig để xem chi tiết bản ghi
+dig hitech.com A
+dig hitech.com MX</code></pre>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        DNS là một dịch vụ nền tảng của Internet hoạt động ở tầng ứng dụng, giúp dịch tên miền thành
+        địa chỉ IP thông qua một hệ thống máy chủ phân cấp và phân tán (Root → TLD → Authoritative).
+        Nhờ cơ chế cache và phân tán, DNS vừa nhanh vừa có độ tin cậy cao, là thành phần không thể
+        thiếu để Internet vận hành như ngày nay.
+      </p>
+
+      <div class="note">
+        <strong>Kết luận:</strong> Mỗi lần bạn truy cập một website bằng tên miền, DNS đã âm thầm làm
+        việc trong vài mili-giây để đưa bạn tới đúng máy chủ.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học Mạng máy tính</h4>
+        <p>Nắm vững DNS, TCP/IP, HTTP và bảo mật mạng từ cơ bản đến nâng cao.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="httpsworkinggfg.html">Cách hoạt động của HTTPS</a></li>
+          <li><a href="#">Sự khác nhau giữa TCP và UDP</a></li>
+          <li><a href="#">Địa chỉ IP là gì?</a></li>
+          <li><a href="#">Mô hình OSI 7 tầng</a></li>
+          <li><a href="#">DNS Cache Poisoning là gì?</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">Computer Networks</a></li>
+          <li><a href="#">Application Layer</a></li>
+          <li><a href="#">Web Security</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Computer Networks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // Đánh dấu mục lục đang xem khi cuộn
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Cuộn mượt khi bấm mục lục
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    // Nút Like
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? '✅ Đã thích' : '👍 Like';
+    }
+  </script>
+</body>
+</html>
