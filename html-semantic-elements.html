@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Semantic Elements trong HTML5 - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#" class="active">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Semantic element là gì?</a></li>
+        <li><a href="#why">Tại sao nên dùng</a></li>
+        <li><a href="#vs">Semantic vs Non-semantic</a></li>
+        <li><a href="#list">Danh sách phần tử</a></li>
+        <li><a href="#structure">Cấu trúc trang semantic</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » Semantic Elements in HTML5</div>
+      <h1>Semantic Elements trong HTML5</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>📅 Cập nhật: 15/06/2026</span>
+        <span>👁 240K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">👍 Like</button>
+          <button>🔖 Lưu</button>
+          <button>✏️ Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Phần tử ngữ nghĩa (Semantic Elements)</strong> là các thẻ HTML mô tả rõ ràng
+        <strong>ý nghĩa</strong> của nội dung mà chúng chứa — cho cả trình duyệt lẫn lập trình viên
+        hiểu được vai trò của phần đó trên trang. Ví dụ, <code>&lt;header&gt;</code>,
+        <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code> và <code>&lt;footer&gt;</code> đều là
+        thẻ ngữ nghĩa vì tên gọi đã nói lên nội dung bên trong. Ngược lại,
+        <code>&lt;div&gt;</code> và <code>&lt;span&gt;</code> là thẻ <strong>không ngữ nghĩa</strong>
+        vì không cho biết gì về nội dung.
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> "Semantic" nghĩa là "thuộc về ý nghĩa". Thẻ ngữ nghĩa giúp mã HTML
+        tự mô tả (self-describing), dễ đọc và dễ bảo trì hơn.
+      </div>
+
+      <h2 id="why">Tại sao nên dùng Semantic Elements?</h2>
+      <ul>
+        <li><strong>Khả năng truy cập (Accessibility):</strong> Trình đọc màn hình dựa vào thẻ ngữ nghĩa để điều hướng, giúp người khiếm thị dùng web dễ hơn.</li>
+        <li><strong>SEO tốt hơn:</strong> Công cụ tìm kiếm hiểu cấu trúc trang rõ hơn, cải thiện thứ hạng.</li>
+        <li><strong>Dễ đọc &amp; bảo trì:</strong> Mã rõ ràng, lập trình viên khác dễ hiểu cấu trúc.</li>
+        <li><strong>Nhất quán:</strong> Tạo một chuẩn cấu trúc chung cho mọi trang web.</li>
+      </ul>
+
+      <h2 id="vs">Semantic và Non-semantic</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Không ngữ nghĩa 🚫</th><th>Có ngữ nghĩa ✅</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;div id="header"&gt;</code></td><td><code>&lt;header&gt;</code></td></tr>
+          <tr><td><code>&lt;div id="nav"&gt;</code></td><td><code>&lt;nav&gt;</code></td></tr>
+          <tr><td><code>&lt;div id="content"&gt;</code></td><td><code>&lt;main&gt;</code> / <code>&lt;article&gt;</code></td></tr>
+          <tr><td><code>&lt;div id="sidebar"&gt;</code></td><td><code>&lt;aside&gt;</code></td></tr>
+          <tr><td><code>&lt;div id="footer"&gt;</code></td><td><code>&lt;footer&gt;</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="list">Các phần tử ngữ nghĩa trong HTML5</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Phần tử</th><th>Ý nghĩa / Công dụng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;header&gt;</code></td><td>Phần đầu trang hoặc đầu một mục: logo, tiêu đề, điều hướng.</td></tr>
+          <tr><td><code>&lt;nav&gt;</code></td><td>Khối chứa các liên kết điều hướng chính.</td></tr>
+          <tr><td><code>&lt;main&gt;</code></td><td>Nội dung chính, duy nhất của trang.</td></tr>
+          <tr><td><code>&lt;section&gt;</code></td><td>Một nhóm nội dung theo chủ đề, thường có tiêu đề.</td></tr>
+          <tr><td><code>&lt;article&gt;</code></td><td>Nội dung độc lập, có thể tái sử dụng (bài viết, tin tức, bình luận).</td></tr>
+          <tr><td><code>&lt;aside&gt;</code></td><td>Nội dung phụ liên quan (sidebar, quảng cáo, ghi chú bên lề).</td></tr>
+          <tr><td><code>&lt;footer&gt;</code></td><td>Phần chân trang: bản quyền, liên hệ, liên kết phụ.</td></tr>
+          <tr><td><code>&lt;figure&gt;</code> / <code>&lt;figcaption&gt;</code></td><td>Hình ảnh/minh họa kèm chú thích.</td></tr>
+          <tr><td><code>&lt;details&gt;</code> / <code>&lt;summary&gt;</code></td><td>Khối nội dung có thể đóng/mở kèm tiêu đề.</td></tr>
+          <tr><td><code>&lt;mark&gt;</code></td><td>Văn bản được tô sáng (đánh dấu).</td></tr>
+          <tr><td><code>&lt;time&gt;</code></td><td>Biểu diễn ngày/giờ ở dạng máy đọc được.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="structure">Cấu trúc một trang web dùng Semantic Elements</h2>
+      <p>Sơ đồ bố cục điển hình của một trang web ngữ nghĩa:</p>
+      <pre><code>&lt;body&gt;
+  &lt;header&gt; ... logo, tiêu đề ... &lt;/header&gt;
+  &lt;nav&gt; ... menu điều hướng ... &lt;/nav&gt;
+
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;section&gt; ... nội dung ... &lt;/section&gt;
+    &lt;/article&gt;
+    &lt;aside&gt; ... nội dung phụ ... &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt; ... bản quyền ... &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+
+      <h2 id="tryit">Thử ngay — bố cục semantic có CSS</h2>
+      <p>
+        Chỉnh sửa mã HTML bên trái và xem ngay kết quả bên phải. Ví dụ minh họa một trang dùng đầy đủ
+        các phần tử ngữ nghĩa kèm tạo kiểu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>🧪 Semantic Layout Editor</span>
+          <span>
+            <button onclick="runCode()">▶ Chạy</button>
+            <button onclick="resetCode()">↺ Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Semantic Elements trong HTML5 giúp mô tả ý nghĩa của nội dung thay vì chỉ tạo khối trống như
+        <code>&lt;div&gt;</code>. Sử dụng <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+        <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>,
+        <code>&lt;aside&gt;</code> và <code>&lt;footer&gt;</code> giúp trang web dễ truy cập hơn, thân
+        thiện SEO hơn và dễ bảo trì hơn. Hãy ưu tiên thẻ ngữ nghĩa bất cứ khi nào có thẻ phù hợp.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Kết hợp Semantic HTML với <strong>CSS</strong> để tạo bố cục
+        và <strong>ARIA</strong> để tăng cường khả năng truy cập.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Xây dựng giao diện web chuẩn ngữ nghĩa, dễ truy cập.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+          <li><a href="html-forms.html">HTML Forms</a></li>
+          <li><a href="#">Accessibility (A11y) là gì?</a></li>
+          <li><a href="web-browser.html">Trình duyệt web là gì?</a></li>
+          <li><a href="httpsworkinggfg.html">Cách hoạt động của HTTPS</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? '✅ Đã thích' : '👍 Like';
+    }
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Semantic</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: Arial, sans-serif; color: #333; }
+    header { background: #1a73e8; color: #fff; padding: 16px; text-align: center; }
+    nav { background: #1557b0; }
+    nav a { color: #fff; display: inline-block; padding: 10px 14px; text-decoration: none; }
+    nav a:hover { background: #0e3f80; }
+    .wrap { display: flex; gap: 12px; padding: 12px; }
+    main { flex: 3; }
+    aside { flex: 1; background: #e8f0fe; padding: 12px; border-radius: 6px; }
+    article { background: #f7f7f7; padding: 14px; border-radius: 6px; margin-bottom: 12px; }
+    footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog của tôi</h1>
+  </header>
+
+  <nav>
+    <a href="#">Trang chủ</a>
+    <a href="#">Bài viết</a>
+    <a href="#">Liên hệ</a>
+  </nav>
+
+  <div class="wrap">
+    <main>
+      <article>
+        <h2>Bài viết đầu tiên</h2>
+        <p>Đây là nội dung chính của bài viết, đặt trong thẻ
+        &lt;article&gt; bên trong &lt;main&gt;.</p>
+      </article>
+      <article>
+        <h2>Bài viết thứ hai</h2>
+        <p>Mỗi bài là một &lt;article&gt; độc lập.</p>
+      </article>
+    </main>
+
+    <aside>
+      <h3>Về tác giả</h3>
+      <p>Nội dung phụ nằm trong thẻ &lt;aside&gt;.</p>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Blog của tôi</p>
+  </footer>
+</body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
+  </script>
+</body>
+</html>
