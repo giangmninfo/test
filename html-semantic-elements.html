@@ -148,114 +148,12 @@
 &lt;/body&gt;</code></pre>
 
       <h2 id="examples">Ví dụ minh họa từng phần tử</h2>
-      <p>Mỗi phần tử ngữ nghĩa kèm đoạn mã ví dụ và kết quả hiển thị thật bên dưới.</p>
-
-      <h3>1. &lt;header&gt; — Đầu trang / đầu mục</h3>
-      <pre><code>&lt;header&gt;
-  &lt;h1&gt;HITech Blog&lt;/h1&gt;
-  &lt;p&gt;Học lập trình web mỗi ngày&lt;/p&gt;
-&lt;/header&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <header style="background:#1a73e8;color:#fff;padding:12px 16px;border-radius:6px;">
-          <h1 style="margin:0;font-size:1.3rem;">HITech Blog</h1>
-          <p style="margin:4px 0 0;">Học lập trình web mỗi ngày</p>
-        </header>
-      </div>
-
-      <h3>2. &lt;nav&gt; — Khối điều hướng</h3>
-      <pre><code>&lt;nav&gt;
-  &lt;a href="#"&gt;Trang chủ&lt;/a&gt;
-  &lt;a href="#"&gt;Bài viết&lt;/a&gt;
-  &lt;a href="#"&gt;Liên hệ&lt;/a&gt;
-&lt;/nav&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <nav style="background:#1557b0;border-radius:6px;">
-          <a href="#" style="color:#fff;display:inline-block;padding:8px 14px;text-decoration:none;">Trang chủ</a>
-          <a href="#" style="color:#fff;display:inline-block;padding:8px 14px;text-decoration:none;">Bài viết</a>
-          <a href="#" style="color:#fff;display:inline-block;padding:8px 14px;text-decoration:none;">Liên hệ</a>
-        </nav>
-      </div>
-
-      <h3>3. &lt;article&gt; — Nội dung độc lập</h3>
-      <pre><code>&lt;article&gt;
-  &lt;h2&gt;HTML là gì?&lt;/h2&gt;
-  &lt;p&gt;HTML là ngôn ngữ đánh dấu để xây dựng web.&lt;/p&gt;
-&lt;/article&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <article style="background:#f7f7f7;padding:12px 14px;border-radius:6px;">
-          <h2 style="margin:0 0 6px;font-size:1.15rem;">HTML là gì?</h2>
-          <p style="margin:0;">HTML là ngôn ngữ đánh dấu để xây dựng web.</p>
-        </article>
-      </div>
-
-      <h3>4. &lt;section&gt; — Nhóm nội dung theo chủ đề</h3>
-      <pre><code>&lt;section&gt;
-  &lt;h2&gt;Khóa học nổi bật&lt;/h2&gt;
-  &lt;p&gt;Danh sách các khóa học mới nhất.&lt;/p&gt;
-&lt;/section&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <section style="border:1px dashed #1a73e8;padding:12px 14px;border-radius:6px;">
-          <h2 style="margin:0 0 6px;font-size:1.15rem;">Khóa học nổi bật</h2>
-          <p style="margin:0;">Danh sách các khóa học mới nhất.</p>
-        </section>
-      </div>
-
-      <h3>5. &lt;aside&gt; — Nội dung phụ</h3>
-      <pre><code>&lt;aside&gt;
-  &lt;h3&gt;Bài liên quan&lt;/h3&gt;
-  &lt;p&gt;HTML Forms, CSS cơ bản...&lt;/p&gt;
-&lt;/aside&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <aside style="background:#e8f0fe;padding:12px 14px;border-radius:6px;">
-          <h3 style="margin:0 0 6px;font-size:1.05rem;">Bài liên quan</h3>
-          <p style="margin:0;">HTML Forms, CSS cơ bản...</p>
-        </aside>
-      </div>
-
-      <h3>6. &lt;figure&gt; và &lt;figcaption&gt; — Hình kèm chú thích</h3>
-      <pre><code>&lt;figure&gt;
-  &lt;img src="logo.png" alt="Logo HITech"&gt;
-  &lt;figcaption&gt;Hình 1: Logo của HITech&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <figure style="margin:0;text-align:center;">
-          <div style="width:120px;height:70px;margin:0 auto;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:6px;font-weight:700;">LOGO</div>
-          <figcaption style="font-size:0.85rem;color:#707070;margin-top:6px;">Hình 1: Logo của HITech</figcaption>
-        </figure>
-      </div>
-
-      <h3>7. &lt;details&gt; và &lt;summary&gt; — Đóng/mở nội dung</h3>
-      <pre><code>&lt;details&gt;
-  &lt;summary&gt;Xem thêm thông tin&lt;/summary&gt;
-  &lt;p&gt;Đây là phần nội dung ẩn, bấm để mở.&lt;/p&gt;
-&lt;/details&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả (bấm để mở)</div>
-        <details style="border:1px solid #e0e0e0;border-radius:6px;padding:10px 14px;">
-          <summary style="cursor:pointer;font-weight:700;">Xem thêm thông tin</summary>
-          <p style="margin:8px 0 0;">Đây là phần nội dung ẩn, bấm để mở.</p>
-        </details>
-      </div>
-
-      <h3>8. &lt;mark&gt; — Tô sáng văn bản</h3>
-      <pre><code>&lt;p&gt;Hãy ghi nhớ từ khóa &lt;mark&gt;semantic&lt;/mark&gt; nhé!&lt;/p&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <p style="margin:0;">Hãy ghi nhớ từ khóa <mark>semantic</mark> nhé!</p>
-      </div>
-
-      <h3>9. &lt;time&gt; — Ngày/giờ máy đọc được</h3>
-      <pre><code>&lt;p&gt;Đăng ngày &lt;time datetime="2026-06-15"&gt;15/06/2026&lt;/time&gt;&lt;/p&gt;</code></pre>
-      <div class="ex-out">
-        <div class="lbl-out">Kết quả</div>
-        <p style="margin:0;">Đăng ngày <time datetime="2026-06-15">15/06/2026</time></p>
-      </div>
+      <p>
+        Mỗi phần tử ngữ nghĩa có một <strong>editor chạy code trực tiếp</strong>: chỉnh sửa mã bên
+        trái, kết quả cập nhật ngay bên phải. Bấm <strong>Chạy</strong> để cập nhật thủ công hoặc
+        <strong>Đặt lại</strong> để khôi phục ví dụ gốc.
+      </p>
+      <div id="exHost"></div>
 
       <h2 id="tryit">Thử ngay — bố cục semantic có CSS</h2>
       <p>
@@ -459,6 +357,80 @@
     });
 
     resetCode();
+
+    // ----- Mini editor chạy code cho từng ví dụ -----
+    const examples = [
+      { tag: '<header>', code:
+`<header>
+  <h1>HITech Blog</h1>
+  <p>Học lập trình web mỗi ngày</p>
+</header>` },
+      { tag: '<nav>', code:
+`<nav>
+  <a href="#">Trang chủ</a> |
+  <a href="#">Bài viết</a> |
+  <a href="#">Liên hệ</a>
+</nav>` },
+      { tag: '<article>', code:
+`<article>
+  <h2>HTML là gì?</h2>
+  <p>HTML là ngôn ngữ đánh dấu để xây dựng web.</p>
+</article>` },
+      { tag: '<section>', code:
+`<section>
+  <h2>Khóa học nổi bật</h2>
+  <p>Danh sách các khóa học mới nhất.</p>
+</section>` },
+      { tag: '<aside>', code:
+`<aside>
+  <h3>Bài liên quan</h3>
+  <p>HTML Forms, CSS cơ bản...</p>
+</aside>` },
+      { tag: '<figure>', code:
+`<figure>
+  <img src="https://picsum.photos/160/90" alt="Ảnh minh họa">
+  <figcaption>Hình 1: Ảnh minh họa kèm chú thích</figcaption>
+</figure>` },
+      { tag: '<details>', code:
+`<details>
+  <summary>Xem thêm thông tin</summary>
+  <p>Đây là phần nội dung ẩn, bấm để mở.</p>
+</details>` },
+      { tag: '<mark>', code:
+`<p>Hãy ghi nhớ từ khóa <mark>semantic</mark> nhé!</p>` },
+      { tag: '<time>', code:
+`<p>Đăng ngày <time datetime="2026-06-15">15/06/2026</time></p>` }
+    ];
+
+    const exHost = document.getElementById('exHost');
+    const baseStyle = '<style>body{font-family:Arial,sans-serif;margin:10px;color:#333;line-height:1.6}</style>';
+
+    examples.forEach((ex, i) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar">' +
+          '<span>' + (i + 1) + '. <code>' + ex.tag.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</code></span>' +
+          '<span><button data-run>▶ Chạy</button><button data-reset>↺ Đặt lại</button></span>' +
+        '</div>' +
+        '<div class="mini-panes">' +
+          '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+          '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div>' +
+        '</div>';
+
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = baseStyle + ta.value; };
+      const reset = () => { ta.value = ex.code; run(); };
+
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+
+      exHost.appendChild(wrap);
+      reset();
+    });
   </script>
 </body>
 </html>

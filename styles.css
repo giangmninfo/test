@@ -469,6 +469,73 @@ footer.site {
   margin-bottom: 10px;
 }
 
+/* ---------- Mini editor: chạy code cho từng ví dụ ---------- */
+.mini {
+  border: 1px solid var(--gfg-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 12px 0 22px;
+}
+.mini-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--gfg-green);
+  color: #fff;
+  padding: 7px 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.mini-bar code { background: rgba(255,255,255,0.18); color: #fff; }
+.mini-bar button {
+  background: #fff;
+  color: var(--gfg-green-dark);
+  border: none;
+  border-radius: 5px;
+  padding: 4px 12px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+  margin-left: 6px;
+}
+.mini-bar button:hover { background: var(--gfg-green-light); }
+.mini-panes { display: grid; grid-template-columns: 1fr 1fr; }
+.mini-panes > div { display: flex; flex-direction: column; }
+.mini-panes .lbl {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gfg-muted);
+  padding: 6px 10px 3px;
+  background: var(--gfg-bg-alt);
+  border-bottom: 1px solid var(--gfg-border);
+}
+.mini textarea {
+  border: none;
+  outline: none;
+  resize: vertical;
+  width: 100%;
+  min-height: 190px;
+  padding: 12px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #2d2d2d;
+  background: #fff;
+  border-right: 1px solid var(--gfg-border);
+}
+.mini iframe {
+  border: none;
+  width: 100%;
+  min-height: 190px;
+  background: #fff;
+}
+@media (max-width: 700px) {
+  .mini-panes { grid-template-columns: 1fr; }
+  .mini textarea { border-right: none; border-bottom: 1px solid var(--gfg-border); }
+}
+
 /* ---------- Form demo (trang HTML Forms) ---------- */
 .demo-form {
   border: 1px solid var(--gfg-border);
