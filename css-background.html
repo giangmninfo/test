@@ -56,7 +56,6 @@
         <li><a href="#repeat">background-repeat</a></li>
         <li><a href="#position-size">position &amp; size</a></li>
         <li><a href="#attachment">background-attachment</a></li>
-        <li><a href="#shorthand">Shorthand</a></li>
         <li><a href="#gradient">Gradient</a></li>
         <li><a href="#bgtry">Chọn loại background</a></li>
         <li><a href="#tryit">Thử ngay</a></li>
@@ -139,15 +138,7 @@
       </p>
       <div id="mini-attach"></div>
 
-      <h2 id="shorthand">6. Thuộc tính rút gọn (shorthand)</h2>
-      <p>Gộp nhiều thuộc tính vào một dòng <code>background</code>:</p>
-      <pre><code>div {
-  background: #e8f0fe url("anh.png") no-repeat center / cover;
-  /* color image repeat position / size */
-}</code></pre>
-      <div id="mini-shorthand"></div>
-
-      <h2 id="gradient">7. Gradient (chuyển màu)</h2>
+      <h2 id="gradient">6. Gradient (chuyển màu)</h2>
       <p>
         Gradient là hình nền đặc biệt: <code>linear-gradient()</code> (tuyến tính) và
         <code>radial-gradient()</code> (tỏa tròn).
@@ -406,17 +397,6 @@
 </body>
 </html>`);
 
-    makeMini('mini-shorthand',
-`<!DOCTYPE html>
-<html>
-<head>${baseHead}</head>
-<body>
-  <div class="box" style="background: #1a73e8 url('${tile}') no-repeat right center;">
-    Shorthand: color + image + no-repeat + position
-  </div>
-</body>
-</html>`);
-
     makeMini('mini-gradient',
 `<!DOCTYPE html>
 <html>
@@ -430,7 +410,7 @@
 
     // ----- Widget chọn loại background -----
     const bgOptions = {
-      image:    "background: url('" + tile + "') repeat;",
+      image:    "background: url('https://jbagy.me/wp-content/uploads/2025/03/Hinh-anh-doremon-cute-1.jpg') repeat;",
       color:    "background: #1a73e8;",
       gradient: "background: linear-gradient(135deg, #1a73e8, #0b3d91);",
       none:     "background: none;"
