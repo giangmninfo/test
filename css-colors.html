@@ -57,6 +57,7 @@
         <li><a href="#rgb">RGB &amp; RGBA</a></li>
         <li><a href="#hsl">HSL &amp; HSLA</a></li>
         <li><a href="#tool">Công cụ chọn màu</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
@@ -148,6 +149,28 @@
           <div class="fmt-row"><span class="name">HEX</span><code id="outHex"></code><button class="copy" data-target="outHex">Copy</button></div>
           <div class="fmt-row"><span class="name">RGB</span><code id="outRgb"></code><button class="copy" data-target="outRgb">Copy</button></div>
           <div class="fmt-row"><span class="name">HSL</span><code id="outHsl"></code><button class="copy" data-target="outHsl">Copy</button></div>
+        </div>
+      </div>
+
+      <h2 id="tryit">Thử ngay — kết hợp các định dạng màu</h2>
+      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải. Thử đổi các giá trị màu xem sao!</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>CSS Colors Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML + CSS</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
         </div>
       </div>
 
@@ -325,6 +348,44 @@
   <div class="box" style="background: hsla(214,82%,51%,0.4);">hsla(...,0.4) — mờ</div>
 </body>
 </html>`);
+
+    // ----- Editor lớn: Thử ngay -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    .card {
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .named { background: steelblue; }
+    .hex   { background: #1a73e8; }
+    .rgb   { background: rgb(192, 52, 29); }
+    .rgba  { background: rgba(26, 115, 232, 0.45); color: #1b1b32; }
+    .hsl   { background: hsl(140, 60%, 40%); }
+    h1 { color: #1a73e8; }
+  </style>
+</head>
+<body>
+  <h1>Bảng màu CSS</h1>
+  <div class="card named">Tên màu: steelblue</div>
+  <div class="card hex">HEX: #1a73e8</div>
+  <div class="card rgb">RGB: rgb(192, 52, 29)</div>
+  <div class="card rgba">RGBA: rgba(26,115,232,0.45)</div>
+  <div class="card hsl">HSL: hsl(140, 60%, 40%)</div>
+</body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let bigTimer;
+    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
+    resetCode();
 
     // ----- Công cụ chọn màu -----
     const picker = document.getElementById('colorPicker');
