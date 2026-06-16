@@ -388,11 +388,31 @@
     makeMini('mini-attach',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}<style>.scrollbox{height:120px;overflow:auto;border-radius:8px;padding:10px;color:#fff;background-image:url('${pic}');background-attachment:local;background-size:cover;}</style></head>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .scrollbox {
+    height: 120px;
+    overflow: auto;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    background-image: url('${pic}');
+    background-size: cover;
+
+    /* local: nền cuộn theo nội dung bên trong */
+    background-attachment: local;
+  }
+</style>
+</head>
 <body>
   <div class="scrollbox">
     <p>Cuộn nội dung này — nền dùng background-attachment: local.</p>
-    <p>Dòng 2</p><p>Dòng 3</p><p>Dòng 4</p><p>Dòng 5</p><p>Dòng 6</p>
+    <p>Dòng 2</p>
+    <p>Dòng 3</p>
+    <p>Dòng 4</p>
+    <p>Dòng 5</p>
+    <p>Dòng 6</p>
   </div>
 </body>
 </html>`);
@@ -400,11 +420,25 @@
     makeMini('mini-gradient',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}</head>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    height: 120px;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  /* Gradient là một loại background-image */
+  .linear { background: linear-gradient(135deg, #1a73e8, #1557b0); }
+  .radial { background: radial-gradient(circle, #1a73e8, #0b3d91); }
+</style>
+</head>
 <body>
-  <div class="box" style="background: linear-gradient(135deg, #1a73e8, #1557b0);">linear-gradient</div>
-  <br>
-  <div class="box" style="background: radial-gradient(circle, #1a73e8, #0b3d91);">radial-gradient</div>
+  <div class="box linear">linear-gradient</div>
+  <div class="box radial">radial-gradient</div>
 </body>
 </html>`);
 

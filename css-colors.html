@@ -303,49 +303,87 @@
       reset();
     }
 
-    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;line-height:1.6}.box{padding:14px;border-radius:8px;margin-bottom:8px}</style>';
-
     makeMini('mini-named',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}</head>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; }
+
+  /* Dùng tên màu có sẵn của CSS */
+  .text { color: tomato; }
+  .bg1  { background: steelblue; color: white; }
+  .bg2  { background: gold; }
+</style>
+</head>
 <body>
-  <p style="color: tomato;">Chữ màu tomato</p>
-  <div class="box" style="background: steelblue; color: white;">Nền steelblue</div>
-  <div class="box" style="background: gold;">Nền gold</div>
+  <p class="text">Chữ màu tomato</p>
+  <div class="box bg1">Nền steelblue</div>
+  <div class="box bg2">Nền gold</div>
 </body>
 </html>`);
 
     makeMini('mini-hex',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}</head>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; color: #fff; }
+
+  /* Màu dạng HEX: #RRGGBB */
+  .c1 { background: #1a73e8; }
+  .c2 { background: #e8f0fe; color: #1557b0; }
+  .c3 { background: #1a7; }   /* viết tắt 3 ký tự */
+</style>
+</head>
 <body>
-  <div class="box" style="background: #1a73e8; color: #fff;">#1a73e8</div>
-  <div class="box" style="background: #e8f0fe; color: #1557b0;">#e8f0fe</div>
-  <div class="box" style="background: #1a7; color: #fff;">Viết tắt #1a7</div>
+  <div class="box c1">#1a73e8</div>
+  <div class="box c2">#e8f0fe</div>
+  <div class="box c3">Viết tắt #1a7</div>
 </body>
 </html>`);
 
     makeMini('mini-rgb',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}</head>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; }
+
+  /* rgb() và rgba() — kênh alpha tạo độ mờ */
+  .full  { background: rgb(26, 115, 232); color: #fff; }
+  .half  { background: rgba(26, 115, 232, 0.5); }
+  .light { background: rgba(26, 115, 232, 0.15); }
+</style>
+</head>
 <body>
-  <div class="box" style="background: rgb(26,115,232); color:#fff;">rgb(26,115,232)</div>
-  <div class="box" style="background: rgba(26,115,232,0.5);">rgba(...,0.5) — mờ 50%</div>
-  <div class="box" style="background: rgba(26,115,232,0.15);">rgba(...,0.15) — mờ 15%</div>
+  <div class="box full">rgb(26, 115, 232)</div>
+  <div class="box half">rgba(..., 0.5) — mờ 50%</div>
+  <div class="box light">rgba(..., 0.15) — mờ 15%</div>
 </body>
 </html>`);
 
     makeMini('mini-hsl',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}</head>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; }
+
+  /* hsl(hue, saturation, lightness) */
+  .base    { background: hsl(214, 82%, 51%); color: #fff; }
+  .lighter { background: hsl(214, 82%, 75%); }
+  .alpha   { background: hsla(214, 82%, 51%, 0.4); }
+</style>
+</head>
 <body>
-  <div class="box" style="background: hsl(214,82%,51%); color:#fff;">hsl(214,82%,51%)</div>
-  <div class="box" style="background: hsl(214,82%,75%);">Tăng lightness → sáng hơn</div>
-  <div class="box" style="background: hsla(214,82%,51%,0.4);">hsla(...,0.4) — mờ</div>
+  <div class="box base">hsl(214, 82%, 51%)</div>
+  <div class="box lighter">Tăng lightness → sáng hơn</div>
+  <div class="box alpha">hsla(..., 0.4) — mờ</div>
 </body>
 </html>`);
 
