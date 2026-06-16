@@ -110,6 +110,8 @@
 div p {
   color: blue;
 }</code></pre>
+      <p><strong>Bài tập:</strong> Đoạn <code>&lt;p&gt;</code> lồng sâu trong <code>&lt;section&gt;</code> có bị đổi màu không? Thử thêm một <code>&lt;p&gt;</code> nữa để kiểm chứng.</p>
+      <div id="mini-desc"></div>
 
       <h2 id="child">2. Child combinator (&gt;)</h2>
       <p>
@@ -119,6 +121,8 @@ div p {
 div &gt; p {
   color: green;
 }</code></pre>
+      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> là con trực tiếp đổi màu, còn <code>&lt;p&gt;</code> nằm trong <code>&lt;section&gt;</code> thì không. Thử đổi <code>&gt;</code> thành dấu cách để thấy khác biệt.</p>
+      <div id="mini-child"></div>
 
       <h2 id="adjacent">3. Adjacent sibling combinator (+)</h2>
       <p>
@@ -129,6 +133,8 @@ div &gt; p {
 h2 + p {
   font-weight: bold;
 }</code></pre>
+      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> ngay liền sau <code>&lt;h2&gt;</code> được in đậm. Thử đổi vị trí các đoạn để xem đoạn nào bị ảnh hưởng.</p>
+      <div id="mini-adj"></div>
 
       <h2 id="general">4. General sibling combinator (~)</h2>
       <p>
@@ -139,6 +145,8 @@ h2 + p {
 h2 ~ p {
   color: purple;
 }</code></pre>
+      <p><strong>Bài tập:</strong> Tất cả <code>&lt;p&gt;</code> cùng cấp đứng sau <code>&lt;h2&gt;</code> đổi màu. Thử thêm một <code>&lt;p&gt;</code> trước <code>&lt;h2&gt;</code> — nó có đổi màu không?</p>
+      <div id="mini-gen"></div>
 
       <h2 id="tryit">Thử ngay — các combinator hoạt động</h2>
       <p>
@@ -317,6 +325,103 @@ h2 ~ p {
     });
 
     resetCode();
+
+    // ----- Mini editor cho từng combinator -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;line-height:1.6}</style>';
+
+    makeMini('mini-desc',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}
+<style>
+  /* Descendant: mọi p bên trong div (mọi cấp) */
+  div p { color: blue; }
+</style>
+</head>
+<body>
+  <div>
+    <p>Đoạn con trực tiếp của div.</p>
+    <section>
+      <p>Đoạn lồng sâu trong section.</p>
+    </section>
+  </div>
+  <p>Đoạn NGOÀI div (không đổi màu).</p>
+</body>
+</html>`);
+
+    makeMini('mini-child',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}
+<style>
+  /* Child: chỉ p là con trực tiếp của div */
+  div > p { color: green; font-weight: bold; }
+</style>
+</head>
+<body>
+  <div>
+    <p>Con trực tiếp của div (đổi màu).</p>
+    <section>
+      <p>p trong section (KHÔNG đổi màu).</p>
+    </section>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-adj',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}
+<style>
+  /* Adjacent sibling: p ngay liền sau h2 */
+  h2 + p { background: #e8f0fe; padding: 6px; }
+</style>
+</head>
+<body>
+  <h2>Tiêu đề</h2>
+  <p>Đoạn NGAY sau h2 (được tô nền).</p>
+  <p>Đoạn thứ hai (không tô).</p>
+</body>
+</html>`);
+
+    makeMini('mini-gen',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}
+<style>
+  /* General sibling: mọi p cùng cấp đứng sau h2 */
+  h2 ~ p { color: purple; }
+</style>
+</head>
+<body>
+  <p>Đoạn TRƯỚC h2 (không đổi màu).</p>
+  <h2>Tiêu đề</h2>
+  <p>Đoạn sau h2 (đổi màu).</p>
+  <p>Đoạn nữa sau h2 (đổi màu).</p>
+</body>
+</html>`);
   </script>
 </body>
 </html>
