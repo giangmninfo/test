@@ -52,6 +52,7 @@
         <li><a href="#intro" class="active">Selector là gì?</a></li>
         <li><a href="#types">Phân loại selector</a></li>
         <li><a href="#simple">Bộ chọn cơ bản</a></li>
+        <li><a href="#combinator">Combinator Selectors</a></li>
         <li><a href="#attribute">Bộ chọn thuộc tính</a></li>
         <li><a href="#pseudo-class">Pseudo-class</a></li>
         <li><a href="#pseudo-element">Pseudo-element</a></li>
@@ -111,7 +112,26 @@
       </ul>
       <div id="mini-simple"></div>
 
-      <h2 id="attribute">2. Bộ chọn thuộc tính (Attribute)</h2>
+      <h2 id="combinator">2. Combinator Selectors</h2>
+      <p>
+        <strong>Combinator</strong> chọn phần tử dựa trên <strong>mối quan hệ</strong> với phần tử
+        khác trong cây HTML. CSS có 4 combinator:
+      </p>
+      <table class="cmp">
+        <thead>
+          <tr><th>Combinator</th><th>Ký hiệu</th><th>Chọn...</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Descendant</td><td><code>(dấu cách)</code></td><td>mọi con cháu bên trong (mọi cấp).</td></tr>
+          <tr><td>Child</td><td><code>&gt;</code></td><td>con trực tiếp.</td></tr>
+          <tr><td>Adjacent sibling</td><td><code>+</code></td><td>phần tử cùng cấp đứng ngay sau.</td></tr>
+          <tr><td>General sibling</td><td><code>~</code></td><td>mọi phần tử cùng cấp đứng sau.</td></tr>
+        </tbody>
+      </table>
+      <p>Xem chi tiết tại bài <a href="css-combinators.html">CSS Combinators</a>. Thử nhanh bên dưới:</p>
+      <div id="mini-combinator"></div>
+
+      <h2 id="attribute">3. Bộ chọn thuộc tính (Attribute)</h2>
       <p>Chọn phần tử dựa trên thuộc tính và/hoặc giá trị của thuộc tính.</p>
       <table class="cmp">
         <thead>
@@ -128,7 +148,7 @@
       </table>
       <div id="mini-attr"></div>
 
-      <h2 id="pseudo-class">3. Pseudo-class</h2>
+      <h2 id="pseudo-class">4. Pseudo-class</h2>
       <p>
         <strong>Pseudo-class</strong> chọn phần tử theo <strong>trạng thái</strong> hoặc
         <strong>vị trí</strong> đặc biệt, viết sau dấu hai chấm <code>:</code>.
@@ -141,7 +161,7 @@
       </ul>
       <div id="mini-pseudoclass"></div>
 
-      <h2 id="pseudo-element">4. Pseudo-element</h2>
+      <h2 id="pseudo-element">5. Pseudo-element</h2>
       <p>
         <strong>Pseudo-element</strong> chọn <strong>một phần</strong> của phần tử, viết sau hai dấu
         hai chấm <code>::</code>.
@@ -300,6 +320,31 @@
   <h2 id="title">Tiêu đề (ID + group)</h2>
   <p>Đoạn văn thường (element).</p>
   <p class="highlight">Đoạn có class highlight.</p>
+</body>
+</html>`);
+
+    makeMini('mini-combinator',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}
+<style>
+  /* Descendant: mọi p trong .box */
+  .box p { color: #1a73e8; }
+  /* Child: li con trực tiếp của ul */
+  ul > li { font-weight: bold; }
+  /* Adjacent: p ngay sau h3 */
+  h3 + p { background: #e8f0fe; }
+  /* General: mọi p sau h3 */
+  h3 ~ p { border-left: 3px solid #1a73e8; padding-left: 8px; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h3>Tiêu đề</h3>
+    <p>Đoạn ngay sau h3 (adjacent + general).</p>
+    <p>Đoạn thứ hai (general).</p>
+    <ul><li>Mục con trực tiếp</li></ul>
+  </div>
 </body>
 </html>`);
 
