@@ -545,6 +545,67 @@ footer.site {
   .seo-tool { grid-template-columns: 1fr; }
 }
 
+/* ---------- Công cụ chọn màu (trang CSS Colors) ---------- */
+.color-tool {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid var(--gfg-border);
+  border-radius: 10px;
+  padding: 18px;
+  background: var(--gfg-bg-alt);
+  margin: 18px 0;
+}
+.color-tool .picker-side { text-align: center; }
+.color-tool input[type="color"] {
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: none;
+}
+.color-tool .swatch {
+  height: 70px;
+  border-radius: 8px;
+  border: 1px solid var(--gfg-border);
+  margin-bottom: 12px;
+}
+.color-tool .fmt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.color-tool .fmt-row .name {
+  flex: 0 0 64px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--gfg-muted);
+}
+.color-tool .fmt-row code {
+  flex: 1;
+  background: #fff;
+  border: 1px solid var(--gfg-border);
+  color: var(--gfg-text);
+  padding: 6px 10px;
+}
+.color-tool .copy {
+  border: 1px solid var(--gfg-border);
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--gfg-green-dark);
+  font-weight: 700;
+}
+.color-tool .copy:hover { background: var(--gfg-green-light); border-color: var(--gfg-green); }
+@media (max-width: 600px) {
+  .color-tool { grid-template-columns: 1fr; }
+}
+
 /* ---------- Mini editor: chạy code cho từng ví dụ ---------- */
 .mini {
   border: 1px solid var(--gfg-border);
