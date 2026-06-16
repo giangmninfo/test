@@ -753,6 +753,16 @@ footer.site {
 .card h3 { font-size: 1.1rem; color: var(--gfg-heading); margin: 8px 0 6px; }
 .card p { font-size: 0.9rem; color: var(--gfg-muted); margin: 0; }
 
+.subgroup { margin: 18px 0 8px; }
+.subgroup-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gfg-green-dark);
+  margin: 18px 0 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--gfg-green);
+}
+
 .empty-note {
   border: 1px dashed var(--gfg-border);
   border-radius: 10px;
@@ -761,6 +771,7 @@ footer.site {
   color: var(--gfg-muted);
   background: var(--gfg-bg-alt);
 }
+.empty-note.sm { padding: 14px; }
 .empty-note .badge-soon {
   display: inline-block;
   background: var(--gfg-green-light);
