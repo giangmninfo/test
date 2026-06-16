@@ -50,6 +50,7 @@
       <h3>Mục lục</h3>
       <ul>
         <li><a href="#intro" class="active">Padding là gì?</a></li>
+        <li><a href="#diagram">Sơ đồ minh họa</a></li>
         <li><a href="#sides">Padding từng cạnh</a></li>
         <li><a href="#shorthand">Cú pháp rút gọn</a></li>
         <li><a href="#size">Padding &amp; kích thước</a></li>
@@ -86,6 +87,40 @@
         <strong>Ghi nhớ:</strong> Padding không nhận giá trị âm. Mặc định, padding làm
         <strong>tăng</strong> tổng kích thước hiển thị của phần tử (trừ khi dùng <code>box-sizing: border-box</code>).
       </div>
+
+      <h2 id="diagram">Sơ đồ minh họa</h2>
+      <p>Vị trí của padding trong mô hình hộp — nằm giữa nội dung (Content) và viền (Border):</p>
+      <figure style="margin:0 0 18px;background:var(--gfg-bg-alt);border-radius:10px;padding:10px;">
+        <svg viewBox="0 0 800 420" width="100%" role="img" aria-label="Sơ đồ CSS Padding: margin, border, padding, content" style="display:block;max-width:720px;margin:0 auto;font-family:Arial,sans-serif;">
+          <!-- Tiêu đề -->
+          <rect x="300" y="4" width="200" height="34" rx="4" fill="#fff" stroke="#ddd"/>
+          <text x="400" y="28" font-size="20" font-weight="800" fill="#1b1b32" text-anchor="middle">CSS Padding</text>
+
+          <!-- Nhãn trục -->
+          <text x="400" y="54" font-size="14" font-weight="700" fill="#333" text-anchor="middle">TOP</text>
+          <text x="400" y="414" font-size="14" font-weight="700" fill="#333" text-anchor="middle">BOTTOM</text>
+          <text x="20" y="232" font-size="14" font-weight="700" fill="#333" text-anchor="middle" transform="rotate(-90 20 232)">LEFT</text>
+          <text x="784" y="232" font-size="14" font-weight="700" fill="#333" text-anchor="middle" transform="rotate(90 784 232)">RIGHT</text>
+
+          <!-- Margin (xanh lá) -->
+          <rect x="55" y="62" width="690" height="320" fill="#5ad29a"/>
+          <text x="736" y="84" font-size="15" font-weight="700" fill="#1b1b32" text-anchor="end">Margin</text>
+          <!-- Border (cam) -->
+          <rect x="110" y="92" width="580" height="260" fill="#f7a800"/>
+          <text x="682" y="112" font-size="15" font-weight="700" fill="#1b1b32" text-anchor="end">Border</text>
+          <!-- Padding (vàng nhạt) -->
+          <rect x="150" y="120" width="500" height="204" fill="#f3f3a8"/>
+          <text x="642" y="140" font-size="15" font-weight="700" fill="#1b1b32" text-anchor="end">Padding</text>
+          <!-- Content (xanh dương nhạt) -->
+          <rect x="195" y="150" width="410" height="144" fill="#bcd6f2"/>
+          <text x="400" y="206" font-size="15" font-weight="700" fill="#1b1b32" text-anchor="middle">Content</text>
+
+          <!-- Trục đứt nét đỏ -->
+          <line x1="400" y1="58" x2="400" y2="392" stroke="#e8533f" stroke-width="2" stroke-dasharray="7 5"/>
+          <line x1="45" y1="222" x2="755" y2="222" stroke="#e8533f" stroke-width="2" stroke-dasharray="7 5"/>
+        </svg>
+        <figcaption style="text-align:center;font-size:0.82rem;color:var(--gfg-muted);margin-top:6px;">Hình 1: Vị trí của Padding trong mô hình hộp</figcaption>
+      </figure>
 
       <h2 id="sides">1. Padding cho từng cạnh</h2>
       <p>
