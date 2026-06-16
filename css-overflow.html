@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CSS Overflow: xử lý nội dung tràn khỏi khung với visible, hidden, scroll, auto, clip và overflow-x/overflow-y kèm ví dụ chạy trực tiếp." />
+<title>CSS Overflow - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#">HTML</a>
+      <a href="#" class="active">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Overflow là gì?</a></li>
+        <li><a href="#values">Các giá trị</a></li>
+        <li><a href="#visible">visible</a></li>
+        <li><a href="#hidden">hidden</a></li>
+        <li><a href="#scroll">scroll</a></li>
+        <li><a href="#auto">auto</a></li>
+        <li><a href="#xy">overflow-x &amp; overflow-y</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » CSS » Styling &amp; Properties » CSS Overflow</div>
+      <h1>CSS Overflow</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 16/06/2026</span>
+        <span>200K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        Thuộc tính <strong>overflow</strong> trong CSS quyết định điều gì xảy ra khi
+        <strong>nội dung tràn ra ngoài</strong> khung của một phần tử (khi nội dung lớn hơn kích thước
+        đã đặt). Bạn có thể cho phần thừa hiển thị tràn ra, bị cắt đi, hoặc thêm thanh cuộn.
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> <code>overflow</code> chỉ có tác dụng khi phần tử có kích thước giới
+        hạn (ví dụ đặt <code>height</code>) và nội dung vượt quá kích thước đó.
+      </div>
+
+      <h2 id="values">Các giá trị của overflow</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Giá trị</th><th>Tác dụng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>visible</code></td><td>Mặc định — nội dung tràn vẫn hiển thị ra ngoài khung.</td></tr>
+          <tr><td><code>hidden</code></td><td>Phần tràn bị cắt và ẩn đi, không có thanh cuộn.</td></tr>
+          <tr><td><code>scroll</code></td><td>Luôn hiển thị thanh cuộn (cả khi không cần).</td></tr>
+          <tr><td><code>auto</code></td><td>Tự thêm thanh cuộn chỉ khi cần.</td></tr>
+          <tr><td><code>clip</code></td><td>Cắt phần tràn, không cho cuộn (nghiêm ngặt hơn hidden).</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="visible">1. overflow: visible</h2>
+      <p>Giá trị mặc định — nội dung thừa tràn ra ngoài khung và vẫn hiển thị.</p>
+      <div id="mini-visible"></div>
+
+      <h2 id="hidden">2. overflow: hidden</h2>
+      <p>Phần nội dung vượt khung bị cắt và ẩn đi; không có thanh cuộn.</p>
+      <div id="mini-hidden"></div>
+
+      <h2 id="scroll">3. overflow: scroll</h2>
+      <p>Luôn hiển thị thanh cuộn để xem phần nội dung bị tràn.</p>
+      <div id="mini-scroll"></div>
+
+      <h2 id="auto">4. overflow: auto</h2>
+      <p>Chỉ thêm thanh cuộn khi nội dung thực sự tràn — gọn gàng nhất trong đa số trường hợp.</p>
+      <div id="mini-auto"></div>
+
+      <h2 id="xy">5. overflow-x &amp; overflow-y</h2>
+      <p>
+        Điều khiển tràn theo từng trục: <code>overflow-x</code> (ngang) và <code>overflow-y</code>
+        (dọc). Ví dụ chỉ cho cuộn ngang, ẩn tràn dọc.
+      </p>
+      <div id="mini-xy"></div>
+
+      <h2 id="tryit">Thử ngay — overflow</h2>
+      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải. Thử đổi giá trị <code>overflow</code>.</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>CSS Overflow Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML + CSS</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        <code>overflow</code> xử lý nội dung tràn khỏi khung phần tử với các giá trị:
+        <code>visible</code> (tràn ra), <code>hidden</code> (cắt bỏ), <code>scroll</code> (luôn có
+        thanh cuộn), <code>auto</code> (cuộn khi cần) và <code>clip</code>. Có thể điều khiển riêng
+        từng trục bằng <code>overflow-x</code> và <code>overflow-y</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tìm hiểu <code>white-space</code> và
+        <code>text-overflow: ellipsis</code> để xử lý văn bản dài bị tràn.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học CSS</h4>
+        <p>Làm chủ box model, overflow và bố cục web hiện đại.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-margins-padding.html">CSS Margins &amp; Padding</a></li>
+          <li><a href="css-borders.html">CSS Borders</a></li>
+          <li><a href="#">CSS Box Model</a></li>
+          <li><a href="#">CSS text-overflow</a></li>
+          <li><a href="css-background.html">CSS Background</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    // Mẫu chung: một khung nhỏ chứa nhiều dòng để thấy hiệu ứng tràn
+    function demo(overflowRule, extra) {
+      return `<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .frame {
+    width: 220px;
+    height: 90px;
+    border: 2px solid #1a73e8;
+    background: #e8f0fe;
+    padding: 8px;
+
+    ${overflowRule}${extra || ''}
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    Đây là một đoạn văn bản khá dài được đặt trong một khung nhỏ.
+    Vì nội dung vượt quá chiều cao của khung nên đây là lúc thuộc tính
+    overflow phát huy tác dụng. Hãy quan sát phần nội dung thừa.
+  </div>
+</body>
+</html>`;
+    }
+
+    makeMini('mini-visible', demo('/* mặc định */\n    overflow: visible;'));
+    makeMini('mini-hidden',  demo('overflow: hidden;'));
+    makeMini('mini-scroll',  demo('overflow: scroll;'));
+    makeMini('mini-auto',    demo('overflow: auto;'));
+
+    makeMini('mini-xy',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .frame {
+    width: 220px;
+    height: 90px;
+    border: 2px solid #1a73e8;
+    background: #e8f0fe;
+    padding: 8px;
+    white-space: nowrap;
+
+    /* cuộn ngang, ẩn tràn dọc */
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    Một dòng văn bản rất dài không xuống dòng để minh họa cuộn ngang theo overflow-x.
+  </div>
+</body>
+</html>`);
+
+    // ----- Editor lớn: Thử ngay -----
+    const sampleCode =
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    .frame {
+      width: 260px;
+      height: 110px;
+      border: 2px solid #1a73e8;
+      background: #e8f0fe;
+      padding: 10px;
+
+      /* thử đổi: visible | hidden | scroll | auto */
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    Thay đổi giá trị overflow ở trên để xem nội dung dài này
+    được xử lý ra sao: tràn ra, bị cắt, hay xuất hiện thanh cuộn.
+    Thêm vài câu nữa để nội dung chắc chắn vượt khung và thấy rõ hiệu ứng.
+  </div>
+</body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let bigTimer;
+    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
+    resetCode();
+  </script>
+</body>
+</html>
