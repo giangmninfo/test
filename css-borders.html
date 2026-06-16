@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CSS Borders: border-style, border-width, border-color, viền từng cạnh, shorthand và border-radius kèm ví dụ chạy trực tiếp." />
+<title>CSS Borders - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#">HTML</a>
+      <a href="#" class="active">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Border là gì?</a></li>
+        <li><a href="#properties">Các thuộc tính</a></li>
+        <li><a href="#style">border-style</a></li>
+        <li><a href="#width">border-width</a></li>
+        <li><a href="#color">border-color</a></li>
+        <li><a href="#sides">Viền từng cạnh</a></li>
+        <li><a href="#shorthand">Shorthand</a></li>
+        <li><a href="#radius">border-radius</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » CSS » Styling &amp; Properties » CSS Borders</div>
+      <h1>CSS Borders</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 16/06/2026</span>
+        <span>230K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Border (viền)</strong> trong CSS là đường bao quanh nội dung và phần đệm (padding) của
+        một phần tử. Viền giúp phân tách, làm nổi bật hoặc trang trí các khối. Một viền được xác định
+        bởi ba yếu tố: <strong>kiểu (style)</strong>, <strong>độ dày (width)</strong> và
+        <strong>màu (color)</strong>.
+      </p>
+
+      <div class="note">
+        <strong>Quan trọng:</strong> Phải có <code>border-style</code> thì viền mới hiển thị — chỉ đặt
+        <code>border-width</code> hay <code>border-color</code> mà thiếu style sẽ không thấy gì.
+      </div>
+
+      <h2 id="properties">Các thuộc tính border</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Thuộc tính</th><th>Công dụng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>border-style</code></td><td>Kiểu viền (solid, dashed...).</td></tr>
+          <tr><td><code>border-width</code></td><td>Độ dày viền.</td></tr>
+          <tr><td><code>border-color</code></td><td>Màu viền.</td></tr>
+          <tr><td><code>border-top/right/bottom/left</code></td><td>Viền cho từng cạnh.</td></tr>
+          <tr><td><code>border</code></td><td>Thuộc tính rút gọn.</td></tr>
+          <tr><td><code>border-radius</code></td><td>Bo tròn góc.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="style">1. border-style</h2>
+      <p>
+        Xác định kiểu đường viền. Các giá trị thường dùng: <code>solid</code>, <code>dashed</code>,
+        <code>dotted</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>,
+        <code>none</code>.
+      </p>
+      <div id="mini-style"></div>
+
+      <h2 id="width">2. border-width</h2>
+      <p>Đặt độ dày viền bằng px (hoặc thin/medium/thick).</p>
+      <div id="mini-width"></div>
+
+      <h2 id="color">3. border-color</h2>
+      <p>Đặt màu viền bằng tên màu, HEX, RGB, HSL...</p>
+      <div id="mini-color"></div>
+
+      <h2 id="sides">4. Viền cho từng cạnh</h2>
+      <p>
+        Có thể đặt viền riêng cho từng cạnh với <code>border-top</code>, <code>border-right</code>,
+        <code>border-bottom</code>, <code>border-left</code>.
+      </p>
+      <div id="mini-sides"></div>
+
+      <h2 id="shorthand">5. Thuộc tính rút gọn (shorthand)</h2>
+      <p>Gộp width, style, color vào một dòng <code>border</code>:</p>
+      <pre><code>div {
+  border: 2px solid #1a73e8;
+  /* width style color */
+}</code></pre>
+      <div id="mini-shorthand"></div>
+
+      <h2 id="radius">6. border-radius (bo góc)</h2>
+      <p>
+        Bo tròn các góc của viền. Giá trị càng lớn càng tròn; <code>50%</code> tạo hình tròn/elip.
+      </p>
+      <div id="mini-radius"></div>
+
+      <h2 id="tryit">Thử ngay — kết hợp border</h2>
+      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải.</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>CSS Borders Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML + CSS</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Viền CSS gồm ba yếu tố: <code>border-style</code>, <code>border-width</code> và
+        <code>border-color</code> — trong đó <code>border-style</code> là bắt buộc để viền hiển thị.
+        Có thể đặt viền cho từng cạnh, gộp bằng thuộc tính rút gọn <code>border</code>, và bo góc bằng
+        <code>border-radius</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tìm hiểu <strong>Box Model</strong> để hiểu mối quan hệ giữa
+        content, padding, border và margin.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học CSS</h4>
+        <p>Làm chủ màu sắc, nền, viền và bố cục web hiện đại.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-colors.html">CSS Colors</a></li>
+          <li><a href="css-background.html">CSS Background</a></li>
+          <li><a href="#">CSS Box Model</a></li>
+          <li><a href="#">CSS Margin &amp; Padding</a></li>
+          <li><a href="css-selectors.html">CSS Selectors</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;}.box{padding:14px;margin-bottom:10px;}</style>';
+
+    makeMini('mini-style',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}</head>
+<body>
+  <div class="box" style="border: 3px solid #1a73e8;">solid</div>
+  <div class="box" style="border: 3px dashed #1a73e8;">dashed</div>
+  <div class="box" style="border: 3px dotted #1a73e8;">dotted</div>
+  <div class="box" style="border: 4px double #1a73e8;">double</div>
+</body>
+</html>`);
+
+    makeMini('mini-width',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}</head>
+<body>
+  <div class="box" style="border: 1px solid #1a73e8;">1px</div>
+  <div class="box" style="border: 4px solid #1a73e8;">4px</div>
+  <div class="box" style="border: 8px solid #1a73e8;">8px</div>
+</body>
+</html>`);
+
+    makeMini('mini-color',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}</head>
+<body>
+  <div class="box" style="border: 3px solid #1a73e8;">#1a73e8</div>
+  <div class="box" style="border: 3px solid tomato;">tomato</div>
+  <div class="box" style="border: 3px solid hsl(140,60%,40%);">hsl(...)</div>
+</body>
+</html>`);
+
+    makeMini('mini-sides',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}</head>
+<body>
+  <div class="box" style="border-bottom: 3px solid #1a73e8;">Chỉ viền dưới</div>
+  <div class="box" style="border-left: 5px solid tomato;">Chỉ viền trái</div>
+  <div class="box" style="border-top: 2px dashed #1a73e8; border-right: 4px solid #0b3d91;">Trên dashed + phải solid</div>
+</body>
+</html>`);
+
+    makeMini('mini-shorthand',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}</head>
+<body>
+  <div class="box" style="border: 2px solid #1a73e8;">border: 2px solid #1a73e8</div>
+  <div class="box" style="border: 4px dashed tomato;">border: 4px dashed tomato</div>
+</body>
+</html>`);
+
+    makeMini('mini-radius',
+`<!DOCTYPE html>
+<html>
+<head>${baseHead}</head>
+<body>
+  <div class="box" style="border: 3px solid #1a73e8; border-radius: 8px;">radius: 8px</div>
+  <div class="box" style="border: 3px solid #1a73e8; border-radius: 20px;">radius: 20px</div>
+  <div class="box" style="border: 3px solid #1a73e8; border-radius: 50%; width: 90px; height: 90px; display:flex; align-items:center; justify-content:center;">50%</div>
+</body>
+</html>`);
+
+    // ----- Editor lớn: Thử ngay -----
+    const sampleCode =
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    .card {
+      border: 2px solid #1a73e8;
+      border-radius: 12px;
+      border-left: 6px solid #0b3d91;
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>Khối có viền</h3>
+    <p>Thử đổi border-style, width, color hoặc radius!</p>
+  </div>
+</body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let bigTimer;
+    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
+    resetCode();
+  </script>
+</body>
+</html>
