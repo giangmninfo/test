@@ -165,25 +165,27 @@
       </p>
       <div id="mini-percent"></div>
 
-      <h2 id="tryit">Thử ngay — padding</h2>
-      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải.</p>
-      <div class="tryit">
-        <div class="tryit-bar">
-          <span>CSS Padding Editor</span>
-          <span>
-            <button onclick="runCode()">Chạy</button>
-            <button onclick="resetCode()">Đặt lại</button>
-          </span>
+      <h2 id="tryit">Thử ngay — chọn box-sizing</h2>
+      <p>
+        Khối dưới đây có <code>width: 200px</code> và <code>padding: 20px</code>. Bấm để đổi
+        <code>box-sizing</code> và quan sát bề rộng thực tế thay đổi — dòng "Thuộc tính đang áp dụng"
+        cập nhật theo.
+      </p>
+      <div class="bgtry">
+        <div class="bgtry-panes">
+          <div class="bgtry-options">
+            <button data-bx="content-box">content-box</button>
+            <button data-bx="border-box">border-box</button>
+          </div>
+          <div style="display:flex;align-items:center;">
+            <div id="bxPreview" style="width:200px;padding:20px;background:#1a73e8;color:#fff;border:2px solid #0b3d91;">
+              width: 200px<br>padding: 20px
+            </div>
+          </div>
         </div>
-        <div class="tryit-panes">
-          <div>
-            <span class="lbl">Mã HTML + CSS</span>
-            <textarea id="htmlInput" spellcheck="false"></textarea>
-          </div>
-          <div>
-            <span class="lbl">Kết quả</span>
-            <iframe id="preview" title="Kết quả xem trước"></iframe>
-          </div>
+        <div class="bgtry-active">
+          <div class="lbl-out">Thuộc tính đang áp dụng:</div>
+          <code id="bxCode"></code>
         </div>
       </div>
 
@@ -430,39 +432,19 @@
 </body>
 </html>`);
 
-    // ----- Editor lớn: Thử ngay -----
-    const sampleCode =
-`<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-    .card {
-      background: #e8f0fe;
-      border: 2px solid #1a73e8;
-      box-sizing: border-box;
-      width: 260px;
+    // ----- Widget chọn box-sizing -----
+    const bxButtons = document.querySelectorAll('.bgtry-options button');
+    const bxPreview = document.getElementById('bxPreview');
+    const bxCode = document.getElementById('bxCode');
 
-      /* thử đổi padding */
-      padding: 24px;
+    function selectBx(value) {
+      bxPreview.style.boxSizing = value;
+      const total = (value === 'border-box') ? '200px (padding tính vào trong)' : '240px (200 + 20 + 20)';
+      bxCode.textContent = 'box-sizing: ' + value + ';   /* bề rộng thực tế ≈ ' + total + ' */';
+      bxButtons.forEach(b => b.classList.toggle('active', b.dataset.bx === value));
     }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h3>Thẻ có padding</h3>
-    <p>Nội dung cách viền một khoảng padding.</p>
-  </div>
-</body>
-</html>`;
-
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-    let bigTimer;
-    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
-    resetCode();
+    bxButtons.forEach(b => b.addEventListener('click', () => selectBx(b.dataset.bx)));
+    selectBx('content-box');
   </script>
 </body>
 </html>

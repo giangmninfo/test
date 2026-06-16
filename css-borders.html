@@ -141,25 +141,24 @@
       </p>
       <div id="mini-radius"></div>
 
-      <h2 id="tryit">Thử ngay — kết hợp border</h2>
-      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải.</p>
-      <div class="tryit">
-        <div class="tryit-bar">
-          <span>CSS Borders Editor</span>
-          <span>
-            <button onclick="runCode()">Chạy</button>
-            <button onclick="resetCode()">Đặt lại</button>
-          </span>
+      <h2 id="tryit">Thử ngay — chọn kiểu viền</h2>
+      <p>Bấm từng kiểu để xem viền thay đổi — dòng "Thuộc tính đang áp dụng" sẽ cập nhật theo.</p>
+      <div class="bgtry">
+        <div class="bgtry-panes">
+          <div class="bgtry-options">
+            <button data-bs="solid">solid</button>
+            <button data-bs="dashed">dashed</button>
+            <button data-bs="dotted">dotted</button>
+            <button data-bs="double">double</button>
+            <button data-bs="none">none</button>
+          </div>
+          <div class="bgtry-preview" id="bsPreview" style="display:flex;align-items:center;justify-content:center;color:#1b1b32;background:#e8f0fe;border-width:6px;border-color:#1a73e8;">
+            Khối có viền
+          </div>
         </div>
-        <div class="tryit-panes">
-          <div>
-            <span class="lbl">Mã HTML + CSS</span>
-            <textarea id="htmlInput" spellcheck="false"></textarea>
-          </div>
-          <div>
-            <span class="lbl">Kết quả</span>
-            <iframe id="preview" title="Kết quả xem trước"></iframe>
-          </div>
+        <div class="bgtry-active">
+          <div class="lbl-out">Thuộc tính đang áp dụng:</div>
+          <code id="bsCode"></code>
         </div>
       </div>
 
@@ -454,36 +453,18 @@
 </body>
 </html>`);
 
-    // ----- Editor lớn: Thử ngay -----
-    const sampleCode =
-`<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-    .card {
-      border: 2px solid #1a73e8;
-      border-radius: 12px;
-      border-left: 6px solid #0b3d91;
-      padding: 16px;
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h3>Khối có viền</h3>
-    <p>Thử đổi border-style, width, color hoặc radius!</p>
-  </div>
-</body>
-</html>`;
+    // ----- Widget chọn kiểu viền (border-style) -----
+    const bsButtons = document.querySelectorAll('.bgtry-options button');
+    const bsPreview = document.getElementById('bsPreview');
+    const bsCode = document.getElementById('bsCode');
 
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-    let bigTimer;
-    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
-    resetCode();
+    function selectBs(value) {
+      bsPreview.style.borderStyle = value;
+      bsCode.textContent = 'border-style: ' + value + ';';
+      bsButtons.forEach(b => b.classList.toggle('active', b.dataset.bs === value));
+    }
+    bsButtons.forEach(b => b.addEventListener('click', () => selectBs(b.dataset.bs)));
+    selectBs('solid');
   </script>
 </body>
 </html>
