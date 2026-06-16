@@ -58,6 +58,7 @@
         <li><a href="#attachment">background-attachment</a></li>
         <li><a href="#shorthand">Shorthand</a></li>
         <li><a href="#gradient">Gradient</a></li>
+        <li><a href="#bgtry">Chọn loại background</a></li>
         <li><a href="#tryit">Thử ngay</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
@@ -152,6 +153,24 @@
         <code>radial-gradient()</code> (tỏa tròn).
       </p>
       <div id="mini-gradient"></div>
+
+      <h2 id="bgtry">Chọn loại background</h2>
+      <p>Bấm vào từng lựa chọn để đổi nền ô xem trước — dòng "Thuộc tính đang áp dụng" sẽ cập nhật theo.</p>
+      <div class="bgtry">
+        <div class="bgtry-panes">
+          <div class="bgtry-options">
+            <button data-bg="image">Image</button>
+            <button data-bg="color">Color</button>
+            <button data-bg="gradient">Gradient</button>
+            <button data-bg="none">None</button>
+          </div>
+          <div class="bgtry-preview" id="bgtryPreview"></div>
+        </div>
+        <div class="bgtry-active">
+          <div class="lbl-out">Thuộc tính đang áp dụng:</div>
+          <code id="bgtryCode"></code>
+        </div>
+      </div>
 
       <h2 id="tryit">Thử ngay — kết hợp background</h2>
       <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải.</p>
@@ -312,42 +331,66 @@
     const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;}.box{height:140px;border-radius:8px;border:1px solid #ccc;color:#fff;padding:10px;}</style>';
 
     makeMini('mini-color',
-`<!DOCTYPE html>
-<html>
-<head>${baseHead}</head>
+`<html>
+<head>
+    <style>
+        h1 {
+            background-color: skyblue;
+        }
+    </style>
+</head>
 <body>
-  <div class="box" style="background-color: #1a73e8;">background-color: #1a73e8</div>
+    <h1>EduTech</h1>
 </body>
 </html>`);
 
     makeMini('mini-image',
-`<!DOCTYPE html>
-<html>
-<head>${baseHead}</head>
+`<html>
+<head>
+    <style>
+        body {
+            background-image:
+                url("https://jbagy.me/wp-content/uploads/2025/03/Hinh-anh-doremon-cute-1.jpg");
+        }
+    </style>
+</head>
 <body>
-  <div class="box" style="background-image: url('${pic}'); background-size: cover;">background-image</div>
+    <h1>Doreamon</h1>
 </body>
 </html>`);
 
     makeMini('mini-repeat',
-`<!DOCTYPE html>
-<html>
-<head>${baseHead}</head>
+`<html>
+<head>
+    <style>
+        body {
+            background-image:
+                url(
+            "https://stickershop.line-scdn.net/sticonshop/v1/product/61ea2355ed42d17647058943/iPhone/main.png?v=3");
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
 <body>
-  <div class="box" style="background-image: url('${tile}'); background-repeat: repeat;">repeat (lặp kín)</div>
-  <br>
-  <div class="box" style="background-image: url('${tile}'); background-repeat: no-repeat; color:#1b1b32;">no-repeat (1 lần)</div>
+    <h1>"Doreamon"</h1>
 </body>
 </html>`);
 
     makeMini('mini-possize',
-`<!DOCTYPE html>
-<html>
-<head>${baseHead}</head>
+`<html>
+<head>
+    <style>
+        body {
+            background-image:
+                url(
+            "https://stickershop.line-scdn.net/sticonshop/v1/product/61ea2355ed42d17647058943/iPhone/main.png?v=3");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
 <body>
-  <div class="box" style="background-image: url('${tile}'); background-repeat:no-repeat; background-position:center; color:#1b1b32;">position: center</div>
-  <br>
-  <div class="box" style="background-image: url('${pic}'); background-size: contain; background-repeat:no-repeat; color:#1b1b32;">size: contain</div>
+    <h1>Geeksforgeeks</h1>
 </body>
 </html>`);
 
@@ -384,6 +427,25 @@
   <div class="box" style="background: radial-gradient(circle, #1a73e8, #0b3d91);">radial-gradient</div>
 </body>
 </html>`);
+
+    // ----- Widget chọn loại background -----
+    const bgOptions = {
+      image:    "background: url('" + tile + "') repeat;",
+      color:    "background: #1a73e8;",
+      gradient: "background: linear-gradient(135deg, #1a73e8, #0b3d91);",
+      none:     "background: none;"
+    };
+    const bgPreview = document.getElementById('bgtryPreview');
+    const bgCode = document.getElementById('bgtryCode');
+    const bgButtons = document.querySelectorAll('.bgtry-options button');
+
+    function selectBg(key) {
+      bgPreview.style.cssText = 'min-height:150px;border-radius:6px;' + bgOptions[key];
+      bgCode.textContent = bgOptions[key];
+      bgButtons.forEach(b => b.classList.toggle('active', b.dataset.bg === key));
+    }
+    bgButtons.forEach(b => b.addEventListener('click', () => selectBg(b.dataset.bg)));
+    selectBg('image');
 
     // ----- Editor lớn: Thử ngay -----
     const sampleCode =

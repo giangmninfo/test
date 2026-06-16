@@ -545,6 +545,58 @@ footer.site {
   .seo-tool { grid-template-columns: 1fr; }
 }
 
+/* ---------- Widget chọn loại background (trang CSS Background) ---------- */
+.bgtry {
+  border: 1px solid var(--gfg-border);
+  border-radius: 10px;
+  padding: 18px;
+  background: var(--gfg-bg-alt);
+  margin: 18px 0;
+}
+.bgtry-panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.bgtry-options { display: flex; flex-direction: column; gap: 10px; }
+.bgtry-options button {
+  background: #7fa8c9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.bgtry-options button:hover { background: var(--gfg-green); }
+.bgtry-options button.active { background: var(--gfg-yellow, #f1be32); color: #1b1b32; }
+.bgtry-preview {
+  border: 1px solid var(--gfg-border);
+  border-radius: 6px;
+  min-height: 150px;
+  background: #fff;
+}
+.bgtry-active { margin-top: 14px; }
+.bgtry-active .lbl-out {
+  font-weight: 700;
+  color: var(--gfg-heading);
+  margin-bottom: 6px;
+}
+.bgtry-active code {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--gfg-border);
+  color: var(--gfg-text);
+  padding: 10px 12px;
+  border-radius: 6px;
+  word-break: break-all;
+}
+@media (max-width: 600px) {
+  .bgtry-panes { grid-template-columns: 1fr; }
+}
+
 /* ---------- Công cụ chọn màu (trang CSS Colors) ---------- */
 .color-tool {
   display: grid;
