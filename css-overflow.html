@@ -124,25 +124,26 @@
       </p>
       <div id="mini-xy"></div>
 
-      <h2 id="tryit">Thử ngay — overflow</h2>
-      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải. Thử đổi giá trị <code>overflow</code>.</p>
-      <div class="tryit">
-        <div class="tryit-bar">
-          <span>CSS Overflow Editor</span>
-          <span>
-            <button onclick="runCode()">Chạy</button>
-            <button onclick="resetCode()">Đặt lại</button>
-          </span>
+      <h2 id="tryit">Thử ngay — chọn giá trị overflow</h2>
+      <p>Bấm từng giá trị để xem nội dung tràn được xử lý ra sao — dòng "Thuộc tính đang áp dụng" sẽ cập nhật theo.</p>
+      <div class="bgtry">
+        <div class="bgtry-panes">
+          <div class="bgtry-options">
+            <button data-ov="visible">visible</button>
+            <button data-ov="hidden">hidden</button>
+            <button data-ov="scroll">scroll</button>
+            <button data-ov="auto">auto</button>
+          </div>
+          <div class="bgtry-preview" id="ovPreview" style="height:150px;padding:10px;line-height:1.6;color:#1b1b32;background:#e8f0fe;border:2px solid #1a73e8;">
+            Đây là một đoạn văn bản khá dài đặt trong khung có kích thước cố định.
+            Vì nội dung vượt quá chiều cao của khung nên giá trị overflow bạn chọn
+            sẽ quyết định: cho tràn ra ngoài, cắt bỏ phần thừa, hay hiển thị thanh cuộn.
+            Hãy bấm thử các nút bên trái để so sánh kết quả.
+          </div>
         </div>
-        <div class="tryit-panes">
-          <div>
-            <span class="lbl">Mã HTML + CSS</span>
-            <textarea id="htmlInput" spellcheck="false"></textarea>
-          </div>
-          <div>
-            <span class="lbl">Kết quả</span>
-            <iframe id="preview" title="Kết quả xem trước"></iframe>
-          </div>
+        <div class="bgtry-active">
+          <div class="lbl-out">Thuộc tính đang áp dụng:</div>
+          <code id="ovCode"></code>
         </div>
       </div>
 
@@ -336,41 +337,18 @@
 </body>
 </html>`);
 
-    // ----- Editor lớn: Thử ngay -----
-    const sampleCode =
-`<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-    .frame {
-      width: 260px;
-      height: 110px;
-      border: 2px solid #1a73e8;
-      background: #e8f0fe;
-      padding: 10px;
+    // ----- Widget chọn giá trị overflow -----
+    const ovButtons = document.querySelectorAll('.bgtry-options button');
+    const ovPreview = document.getElementById('ovPreview');
+    const ovCode = document.getElementById('ovCode');
 
-      /* thử đổi: visible | hidden | scroll | auto */
-      overflow: auto;
+    function selectOv(value) {
+      ovPreview.style.overflow = value;
+      ovCode.textContent = 'overflow: ' + value + ';';
+      ovButtons.forEach(b => b.classList.toggle('active', b.dataset.ov === value));
     }
-  </style>
-</head>
-<body>
-  <div class="frame">
-    Thay đổi giá trị overflow ở trên để xem nội dung dài này
-    được xử lý ra sao: tràn ra, bị cắt, hay xuất hiện thanh cuộn.
-    Thêm vài câu nữa để nội dung chắc chắn vượt khung và thấy rõ hiệu ứng.
-  </div>
-</body>
-</html>`;
-
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-    let bigTimer;
-    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
-    resetCode();
+    ovButtons.forEach(b => b.addEventListener('click', () => selectOv(b.dataset.ov)));
+    selectOv('auto');
   </script>
 </body>
 </html>
