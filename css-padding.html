@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CSS Padding: khoảng đệm bên trong phần tử, từng cạnh, cú pháp rút gọn 1-4 giá trị, padding với box-sizing kèm ví dụ chạy trực tiếp." />
+<title>CSS Padding - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <a href="#">HTML</a>
+      <a href="#" class="active">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Padding là gì?</a></li>
+        <li><a href="#sides">Padding từng cạnh</a></li>
+        <li><a href="#shorthand">Cú pháp rút gọn</a></li>
+        <li><a href="#size">Padding &amp; kích thước</a></li>
+        <li><a href="#boxsizing">box-sizing</a></li>
+        <li><a href="#percent">Padding theo %</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » CSS » Styling &amp; Properties » CSS Padding</div>
+      <h1>CSS Padding</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 16/06/2026</span>
+        <span>235K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Padding (khoảng đệm)</strong> trong CSS là khoảng trống <em>bên trong</em> phần tử —
+        nằm giữa <strong>nội dung</strong> và <strong>viền (border)</strong>. Padding giúp nội dung
+        "thở", không bị dính sát vào viền. Khác với margin (khoảng cách bên ngoài), padding nằm bên
+        trong và <strong>bị phủ bởi màu nền</strong> của phần tử.
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> Padding không nhận giá trị âm. Mặc định, padding làm
+        <strong>tăng</strong> tổng kích thước hiển thị của phần tử (trừ khi dùng <code>box-sizing: border-box</code>).
+      </div>
+
+      <h2 id="sides">1. Padding cho từng cạnh</h2>
+      <p>
+        Đặt khoảng đệm riêng cho mỗi cạnh bằng <code>padding-top</code>, <code>padding-right</code>,
+        <code>padding-bottom</code>, <code>padding-left</code>.
+      </p>
+      <div id="mini-sides"></div>
+
+      <h2 id="shorthand">2. Cú pháp rút gọn (1–4 giá trị)</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Khai báo</th><th>Ý nghĩa</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>padding: 20px;</code></td><td>cả 4 cạnh = 20px.</td></tr>
+          <tr><td><code>padding: 10px 30px;</code></td><td>trên/dưới = 10px, trái/phải = 30px.</td></tr>
+          <tr><td><code>padding: 10px 20px 30px;</code></td><td>trên = 10, trái/phải = 20, dưới = 30.</td></tr>
+          <tr><td><code>padding: 5px 10px 15px 20px;</code></td><td>trên, phải, dưới, trái (theo chiều kim đồng hồ).</td></tr>
+        </tbody>
+      </table>
+      <div id="mini-shorthand"></div>
+
+      <h2 id="size">3. Padding ảnh hưởng tới kích thước</h2>
+      <p>
+        Mặc định (<code>content-box</code>), padding được <strong>cộng thêm</strong> vào chiều rộng
+        đã đặt. Ví dụ <code>width: 200px</code> + <code>padding: 20px</code> → phần tử rộng thực tế
+        <strong>240px</strong> (200 + 20 trái + 20 phải).
+      </p>
+      <div id="mini-size"></div>
+
+      <h2 id="boxsizing">4. box-sizing: border-box</h2>
+      <p>
+        Đặt <code>box-sizing: border-box</code> để padding (và border) được <strong>tính vào trong</strong>
+        chiều rộng — phần tử giữ đúng <code>width</code> đã đặt, không bị phình ra.
+      </p>
+      <div id="mini-boxsizing"></div>
+
+      <h2 id="percent">5. Padding theo phần trăm (%)</h2>
+      <p>
+        Padding tính theo <code>%</code> dựa trên <strong>chiều rộng</strong> của phần tử cha (kể cả
+        padding trên/dưới). Hữu ích để tạo khoảng đệm co giãn theo màn hình.
+      </p>
+      <div id="mini-percent"></div>
+
+      <h2 id="tryit">Thử ngay — padding</h2>
+      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải.</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>CSS Padding Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML + CSS</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Padding tạo khoảng đệm bên trong phần tử, giữa nội dung và viền. Có thể đặt cho từng cạnh,
+        dùng cú pháp rút gọn 1–4 giá trị, hoặc theo phần trăm. Mặc định padding làm tăng kích thước
+        phần tử; dùng <code>box-sizing: border-box</code> để giữ đúng <code>width</code> đã đặt.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem lại bài
+        <a href="css-margins-padding.html">CSS Margins &amp; Padding</a> và tìm hiểu
+        <strong>Box Model</strong> đầy đủ.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học CSS</h4>
+        <p>Làm chủ box model, khoảng cách và bố cục web hiện đại.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-margins-padding.html">CSS Margins &amp; Padding</a></li>
+          <li><a href="css-borders.html">CSS Borders</a></li>
+          <li><a href="#">CSS Margin</a></li>
+          <li><a href="#">CSS Box Model</a></li>
+          <li><a href="css-background.html">CSS Background</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-sides',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    background: #e8f0fe;
+    border: 1px solid #1a73e8;
+  }
+
+  /* Padding riêng cho từng cạnh */
+  .demo {
+    padding-top: 30px;
+    padding-left: 50px;
+  }
+</style>
+</head>
+<body>
+  <div class="box demo">padding-top: 30px; padding-left: 50px;</div>
+</body>
+</html>`);
+
+    makeMini('mini-shorthand',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    background: #e8f0fe;
+    border: 1px solid #1a73e8;
+    margin-bottom: 10px;
+  }
+
+  /* 2 giá trị: trên-dưới | trái-phải */
+  .two { padding: 10px 40px; }
+
+  /* 4 giá trị: trên | phải | dưới | trái */
+  .four { padding: 5px 10px 25px 40px; }
+</style>
+</head>
+<body>
+  <div class="box two">padding: 10px 40px</div>
+  <div class="box four">padding: 5px 10px 25px 40px</div>
+</body>
+</html>`);
+
+    makeMini('mini-size',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    width: 200px;
+    background: #1a73e8;
+    color: #fff;
+
+    /* padding cộng thêm vào chiều rộng -> tổng 240px */
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="box">width 200px + padding 20px = rộng 240px</div>
+</body>
+</html>`);
+
+    makeMini('mini-boxsizing',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    width: 200px;
+    background: #1a73e8;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* border-box: padding tính vào trong, giữ đúng 200px */
+  .bb { box-sizing: border-box; }
+</style>
+</head>
+<body>
+  <div class="box">content-box (rộng 240px)</div>
+  <div class="box bb">border-box (đúng 200px)</div>
+</body>
+</html>`);
+
+    makeMini('mini-percent',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    background: #e8f0fe;
+    border: 1px solid #1a73e8;
+
+    /* padding theo % của chiều rộng phần tử cha */
+    padding: 5%;
+  }
+</style>
+</head>
+<body>
+  <div class="box">padding: 5% (co giãn theo bề rộng)</div>
+</body>
+</html>`);
+
+    // ----- Editor lớn: Thử ngay -----
+    const sampleCode =
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    .card {
+      background: #e8f0fe;
+      border: 2px solid #1a73e8;
+      box-sizing: border-box;
+      width: 260px;
+
+      /* thử đổi padding */
+      padding: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>Thẻ có padding</h3>
+    <p>Nội dung cách viền một khoảng padding.</p>
+  </div>
+</body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let bigTimer;
+    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
+    resetCode();
+  </script>
+</body>
+</html>
