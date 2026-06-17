@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="CSS Combinators: combinator hậu duệ, con, anh em liền kề và anh em chung, kèm ví dụ chạy trực tiếp." />
-<title>CSS Combinators - HITech</title>
+<title>HTML Iframes - Nhúng trang trong trang - HITech</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,7 +31,7 @@
   <nav class="subbar">
     <div class="subbar-inner">
       <div class="subbar-item">
-        <a href="index.html#html-basic">HTML</a>
+        <a href="index.html#html-basic" class="active">HTML</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">HTML Basic</span>
@@ -91,7 +90,7 @@
         </div>
       </div>
       <div class="subbar-item">
-        <a href="index.html#css" class="active">CSS</a>
+        <a href="index.html#css">CSS</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">CSS Basic</span>
@@ -132,25 +131,28 @@
     <aside class="toc">
       <h3>Mục lục</h3>
       <ul>
-        <li><a href="#intro" class="active">Combinator là gì?</a></li>
-        <li><a href="#types">4 loại combinator</a></li>
-        <li><a href="#descendant">Descendant ( )</a></li>
-        <li><a href="#child">Child (&gt;)</a></li>
-        <li><a href="#adjacent">Adjacent sibling (+)</a></li>
-        <li><a href="#general">General sibling (~)</a></li>
-        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#intro" class="active">Iframe là gì?</a></li>
+        <li><a href="#example">Ví dụ cơ bản</a></li>
+        <li><a href="#attrs">Các thuộc tính</a></li>
+        <li><a href="#size">Kích thước iframe</a></li>
+        <li><a href="#border">Bỏ/đổi viền</a></li>
+        <li><a href="#target">Iframe làm đích cho link</a></li>
+        <li><a href="#youtube">Nhúng video YouTube</a></li>
+        <li><a href="#sandbox">Bảo mật: sandbox &amp; loading</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
 
     <!-- Main article -->
     <main class="article">
-      <div class="crumbs">Home » CSS » CSS Basic » CSS Combinators</div>
-      <h1>CSS Combinators</h1>
+      <div class="crumbs">Home » HTML » HTML Iframes</div>
+      <h1>HTML Iframes — Nhúng trang trong trang</h1>
       <div class="meta">
-        <span class="lvl">Cấp độ: Trung bình</span>
-        <span>Cập nhật: 16/06/2026</span>
-        <span>180K lượt đọc</span>
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>234K lượt đọc</span>
         <div class="actions">
           <button onclick="toggleLike(this)">Like</button>
           <button>Lưu</button>
@@ -159,85 +161,94 @@
       </div>
 
       <p id="intro">
-        <strong>Combinator (toán tử kết hợp)</strong> trong CSS là ký hiệu dùng để
-        <strong>kết hợp nhiều bộ chọn</strong>, qua đó mô tả <strong>mối quan hệ</strong> giữa các phần
-        tử trong cây HTML. Thay vì chọn phần tử một cách riêng lẻ, combinator giúp bạn chọn phần tử
-        dựa trên vị trí của nó so với phần tử khác (cha–con, anh em...). CSS có <strong>4 loại
-        combinator</strong> chính.
+        Thẻ <code>&lt;iframe&gt;</code> (inline frame) dùng để <strong>nhúng một trang web khác</strong> vào
+        bên trong trang hiện tại — như một "cửa sổ" hiển thị tài liệu HTML khác. Iframe thường dùng để nhúng
+        video YouTube, bản đồ Google Maps, biểu mẫu, quảng cáo…
       </p>
 
       <div class="note">
-        <strong>Ghi nhớ:</strong> Combinator nằm <em>giữa</em> hai bộ chọn, ví dụ <code>A B</code>,
-        <code>A &gt; B</code>, <code>A + B</code>, <code>A ~ B</code>.
+        <strong>Lưu ý:</strong> Thẻ <code>&lt;iframe&gt;</code> cần thẻ đóng <code>&lt;/iframe&gt;</code>. Nội
+        dung giữa hai thẻ là văn bản dự phòng cho trình duyệt không hỗ trợ.
       </div>
 
-      <h2 id="types">4 loại combinator trong CSS</h2>
+      <h2 id="example">Ví dụ cơ bản</h2>
+      <p>Thuộc tính <code>src</code> chỉ địa chỉ trang cần nhúng:</p>
+      <pre><code>&lt;iframe src="https://example.com" title="Trang nhúng"&gt;&lt;/iframe&gt;</code></pre>
+      <div id="mini-basic"></div>
+
+      <h2 id="attrs">Các thuộc tính của <code>&lt;iframe&gt;</code></h2>
       <table class="cmp">
         <thead>
-          <tr><th>Combinator</th><th>Ký hiệu</th><th>Ý nghĩa</th></tr>
+          <tr><th>Thuộc tính</th><th>Mô tả</th></tr>
         </thead>
         <tbody>
-          <tr><td>Descendant (hậu duệ)</td><td><code>(dấu cách)</code></td><td>Chọn mọi phần tử con cháu (bất kỳ cấp nào) bên trong phần tử khác.</td></tr>
-          <tr><td>Child (con)</td><td><code>&gt;</code></td><td>Chỉ chọn phần tử là <strong>con trực tiếp</strong>.</td></tr>
-          <tr><td>Adjacent sibling (anh em liền kề)</td><td><code>+</code></td><td>Chọn phần tử đứng <strong>ngay sau</strong> và cùng cấp.</td></tr>
-          <tr><td>General sibling (anh em chung)</td><td><code>~</code></td><td>Chọn <strong>mọi phần tử cùng cấp</strong> đứng sau.</td></tr>
+          <tr><td><code>src</code></td><td>Địa chỉ (URL) trang cần nhúng.</td></tr>
+          <tr><td><code>title</code></td><td>Mô tả nội dung iframe (quan trọng cho trợ năng).</td></tr>
+          <tr><td><code>width</code> / <code>height</code></td><td>Kích thước khung (pixel).</td></tr>
+          <tr><td><code>name</code></td><td>Đặt tên để làm đích cho liên kết (<code>target</code>).</td></tr>
+          <tr><td><code>sandbox</code></td><td>Giới hạn quyền của nội dung nhúng (bảo mật).</td></tr>
+          <tr><td><code>allow</code></td><td>Cấp quyền tính năng (camera, fullscreen…).</td></tr>
+          <tr><td><code>loading</code></td><td><code>lazy</code> để tải trễ khi cuộn tới.</td></tr>
         </tbody>
       </table>
 
-      <h2 id="descendant">1. Descendant combinator ( )</h2>
-      <p>
-        Viết bằng <strong>dấu cách</strong> giữa hai selector. Chọn tất cả phần tử khớp nằm bên trong
-        phần tử cha — ở <strong>bất kỳ cấp nào</strong>.
-      </p>
-      <pre><code>/* Mọi &lt;p&gt; bên trong &lt;div&gt; (kể cả lồng sâu) */
-div p {
-  color: blue;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Đoạn <code>&lt;p&gt;</code> lồng sâu trong <code>&lt;section&gt;</code> có bị đổi màu không? Thử thêm một <code>&lt;p&gt;</code> nữa để kiểm chứng.</p>
-      <div id="mini-desc"></div>
+      <h2 id="size">Kích thước iframe</h2>
+      <p>Đặt bằng thuộc tính <code>width</code>/<code>height</code> hoặc CSS:</p>
+      <pre><code>&lt;iframe src="page.html" width="400" height="250"&gt;&lt;/iframe&gt;
 
-      <h2 id="child">2. Child combinator (&gt;)</h2>
-      <p>
-        Chỉ chọn phần tử là <strong>con trực tiếp</strong> của phần tử cha (không tính cháu, chắt).
-      </p>
-      <pre><code>/* Chỉ &lt;p&gt; là con trực tiếp của &lt;div&gt; */
-div &gt; p {
-  color: green;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> là con trực tiếp đổi màu, còn <code>&lt;p&gt;</code> nằm trong <code>&lt;section&gt;</code> thì không. Thử đổi <code>&gt;</code> thành dấu cách để thấy khác biệt.</p>
-      <div id="mini-child"></div>
+&lt;!-- Hoặc bằng CSS --&gt;
+&lt;iframe src="page.html" style="width:100%; height:300px;"&gt;&lt;/iframe&gt;</code></pre>
+      <div id="mini-size"></div>
 
-      <h2 id="adjacent">3. Adjacent sibling combinator (+)</h2>
+      <h2 id="border">Bỏ hoặc đổi viền</h2>
       <p>
-        Chọn phần tử đứng <strong>ngay liền sau</strong> một phần tử khác và <strong>cùng cấp</strong>
-        (cùng phần tử cha). Chỉ chọn <strong>một</strong> phần tử ngay kề.
+        Mặc định iframe có viền. Dùng CSS <code>border</code> để bỏ hoặc tùy chỉnh:
       </p>
-      <pre><code>/* &lt;p&gt; đứng ngay sau &lt;h2&gt; */
-h2 + p {
-  font-weight: bold;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> ngay liền sau <code>&lt;h2&gt;</code> được in đậm. Thử đổi vị trí các đoạn để xem đoạn nào bị ảnh hưởng.</p>
-      <div id="mini-adj"></div>
+      <div id="mini-border"></div>
 
-      <h2 id="general">4. General sibling combinator (~)</h2>
+      <h2 id="target">Iframe làm đích cho liên kết</h2>
       <p>
-        Chọn <strong>tất cả</strong> phần tử cùng cấp đứng <strong>sau</strong> một phần tử khác (không
-        nhất thiết liền kề).
+        Đặt <code>name</code> cho iframe rồi dùng <code>target</code> của thẻ <code>&lt;a&gt;</code> để mở liên
+        kết ngay trong iframe đó:
       </p>
-      <pre><code>/* Mọi &lt;p&gt; đứng sau &lt;h2&gt; (cùng cấp) */
-h2 ~ p {
-  color: purple;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Tất cả <code>&lt;p&gt;</code> cùng cấp đứng sau <code>&lt;h2&gt;</code> đổi màu. Thử thêm một <code>&lt;p&gt;</code> trước <code>&lt;h2&gt;</code> — nó có đổi màu không?</p>
-      <div id="mini-gen"></div>
+      <pre><code>&lt;iframe src="trang1.html" name="khung"&gt;&lt;/iframe&gt;
+&lt;a href="trang2.html" target="khung"&gt;Mở trang 2 trong iframe&lt;/a&gt;</code></pre>
+      <div id="mini-target"></div>
 
-      <h2 id="tryit">Thử ngay — các combinator hoạt động</h2>
+      <h2 id="youtube">Nhúng video YouTube</h2>
       <p>
-        Ví dụ dưới minh họa cả 4 combinator. Sửa CSS bên trái và xem phần tử nào bị ảnh hưởng bên phải.
+        Cách dùng phổ biến nhất của iframe là nhúng video. Lấy URL nhúng dạng
+        <code>https://www.youtube.com/embed/ID</code>:
+      </p>
+      <pre><code>&lt;iframe width="420" height="236"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="YouTube video" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+
+      <h2 id="sandbox">Bảo mật: <code>sandbox</code> &amp; <code>loading</code></h2>
+      <ul>
+        <li><code>sandbox</code> giới hạn quyền của nội dung nhúng (chặn script, form, popup…). Để trống là an toàn nhất; thêm giá trị như <code>allow-scripts</code> để mở từng quyền.</li>
+        <li><code>loading="lazy"</code> giúp trang tải nhanh hơn vì iframe chỉ tải khi người dùng cuộn tới.</li>
+        <li>Một số trang chặn việc bị nhúng (qua <code>X-Frame-Options</code>) nên có thể không hiển thị.</li>
+      </ul>
+      <pre><code>&lt;iframe src="page.html" sandbox loading="lazy" title="An toàn"&gt;&lt;/iframe&gt;</code></pre>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Luôn thêm <code>title</code> để hỗ trợ trợ năng.</li>
+        <li>Dùng <code>loading="lazy"</code> cho iframe nằm dưới màn hình đầu tiên.</li>
+        <li>Dùng <code>sandbox</code> khi nhúng nội dung không tin cậy.</li>
+        <li>Chỉ nhúng nguồn đáng tin cậy (HTTPS) để tránh rủi ro bảo mật.</li>
+        <li>Đừng lạm dụng iframe để dàn trang — hãy dùng CSS layout.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
       </p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>CSS Combinators Editor</span>
+          <span>HTML Editor</span>
           <span>
             <button onclick="runCode()">Chạy</button>
             <button onclick="resetCode()">Đặt lại</button>
@@ -245,7 +256,7 @@ h2 ~ p {
         </div>
         <div class="tryit-panes">
           <div>
-            <span class="lbl">Mã HTML + CSS</span>
+            <span class="lbl">Mã HTML</span>
             <textarea id="htmlInput" spellcheck="false"></textarea>
           </div>
           <div>
@@ -257,41 +268,41 @@ h2 ~ p {
 
       <h2 id="summary">Tóm tắt</h2>
       <p>
-        Combinator giúp chọn phần tử dựa trên quan hệ trong cây HTML. CSS có 4 loại:
-        <strong>descendant</strong> (dấu cách), <strong>child</strong> (<code>&gt;</code>),
-        <strong>adjacent sibling</strong> (<code>+</code>) và <strong>general sibling</strong>
-        (<code>~</code>). Nắm vững combinator giúp bạn viết bộ chọn chính xác và gọn gàng hơn, hạn chế
-        lạm dụng class thừa.
+        Thẻ <code>&lt;iframe&gt;</code> nhúng một trang web vào bên trong trang khác qua thuộc tính
+        <code>src</code>. Đặt kích thước bằng <code>width</code>/<code>height</code> hoặc CSS, bỏ viền bằng CSS,
+        dùng <code>name</code> + <code>target</code> để mở link trong iframe, và tăng bảo mật/hiệu năng với
+        <code>sandbox</code> cùng <code>loading="lazy"</code>. Ứng dụng phổ biến: nhúng YouTube và Google Maps.
       </p>
 
       <div class="note">
-        <strong>Bước tiếp theo:</strong> Tìm hiểu về <strong>pseudo-class</strong> (như
-        <code>:hover</code>, <code>:first-child</code>) để chọn phần tử theo trạng thái và vị trí.
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="html5-video.html"><strong>HTML5 Video</strong></a> để nhúng video trực tiếp và
+        <a href="html-links.html"><strong>HTML Links</strong></a> để hiểu thuộc tính <code>target</code>.
       </div>
     </main>
 
     <!-- Right rail -->
     <aside class="rail">
       <div class="ad">
-        <h4>Khóa học CSS</h4>
-        <p>Thành thạo selector, combinator và bố cục CSS hiện đại.</p>
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
         <button>Đăng ký ngay</button>
       </div>
       <div class="rail-card">
         <h4>Bài viết liên quan</h4>
         <ul>
-          <li><a href="css-introduction.html">CSS Introduction</a></li>
-          <li><a href="css-syntax.html">CSS Syntax</a></li>
-          <li><a href="#">CSS Selectors</a></li>
-          <li><a href="#">CSS Pseudo-classes</a></li>
+          <li><a href="html5-video.html">HTML5 Video</a></li>
+          <li><a href="html-images.html">HTML Images</a></li>
+          <li><a href="html-links.html">HTML Links</a></li>
+          <li><a href="html-tables.html">HTML Tables</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
         </ul>
       </div>
       <div class="rail-card">
         <h4>Chủ đề phổ biến</h4>
         <ul>
-          <li><a href="#">CSS</a></li>
           <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
           <li><a href="#">Web Technologies</a></li>
         </ul>
       </div>
@@ -363,62 +374,17 @@ h2 ~ p {
       btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
 
-    // ----- Trình soạn HTML + CSS trực tiếp -----
-    const sampleCode = `<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-
-    /* Descendant: mọi p trong .box */
-    .box p { color: #1a73e8; }
-
-    /* Child: chỉ li là con trực tiếp của ul */
-    ul > li { font-weight: bold; }
-
-    /* Adjacent sibling: p ngay sau h2 */
-    h2 + p { background: #e8f0fe; }
-
-    /* General sibling: mọi p sau h2 */
-    h2 ~ p { border-left: 3px solid #1a73e8; padding-left: 8px; }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h2>Tiêu đề</h2>
-    <p>Đoạn ngay sau h2 (adjacent + general).</p>
-    <p>Đoạn thứ hai (general sibling).</p>
-    <ul>
-      <li>Mục con trực tiếp</li>
-    </ul>
-  </div>
-</body>
-</html>`;
-
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-
-    let typingTimer;
-    input.addEventListener('input', () => {
-      clearTimeout(typingTimer);
-      typingTimer = setTimeout(runCode, 300);
-    });
-
-    resetCode();
-
-    // ----- Mini editor cho từng combinator -----
+    // ----- Mini editor chạy code trực tiếp -----
     function makeMini(hostId, code) {
       const host = document.getElementById(hostId);
+      if (!host) return;
       const wrap = document.createElement('div');
       wrap.className = 'mini';
       wrap.innerHTML =
         '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
         '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
         '<div class="mini-panes">' +
-        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
         '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
       const ta = wrap.querySelector('textarea');
       const fr = wrap.querySelector('iframe');
@@ -432,79 +398,85 @@ h2 ~ p {
       reset();
     }
 
-    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;line-height:1.6}</style>';
+    // Trang con mẫu được nhúng (dùng data URI để chạy offline)
+    const PAGE1 = "data:text/html,<body style='font-family:Arial;background:%23eef7ee;padding:16px'><h3>Trang 1</h3><p>Đây là nội dung được nhúng trong iframe.</p></body>";
+    const PAGE2 = "data:text/html,<body style='font-family:Arial;background:%23eef2ff;padding:16px'><h3>Trang 2</h3><p>Bạn vừa mở trang 2 bên trong iframe!</p></body>";
 
-    makeMini('mini-desc',
+    makeMini('mini-basic',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Descendant: mọi p bên trong div (mọi cấp) */
-  div p { color: blue; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Đoạn con trực tiếp của div.</p>
-    <section>
-      <p>Đoạn lồng sâu trong section.</p>
-    </section>
-  </div>
-  <p>Đoạn NGOÀI div (không đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h3>Trang chính</h3>
+  <iframe src="${PAGE1}" title="Trang nhúng"></iframe>
 </body>
 </html>`);
 
-    makeMini('mini-child',
+    makeMini('mini-size',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Child: chỉ p là con trực tiếp của div */
-  div > p { color: green; font-weight: bold; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Con trực tiếp của div (đổi màu).</p>
-    <section>
-      <p>p trong section (KHÔNG đổi màu).</p>
-    </section>
-  </div>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <iframe src="${PAGE1}" width="400" height="150" title="Cố định"></iframe>
+  <p>Hoặc dùng CSS để responsive:</p>
+  <iframe src="${PAGE1}" style="width:100%; height:120px;" title="Responsive"></iframe>
 </body>
 </html>`);
 
-    makeMini('mini-adj',
+    makeMini('mini-border',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Adjacent sibling: p ngay liền sau h2 */
-  h2 + p { background: #e8f0fe; padding: 6px; }
-</style>
-</head>
-<body>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn NGAY sau h2 (được tô nền).</p>
-  <p>Đoạn thứ hai (không tô).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>Viền mặc định:</p>
+  <iframe src="${PAGE1}" height="100" title="Mặc định"></iframe>
+  <p>Bỏ viền:</p>
+  <iframe src="${PAGE1}" height="100" style="border:none;" title="Không viền"></iframe>
+  <p>Viền tùy chỉnh:</p>
+  <iframe src="${PAGE1}" height="100" style="border:3px solid #2da44e; border-radius:8px;" title="Tùy chỉnh"></iframe>
 </body>
 </html>`);
 
-    makeMini('mini-gen',
+    makeMini('mini-target',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* General sibling: mọi p cùng cấp đứng sau h2 */
-  h2 ~ p { color: purple; }
-</style>
-</head>
-<body>
-  <p>Đoạn TRƯỚC h2 (không đổi màu).</p>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn sau h2 (đổi màu).</p>
-  <p>Đoạn nữa sau h2 (đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <a href="${PAGE1}" target="khung">Mở Trang 1</a> |
+  <a href="${PAGE2}" target="khung">Mở Trang 2</a>
+  <br><br>
+  <iframe name="khung" src="${PAGE1}" style="width:100%; height:130px;" title="Khung đích"></iframe>
 </body>
 </html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <body style="font-family:Arial,sans-serif;">
+    <h1>Trang có iframe</h1>
+    <iframe
+      src="${PAGE1}"
+      title="Nội dung nhúng"
+      style="width:100%; height:160px; border:2px solid #2da44e; border-radius:8px;">
+    </iframe>
+    <p>Thử đổi src, width/height hoặc viền để xem kết quả.</p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
   </script>
 </body>
 </html>

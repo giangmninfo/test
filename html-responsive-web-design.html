@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="CSS Height & Width: đặt chiều cao/rộng, đơn vị, min/max-width, min/max-height và % kèm ví dụ chạy trực tiếp." />
-<title>CSS Height &amp; Width - HITech</title>
+<title>HTML Responsive Web Design - Thiết kế web đáp ứng - HITech</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,7 +31,7 @@
   <nav class="subbar">
     <div class="subbar-inner">
       <div class="subbar-item">
-        <a href="index.html#html-basic">HTML</a>
+        <a href="index.html#html-basic" class="active">HTML</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">HTML Basic</span>
@@ -91,7 +90,7 @@
         </div>
       </div>
       <div class="subbar-item">
-        <a href="index.html#css" class="active">CSS</a>
+        <a href="index.html#css">CSS</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">CSS Basic</span>
@@ -132,25 +131,28 @@
     <aside class="toc">
       <h3>Mục lục</h3>
       <ul>
-        <li><a href="#intro" class="active">Height &amp; Width</a></li>
-        <li><a href="#units">Đơn vị</a></li>
-        <li><a href="#basic">Đặt cơ bản</a></li>
-        <li><a href="#percent">Theo phần trăm</a></li>
-        <li><a href="#minmax-width">min/max-width</a></li>
-        <li><a href="#minmax-height">min/max-height</a></li>
-        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#intro" class="active">RWD là gì?</a></li>
+        <li><a href="#why">Vì sao cần responsive?</a></li>
+        <li><a href="#viewport">Thẻ meta viewport</a></li>
+        <li><a href="#media">Media queries</a></li>
+        <li><a href="#fluid">Lưới linh hoạt (%)</a></li>
+        <li><a href="#images">Ảnh đáp ứng</a></li>
+        <li><a href="#units">Đơn vị đáp ứng</a></li>
+        <li><a href="#flexgrid">Flexbox &amp; Grid</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
 
     <!-- Main article -->
     <main class="article">
-      <div class="crumbs">Home » CSS » Styling &amp; Properties » CSS Height &amp; Width</div>
-      <h1>CSS Height &amp; Width</h1>
+      <div class="crumbs">Home » HTML » Responsive Web Design</div>
+      <h1>HTML Responsive Web Design — Thiết kế web đáp ứng</h1>
       <div class="meta">
-        <span class="lvl">Cấp độ: Cơ bản</span>
-        <span>Cập nhật: 16/06/2026</span>
-        <span>215K lượt đọc</span>
+        <span class="lvl">Cấp độ: Trung bình</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>312K lượt đọc</span>
         <div class="actions">
           <button onclick="toggleLike(this)">Like</button>
           <button>Lưu</button>
@@ -159,60 +161,107 @@
       </div>
 
       <p id="intro">
-        Hai thuộc tính <strong>width</strong> (chiều rộng) và <strong>height</strong> (chiều cao) dùng
-        để đặt <strong>kích thước</strong> cho phần tử. Chúng áp dụng cho vùng <em>content</em> của
-        phần tử (theo mặc định <code>box-sizing: content-box</code>), chưa tính padding và border. Kết
-        hợp với các giới hạn <strong>min/max</strong>, bạn kiểm soát được kích thước trong nhiều tình
-        huống màn hình khác nhau.
+        <strong>Responsive Web Design (RWD)</strong> — thiết kế web đáp ứng — là cách xây dựng trang web sao cho
+        giao diện <strong>tự điều chỉnh</strong> để hiển thị tốt trên mọi kích thước màn hình: điện thoại, máy
+        tính bảng, laptop và màn hình lớn. Thay vì làm nhiều phiên bản riêng, ta dùng <strong>một bộ mã</strong>
+        co giãn linh hoạt theo thiết bị.
       </p>
 
       <div class="note">
-        <strong>Ghi nhớ:</strong> <code>width</code> và <code>height</code> không áp dụng cho phần tử
-        <em>inline</em> (như <code>&lt;span&gt;</code>) — chỉ áp dụng cho phần tử khối (block) hoặc
-        inline-block.
+        <strong>Ba trụ cột của RWD:</strong> thẻ <strong>meta viewport</strong>, <strong>media queries</strong>
+        và <strong>bố cục/đơn vị linh hoạt</strong> (phần trăm, Flexbox, Grid).
       </div>
 
-      <h2 id="units">Đơn vị thường dùng</h2>
+      <h2 id="why">Vì sao cần responsive?</h2>
+      <ul>
+        <li>Phần lớn người dùng truy cập web bằng <strong>điện thoại</strong>.</li>
+        <li>Trải nghiệm tốt trên mọi thiết bị, không phải phóng to/cuộn ngang.</li>
+        <li>Chỉ cần <strong>một website</strong> duy nhất, dễ bảo trì.</li>
+        <li>Tốt cho <strong>SEO</strong> (Google ưu tiên trang thân thiện di động).</li>
+      </ul>
+
+      <h2 id="viewport">1. Thẻ meta viewport</h2>
+      <p>
+        Đây là dòng <strong>bắt buộc</strong> đầu tiên cho web responsive. Nó yêu cầu trình duyệt khớp chiều
+        rộng trang với chiều rộng thiết bị:
+      </p>
+      <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+      <ul>
+        <li><code>width=device-width</code> — đặt chiều rộng trang bằng chiều rộng màn hình.</li>
+        <li><code>initial-scale=1.0</code> — mức phóng to ban đầu là 100%.</li>
+      </ul>
+
+      <h2 id="media">2. Media queries</h2>
+      <p>
+        <code>@media</code> cho phép áp dụng CSS khác nhau theo kích thước màn hình (breakpoint). Ví dụ đổi màu
+        nền và sắp xếp khi màn hình hẹp:
+      </p>
+      <pre><code>/* Mặc định (màn hình lớn) */
+.box { background: #2da44e; }
+
+/* Khi rộng tối đa 600px (di động) */
+@media (max-width: 600px) {
+  .box { background: #0969da; }
+}</code></pre>
+      <div id="mini-media"></div>
+
+      <h2 id="fluid">3. Lưới linh hoạt bằng phần trăm</h2>
+      <p>
+        Dùng <code>%</code> thay cho <code>px</code> để các cột co giãn theo khung chứa:
+      </p>
+      <div id="mini-fluid"></div>
+
+      <h2 id="images">4. Ảnh đáp ứng</h2>
+      <p>
+        Cho ảnh co theo khung mà không bị tràn bằng <code>max-width:100%</code> và <code>height:auto</code>:
+      </p>
+      <pre><code>img { max-width: 100%; height: auto; }</code></pre>
+      <div id="mini-images"></div>
+      <p>
+        Ngoài ra có thể dùng thuộc tính <code>srcset</code> để chọn ảnh theo độ phân giải, hoặc thẻ
+        <code>&lt;picture&gt;</code> để đổi ảnh theo điều kiện màn hình.
+      </p>
+
+      <h2 id="units">5. Đơn vị đáp ứng</h2>
       <table class="cmp">
         <thead>
           <tr><th>Đơn vị</th><th>Ý nghĩa</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>px</code></td><td>Pixel — kích thước cố định.</td></tr>
           <tr><td><code>%</code></td><td>Phần trăm so với phần tử cha.</td></tr>
-          <tr><td><code>em</code> / <code>rem</code></td><td>Tương đối theo cỡ chữ.</td></tr>
-          <tr><td><code>vw</code> / <code>vh</code></td><td>Phần trăm theo chiều rộng/cao khung nhìn (viewport).</td></tr>
-          <tr><td><code>auto</code></td><td>Trình duyệt tự tính (mặc định).</td></tr>
+          <tr><td><code>vw</code> / <code>vh</code></td><td>1% chiều rộng / chiều cao khung nhìn (viewport).</td></tr>
+          <tr><td><code>em</code></td><td>So với cỡ chữ của phần tử hiện tại.</td></tr>
+          <tr><td><code>rem</code></td><td>So với cỡ chữ gốc (root) — dễ kiểm soát hơn em.</td></tr>
+          <tr><td><code>clamp()</code></td><td>Giá trị co giãn có giới hạn min–max, rất hợp cho cỡ chữ.</td></tr>
         </tbody>
       </table>
 
-      <h2 id="basic">1. Đặt width &amp; height cơ bản</h2>
-      <p>Đặt kích thước cố định bằng px.</p>
-      <div id="mini-basic"></div>
-
-      <h2 id="percent">2. Kích thước theo phần trăm</h2>
-      <p>Giá trị <code>%</code> tính theo kích thước của phần tử cha — giúp khối co giãn linh hoạt.</p>
-      <div id="mini-percent"></div>
-
-      <h2 id="minmax-width">3. min-width &amp; max-width</h2>
+      <h2 id="flexgrid">6. Flexbox &amp; Grid</h2>
       <p>
-        <code>min-width</code> đặt bề rộng tối thiểu, <code>max-width</code> đặt bề rộng tối đa. Rất
-        hữu ích cho thiết kế responsive (vd <code>max-width: 100%</code> để ảnh không tràn).
+        Kết hợp <strong>Flexbox/Grid</strong> với media queries để bố cục tự xếp lại. Ví dụ lưới tự xuống dòng
+        mà không cần media query nhờ <code>flex-wrap</code>:
       </p>
-      <div id="mini-minmax-width"></div>
+      <div id="mini-flexgrid"></div>
 
-      <h2 id="minmax-height">4. min-height &amp; max-height</h2>
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Luôn thêm thẻ <strong>meta viewport</strong>.</li>
+        <li>Thiết kế theo hướng <strong>mobile-first</strong> (mặc định cho di động, mở rộng dần lên).</li>
+        <li>Dùng đơn vị linh hoạt (<code>%</code>, <code>rem</code>, <code>vw</code>) thay vì <code>px</code> cứng.</li>
+        <li>Cho ảnh/video <code>max-width:100%</code> để không tràn.</li>
+        <li>Chọn breakpoint theo nội dung, không theo từng thiết bị cụ thể.</li>
+        <li>Kiểm thử trên nhiều kích thước màn hình thật.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
       <p>
-        <code>min-height</code> đảm bảo chiều cao tối thiểu kể cả khi ít nội dung;
-        <code>max-height</code> giới hạn chiều cao tối đa (thường kết hợp <code>overflow</code>).
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Thử <strong>thu hẹp</strong>
+        khung kết quả để thấy bố cục thay đổi. Bấm <strong>Chạy</strong> để cập nhật, hoặc <strong>Đặt lại</strong>
+        để khôi phục ví dụ mẫu.
       </p>
-      <div id="mini-minmax-height"></div>
-
-      <h2 id="tryit">Thử ngay — height &amp; width</h2>
-      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải.</p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>CSS Height &amp; Width Editor</span>
+          <span>HTML Editor</span>
           <span>
             <button onclick="runCode()">Chạy</button>
             <button onclick="resetCode()">Đặt lại</button>
@@ -220,7 +269,7 @@
         </div>
         <div class="tryit-panes">
           <div>
-            <span class="lbl">Mã HTML + CSS</span>
+            <span class="lbl">Mã HTML</span>
             <textarea id="htmlInput" spellcheck="false"></textarea>
           </div>
           <div>
@@ -232,40 +281,41 @@
 
       <h2 id="summary">Tóm tắt</h2>
       <p>
-        <code>width</code> và <code>height</code> đặt kích thước phần tử, có thể dùng px, %, em/rem,
-        vw/vh hoặc auto. Các thuộc tính <code>min-width</code>, <code>max-width</code>,
-        <code>min-height</code>, <code>max-height</code> giúp giới hạn kích thước, đặc biệt quan trọng
-        khi làm giao diện responsive.
+        Responsive Web Design giúp một website hiển thị tốt trên mọi thiết bị. Ba yếu tố cốt lõi là thẻ
+        <strong>meta viewport</strong>, <strong>media queries</strong> (<code>@media</code>) và
+        <strong>bố cục/đơn vị linh hoạt</strong> (phần trăm, <code>rem</code>, <code>vw</code>, Flexbox, Grid).
+        Kết hợp với ảnh đáp ứng (<code>max-width:100%</code>) và tư duy mobile-first để có trải nghiệm tốt nhất.
       </p>
 
       <div class="note">
-        <strong>Bước tiếp theo:</strong> Tìm hiểu <code>box-sizing</code> và
-        <a href="css-overflow.html">CSS Overflow</a> để kiểm soát kích thước &amp; nội dung tràn.
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="html-layout.html"><strong>HTML Layout</strong></a> để dựng bố cục và
+        <a href="html-images.html"><strong>HTML Images</strong></a> để làm ảnh đáp ứng.
       </div>
     </main>
 
     <!-- Right rail -->
     <aside class="rail">
       <div class="ad">
-        <h4>Khóa học CSS</h4>
-        <p>Làm chủ box model, kích thước và bố cục web hiện đại.</p>
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
         <button>Đăng ký ngay</button>
       </div>
       <div class="rail-card">
         <h4>Bài viết liên quan</h4>
         <ul>
-          <li><a href="css-padding.html">CSS Padding</a></li>
-          <li><a href="css-overflow.html">CSS Overflow</a></li>
-          <li><a href="#">CSS Box Model</a></li>
-          <li><a href="#">CSS box-sizing</a></li>
-          <li><a href="css-borders.html">CSS Borders</a></li>
+          <li><a href="html-layout.html">HTML Layout</a></li>
+          <li><a href="html-images.html">HTML Images</a></li>
+          <li><a href="html-semantic-elements.html">Semantic Elements</a></li>
+          <li><a href="html5-introduction.html">HTML5 Introduction</a></li>
+          <li><a href="html-basics.html">HTML Basics</a></li>
         </ul>
       </div>
       <div class="rail-card">
         <h4>Chủ đề phổ biến</h4>
         <ul>
-          <li><a href="#">CSS</a></li>
           <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
           <li><a href="#">Web Technologies</a></li>
         </ul>
       </div>
@@ -340,13 +390,14 @@
     // ----- Mini editor chạy code trực tiếp -----
     function makeMini(hostId, code) {
       const host = document.getElementById(hostId);
+      if (!host) return;
       const wrap = document.createElement('div');
       wrap.className = 'mini';
       wrap.innerHTML =
         '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
         '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
         '<div class="mini-panes">' +
-        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
         '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
       const ta = wrap.querySelector('textarea');
       const fr = wrap.querySelector('iframe');
@@ -360,135 +411,127 @@
       reset();
     }
 
-    makeMini('mini-basic',
+    const IMG = 'images.jpeg';
+
+    makeMini('mini-media',
 `<!DOCTYPE html>
 <html>
 <head>
-<style>
-  body { font-family: Arial, sans-serif; padding: 14px; }
-  .box {
-    width: 200px;
-    height: 80px;
-    background: #1a73e8;
-    color: #fff;
-    padding: 8px;
-  }
-</style>
-</head>
-<body>
-  <div class="box">width: 200px; height: 80px</div>
-</body>
-</html>`);
-
-    makeMini('mini-percent',
-`<!DOCTYPE html>
-<html>
-<head>
-<style>
-  body { font-family: Arial, sans-serif; padding: 14px; }
-  .parent {
-    width: 100%;
-    background: #e8f0fe;
-    padding: 10px;
-  }
-  .child {
-    /* 50% của phần tử cha */
-    width: 50%;
-    background: #1a73e8;
-    color: #fff;
-    padding: 8px;
-  }
-</style>
-</head>
-<body>
-  <div class="parent">
-    <div class="child">width: 50% của cha</div>
-  </div>
-</body>
-</html>`);
-
-    makeMini('mini-minmax-width',
-`<!DOCTYPE html>
-<html>
-<head>
-<style>
-  body { font-family: Arial, sans-serif; padding: 14px; }
-  .box {
-    width: 100%;
-    background: #1a73e8;
-    color: #fff;
-    padding: 8px;
-
-    /* không rộng quá 250px dù width: 100% */
-    max-width: 250px;
-    /* và không hẹp hơn 120px */
-    min-width: 120px;
-  }
-</style>
-</head>
-<body>
-  <div class="box">max-width: 250px; min-width: 120px</div>
-</body>
-</html>`);
-
-    makeMini('mini-minmax-height',
-`<!DOCTYPE html>
-<html>
-<head>
-<style>
-  body { font-family: Arial, sans-serif; padding: 14px; }
-  .box {
-    background: #e8f0fe;
-    border: 1px solid #1a73e8;
-    padding: 8px;
-
-    /* cao tối thiểu 80px dù ít nội dung */
-    min-height: 80px;
-    /* cao tối đa 120px, phần thừa sẽ cuộn */
-    max-height: 120px;
-    overflow: auto;
-  }
-</style>
-</head>
-<body>
-  <div class="box">
-    min-height giữ khối cao ít nhất 80px. Thêm thật nhiều nội dung vào đây để
-    vượt quá max-height 120px và xuất hiện thanh cuộn nhờ overflow: auto.
-    Dòng thêm 1. Dòng thêm 2. Dòng thêm 3. Dòng thêm 4. Dòng thêm 5.
-  </div>
-</body>
-</html>`);
-
-    // ----- Editor lớn: Thử ngay -----
-    const sampleCode =
-`<!DOCTYPE html>
-<html>
-<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-    .box {
-      width: 240px;
-      height: 100px;
-      background: #1a73e8;
-      color: #fff;
-      padding: 10px;
-      box-sizing: border-box;
+    body { font-family:Arial,sans-serif; padding:14px; }
+    .box { padding:24px; color:#fff; border-radius:8px; text-align:center;
+           background:#2da44e; font-weight:700; }
+    @media (max-width: 500px) {
+      .box { background:#0969da; }
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    Thử đổi width, height, hoặc thêm max-width / min-height!
+  <p>Thu hẹp khung dưới 500px: hộp đổi từ xanh lá sang xanh dương.</p>
+  <div class="box">Responsive Box</div>
+</body>
+</html>`);
+
+    makeMini('mini-fluid',
+`<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family:Arial,sans-serif; padding:14px; }
+    .col { float:left; width:33.33%; box-sizing:border-box; padding:8px; }
+    .inner { background:#d2f0d6; padding:18px; text-align:center; border-radius:6px; }
+    @media (max-width: 500px) { .col { width:100%; } }
+  </style>
+</head>
+<body>
+  <div class="col"><div class="inner">1/3</div></div>
+  <div class="col"><div class="inner">1/3</div></div>
+  <div class="col"><div class="inner">1/3</div></div>
+</body>
+</html>`);
+
+    makeMini('mini-images',
+`<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family:Arial,sans-serif; padding:14px; }
+    img { max-width:100%; height:auto; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <p>Ảnh co theo khung, không tràn:</p>
+  <img src="${IMG}" alt="Ảnh đáp ứng">
+</body>
+</html>`);
+
+    makeMini('mini-flexgrid',
+`<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family:Arial,sans-serif; padding:14px; }
+    .wrap { display:flex; flex-wrap:wrap; gap:10px; }
+    .card { flex:1 1 150px; background:#d2f0d6; padding:20px; text-align:center; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <p>Các thẻ tự xuống dòng khi không đủ chỗ (flex-wrap):</p>
+  <div class="wrap">
+    <div class="card">A</div>
+    <div class="card">B</div>
+    <div class="card">C</div>
+    <div class="card">D</div>
   </div>
 </body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body { font-family:Arial,sans-serif; margin:0; }
+      header { background:#2da44e; color:#fff; padding:16px; text-align:center; }
+      .grid { display:flex; flex-wrap:wrap; gap:10px; padding:12px; }
+      .item { flex:1 1 200px; background:#d2f0d6; padding:24px; text-align:center; border-radius:8px; }
+      @media (max-width: 480px) {
+        header { background:#0969da; }
+      }
+    </style>
+  </head>
+  <body>
+    <header><h2>Trang Responsive</h2></header>
+    <div class="grid">
+      <div class="item">Khối 1</div>
+      <div class="item">Khối 2</div>
+      <div class="item">Khối 3</div>
+    </div>
+  </body>
 </html>`;
 
     const input = document.getElementById('htmlInput');
     const preview = document.getElementById('preview');
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-    let bigTimer;
-    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
     resetCode();
   </script>
 </body>

@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="CSS Combinators: combinator hậu duệ, con, anh em liền kề và anh em chung, kèm ví dụ chạy trực tiếp." />
-<title>CSS Combinators - HITech</title>
+<title>HTML Paragraphs - Thẻ đoạn văn trong HTML - HITech</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,7 +31,7 @@
   <nav class="subbar">
     <div class="subbar-inner">
       <div class="subbar-item">
-        <a href="index.html#html-basic">HTML</a>
+        <a href="index.html#html-basic" class="active">HTML</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">HTML Basic</span>
@@ -91,7 +90,7 @@
         </div>
       </div>
       <div class="subbar-item">
-        <a href="index.html#css" class="active">CSS</a>
+        <a href="index.html#css">CSS</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">CSS Basic</span>
@@ -132,25 +131,28 @@
     <aside class="toc">
       <h3>Mục lục</h3>
       <ul>
-        <li><a href="#intro" class="active">Combinator là gì?</a></li>
-        <li><a href="#types">4 loại combinator</a></li>
-        <li><a href="#descendant">Descendant ( )</a></li>
-        <li><a href="#child">Child (&gt;)</a></li>
-        <li><a href="#adjacent">Adjacent sibling (+)</a></li>
-        <li><a href="#general">General sibling (~)</a></li>
-        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#intro" class="active">Thẻ đoạn văn là gì?</a></li>
+        <li><a href="#example">Ví dụ cơ bản</a></li>
+        <li><a href="#whitespace">Khoảng trắng &amp; xuống dòng</a></li>
+        <li><a href="#pre">Giữ định dạng với &lt;pre&gt;</a></li>
+        <li><a href="#br">Xuống dòng với &lt;br&gt;</a></li>
+        <li><a href="#hr">Đường kẻ ngang &lt;hr&gt;</a></li>
+        <li><a href="#align">Căn lề đoạn văn</a></li>
+        <li><a href="#block">Phần tử khối (block)</a></li>
+        <li><a href="#mistakes">Lỗi thường gặp</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
 
     <!-- Main article -->
     <main class="article">
-      <div class="crumbs">Home » CSS » CSS Basic » CSS Combinators</div>
-      <h1>CSS Combinators</h1>
+      <div class="crumbs">Home » HTML » HTML Paragraphs</div>
+      <h1>HTML Paragraphs — Thẻ đoạn văn trong HTML</h1>
       <div class="meta">
-        <span class="lvl">Cấp độ: Trung bình</span>
-        <span>Cập nhật: 16/06/2026</span>
-        <span>180K lượt đọc</span>
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>248K lượt đọc</span>
         <div class="actions">
           <button onclick="toggleLike(this)">Like</button>
           <button>Lưu</button>
@@ -159,85 +161,87 @@
       </div>
 
       <p id="intro">
-        <strong>Combinator (toán tử kết hợp)</strong> trong CSS là ký hiệu dùng để
-        <strong>kết hợp nhiều bộ chọn</strong>, qua đó mô tả <strong>mối quan hệ</strong> giữa các phần
-        tử trong cây HTML. Thay vì chọn phần tử một cách riêng lẻ, combinator giúp bạn chọn phần tử
-        dựa trên vị trí của nó so với phần tử khác (cha–con, anh em...). CSS có <strong>4 loại
-        combinator</strong> chính.
+        Một <strong>đoạn văn (paragraph)</strong> trong HTML đơn giản là một khối văn bản được bao trong
+        thẻ <code>&lt;p&gt;</code>. Thẻ này dùng để <strong>chia nội dung thành các phần dễ đọc</strong>,
+        và trình duyệt tự động thêm khoảng cách phía trên và dưới mỗi đoạn để tách bạch về mặt thị giác.
       </p>
 
       <div class="note">
-        <strong>Ghi nhớ:</strong> Combinator nằm <em>giữa</em> hai bộ chọn, ví dụ <code>A B</code>,
-        <code>A &gt; B</code>, <code>A + B</code>, <code>A ~ B</code>.
+        <strong>Cú pháp:</strong> <code>&lt;p&gt; Nội dung đoạn văn... &lt;/p&gt;</code> — luôn cần thẻ
+        mở và thẻ đóng.
       </div>
 
-      <h2 id="types">4 loại combinator trong CSS</h2>
-      <table class="cmp">
-        <thead>
-          <tr><th>Combinator</th><th>Ký hiệu</th><th>Ý nghĩa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Descendant (hậu duệ)</td><td><code>(dấu cách)</code></td><td>Chọn mọi phần tử con cháu (bất kỳ cấp nào) bên trong phần tử khác.</td></tr>
-          <tr><td>Child (con)</td><td><code>&gt;</code></td><td>Chỉ chọn phần tử là <strong>con trực tiếp</strong>.</td></tr>
-          <tr><td>Adjacent sibling (anh em liền kề)</td><td><code>+</code></td><td>Chọn phần tử đứng <strong>ngay sau</strong> và cùng cấp.</td></tr>
-          <tr><td>General sibling (anh em chung)</td><td><code>~</code></td><td>Chọn <strong>mọi phần tử cùng cấp</strong> đứng sau.</td></tr>
-        </tbody>
-      </table>
+      <h2 id="example">Ví dụ cơ bản</h2>
+      <p>Mỗi thẻ <code>&lt;p&gt;</code> tạo thành một đoạn riêng, nằm trên dòng mới:</p>
+      <div id="mini-basic"></div>
 
-      <h2 id="descendant">1. Descendant combinator ( )</h2>
+      <h2 id="whitespace">Khoảng trắng và xuống dòng trong HTML</h2>
       <p>
-        Viết bằng <strong>dấu cách</strong> giữa hai selector. Chọn tất cả phần tử khớp nằm bên trong
-        phần tử cha — ở <strong>bất kỳ cấp nào</strong>.
+        Một đặc điểm quan trọng: trình duyệt <strong>gộp nhiều khoảng trắng liên tiếp thành một</strong>,
+        và <strong>bỏ qua</strong> các ký tự xuống dòng, tab thừa trong mã nguồn — rồi hiển thị nội dung
+        thành một dòng liền mạch.
       </p>
-      <pre><code>/* Mọi &lt;p&gt; bên trong &lt;div&gt; (kể cả lồng sâu) */
-div p {
-  color: blue;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Đoạn <code>&lt;p&gt;</code> lồng sâu trong <code>&lt;section&gt;</code> có bị đổi màu không? Thử thêm một <code>&lt;p&gt;</code> nữa để kiểm chứng.</p>
-      <div id="mini-desc"></div>
+      <div id="mini-whitespace"></div>
 
-      <h2 id="child">2. Child combinator (&gt;)</h2>
+      <h2 id="pre">Giữ nguyên định dạng với <code>&lt;pre&gt;</code></h2>
       <p>
-        Chỉ chọn phần tử là <strong>con trực tiếp</strong> của phần tử cha (không tính cháu, chắt).
+        Để giữ <strong>đúng</strong> khoảng trắng và ngắt dòng như khi gõ, hãy dùng thẻ
+        <code>&lt;pre&gt;</code> (preformatted) — nội dung sẽ hiển thị y nguyên như trong mã:
       </p>
-      <pre><code>/* Chỉ &lt;p&gt; là con trực tiếp của &lt;div&gt; */
-div &gt; p {
-  color: green;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> là con trực tiếp đổi màu, còn <code>&lt;p&gt;</code> nằm trong <code>&lt;section&gt;</code> thì không. Thử đổi <code>&gt;</code> thành dấu cách để thấy khác biệt.</p>
-      <div id="mini-child"></div>
+      <div id="mini-pre"></div>
 
-      <h2 id="adjacent">3. Adjacent sibling combinator (+)</h2>
+      <h2 id="br">Xuống dòng với thẻ <code>&lt;br&gt;</code></h2>
       <p>
-        Chọn phần tử đứng <strong>ngay liền sau</strong> một phần tử khác và <strong>cùng cấp</strong>
-        (cùng phần tử cha). Chỉ chọn <strong>một</strong> phần tử ngay kề.
+        Thẻ <code>&lt;br&gt;</code> tạo một lần <strong>ngắt dòng</strong> mà không bắt đầu đoạn mới — hữu
+        ích khi cần xuống dòng ngay bên trong một đoạn. Đây là thẻ rỗng, không cần thẻ đóng:
       </p>
-      <pre><code>/* &lt;p&gt; đứng ngay sau &lt;h2&gt; */
-h2 + p {
-  font-weight: bold;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> ngay liền sau <code>&lt;h2&gt;</code> được in đậm. Thử đổi vị trí các đoạn để xem đoạn nào bị ảnh hưởng.</p>
-      <div id="mini-adj"></div>
+      <div id="mini-br"></div>
 
-      <h2 id="general">4. General sibling combinator (~)</h2>
+      <h2 id="hr">Đường kẻ ngang với thẻ <code>&lt;hr&gt;</code></h2>
       <p>
-        Chọn <strong>tất cả</strong> phần tử cùng cấp đứng <strong>sau</strong> một phần tử khác (không
-        nhất thiết liền kề).
+        Thẻ <code>&lt;hr&gt;</code> tạo một <strong>đường kẻ ngang</strong>, dùng để phân tách trực quan
+        các phần nội dung trên trang:
       </p>
-      <pre><code>/* Mọi &lt;p&gt; đứng sau &lt;h2&gt; (cùng cấp) */
-h2 ~ p {
-  color: purple;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Tất cả <code>&lt;p&gt;</code> cùng cấp đứng sau <code>&lt;h2&gt;</code> đổi màu. Thử thêm một <code>&lt;p&gt;</code> trước <code>&lt;h2&gt;</code> — nó có đổi màu không?</p>
-      <div id="mini-gen"></div>
+      <div id="mini-hr"></div>
 
-      <h2 id="tryit">Thử ngay — các combinator hoạt động</h2>
+      <h2 id="align">Căn lề đoạn văn</h2>
       <p>
-        Ví dụ dưới minh họa cả 4 combinator. Sửa CSS bên trái và xem phần tử nào bị ảnh hưởng bên phải.
+        Thuộc tính <code>align</code> cho phép căn trái/phải/giữa, nhưng nó đã <strong>lỗi thời trong
+        HTML5</strong>. Nên dùng CSS (<code>text-align</code>) thay thế để có thực hành tốt hơn:
+      </p>
+      <div id="mini-align"></div>
+      <div class="note">
+        <strong>Khuyến nghị:</strong> thay vì <code>&lt;p align="center"&gt;</code>, hãy dùng
+        <code>&lt;p style="text-align:center;"&gt;</code> hoặc đặt trong file CSS.
+      </div>
+
+      <h2 id="block">Đoạn văn là phần tử khối (block)</h2>
+      <p>
+        Mặc định, <code>&lt;p&gt;</code> có <code>display: block</code> — nghĩa là mỗi đoạn chiếm trọn
+        chiều rộng và nằm trên một dòng mới. Bạn có thể thay đổi hành vi này bằng CSS nếu cần.
+      </p>
+
+      <h2 id="mistakes">Lỗi thường gặp</h2>
+      <ul>
+        <li>
+          <strong>Không lồng đoạn văn vào nhau:</strong> bạn không thể đặt một <code>&lt;p&gt;</code> bên
+          trong <code>&lt;p&gt;</code> khác. Mỗi thẻ <code>&lt;p&gt;</code> chỉ nên chứa văn bản của một khối.
+        </li>
+        <li>
+          <strong>Không dùng <code>&lt;p&gt;</code> cho nội dung phi văn bản:</strong> thẻ này dành cho văn
+          bản. Nếu cần bọc ảnh, bảng hay phần tử khác, hãy dùng thẻ phù hợp như <code>&lt;img&gt;</code>,
+          <code>&lt;table&gt;</code> hoặc <code>&lt;div&gt;</code>.
+        </li>
+      </ul>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
       </p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>CSS Combinators Editor</span>
+          <span>HTML Editor</span>
           <span>
             <button onclick="runCode()">Chạy</button>
             <button onclick="resetCode()">Đặt lại</button>
@@ -245,7 +249,7 @@ h2 ~ p {
         </div>
         <div class="tryit-panes">
           <div>
-            <span class="lbl">Mã HTML + CSS</span>
+            <span class="lbl">Mã HTML</span>
             <textarea id="htmlInput" spellcheck="false"></textarea>
           </div>
           <div>
@@ -257,41 +261,42 @@ h2 ~ p {
 
       <h2 id="summary">Tóm tắt</h2>
       <p>
-        Combinator giúp chọn phần tử dựa trên quan hệ trong cây HTML. CSS có 4 loại:
-        <strong>descendant</strong> (dấu cách), <strong>child</strong> (<code>&gt;</code>),
-        <strong>adjacent sibling</strong> (<code>+</code>) và <strong>general sibling</strong>
-        (<code>~</code>). Nắm vững combinator giúp bạn viết bộ chọn chính xác và gọn gàng hơn, hạn chế
-        lạm dụng class thừa.
+        Thẻ <code>&lt;p&gt;</code> dùng để tạo đoạn văn, tự động thêm khoảng cách trên/dưới. HTML
+        <strong>gộp khoảng trắng thừa</strong> và bỏ qua xuống dòng trong mã; muốn giữ nguyên định dạng
+        hãy dùng <code>&lt;pre&gt;</code>, muốn ngắt dòng dùng <code>&lt;br&gt;</code>, muốn phân tách phần
+        nội dung dùng <code>&lt;hr&gt;</code>. Tránh lồng <code>&lt;p&gt;</code> vào nhau và đừng dùng nó
+        cho nội dung phi văn bản. Để căn lề, hãy dùng CSS thay vì thuộc tính <code>align</code> đã lỗi thời.
       </p>
 
       <div class="note">
-        <strong>Bước tiếp theo:</strong> Tìm hiểu về <strong>pseudo-class</strong> (như
-        <code>:hover</code>, <code>:first-child</code>) để chọn phần tử theo trạng thái và vị trí.
+        <strong>Bước tiếp theo:</strong> Xem thêm
+        <a href="html-headings.html"><strong>HTML Headings</strong></a> và
+        <a href="html-attributes.html"><strong>HTML Attributes</strong></a> để hoàn thiện kỹ năng cấu trúc nội dung.
       </div>
     </main>
 
     <!-- Right rail -->
     <aside class="rail">
       <div class="ad">
-        <h4>Khóa học CSS</h4>
-        <p>Thành thạo selector, combinator và bố cục CSS hiện đại.</p>
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
         <button>Đăng ký ngay</button>
       </div>
       <div class="rail-card">
         <h4>Bài viết liên quan</h4>
         <ul>
-          <li><a href="css-introduction.html">CSS Introduction</a></li>
-          <li><a href="css-syntax.html">CSS Syntax</a></li>
-          <li><a href="#">CSS Selectors</a></li>
-          <li><a href="#">CSS Pseudo-classes</a></li>
+          <li><a href="html-headings.html">HTML Headings</a></li>
+          <li><a href="html-attributes.html">HTML Attributes</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
+          <li><a href="html-semantic-elements.html">Semantic Elements</a></li>
+          <li><a href="html-forms.html">HTML Forms</a></li>
         </ul>
       </div>
       <div class="rail-card">
         <h4>Chủ đề phổ biến</h4>
         <ul>
-          <li><a href="#">CSS</a></li>
           <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
           <li><a href="#">Web Technologies</a></li>
         </ul>
       </div>
@@ -363,62 +368,17 @@ h2 ~ p {
       btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
 
-    // ----- Trình soạn HTML + CSS trực tiếp -----
-    const sampleCode = `<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-
-    /* Descendant: mọi p trong .box */
-    .box p { color: #1a73e8; }
-
-    /* Child: chỉ li là con trực tiếp của ul */
-    ul > li { font-weight: bold; }
-
-    /* Adjacent sibling: p ngay sau h2 */
-    h2 + p { background: #e8f0fe; }
-
-    /* General sibling: mọi p sau h2 */
-    h2 ~ p { border-left: 3px solid #1a73e8; padding-left: 8px; }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h2>Tiêu đề</h2>
-    <p>Đoạn ngay sau h2 (adjacent + general).</p>
-    <p>Đoạn thứ hai (general sibling).</p>
-    <ul>
-      <li>Mục con trực tiếp</li>
-    </ul>
-  </div>
-</body>
-</html>`;
-
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-
-    let typingTimer;
-    input.addEventListener('input', () => {
-      clearTimeout(typingTimer);
-      typingTimer = setTimeout(runCode, 300);
-    });
-
-    resetCode();
-
-    // ----- Mini editor cho từng combinator -----
+    // ----- Mini editor chạy code trực tiếp -----
     function makeMini(hostId, code) {
       const host = document.getElementById(hostId);
+      if (!host) return;
       const wrap = document.createElement('div');
       wrap.className = 'mini';
       wrap.innerHTML =
         '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
         '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
         '<div class="mini-panes">' +
-        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
         '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
       const ta = wrap.querySelector('textarea');
       const fr = wrap.querySelector('iframe');
@@ -432,79 +392,115 @@ h2 ~ p {
       reset();
     }
 
-    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;line-height:1.6}</style>';
-
-    makeMini('mini-desc',
+    makeMini('mini-basic',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Descendant: mọi p bên trong div (mọi cấp) */
-  div p { color: blue; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Đoạn con trực tiếp của div.</p>
-    <section>
-      <p>Đoạn lồng sâu trong section.</p>
-    </section>
-  </div>
-  <p>Đoạn NGOÀI div (không đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>HITech là một cổng học lập trình.</p>
+  <p>Nó chứa nhiều bài viết được trình bày rõ ràng.</p>
 </body>
 </html>`);
 
-    makeMini('mini-child',
+    makeMini('mini-whitespace',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Child: chỉ p là con trực tiếp của div */
-  div > p { color: green; font-weight: bold; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Con trực tiếp của div (đổi màu).</p>
-    <section>
-      <p>p trong section (KHÔNG đổi màu).</p>
-    </section>
-  </div>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>
+    Đoạn văn này có nhiều dòng.
+    Nhưng HTML gộp chúng thành một dòng,
+    bỏ qua các lần xuống dòng đã gõ.
+  </p>
+  <p>
+    Đoạn này có        nhiều khoảng trắng.
+    Nhưng HTML gộp tất cả thành một khoảng trắng duy nhất.
+  </p>
 </body>
 </html>`);
 
-    makeMini('mini-adj',
+    makeMini('mini-pre',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Adjacent sibling: p ngay liền sau h2 */
-  h2 + p { background: #e8f0fe; padding: 6px; }
-</style>
-</head>
-<body>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn NGAY sau h2 (được tô nền).</p>
-  <p>Đoạn thứ hai (không tô).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <pre>
+Dòng 1   giữ nguyên   khoảng trắng
+   Dòng 2 thụt đầu dòng
+Dòng 3
+  </pre>
 </body>
 </html>`);
 
-    makeMini('mini-gen',
+    makeMini('mini-br',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* General sibling: mọi p cùng cấp đứng sau h2 */
-  h2 ~ p { color: purple; }
-</style>
-</head>
-<body>
-  <p>Đoạn TRƯỚC h2 (không đổi màu).</p>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn sau h2 (đổi màu).</p>
-  <p>Đoạn nữa sau h2 (đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>
+    Đoạn này có nhiều
+    <br />dòng. HTML gộp chúng lại
+    <br />thành một dòng nếu không có
+    <br />thẻ br để ngắt dòng.
+  </p>
 </body>
 </html>`);
+
+    makeMini('mini-hr',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h1>Chào mừng đến với HITech</h1>
+  <p>HITech cung cấp tài nguyên khoa học máy tính và bài tập lập trình.</p>
+  <hr>
+  <p>Phần nội dung thứ hai, được ngăn cách bởi đường kẻ ngang.</p>
+</body>
+</html>`);
+
+    makeMini('mini-align',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <!-- Khuyến nghị dùng CSS text-align thay cho align -->
+  <p style="text-align:center;">Chào các bạn (căn giữa)</p>
+  <p style="text-align:left;">Căn trái — cổng học lập trình.</p>
+  <p style="text-align:right;">Căn phải — nhiều bài viết hay.</p>
+</body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Đoạn văn của tôi</title>
+  </head>
+  <body>
+    <h1>Bài viết về HTML</h1>
+    <p>Đây là đoạn văn đầu tiên giới thiệu nội dung.</p>
+    <hr>
+    <p>
+      Đoạn thứ hai có ngắt dòng:<br>
+      dòng mới nhờ thẻ br.
+    </p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    // Cập nhật trực tiếp khi gõ (debounce nhẹ)
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    // Khởi tạo
+    resetCode();
   </script>
 </body>
 </html>

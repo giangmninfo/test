@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML Layout - Bố cục trang web - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="index.html#html-basic" class="active">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-editors.html">HTML Editors</a>
+            <a href="html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-paragraphs.html">HTML Paragraphs</a>
+            <a href="html-text-formatting.html">HTML Text Formatting</a>
+            <a href="html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="html-charsets.html">HTML Charsets</a>
+            <a href="html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-ordered-lists.html">Ordered Lists</a>
+            <a href="html-unordered-lists.html">Unordered Lists</a>
+            <a href="html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="html-colors.html">HTML Colors</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html5-video.html">HTML5 Video</a>
+            <a href="html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-iframes.html">HTML Iframes</a>
+            <a href="html-layout.html">HTML Layout</a>
+            <a href="html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="html-semantic-elements.html">Semantic Elements</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-url-encoding.html">HTML URL Encoding</a>
+            <a href="html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Bố cục trang là gì?</a></li>
+        <li><a href="#elements">Các phần tử bố cục</a></li>
+        <li><a href="#semantic">Bố cục bằng thẻ ngữ nghĩa</a></li>
+        <li><a href="#techniques">Các kỹ thuật bố cục</a></li>
+        <li><a href="#flexbox">Bố cục với Flexbox</a></li>
+        <li><a href="#grid">Bố cục với Grid</a></li>
+        <li><a href="#float">Bố cục với float</a></li>
+        <li><a href="#responsive">Bố cục responsive</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » HTML Layout</div>
+      <h1>HTML Layout — Bố cục trang web</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>288K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Bố cục (layout)</strong> là cách sắp xếp các thành phần của trang web — như tiêu đề, menu, nội
+        dung chính và chân trang — thành một cấu trúc rõ ràng, dễ nhìn. Một website thường được chia thành các
+        khu vực: <strong>header</strong> (đầu trang), <strong>nav</strong> (điều hướng),
+        <strong>main/section/article</strong> (nội dung), <strong>aside</strong> (cột bên) và
+        <strong>footer</strong> (chân trang).
+      </p>
+
+      <div class="note">
+        <strong>Lưu ý:</strong> HTML định nghĩa <em>cấu trúc</em> các khu vực; còn việc <em>sắp đặt vị trí</em>
+        (cạnh nhau, theo lưới…) chủ yếu do CSS đảm nhận (Flexbox, Grid, float).
+      </div>
+
+      <p>Một bố cục website điển hình gồm các khu vực sau:</p>
+      <figure class="layout-fig">
+        <div class="lf-box lf-header">
+          <strong>Header</strong>
+          <span>(Tiêu đề website hoặc logo)</span>
+        </div>
+        <div class="lf-box lf-nav">
+          <strong>Navigation Menu</strong>
+          <span>(Liên kết tới các trang)</span>
+        </div>
+        <div class="lf-middle">
+          <div class="lf-box lf-index">
+            <strong>Index</strong>
+            <span>(Liên kết tới các mục)</span>
+          </div>
+          <div class="lf-box lf-content">
+            <strong>Content Section</strong>
+            <span>(Nội dung chính nằm ở đây)</span>
+          </div>
+        </div>
+        <div class="lf-box lf-footer">
+          <strong>Footer</strong>
+          <span>(Bản quyền hoặc thông tin thêm)</span>
+        </div>
+        <figcaption>Sơ đồ bố cục trang web thông dụng</figcaption>
+      </figure>
+
+      <h2 id="elements">Các phần tử bố cục</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Phần tử</th><th>Vai trò</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;header&gt;</code></td><td>Phần đầu trang/khu vực — logo, tiêu đề, menu.</td></tr>
+          <tr><td><code>&lt;nav&gt;</code></td><td>Khu vực chứa liên kết điều hướng.</td></tr>
+          <tr><td><code>&lt;main&gt;</code></td><td>Nội dung chính, duy nhất của trang.</td></tr>
+          <tr><td><code>&lt;section&gt;</code></td><td>Một phần/chủ đề trong tài liệu.</td></tr>
+          <tr><td><code>&lt;article&gt;</code></td><td>Nội dung độc lập (bài viết, tin tức).</td></tr>
+          <tr><td><code>&lt;aside&gt;</code></td><td>Nội dung phụ (sidebar, quảng cáo).</td></tr>
+          <tr><td><code>&lt;footer&gt;</code></td><td>Chân trang — bản quyền, liên hệ.</td></tr>
+          <tr><td><code>&lt;div&gt;</code></td><td>Hộp chứa chung khi không có thẻ ngữ nghĩa phù hợp.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="semantic">Bố cục bằng thẻ ngữ nghĩa</h2>
+      <p>
+        Dùng các thẻ ngữ nghĩa HTML5 giúp mã rõ ràng, tốt cho SEO và trợ năng hơn là dùng toàn
+        <code>&lt;div&gt;</code>:
+      </p>
+      <pre><code>&lt;body&gt;
+  &lt;header&gt;Tiêu đề trang&lt;/header&gt;
+  &lt;nav&gt;Menu&lt;/nav&gt;
+  &lt;main&gt;
+    &lt;section&gt;Nội dung chính&lt;/section&gt;
+    &lt;aside&gt;Cột bên&lt;/aside&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;Chân trang&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+      <div id="mini-semantic"></div>
+
+      <h2 id="techniques">Các kỹ thuật bố cục</h2>
+      <ul>
+        <li><strong>CSS Flexbox</strong> — sắp xếp theo một chiều (hàng hoặc cột), linh hoạt, phổ biến nhất.</li>
+        <li><strong>CSS Grid</strong> — sắp xếp theo hai chiều (hàng và cột), mạnh cho bố cục tổng thể.</li>
+        <li><strong>CSS Float</strong> — kỹ thuật cũ, cho phần tử "trôi" sang trái/phải.</li>
+        <li><strong>Table</strong> — chỉ nên dùng cho dữ liệu bảng, không dùng để dàn trang.</li>
+      </ul>
+
+      <h2 id="flexbox">Bố cục với Flexbox</h2>
+      <p>
+        Đặt <code>display:flex</code> cho phần tử cha để các con xếp cạnh nhau và co giãn linh hoạt:
+      </p>
+      <div id="mini-flex"></div>
+
+      <h2 id="grid">Bố cục với Grid</h2>
+      <p>
+        <code>display:grid</code> chia trang thành lưới hàng/cột — rất hợp cho bố cục header / sidebar / nội
+        dung / footer:
+      </p>
+      <div id="mini-grid"></div>
+
+      <h2 id="float">Bố cục với float (cũ)</h2>
+      <p>
+        <code>float</code> từng được dùng nhiều để tạo cột. Ngày nay nên ưu tiên Flexbox/Grid, nhưng vẫn nên
+        biết cách hoạt động:
+      </p>
+      <div id="mini-float"></div>
+
+      <h2 id="responsive">Bố cục responsive</h2>
+      <p>
+        Bố cục responsive tự điều chỉnh theo kích thước màn hình. Dùng <code>@media</code> để đổi cách sắp xếp
+        trên di động (ví dụ chuyển từ nhiều cột sang một cột):
+      </p>
+      <pre><code>.container { display: flex; }
+
+@media (max-width: 600px) {
+  .container { flex-direction: column; }
+}</code></pre>
+      <div id="mini-responsive"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Ưu tiên thẻ ngữ nghĩa (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>) thay vì chỉ dùng <code>&lt;div&gt;</code>.</li>
+        <li>Dùng <strong>Flexbox</strong> cho bố cục một chiều, <strong>Grid</strong> cho bố cục hai chiều.</li>
+        <li>Thiết kế <strong>responsive</strong> với <code>@media</code> để hợp mọi thiết bị.</li>
+        <li>Tránh dùng bảng (<code>&lt;table&gt;</code>) để dàn trang.</li>
+        <li>Giữ cấu trúc gọn gàng, đặt tên lớp (class) rõ ràng.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Bố cục trang web chia giao diện thành các khu vực như <code>header</code>, <code>nav</code>,
+        <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code> và
+        <code>footer</code>. HTML tạo cấu trúc, còn CSS sắp đặt vị trí qua <strong>Flexbox</strong>,
+        <strong>Grid</strong> hoặc <code>float</code>. Kết hợp <code>@media</code> để có bố cục responsive
+        thích ứng mọi thiết bị.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="html-semantic-elements.html"><strong>Semantic Elements</strong></a> để hiểu sâu các thẻ bố cục
+        và <a href="html-tables.html"><strong>HTML Tables</strong></a> để trình bày dữ liệu.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="html-semantic-elements.html">Semantic Elements</a></li>
+          <li><a href="html-tables.html">HTML Tables</a></li>
+          <li><a href="html-iframes.html">HTML Iframes</a></li>
+          <li><a href="html-block-inline.html">Block &amp; Inline Elements</a></li>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-semantic',
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family:Arial,sans-serif; margin:0; }
+    header, nav, main, footer { padding:12px; }
+    header { background:#2da44e; color:#fff; }
+    nav { background:#d2f0d6; }
+    main { background:#f6f8fa; }
+    footer { background:#24292f; color:#fff; }
+  </style>
+</head>
+<body>
+  <header><b>Header</b> — tiêu đề trang</header>
+  <nav>Nav — Trang chủ | Giới thiệu | Liên hệ</nav>
+  <main>Main — nội dung chính của trang.</main>
+  <footer>Footer — © 2026 HITech</footer>
+</body>
+</html>`);
+
+    makeMini('mini-flex',
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family:Arial,sans-serif; padding:12px; }
+    .row { display:flex; gap:10px; }
+    .row > div { background:#d2f0d6; padding:16px; flex:1; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div>Cột 1</div>
+    <div>Cột 2</div>
+    <div>Cột 3</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-grid',
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family:Arial,sans-serif; padding:12px; }
+    .grid {
+      display:grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas:
+        "head head"
+        "side main"
+        "foot foot";
+      gap:8px;
+    }
+    .grid > div { padding:14px; color:#fff; }
+    .h { grid-area:head; background:#2da44e; }
+    .s { grid-area:side; background:#6f42c1; }
+    .m { grid-area:main; background:#0969da; }
+    .f { grid-area:foot; background:#24292f; }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="h">Header</div>
+    <div class="s">Sidebar</div>
+    <div class="m">Main</div>
+    <div class="f">Footer</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-float',
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family:Arial,sans-serif; padding:12px; }
+    .side { float:left; width:30%; background:#d2f0d6; padding:12px; }
+    .content { float:left; width:70%; background:#f6f8fa; padding:12px; box-sizing:border-box; }
+    .clear { clear:both; }
+  </style>
+</head>
+<body>
+  <div class="side">Sidebar (float:left 30%)</div>
+  <div class="content">Nội dung (float:left 70%)</div>
+  <div class="clear"></div>
+</body>
+</html>`);
+
+    makeMini('mini-responsive',
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family:Arial,sans-serif; padding:12px; }
+    .container { display:flex; gap:10px; }
+    .container > div { background:#d2f0d6; padding:16px; flex:1; text-align:center; }
+    @media (max-width: 500px) {
+      .container { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <p>Thu nhỏ khung kết quả dưới 500px để thấy các cột xếp dọc.</p>
+  <div class="container">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+  </div>
+</body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { font-family:Arial,sans-serif; margin:0; }
+      header, footer { background:#2da44e; color:#fff; padding:14px; text-align:center; }
+      .wrap { display:flex; gap:10px; padding:10px; }
+      nav { background:#d2f0d6; padding:12px; width:140px; }
+      main { background:#f6f8fa; padding:12px; flex:1; }
+    </style>
+  </head>
+  <body>
+    <header><h2>HITech</h2></header>
+    <div class="wrap">
+      <nav>Menu<br>Trang chủ<br>Bài viết</nav>
+      <main>Nội dung chính. Thử đổi width của nav hoặc màu sắc.</main>
+    </div>
+    <footer>© 2026 HITech</footer>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
+  </script>
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML Block & Inline Elements - Phần tử khối và nội tuyến - HITech</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* Minh hoạ block vs inline (chỉ dùng trong trang này) */
+  .bi-illus { max-width: 560px; margin: 0 auto; text-align: left; }
+  .bi-illus .frame {
+    border: 1.5px dashed var(--gfg-border);
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+  }
+  .bi-illus .frame-lbl {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--gfg-muted); margin-bottom: 8px;
+  }
+  .bi-block {
+    display: block;
+    background: #e8f0fe;
+    border: 1px solid #1a73e8;
+    color: #174ea6;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .bi-block:last-child { margin-bottom: 0; }
+  .bi-block .w { display:block; font-size: 0.72rem; font-weight: 500; color:#5f6368; margin-top:2px; }
+  .bi-line { font-size: 0.92rem; color: var(--gfg-text); line-height: 1.9; }
+  .bi-inline {
+    background: #e6f4ea;
+    border: 1px solid #34a853;
+    color: #145c2e;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="index.html#html-basic" class="active">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-editors.html">HTML Editors</a>
+            <a href="html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-paragraphs.html">HTML Paragraphs</a>
+            <a href="html-text-formatting.html">HTML Text Formatting</a>
+            <a href="html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="html-charsets.html">HTML Charsets</a>
+            <a href="html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-ordered-lists.html">Ordered Lists</a>
+            <a href="html-unordered-lists.html">Unordered Lists</a>
+            <a href="html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="html-colors.html">HTML Colors</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html5-video.html">HTML5 Video</a>
+            <a href="html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-iframes.html">HTML Iframes</a>
+            <a href="html-layout.html">HTML Layout</a>
+            <a href="html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="html-semantic-elements.html">Semantic Elements</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-url-encoding.html">HTML URL Encoding</a>
+            <a href="html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Giới thiệu</a></li>
+        <li><a href="#illus">Minh hoạ trực quan</a></li>
+        <li><a href="#block">Phần tử khối (block)</a></li>
+        <li><a href="#block-list">Danh sách phần tử khối</a></li>
+        <li><a href="#inline">Phần tử nội tuyến (inline)</a></li>
+        <li><a href="#inline-list">Danh sách phần tử nội tuyến</a></li>
+        <li><a href="#compare">Bảng so sánh</a></li>
+        <li><a href="#intro-example">Ví dụ phân biệt</a></li>
+        <li><a href="#div">Thẻ &lt;div&gt;</a></li>
+        <li><a href="#span">Thẻ &lt;span&gt;</a></li>
+        <li><a href="#nesting">Quy tắc lồng nhau</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » HTML Block &amp; Inline Elements</div>
+      <h1>HTML Block &amp; Inline Elements — Phần tử khối và nội tuyến</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>284K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        Mỗi phần tử HTML đều có một <strong>kiểu hiển thị (display)</strong> mặc định, chủ yếu thuộc một
+        trong hai loại: <strong>phần tử khối (block-level)</strong> và <strong>phần tử nội tuyến (inline)</strong>.
+        Hiểu sự khác biệt này là nền tảng để bố cục (layout) một trang web — nó chiếm tới 80–90% các tình
+        huống dàn trang thường gặp.
+      </p>
+
+      <div class="note">
+        <ul>
+          <li><strong>Block-level:</strong> luôn <em>bắt đầu trên một dòng mới</em> và <em>chiếm trọn chiều rộng</em> của phần tử cha (kéo dài hết từ trái sang phải).</li>
+          <li><strong>Inline:</strong> ngược lại — <em>không xuống dòng mới</em> và chỉ <em>chiếm đúng chiều rộng cần thiết</em> cho nội dung.</li>
+        </ul>
+      </div>
+
+      <h2 id="illus">Minh hoạ trực quan</h2>
+      <p>Hai sơ đồ dưới đây cho thấy rõ cách hai loại phần tử chiếm không gian khác nhau:</p>
+
+      <div class="diagram">
+        <div class="bi-illus">
+          <div class="frame">
+            <div class="frame-lbl">Phần tử khối (block) — mỗi phần tử một dòng, chiếm trọn chiều rộng</div>
+            <div class="bi-block">&lt;div&gt; phần tử khối 1 <span class="w">width = 100% chiều rộng cha</span></div>
+            <div class="bi-block">&lt;p&gt; phần tử khối 2 <span class="w">tự xuống dòng mới</span></div>
+            <div class="bi-block">&lt;h2&gt; phần tử khối 3 <span class="w">không nằm cạnh phần tử khác</span></div>
+          </div>
+        </div>
+        <div class="cap">Mỗi phần tử khối nằm trên một dòng riêng và kéo dài hết chiều ngang.</div>
+      </div>
+
+      <div class="diagram">
+        <div class="bi-illus">
+          <div class="frame">
+            <div class="frame-lbl">Phần tử nội tuyến (inline) — nằm trên cùng một dòng, chỉ rộng vừa đủ</div>
+            <div class="bi-line">
+              Đây là đoạn văn có
+              <span class="bi-inline">&lt;a&gt;</span>
+              <span class="bi-inline">&lt;strong&gt;</span>
+              <span class="bi-inline">&lt;span&gt;</span>
+              <span class="bi-inline">&lt;em&gt;</span>
+              chèn lẫn trong dòng chữ mà không làm ngắt mạch nội dung.
+            </div>
+          </div>
+        </div>
+        <div class="cap">Các phần tử nội tuyến chảy theo dòng văn bản, chỉ rộng bằng nội dung của chúng.</div>
+      </div>
+
+      <h2 id="block">Phần tử khối (Block-level Element)</h2>
+      <p>
+        Một phần tử khối <strong>luôn bắt đầu trên một dòng mới</strong> và <strong>chiếm toàn bộ chiều
+        rộng</strong> có thể có của phần tử cha. Nó cũng hỗ trợ <strong>đầy đủ box model</strong>: có thể
+        đặt <code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code> mọi phía.
+      </p>
+      <div id="mini-block"></div>
+
+      <h2 id="block-list">Danh sách phần tử khối thường gặp</h2>
+      <p>Một số phần tử khối phổ biến và chức năng của chúng:</p>
+      <table class="cmp">
+        <thead>
+          <tr><th>Thẻ</th><th>Chức năng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;div&gt;</code></td><td>Vùng chứa tổng quát để nhóm và bố cục nội dung.</td></tr>
+          <tr><td><code>&lt;p&gt;</code></td><td>Đoạn văn bản.</td></tr>
+          <tr><td><code>&lt;h1&gt;</code> … <code>&lt;h6&gt;</code></td><td>Tiêu đề, từ cấp lớn nhất đến nhỏ nhất.</td></tr>
+          <tr><td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> / <code>&lt;li&gt;</code></td><td>Danh sách không thứ tự / có thứ tự / mục danh sách.</td></tr>
+          <tr><td><code>&lt;table&gt;</code></td><td>Bảng dữ liệu.</td></tr>
+          <tr><td><code>&lt;form&gt;</code></td><td>Biểu mẫu nhập liệu.</td></tr>
+          <tr><td><code>&lt;header&gt;</code></td><td>Phần đầu của trang hoặc một khu vực.</td></tr>
+          <tr><td><code>&lt;footer&gt;</code></td><td>Phần chân của trang hoặc một khu vực.</td></tr>
+          <tr><td><code>&lt;section&gt;</code></td><td>Một khu vực nội dung độc lập theo chủ đề.</td></tr>
+          <tr><td><code>&lt;article&gt;</code></td><td>Nội dung tự thân, có thể tái sử dụng (bài viết).</td></tr>
+          <tr><td><code>&lt;aside&gt;</code></td><td>Nội dung phụ, bên lề (sidebar, ghi chú).</td></tr>
+          <tr><td><code>&lt;nav&gt;</code></td><td>Khu vực điều hướng (menu, liên kết).</td></tr>
+          <tr><td><code>&lt;main&gt;</code></td><td>Nội dung chính, duy nhất của trang.</td></tr>
+          <tr><td><code>&lt;blockquote&gt;</code></td><td>Đoạn trích dẫn dài.</td></tr>
+          <tr><td><code>&lt;address&gt;</code></td><td>Thông tin liên hệ.</td></tr>
+          <tr><td><code>&lt;pre&gt;</code></td><td>Văn bản giữ nguyên định dạng (khoảng trắng, xuống dòng).</td></tr>
+          <tr><td><code>&lt;hr&gt;</code></td><td>Đường kẻ ngang phân tách nội dung.</td></tr>
+          <tr><td><code>&lt;figure&gt;</code> / <code>&lt;figcaption&gt;</code></td><td>Hình minh hoạ và chú thích cho hình.</td></tr>
+          <tr><td><code>&lt;fieldset&gt;</code></td><td>Nhóm các trường liên quan trong biểu mẫu.</td></tr>
+          <tr><td><code>&lt;canvas&gt;</code></td><td>Vùng vẽ đồ họa bằng JavaScript.</td></tr>
+          <tr><td><code>&lt;video&gt;</code></td><td>Nhúng video vào trang.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="inline">Phần tử nội tuyến (Inline Element)</h2>
+      <p>
+        Phần tử nội tuyến <strong>không xuống dòng mới</strong> — nó nằm ngay trong mạch văn bản và chỉ
+        chiếm <strong>chiều rộng vừa đủ</strong> với nội dung. Phần tử inline <strong>bị giới hạn</strong>
+        về box model: <code>width</code>/<code>height</code> và margin/padding theo chiều dọc thường không
+        có tác dụng như mong đợi.
+      </p>
+      <div id="mini-inline"></div>
+
+      <h2 id="inline-list">Danh sách phần tử nội tuyến thường gặp</h2>
+      <p>Một số phần tử nội tuyến phổ biến và chức năng của chúng:</p>
+      <table class="cmp">
+        <thead>
+          <tr><th>Thẻ</th><th>Chức năng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;span&gt;</code></td><td>Vùng chứa nội tuyến để khoanh vùng và tạo kiểu một đoạn nhỏ.</td></tr>
+          <tr><td><code>&lt;a&gt;</code></td><td>Liên kết (hyperlink).</td></tr>
+          <tr><td><code>&lt;img&gt;</code></td><td>Chèn hình ảnh.</td></tr>
+          <tr><td><code>&lt;b&gt;</code> / <code>&lt;strong&gt;</code></td><td>In đậm / nhấn mạnh nội dung quan trọng.</td></tr>
+          <tr><td><code>&lt;i&gt;</code> / <code>&lt;em&gt;</code></td><td>In nghiêng / nhấn mạnh có ngữ nghĩa.</td></tr>
+          <tr><td><code>&lt;small&gt;</code></td><td>Văn bản cỡ chữ nhỏ hơn.</td></tr>
+          <tr><td><code>&lt;sub&gt;</code> / <code>&lt;sup&gt;</code></td><td>Chỉ số dưới / chỉ số trên.</td></tr>
+          <tr><td><code>&lt;code&gt;</code></td><td>Hiển thị đoạn mã (font monospace).</td></tr>
+          <tr><td><code>&lt;kbd&gt;</code></td><td>Biểu thị phím bấm hoặc nhập từ bàn phím.</td></tr>
+          <tr><td><code>&lt;var&gt;</code></td><td>Biểu thị một biến trong toán/lập trình.</td></tr>
+          <tr><td><code>&lt;br&gt;</code></td><td>Ngắt dòng trong một đoạn.</td></tr>
+          <tr><td><code>&lt;label&gt;</code></td><td>Nhãn cho một trường nhập liệu.</td></tr>
+          <tr><td><code>&lt;input&gt;</code></td><td>Ô nhập liệu trong biểu mẫu.</td></tr>
+          <tr><td><code>&lt;button&gt;</code></td><td>Nút bấm.</td></tr>
+          <tr><td><code>&lt;select&gt;</code></td><td>Danh sách lựa chọn (dropdown).</td></tr>
+          <tr><td><code>&lt;textarea&gt;</code></td><td>Ô nhập văn bản nhiều dòng.</td></tr>
+          <tr><td><code>&lt;map&gt;</code></td><td>Bản đồ ảnh với các vùng có thể bấm.</td></tr>
+          <tr><td><code>&lt;object&gt;</code></td><td>Nhúng tài nguyên ngoài (PDF, media...).</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="compare">Bảng so sánh Block vs Inline</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Tiêu chí</th><th>Phần tử khối (block)</th><th>Phần tử nội tuyến (inline)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Vị trí bắt đầu</td><td>Luôn trên dòng mới</td><td>Nằm cùng dòng với nội dung quanh nó</td></tr>
+          <tr><td>Chiều rộng</td><td>Chiếm trọn chiều rộng cha</td><td>Chỉ rộng bằng nội dung</td></tr>
+          <tr><td>width / height</td><td>Đặt được</td><td>Thường không có tác dụng</td></tr>
+          <tr><td>margin / padding</td><td>Mọi phía đều hiệu lực</td><td>Chỉ ngang (trái/phải) hiệu lực rõ rệt</td></tr>
+          <tr><td>Chứa phần tử khác</td><td>Chứa được cả block lẫn inline</td><td>Chỉ nên chứa inline / văn bản</td></tr>
+          <tr><td>Ví dụ tiêu biểu</td><td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code></td><td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="intro-example">Ví dụ phân biệt block và inline</h2>
+      <p>
+        Thẻ <code>&lt;div&gt;</code> (block) chiếm trọn một dòng, còn <code>&lt;a&gt;</code> (inline) chảy
+        ngay trong câu mà không ngắt mạch:
+      </p>
+      <div id="mini-introex"></div>
+
+      <h2 id="div">Thẻ <code>&lt;div&gt;</code></h2>
+      <p>
+        <code>&lt;div&gt;</code> là phần tử khối, dùng làm <strong>vùng chứa (container)</strong> cho các
+        phần tử HTML khác — thường để nhóm nội dung lại nhằm bố cục hoặc tạo kiểu. Các thuộc tính hay dùng:
+        <code>style</code>, <code>class</code>, <code>id</code>.
+      </p>
+      <div id="mini-div"></div>
+
+      <h2 id="span">Thẻ <code>&lt;span&gt;</code></h2>
+      <p>
+        <code>&lt;span&gt;</code> là phần tử nội tuyến, dùng để <strong>khoanh vùng một đoạn nhỏ</strong>
+        bên trong dòng văn bản nhằm tạo kiểu riêng (vd đổi màu một từ). Thẻ này không có thuộc tính bắt buộc.
+      </p>
+      <div id="mini-span"></div>
+
+      <h2 id="nesting">Quy tắc lồng nhau</h2>
+      <ul>
+        <li>Phần tử <strong>khối</strong> có thể chứa cả phần tử khối lẫn nội tuyến.</li>
+        <li>Phần tử <strong>nội tuyến</strong> <em>không nên</em> chứa phần tử khối (vd đặt <code>&lt;div&gt;</code> bên trong <code>&lt;span&gt;</code> là sai chuẩn).</li>
+        <li>Ví dụ <strong>đúng</strong>: <code>&lt;p&gt;Xin chào &lt;strong&gt;bạn&lt;/strong&gt;&lt;/p&gt;</code></li>
+        <li>Ví dụ <strong>sai</strong>: <code>&lt;span&gt;&lt;div&gt;...&lt;/div&gt;&lt;/span&gt;</code></li>
+      </ul>
+      <div class="note">
+        <strong>Mẹo:</strong> Bạn có thể đổi kiểu hiển thị bằng CSS — <code>display: block</code>,
+        <code>display: inline</code> hoặc <code>display: inline-block</code> (vừa nằm cùng dòng vừa nhận
+        được width/height).
+      </div>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Phần tử <strong>khối (block)</strong> luôn bắt đầu trên dòng mới, chiếm trọn chiều rộng cha và hỗ
+        trợ đầy đủ box model (vd <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>).
+        Phần tử <strong>nội tuyến (inline)</strong> nằm trong mạch văn bản, chỉ rộng vừa đủ và bị giới hạn
+        box model (vd <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>). Phần
+        tử khối có thể chứa inline, nhưng inline không nên chứa block. Khi cần, dùng CSS
+        <code>display</code> để thay đổi hành vi mặc định.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="html-semantic-elements.html"><strong>Semantic Elements</strong></a> để dùng các phần tử
+        khối có ngữ nghĩa, và
+        <a href="html-text-formatting.html"><strong>Text Formatting</strong></a> cho các phần tử nội tuyến.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="html-text-formatting.html">HTML Text Formatting</a></li>
+          <li><a href="html-paragraphs.html">HTML Paragraphs</a></li>
+          <li><a href="html-semantic-elements.html">Semantic Elements</a></li>
+          <li><a href="html-attributes.html">HTML Attributes</a></li>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-block',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <div style="background:#e8f0fe; border:1px solid #1a73e8; padding:8px;">Phần tử khối 1</div>
+  <div style="background:#e8f0fe; border:1px solid #1a73e8; padding:8px;">Phần tử khối 2</div>
+  <p style="background:#fef7e0; border:1px solid #f9ab00; padding:8px;">p cũng là phần tử khối</p>
+</body>
+</html>`);
+
+    makeMini('mini-inline',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <span style="background:#e6f4ea; border:1px solid #34a853; padding:2px 6px;">inline 1</span>
+  <span style="background:#e6f4ea; border:1px solid #34a853; padding:2px 6px;">inline 2</span>
+  <a href="#" style="background:#fce8e6; border:1px solid #ea4335; padding:2px 6px;">liên kết inline</a>
+  — tất cả nằm cùng một dòng.
+</body>
+</html>`);
+
+    makeMini('mini-introex',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <div>HITech</div>
+  Hãy xem kênh
+  <a href="https://youtube.com"> chính thức </a>
+  của HITech để xem video các khóa học.
+</body>
+</html>`);
+
+    makeMini('mini-div',
+`<!DOCTYPE html>
+<html>
+<head>
+  <title>Phần tử khối</title>
+</head>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <div style="border:1px solid #ccc; padding:12px; border-radius:6px;">
+    <h1>HITech</h1>
+    <h3>HITech là cổng học cho lập trình viên.</h3>
+    <h3>Bạn có thể đánh giá và đóng góp bài viết tại đây.</h3>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-span',
+`<!DOCTYPE html>
+<html>
+<head>
+  <title>Thẻ span</title>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; padding:14px; }
+    h1 { color: green; }
+    span { color: #1a73e8; }
+  </style>
+</head>
+<body>
+  <h1>Hi<span> Tech </span>2026</h1>
+</body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <body style="font-family:Arial,sans-serif;">
+    <h1>Block và Inline</h1>
+    <div style="background:#e8f0fe; padding:8px;">Đây là div (block) — chiếm cả dòng.</div>
+    <p>
+      Đoạn văn có chữ
+      <span style="color:#1a73e8;">span (inline)</span>
+      và <strong>strong (inline)</strong> nằm cùng dòng.
+    </p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    // Cập nhật trực tiếp khi gõ (debounce nhẹ)
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    // Khởi tạo
+    resetCode();
+  </script>
+</body>
+</html>

@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="CSS Combinators: combinator hậu duệ, con, anh em liền kề và anh em chung, kèm ví dụ chạy trực tiếp." />
-<title>CSS Combinators - HITech</title>
+<title>HTML Headings - Thẻ tiêu đề trong HTML - HITech</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,7 +31,7 @@
   <nav class="subbar">
     <div class="subbar-inner">
       <div class="subbar-item">
-        <a href="index.html#html-basic">HTML</a>
+        <a href="index.html#html-basic" class="active">HTML</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">HTML Basic</span>
@@ -91,7 +90,7 @@
         </div>
       </div>
       <div class="subbar-item">
-        <a href="index.html#css" class="active">CSS</a>
+        <a href="index.html#css">CSS</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">CSS Basic</span>
@@ -132,25 +131,27 @@
     <aside class="toc">
       <h3>Mục lục</h3>
       <ul>
-        <li><a href="#intro" class="active">Combinator là gì?</a></li>
-        <li><a href="#types">4 loại combinator</a></li>
-        <li><a href="#descendant">Descendant ( )</a></li>
-        <li><a href="#child">Child (&gt;)</a></li>
-        <li><a href="#adjacent">Adjacent sibling (+)</a></li>
-        <li><a href="#general">General sibling (~)</a></li>
-        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#intro" class="active">Tiêu đề là gì?</a></li>
+        <li><a href="#levels">6 cấp tiêu đề (h1–h6)</a></li>
+        <li><a href="#example">Ví dụ cơ bản</a></li>
+        <li><a href="#why">Vì sao tiêu đề quan trọng?</a></li>
+        <li><a href="#style">Tùy chỉnh bằng CSS</a></li>
+        <li><a href="#hierarchy">Thứ bậc &amp; cấu trúc</a></li>
+        <li><a href="#vs-bold">Tiêu đề khác chữ in đậm</a></li>
+        <li><a href="#bestpractices">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
 
     <!-- Main article -->
     <main class="article">
-      <div class="crumbs">Home » CSS » CSS Basic » CSS Combinators</div>
-      <h1>CSS Combinators</h1>
+      <div class="crumbs">Home » HTML » HTML Headings</div>
+      <h1>HTML Headings — Thẻ tiêu đề trong HTML</h1>
       <div class="meta">
-        <span class="lvl">Cấp độ: Trung bình</span>
-        <span>Cập nhật: 16/06/2026</span>
-        <span>180K lượt đọc</span>
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>262K lượt đọc</span>
         <div class="actions">
           <button onclick="toggleLike(this)">Like</button>
           <button>Lưu</button>
@@ -159,85 +160,97 @@
       </div>
 
       <p id="intro">
-        <strong>Combinator (toán tử kết hợp)</strong> trong CSS là ký hiệu dùng để
-        <strong>kết hợp nhiều bộ chọn</strong>, qua đó mô tả <strong>mối quan hệ</strong> giữa các phần
-        tử trong cây HTML. Thay vì chọn phần tử một cách riêng lẻ, combinator giúp bạn chọn phần tử
-        dựa trên vị trí của nó so với phần tử khác (cha–con, anh em...). CSS có <strong>4 loại
-        combinator</strong> chính.
+        <strong>Tiêu đề HTML (HTML Headings)</strong> dùng để xác định <strong>tiêu đề</strong> và
+        <strong>tiêu đề phụ</strong> cho các phần của trang web. Chúng giúp <strong>sắp xếp nội dung</strong>
+        và tạo nên một cấu trúc dễ điều hướng, dễ đọc cho cả người dùng lẫn công cụ tìm kiếm.
       </p>
 
       <div class="note">
-        <strong>Ghi nhớ:</strong> Combinator nằm <em>giữa</em> hai bộ chọn, ví dụ <code>A B</code>,
-        <code>A &gt; B</code>, <code>A + B</code>, <code>A ~ B</code>.
+        <strong>Lưu ý:</strong> Thẻ HTML <em>không phân biệt hoa thường</em>, nhưng nên viết
+        <strong>chữ thường</strong> để nhất quán (vd dùng <code>&lt;h1&gt;</code> thay vì <code>&lt;H1&gt;</code>).
       </div>
 
-      <h2 id="types">4 loại combinator trong CSS</h2>
+      <h2 id="levels">Sáu cấp tiêu đề (h1 – h6)</h2>
+      <p>HTML có <strong>6 cấp tiêu đề</strong>, cỡ chữ và mức độ quan trọng giảm dần từ h1 đến h6:</p>
       <table class="cmp">
         <thead>
-          <tr><th>Combinator</th><th>Ký hiệu</th><th>Ý nghĩa</th></tr>
+          <tr><th>Thẻ</th><th>Vai trò</th></tr>
         </thead>
         <tbody>
-          <tr><td>Descendant (hậu duệ)</td><td><code>(dấu cách)</code></td><td>Chọn mọi phần tử con cháu (bất kỳ cấp nào) bên trong phần tử khác.</td></tr>
-          <tr><td>Child (con)</td><td><code>&gt;</code></td><td>Chỉ chọn phần tử là <strong>con trực tiếp</strong>.</td></tr>
-          <tr><td>Adjacent sibling (anh em liền kề)</td><td><code>+</code></td><td>Chọn phần tử đứng <strong>ngay sau</strong> và cùng cấp.</td></tr>
-          <tr><td>General sibling (anh em chung)</td><td><code>~</code></td><td>Chọn <strong>mọi phần tử cùng cấp</strong> đứng sau.</td></tr>
+          <tr><td><code>&lt;h1&gt;</code></td><td>Tiêu đề <strong>chính</strong> của trang — nêu chủ đề quan trọng nhất. Nên dùng <strong>duy nhất một</strong> trên mỗi trang.</td></tr>
+          <tr><td><code>&lt;h2&gt;</code></td><td>Tiêu đề các <strong>phần lớn</strong> của nội dung.</td></tr>
+          <tr><td><code>&lt;h3&gt;</code></td><td>Tiêu đề phụ bên trong một phần <code>&lt;h2&gt;</code>.</td></tr>
+          <tr><td><code>&lt;h4&gt;</code></td><td>Tiêu đề nhỏ hơn nữa, chia nhỏ phần <code>&lt;h3&gt;</code>.</td></tr>
+          <tr><td><code>&lt;h5&gt;</code></td><td>Tiêu đề phụ ít quan trọng.</td></tr>
+          <tr><td><code>&lt;h6&gt;</code></td><td>Tiêu đề <strong>nhỏ nhất</strong>, mức quan trọng thấp nhất.</td></tr>
         </tbody>
       </table>
 
-      <h2 id="descendant">1. Descendant combinator ( )</h2>
-      <p>
-        Viết bằng <strong>dấu cách</strong> giữa hai selector. Chọn tất cả phần tử khớp nằm bên trong
-        phần tử cha — ở <strong>bất kỳ cấp nào</strong>.
-      </p>
-      <pre><code>/* Mọi &lt;p&gt; bên trong &lt;div&gt; (kể cả lồng sâu) */
-div p {
-  color: blue;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Đoạn <code>&lt;p&gt;</code> lồng sâu trong <code>&lt;section&gt;</code> có bị đổi màu không? Thử thêm một <code>&lt;p&gt;</code> nữa để kiểm chứng.</p>
-      <div id="mini-desc"></div>
+      <h2 id="example">Ví dụ cơ bản</h2>
+      <p>Sáu cấp tiêu đề hiển thị với cỡ chữ giảm dần. Hãy thử chỉnh sửa và chạy lại:</p>
+      <div id="mini-levels"></div>
 
-      <h2 id="child">2. Child combinator (&gt;)</h2>
-      <p>
-        Chỉ chọn phần tử là <strong>con trực tiếp</strong> của phần tử cha (không tính cháu, chắt).
-      </p>
-      <pre><code>/* Chỉ &lt;p&gt; là con trực tiếp của &lt;div&gt; */
-div &gt; p {
-  color: green;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> là con trực tiếp đổi màu, còn <code>&lt;p&gt;</code> nằm trong <code>&lt;section&gt;</code> thì không. Thử đổi <code>&gt;</code> thành dấu cách để thấy khác biệt.</p>
-      <div id="mini-child"></div>
+      <h2 id="why">Vì sao tiêu đề quan trọng?</h2>
+      <ul>
+        <li><strong>Khả năng đọc:</strong> chia nội dung thành các phần rõ ràng, dễ theo dõi.</li>
+        <li><strong>SEO:</strong> công cụ tìm kiếm dựa vào tiêu đề để hiểu cấu trúc trang, giúp xếp hạng tốt hơn.</li>
+        <li><strong>Trợ năng (Accessibility):</strong> trình đọc màn hình dùng tiêu đề để giúp người khiếm thị điều hướng nhanh giữa các phần.</li>
+        <li><strong>Điều hướng:</strong> là cơ sở để tạo mục lục (table of contents) tự động.</li>
+      </ul>
 
-      <h2 id="adjacent">3. Adjacent sibling combinator (+)</h2>
+      <h2 id="style">Tùy chỉnh tiêu đề bằng CSS</h2>
       <p>
-        Chọn phần tử đứng <strong>ngay liền sau</strong> một phần tử khác và <strong>cùng cấp</strong>
-        (cùng phần tử cha). Chỉ chọn <strong>một</strong> phần tử ngay kề.
+        Có thể đổi cỡ chữ, màu sắc... của tiêu đề bằng thuộc tính <code>style</code> hoặc CSS. Ví dụ thay
+        đổi cỡ chữ của <code>&lt;h1&gt;</code>:
       </p>
-      <pre><code>/* &lt;p&gt; đứng ngay sau &lt;h2&gt; */
-h2 + p {
-  font-weight: bold;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> ngay liền sau <code>&lt;h2&gt;</code> được in đậm. Thử đổi vị trí các đoạn để xem đoạn nào bị ảnh hưởng.</p>
-      <div id="mini-adj"></div>
+      <div id="mini-style"></div>
 
-      <h2 id="general">4. General sibling combinator (~)</h2>
+      <h2 id="hierarchy">Thứ bậc và cấu trúc</h2>
       <p>
-        Chọn <strong>tất cả</strong> phần tử cùng cấp đứng <strong>sau</strong> một phần tử khác (không
-        nhất thiết liền kề).
+        Hãy dùng tiêu đề theo <strong>thứ tự logic</strong> (<code>h1</code> → <code>h2</code> →
+        <code>h3</code>...), không nhảy cóc cấp bậc chỉ vì cỡ chữ. Sơ đồ dưới đây minh hoạ một cấu trúc
+        tiêu đề hợp lý:
       </p>
-      <pre><code>/* Mọi &lt;p&gt; đứng sau &lt;h2&gt; (cùng cấp) */
-h2 ~ p {
-  color: purple;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Tất cả <code>&lt;p&gt;</code> cùng cấp đứng sau <code>&lt;h2&gt;</code> đổi màu. Thử thêm một <code>&lt;p&gt;</code> trước <code>&lt;h2&gt;</code> — nó có đổi màu không?</p>
-      <div id="mini-gen"></div>
+      <div class="diagram">
+        <div class="htmltree">
+          <div class="leaf"><span class="tag">&lt;h1&gt;</span> Tiêu đề chính của trang <span class="tag">&lt;/h1&gt;</span></div>
+          <div class="box">
+            <span class="tag">&lt;h2&gt;</span> Phần lớn thứ nhất <span class="tag">&lt;/h2&gt;</span>
+            <div class="leaf"><span class="tag">&lt;h3&gt;</span> Mục con A <span class="tag">&lt;/h3&gt;</span></div>
+            <div class="leaf"><span class="tag">&lt;h3&gt;</span> Mục con B <span class="tag">&lt;/h3&gt;</span></div>
+          </div>
+          <div class="box">
+            <span class="tag">&lt;h2&gt;</span> Phần lớn thứ hai <span class="tag">&lt;/h2&gt;</span>
+            <div class="leaf"><span class="tag">&lt;h3&gt;</span> Mục con C <span class="tag">&lt;/h3&gt;</span></div>
+          </div>
+        </div>
+        <div class="cap">Thứ bậc tiêu đề hợp lý: h1 → h2 → h3</div>
+      </div>
 
-      <h2 id="tryit">Thử ngay — các combinator hoạt động</h2>
+      <h2 id="vs-bold">Tiêu đề khác với chữ in đậm</h2>
       <p>
-        Ví dụ dưới minh họa cả 4 combinator. Sửa CSS bên trái và xem phần tử nào bị ảnh hưởng bên phải.
+        Đừng dùng thẻ tiêu đề chỉ để làm chữ <strong>to/đậm</strong>. Tiêu đề mang <strong>ý nghĩa cấu
+        trúc</strong> (semantic), còn in đậm chỉ là trình bày. Để nhấn mạnh hãy dùng <code>&lt;strong&gt;</code>
+        hoặc CSS, không lạm dụng <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>. So sánh:
+      </p>
+      <div id="mini-vsbold"></div>
+
+      <h2 id="bestpractices">Thực hành tốt</h2>
+      <ul>
+        <li>Chỉ dùng <strong>một <code>&lt;h1&gt;</code></strong> mỗi trang để giữ rõ ràng độ ưu tiên nội dung.</li>
+        <li>Duy trì <strong>thứ bậc logic</strong> (<code>h1</code> → <code>h2</code> → <code>h3</code>), không bỏ qua cấp.</li>
+        <li>Tiêu đề nên <strong>mô tả đúng</strong> và liên quan đến nội dung phía sau.</li>
+        <li><strong>Không</strong> dùng thẻ tiêu đề chỉ để tạo kiểu hay nhấn mạnh.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
       </p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>CSS Combinators Editor</span>
+          <span>HTML Editor</span>
           <span>
             <button onclick="runCode()">Chạy</button>
             <button onclick="resetCode()">Đặt lại</button>
@@ -245,7 +258,7 @@ h2 ~ p {
         </div>
         <div class="tryit-panes">
           <div>
-            <span class="lbl">Mã HTML + CSS</span>
+            <span class="lbl">Mã HTML</span>
             <textarea id="htmlInput" spellcheck="false"></textarea>
           </div>
           <div>
@@ -257,41 +270,42 @@ h2 ~ p {
 
       <h2 id="summary">Tóm tắt</h2>
       <p>
-        Combinator giúp chọn phần tử dựa trên quan hệ trong cây HTML. CSS có 4 loại:
-        <strong>descendant</strong> (dấu cách), <strong>child</strong> (<code>&gt;</code>),
-        <strong>adjacent sibling</strong> (<code>+</code>) và <strong>general sibling</strong>
-        (<code>~</code>). Nắm vững combinator giúp bạn viết bộ chọn chính xác và gọn gàng hơn, hạn chế
-        lạm dụng class thừa.
+        Thẻ tiêu đề <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> xác định tiêu đề và tiêu đề phụ, giúp
+        sắp xếp nội dung theo thứ bậc rõ ràng. <code>&lt;h1&gt;</code> quan trọng nhất (mỗi trang nên có
+        một), <code>&lt;h6&gt;</code> nhỏ nhất. Tiêu đề mang ý nghĩa cấu trúc — quan trọng cho khả năng
+        đọc, SEO và trợ năng — nên đừng dùng chúng chỉ để tạo kiểu. Hãy giữ thứ bậc logic và nội dung mô
+        tả đúng.
       </p>
 
       <div class="note">
-        <strong>Bước tiếp theo:</strong> Tìm hiểu về <strong>pseudo-class</strong> (như
-        <code>:hover</code>, <code>:first-child</code>) để chọn phần tử theo trạng thái và vị trí.
+        <strong>Bước tiếp theo:</strong> Xem thêm
+        <a href="html-attributes.html"><strong>HTML Attributes</strong></a> và
+        <a href="html-semantic-elements.html"><strong>Semantic Elements</strong></a> để cấu trúc trang tốt hơn.
       </div>
     </main>
 
     <!-- Right rail -->
     <aside class="rail">
       <div class="ad">
-        <h4>Khóa học CSS</h4>
-        <p>Thành thạo selector, combinator và bố cục CSS hiện đại.</p>
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
         <button>Đăng ký ngay</button>
       </div>
       <div class="rail-card">
         <h4>Bài viết liên quan</h4>
         <ul>
-          <li><a href="css-introduction.html">CSS Introduction</a></li>
-          <li><a href="css-syntax.html">CSS Syntax</a></li>
-          <li><a href="#">CSS Selectors</a></li>
-          <li><a href="#">CSS Pseudo-classes</a></li>
+          <li><a href="html-introduction.html">HTML Introduction</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
+          <li><a href="html-attributes.html">HTML Attributes</a></li>
+          <li><a href="html-semantic-elements.html">Semantic Elements</a></li>
+          <li><a href="html-forms.html">HTML Forms</a></li>
         </ul>
       </div>
       <div class="rail-card">
         <h4>Chủ đề phổ biến</h4>
         <ul>
-          <li><a href="#">CSS</a></li>
           <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
           <li><a href="#">Web Technologies</a></li>
         </ul>
       </div>
@@ -363,62 +377,17 @@ h2 ~ p {
       btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
 
-    // ----- Trình soạn HTML + CSS trực tiếp -----
-    const sampleCode = `<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-
-    /* Descendant: mọi p trong .box */
-    .box p { color: #1a73e8; }
-
-    /* Child: chỉ li là con trực tiếp của ul */
-    ul > li { font-weight: bold; }
-
-    /* Adjacent sibling: p ngay sau h2 */
-    h2 + p { background: #e8f0fe; }
-
-    /* General sibling: mọi p sau h2 */
-    h2 ~ p { border-left: 3px solid #1a73e8; padding-left: 8px; }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h2>Tiêu đề</h2>
-    <p>Đoạn ngay sau h2 (adjacent + general).</p>
-    <p>Đoạn thứ hai (general sibling).</p>
-    <ul>
-      <li>Mục con trực tiếp</li>
-    </ul>
-  </div>
-</body>
-</html>`;
-
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-
-    let typingTimer;
-    input.addEventListener('input', () => {
-      clearTimeout(typingTimer);
-      typingTimer = setTimeout(runCode, 300);
-    });
-
-    resetCode();
-
-    // ----- Mini editor cho từng combinator -----
+    // ----- Mini editor chạy code trực tiếp -----
     function makeMini(hostId, code) {
       const host = document.getElementById(hostId);
+      if (!host) return;
       const wrap = document.createElement('div');
       wrap.className = 'mini';
       wrap.innerHTML =
         '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
         '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
         '<div class="mini-panes">' +
-        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
         '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
       const ta = wrap.querySelector('textarea');
       const fr = wrap.querySelector('iframe');
@@ -432,79 +401,77 @@ h2 ~ p {
       reset();
     }
 
-    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;line-height:1.6}</style>';
-
-    makeMini('mini-desc',
+    makeMini('mini-levels',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Descendant: mọi p bên trong div (mọi cấp) */
-  div p { color: blue; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Đoạn con trực tiếp của div.</p>
-    <section>
-      <p>Đoạn lồng sâu trong section.</p>
-    </section>
-  </div>
-  <p>Đoạn NGOÀI div (không đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h1>Tiêu đề chính (h1)</h1>
+  <h2>Tiêu đề phụ (h2)</h2>
+  <h3>Tiêu đề nhỏ hơn (h3)</h3>
+  <h4>Tiêu đề nhỏ nữa (h4)</h4>
+  <h5>Tiêu đề phụ (h5)</h5>
+  <h6>Tiêu đề nhỏ nhất (h6)</h6>
 </body>
 </html>`);
 
-    makeMini('mini-child',
+    makeMini('mini-style',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Child: chỉ p là con trực tiếp của div */
-  div > p { color: green; font-weight: bold; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Con trực tiếp của div (đổi màu).</p>
-    <section>
-      <p>p trong section (KHÔNG đổi màu).</p>
-    </section>
-  </div>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h1 style="font-size:50px;">h1 cỡ chữ mới.</h1>
+  <h2 style="color:#2da44e;">h2 đổi màu xanh.</h2>
+  <h3 style="text-align:center;">h3 căn giữa.</h3>
 </body>
 </html>`);
 
-    makeMini('mini-adj',
+    makeMini('mini-vsbold',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Adjacent sibling: p ngay liền sau h2 */
-  h2 + p { background: #e8f0fe; padding: 6px; }
-</style>
-</head>
-<body>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn NGAY sau h2 (được tô nền).</p>
-  <p>Đoạn thứ hai (không tô).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <!-- Đúng: tiêu đề mang ý nghĩa cấu trúc -->
+  <h2>Đây là một tiêu đề thật (h2)</h2>
+
+  <!-- Nhấn mạnh trong đoạn văn: dùng strong, KHÔNG dùng h2 -->
+  <p>Đoạn văn có chữ <strong>được nhấn mạnh</strong> bằng thẻ strong.</p>
 </body>
 </html>`);
 
-    makeMini('mini-gen',
-`<!DOCTYPE html>
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* General sibling: mọi p cùng cấp đứng sau h2 */
-  h2 ~ p { color: purple; }
-</style>
-</head>
-<body>
-  <p>Đoạn TRƯỚC h2 (không đổi màu).</p>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn sau h2 (đổi màu).</p>
-  <p>Đoạn nữa sau h2 (đổi màu).</p>
-</body>
-</html>`);
+  <head>
+    <title>Tiêu đề của tôi</title>
+  </head>
+  <body>
+    <h1>Trang học HTML</h1>
+    <h2>Phần 1: Giới thiệu</h2>
+    <p>Nội dung phần giới thiệu...</p>
+    <h2>Phần 2: Chi tiết</h2>
+    <h3>2.1 Mục con</h3>
+    <p>Nội dung mục con...</p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    // Cập nhật trực tiếp khi gõ (debounce nhẹ)
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    // Khởi tạo
+    resetCode();
   </script>
 </body>
 </html>

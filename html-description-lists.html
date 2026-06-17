@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Giới thiệu CSS: CSS là gì, cú pháp, ba cách chèn CSS (inline, internal, external), bộ chọn và ví dụ chạy trực tiếp." />
-<title>CSS Introduction - Giới thiệu CSS - HITech</title>
+<title>HTML Description Lists - Danh sách mô tả - HITech</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,7 +31,7 @@
   <nav class="subbar">
     <div class="subbar-inner">
       <div class="subbar-item">
-        <a href="index.html#html-basic">HTML</a>
+        <a href="index.html#html-basic" class="active">HTML</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">HTML Basic</span>
@@ -91,7 +90,7 @@
         </div>
       </div>
       <div class="subbar-item">
-        <a href="index.html#css" class="active">CSS</a>
+        <a href="index.html#css">CSS</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">CSS Basic</span>
@@ -132,24 +131,26 @@
     <aside class="toc">
       <h3>Mục lục</h3>
       <ul>
-        <li><a href="#intro" class="active">CSS là gì?</a></li>
-        <li><a href="#why">Tại sao dùng CSS?</a></li>
-        <li><a href="#syntax">Cú pháp CSS</a></li>
-        <li><a href="#types">3 cách chèn CSS</a></li>
-        <li><a href="#selectors">Bộ chọn (Selectors)</a></li>
-        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#intro" class="active">Danh sách mô tả là gì?</a></li>
+        <li><a href="#tags">Ba thẻ dl, dt, dd</a></li>
+        <li><a href="#syntax">Cú pháp &amp; ví dụ cơ bản</a></li>
+        <li><a href="#multiple">Nhiều mô tả cho một thuật ngữ</a></li>
+        <li><a href="#nested">Danh sách mô tả lồng nhau</a></li>
+        <li><a href="#style">Tạo kiểu bằng CSS</a></li>
+        <li><a href="#usecases">Ứng dụng thực tế</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
 
     <!-- Main article -->
     <main class="article">
-      <div class="crumbs">Home » CSS » CSS Introduction</div>
-      <h1>CSS Introduction — Giới thiệu CSS</h1>
+      <div class="crumbs">Home » HTML » HTML Description Lists</div>
+      <h1>HTML Description Lists — Danh sách mô tả</h1>
       <div class="meta">
         <span class="lvl">Cấp độ: Cơ bản</span>
-        <span>Cập nhật: 16/06/2026</span>
-        <span>300K lượt đọc</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>164K lượt đọc</span>
         <div class="actions">
           <button onclick="toggleLike(this)">Like</button>
           <button>Lưu</button>
@@ -158,95 +159,71 @@
       </div>
 
       <p id="intro">
-        <strong>CSS (Cascading Style Sheets)</strong> là ngôn ngữ dùng để <strong>trình bày và tạo
-        kiểu</strong> cho tài liệu HTML. Nếu HTML quyết định <em>cấu trúc</em> và <em>nội dung</em> của
-        trang, thì CSS quyết định <em>diện mạo</em> — màu sắc, phông chữ, khoảng cách, bố cục và hiệu
-        ứng. Nhờ CSS, ta có thể tách biệt nội dung (HTML) khỏi phần trình bày, giúp mã gọn gàng và dễ
-        bảo trì hơn.
+        <strong>Danh sách mô tả (Description List)</strong> dùng để biểu diễn các cặp
+        <strong>thuật ngữ – định nghĩa</strong> hoặc <strong>tên – giá trị</strong> theo cấu trúc rõ ràng.
+        Nó nhóm dữ liệu liên quan một cách có ngữ nghĩa, cải thiện khả năng đọc và hỗ trợ tốt cho trình
+        đọc màn hình (accessibility).
       </p>
 
       <div class="note">
-        <strong>Cascading (xếp tầng)</strong> nghĩa là khi nhiều quy tắc cùng áp dụng cho một phần tử,
-        trình duyệt sẽ quyết định quy tắc nào thắng dựa trên <strong>độ ưu tiên</strong> (specificity)
-        và thứ tự khai báo.
-      </p>
-
-      <h2 id="why">Tại sao nên dùng CSS?</h2>
-      <ul>
-        <li><strong>Tách nội dung khỏi trình bày:</strong> HTML lo cấu trúc, CSS lo giao diện.</li>
-        <li><strong>Tái sử dụng:</strong> Một file CSS có thể áp dụng cho nhiều trang cùng lúc.</li>
-        <li><strong>Dễ bảo trì:</strong> Đổi giao diện cả website chỉ bằng cách sửa một nơi.</li>
-        <li><strong>Responsive:</strong> Giúp trang hiển thị đẹp trên mọi kích thước màn hình.</li>
-        <li><strong>Tải nhanh hơn:</strong> Giảm lặp mã, trình duyệt cache file CSS dùng chung.</li>
-      </ul>
-
-      <h2 id="syntax">Cú pháp CSS</h2>
-      <p>Một quy tắc CSS gồm <strong>bộ chọn (selector)</strong> và <strong>khối khai báo</strong>:</p>
-      <pre><code>selector {
-  property: value;   /* một khai báo */
-  property: value;
-}
-
-/* Ví dụ cụ thể */
-h1 {
-  color: blue;
-  font-size: 24px;
-}</code></pre>
-      <ul>
-        <li><strong>Selector:</strong> chọn phần tử HTML cần tạo kiểu (ví dụ <code>h1</code>).</li>
-        <li><strong>Property:</strong> thuộc tính muốn thay đổi (ví dụ <code>color</code>).</li>
-        <li><strong>Value:</strong> giá trị áp dụng (ví dụ <code>blue</code>).</li>
-        <li>Mỗi khai báo kết thúc bằng dấu chấm phẩy <code>;</code>.</li>
-      </ul>
-
-      <h2 id="types">Ba cách chèn CSS vào trang</h2>
-
-      <h3>1. Inline CSS — trực tiếp trên phần tử</h3>
-      <p>Dùng thuộc tính <code>style</code> ngay trong thẻ. Chỉ nên dùng cho trường hợp đặc biệt.</p>
-      <pre><code>&lt;p style="color: red; font-size: 18px;"&gt;Đoạn văn màu đỏ&lt;/p&gt;</code></pre>
-
-      <h3>2. Internal CSS — trong thẻ &lt;style&gt;</h3>
-      <p>Đặt trong <code>&lt;style&gt;</code> ở phần <code>&lt;head&gt;</code>, áp dụng cho cả trang đó.</p>
-      <pre><code>&lt;head&gt;
-  &lt;style&gt;
-    p { color: green; }
-  &lt;/style&gt;
-&lt;/head&gt;</code></pre>
-
-      <h3>3. External CSS — file .css riêng</h3>
-      <p>Cách phổ biến nhất: viết CSS ở file riêng rồi liên kết bằng thẻ <code>&lt;link&gt;</code>.</p>
-      <pre><code>&lt;head&gt;
-  &lt;link rel="stylesheet" href="styles.css"&gt;
-&lt;/head&gt;</code></pre>
-      <div class="note">
-        <strong>Khuyến nghị:</strong> Dùng <strong>External CSS</strong> cho dự án thực tế vì dễ tái
-        sử dụng và bảo trì — giống như chính trang web HITech này đang dùng chung một file
-        <code>styles.css</code>.
+        <strong>Lợi ích:</strong> tổ chức dữ liệu theo cặp thuật ngữ–mô tả, tăng ý nghĩa ngữ nghĩa, hỗ trợ
+        trợ năng, và cho phép <strong>nhiều mô tả</strong> cho cùng một thuật ngữ.
       </div>
 
-      <h2 id="selectors">Một số bộ chọn (Selector) cơ bản</h2>
+      <h2 id="tags">Ba thẻ tạo nên danh sách mô tả</h2>
       <table class="cmp">
         <thead>
-          <tr><th>Bộ chọn</th><th>Chọn gì</th><th>Ví dụ</th></tr>
+          <tr><th>Thẻ</th><th>Vai trò</th></tr>
         </thead>
         <tbody>
-          <tr><td>Phần tử</td><td>Mọi thẻ cùng loại</td><td><code>p { }</code></td></tr>
-          <tr><td>Class</td><td>Phần tử có class tương ứng</td><td><code>.box { }</code></td></tr>
-          <tr><td>ID</td><td>Phần tử có id duy nhất</td><td><code>#header { }</code></td></tr>
-          <tr><td>Nhóm</td><td>Nhiều selector cùng kiểu</td><td><code>h1, h2 { }</code></td></tr>
-          <tr><td>Hậu duệ</td><td>Phần tử nằm bên trong phần tử khác</td><td><code>div p { }</code></td></tr>
-          <tr><td>Universal</td><td>Tất cả phần tử</td><td><code>* { }</code></td></tr>
+          <tr><td><code>&lt;dl&gt;</code></td><td>Vùng chứa bao toàn bộ danh sách mô tả (description list).</td></tr>
+          <tr><td><code>&lt;dt&gt;</code></td><td>Xác định một <strong>thuật ngữ</strong> / nhãn (description term).</td></tr>
+          <tr><td><code>&lt;dd&gt;</code></td><td>Cung cấp <strong>định nghĩa</strong> / mô tả cho thuật ngữ tương ứng (description details).</td></tr>
         </tbody>
       </table>
 
-      <h2 id="tryit">Thử ngay — viết HTML + CSS</h2>
+      <h2 id="syntax">Cú pháp và ví dụ cơ bản</h2>
+      <pre><code>&lt;dl&gt;
+  &lt;dt&gt;Thuật ngữ&lt;/dt&gt;
+  &lt;dd&gt;Định nghĩa của thuật ngữ&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      <div id="mini-basic"></div>
+
+      <h2 id="multiple">Nhiều mô tả cho một thuật ngữ</h2>
       <p>
-        Chỉnh sửa mã bên trái (gồm cả HTML và CSS trong thẻ <code>&lt;style&gt;</code>), kết quả hiển
-        thị ngay bên phải. Thử đổi màu, cỡ chữ, khoảng cách xem sao!
+        Một <code>&lt;dt&gt;</code> có thể đi kèm <strong>nhiều</strong> <code>&lt;dd&gt;</code> — hữu ích
+        khi một thuật ngữ cần nhiều dòng giải thích:
+      </p>
+      <div id="mini-multiple"></div>
+
+      <h2 id="nested">Danh sách mô tả lồng nhau</h2>
+      <p>
+        Có thể đặt một <code>&lt;dl&gt;</code> bên trong một <code>&lt;dd&gt;</code> để tổ chức thông tin
+        theo phân cấp:
+      </p>
+      <div id="mini-nested"></div>
+
+      <h2 id="style">Tạo kiểu bằng CSS</h2>
+      <p>Thường tô đậm thuật ngữ và thụt lề phần mô tả để dễ đọc hơn:</p>
+      <div id="mini-style"></div>
+
+      <h2 id="usecases">Ứng dụng thực tế</h2>
+      <ul>
+        <li><strong>FAQ:</strong> ghép câu hỏi với câu trả lời một cách gọn gàng, dễ đọc.</li>
+        <li><strong>Bảng chú giải (glossary):</strong> hiển thị thuật ngữ kỹ thuật kèm định nghĩa.</li>
+        <li><strong>Thông tin sản phẩm:</strong> liệt kê tính năng, giá, thông số một cách có hệ thống.</li>
+        <li><strong>Tài liệu kỹ thuật:</strong> ánh xạ tham số/thuộc tính với mô tả.</li>
+        <li><strong>Metadata:</strong> hiển thị cặp khóa–giá trị như tác giả, ngày, phiên bản.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
       </p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>CSS Editor</span>
+          <span>HTML Editor</span>
           <span>
             <button onclick="runCode()">Chạy</button>
             <button onclick="resetCode()">Đặt lại</button>
@@ -254,7 +231,7 @@ h1 {
         </div>
         <div class="tryit-panes">
           <div>
-            <span class="lbl">Mã HTML + CSS</span>
+            <span class="lbl">Mã HTML</span>
             <textarea id="htmlInput" spellcheck="false"></textarea>
           </div>
           <div>
@@ -266,40 +243,42 @@ h1 {
 
       <h2 id="summary">Tóm tắt</h2>
       <p>
-        CSS là ngôn ngữ tạo kiểu cho web, làm việc cùng HTML để tạo nên giao diện trang. Một quy tắc
-        CSS gồm selector và các cặp <code>property: value</code>. Có ba cách chèn CSS — inline,
-        internal và external — trong đó <strong>external CSS</strong> được khuyên dùng nhất. Nắm vững
-        cú pháp và các bộ chọn cơ bản là bước khởi đầu để làm chủ thiết kế giao diện web.
+        Danh sách mô tả dùng <code>&lt;dl&gt;</code> bao quanh các cặp <code>&lt;dt&gt;</code> (thuật ngữ)
+        và <code>&lt;dd&gt;</code> (định nghĩa). Một thuật ngữ có thể có nhiều <code>&lt;dd&gt;</code>, và
+        các <code>&lt;dl&gt;</code> có thể lồng nhau. Đây là lựa chọn ngữ nghĩa lý tưởng cho FAQ, bảng chú
+        giải, thông tin sản phẩm, tài liệu kỹ thuật và metadata.
       </p>
 
       <div class="note">
-        <strong>Bước tiếp theo:</strong> Tìm hiểu về <strong>Box Model</strong>, <strong>màu sắc &amp;
-        đơn vị</strong>, và <strong>Flexbox/Grid</strong> để dựng bố cục trang.
+        <strong>Xem thêm:</strong>
+        <a href="html-ordered-lists.html"><strong>Ordered Lists</strong></a>,
+        <a href="html-unordered-lists.html"><strong>Unordered Lists</strong></a> và
+        <a href="html-lists.html"><strong>HTML Lists (tổng quan)</strong></a>.
       </div>
     </main>
 
     <!-- Right rail -->
     <aside class="rail">
       <div class="ad">
-        <h4>Khóa học CSS</h4>
-        <p>Học CSS từ cơ bản đến nâng cao: bố cục, responsive và hiệu ứng.</p>
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
         <button>Đăng ký ngay</button>
       </div>
       <div class="rail-card">
         <h4>Bài viết liên quan</h4>
         <ul>
+          <li><a href="html-lists.html">HTML Lists (tổng quan)</a></li>
+          <li><a href="html-ordered-lists.html">Ordered Lists</a></li>
+          <li><a href="html-unordered-lists.html">Unordered Lists</a></li>
+          <li><a href="html-block-inline.html">Block &amp; Inline Elements</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
-          <li><a href="html-semantic-elements.html">Semantic Elements HTML5</a></li>
-          <li><a href="#">CSS Box Model</a></li>
-          <li><a href="#">CSS Flexbox</a></li>
-          <li><a href="web-browser.html">Trình duyệt web là gì?</a></li>
         </ul>
       </div>
       <div class="rail-card">
         <h4>Chủ đề phổ biến</h4>
         <ul>
-          <li><a href="#">CSS</a></li>
           <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
           <li><a href="#">Web Technologies</a></li>
         </ul>
       </div>
@@ -371,45 +350,125 @@ h1 {
       btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
 
-    // ----- Trình soạn HTML + CSS trực tiếp -----
-    const sampleCode = `<!DOCTYPE html>
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-basic',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h2>Danh sách mô tả</h2>
+  <dl>
+    <dt>HTML</dt>
+    <dd>HyperText Markup Language</dd>
+    <dt>CSS</dt>
+    <dd>Cascading Style Sheets</dd>
+    <dt>JavaScript</dt>
+    <dd>Ngôn ngữ kịch bản cho trang web</dd>
+  </dl>
+</body>
+</html>`);
+
+    makeMini('mini-multiple',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <dl>
+    <dt>Cà phê</dt>
+    <dd>Thức uống nóng từ hạt cà phê rang.</dd>
+    <dd>Chứa caffeine giúp tỉnh táo.</dd>
+    <dt>Espresso</dt>
+    <dd>Cà phê đậm pha bằng hơi nước qua bột cà phê.</dd>
+  </dl>
+</body>
+</html>`);
+
+    makeMini('mini-nested',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h3>Tổng quan công nghệ</h3>
+  <dl>
+    <dt>Phần cứng</dt>
+    <dd>Thiết bị vật lý</dd>
+    <dd>
+      <dl>
+        <dt>CPU</dt>
+        <dd>Bộ xử lý</dd>
+        <dt>GPU</dt>
+        <dd>Đồ họa</dd>
+      </dl>
+    </dd>
+    <dt>Phần mềm</dt>
+    <dd>Chương trình / ứng dụng</dd>
+  </dl>
+</body>
+</html>`);
+
+    makeMini('mini-style',
+`<!DOCTYPE html>
 <html>
 <head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-    h1 { color: #1a73e8; }
-    .box {
-      background: #e8f0fe;
-      color: #1557b0;
-      padding: 16px;
-      border-radius: 8px;
-      border-left: 4px solid #1a73e8;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      background: #1a73e8;
-      color: #fff;
-      padding: 8px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-  </style>
+<style>
+  dt { font-weight: bold; color: #1a73e8; margin-top: 8px; }
+  dd { margin-left: 24px; color: #444; }
+</style>
 </head>
-<body>
-  <h1>Xin chào CSS!</h1>
-  <div class="box">
-    <p>Đây là một khối được tạo kiểu bằng CSS.</p>
-    <a class="btn" href="#">Nút bấm</a>
-  </div>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <dl>
+    <dt>HTML</dt>
+    <dd>Ngôn ngữ đánh dấu để cấu trúc trang web.</dd>
+    <dt>CSS</dt>
+    <dd>Ngôn ngữ tạo kiểu cho trang web.</dd>
+  </dl>
 </body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Bảng chú giải</h2>
+    <dl>
+      <dt>API</dt>
+      <dd>Giao diện lập trình ứng dụng</dd>
+      <dt>DOM</dt>
+      <dd>Mô hình đối tượng tài liệu</dd>
+    </dl>
+  </body>
 </html>`;
 
     const input = document.getElementById('htmlInput');
     const preview = document.getElementById('preview');
 
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
 
     let typingTimer;
     input.addEventListener('input', () => {

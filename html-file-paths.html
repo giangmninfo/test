@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="CSS Combinators: combinator hậu duệ, con, anh em liền kề và anh em chung, kèm ví dụ chạy trực tiếp." />
-<title>CSS Combinators - HITech</title>
+<title>HTML File Paths - Đường dẫn tệp trong HTML - HITech</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,7 +31,7 @@
   <nav class="subbar">
     <div class="subbar-inner">
       <div class="subbar-item">
-        <a href="index.html#html-basic">HTML</a>
+        <a href="index.html#html-basic" class="active">HTML</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">HTML Basic</span>
@@ -91,7 +90,7 @@
         </div>
       </div>
       <div class="subbar-item">
-        <a href="index.html#css" class="active">CSS</a>
+        <a href="index.html#css">CSS</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">CSS Basic</span>
@@ -132,25 +131,29 @@
     <aside class="toc">
       <h3>Mục lục</h3>
       <ul>
-        <li><a href="#intro" class="active">Combinator là gì?</a></li>
-        <li><a href="#types">4 loại combinator</a></li>
-        <li><a href="#descendant">Descendant ( )</a></li>
-        <li><a href="#child">Child (&gt;)</a></li>
-        <li><a href="#adjacent">Adjacent sibling (+)</a></li>
-        <li><a href="#general">General sibling (~)</a></li>
-        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#intro" class="active">Đường dẫn tệp là gì?</a></li>
+        <li><a href="#types">Hai loại đường dẫn</a></li>
+        <li><a href="#absolute">Đường dẫn tuyệt đối</a></li>
+        <li><a href="#relative">Đường dẫn tương đối</a></li>
+        <li><a href="#same">Cùng thư mục</a></li>
+        <li><a href="#sub">Thư mục con</a></li>
+        <li><a href="#parent">Thư mục cha (..)</a></li>
+        <li><a href="#root">Gốc website (/)</a></li>
+        <li><a href="#table">Bảng tổng hợp</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
 
     <!-- Main article -->
     <main class="article">
-      <div class="crumbs">Home » CSS » CSS Basic » CSS Combinators</div>
-      <h1>CSS Combinators</h1>
+      <div class="crumbs">Home » HTML » HTML File Paths</div>
+      <h1>HTML File Paths — Đường dẫn tệp trong HTML</h1>
       <div class="meta">
-        <span class="lvl">Cấp độ: Trung bình</span>
-        <span>Cập nhật: 16/06/2026</span>
-        <span>180K lượt đọc</span>
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>205K lượt đọc</span>
         <div class="actions">
           <button onclick="toggleLike(this)">Like</button>
           <button>Lưu</button>
@@ -159,85 +162,91 @@
       </div>
 
       <p id="intro">
-        <strong>Combinator (toán tử kết hợp)</strong> trong CSS là ký hiệu dùng để
-        <strong>kết hợp nhiều bộ chọn</strong>, qua đó mô tả <strong>mối quan hệ</strong> giữa các phần
-        tử trong cây HTML. Thay vì chọn phần tử một cách riêng lẻ, combinator giúp bạn chọn phần tử
-        dựa trên vị trí của nó so với phần tử khác (cha–con, anh em...). CSS có <strong>4 loại
-        combinator</strong> chính.
+        <strong>Đường dẫn tệp (file path)</strong> mô tả vị trí của một tệp trong cấu trúc thư mục của website.
+        Chúng được dùng khi liên kết tới tài nguyên bên ngoài như <strong>ảnh</strong> (<code>&lt;img&gt;</code>),
+        <strong>trang khác</strong> (<code>&lt;a&gt;</code>), <strong>CSS</strong> (<code>&lt;link&gt;</code>) hay
+        <strong>JavaScript</strong> (<code>&lt;script&gt;</code>).
       </p>
 
       <div class="note">
-        <strong>Ghi nhớ:</strong> Combinator nằm <em>giữa</em> hai bộ chọn, ví dụ <code>A B</code>,
-        <code>A &gt; B</code>, <code>A + B</code>, <code>A ~ B</code>.
+        <strong>Mẹo:</strong> Hiểu đúng đường dẫn giúp tránh lỗi "không tìm thấy ảnh/trang" (404) khi tệp được
+        di chuyển hoặc đưa lên máy chủ.
       </div>
 
-      <h2 id="types">4 loại combinator trong CSS</h2>
+      <h2 id="types">Hai loại đường dẫn</h2>
+      <p>Có hai cách chỉ định đường dẫn tới một tệp:</p>
+      <ul>
+        <li><strong>Tuyệt đối (absolute):</strong> URL đầy đủ, bắt đầu bằng <code>http://</code> hoặc <code>https://</code>.</li>
+        <li><strong>Tương đối (relative):</strong> đường dẫn so với trang HTML hiện tại.</li>
+      </ul>
+
+      <h2 id="absolute">Đường dẫn tuyệt đối</h2>
+      <p>Chứa địa chỉ đầy đủ (gồm tên miền). Thường dùng để trỏ tới tài nguyên trên website khác:</p>
+      <pre><code>&lt;img src="https://www.example.com/images/logo.png" alt="Logo"&gt;
+&lt;a href="https://www.geeksforgeeks.org/"&gt;GeeksforGeeks&lt;/a&gt;</code></pre>
+      <div id="mini-absolute"></div>
+
+      <h2 id="relative">Đường dẫn tương đối</h2>
+      <p>
+        Trỏ tới tệp dựa theo vị trí của trang hiện tại — <strong>không</strong> chứa tên miền. Đây là cách nên
+        dùng cho tài nguyên trong cùng một dự án vì không phụ thuộc tên miền.
+      </p>
+
+      <h2 id="same">Tệp cùng thư mục</h2>
+      <p>Chỉ cần ghi tên tệp:</p>
+      <pre><code>&lt;img src="anh.png" alt="Ảnh"&gt;</code></pre>
+      <div id="mini-same"></div>
+
+      <h2 id="sub">Tệp trong thư mục con</h2>
+      <p>Ghi tên thư mục, dấu <code>/</code> rồi tên tệp:</p>
+      <pre><code>&lt;img src="images/anh.png" alt="Ảnh"&gt;</code></pre>
+      <div id="mini-sub"></div>
+
+      <h2 id="parent">Lên thư mục cha với <code>..</code></h2>
+      <p>Dùng <code>../</code> để đi ngược lên một cấp thư mục (có thể lặp lại nhiều lần):</p>
+      <pre><code>&lt;img src="../anh.png" alt="Lên 1 cấp"&gt;
+&lt;img src="../../img/anh.png" alt="Lên 2 cấp rồi vào img"&gt;</code></pre>
+      <div id="mini-parent"></div>
+
+      <h2 id="root">Trỏ từ gốc website với <code>/</code></h2>
+      <p>
+        Dấu <code>/</code> ở đầu nghĩa là bắt đầu từ <strong>thư mục gốc</strong> của website, bất kể trang
+        hiện tại nằm ở đâu:
+      </p>
+      <pre><code>&lt;img src="/images/anh.png" alt="Từ gốc website"&gt;</code></pre>
+
+      <h2 id="table">Bảng tổng hợp</h2>
       <table class="cmp">
         <thead>
-          <tr><th>Combinator</th><th>Ký hiệu</th><th>Ý nghĩa</th></tr>
+          <tr><th>Cú pháp</th><th>Ý nghĩa</th></tr>
         </thead>
         <tbody>
-          <tr><td>Descendant (hậu duệ)</td><td><code>(dấu cách)</code></td><td>Chọn mọi phần tử con cháu (bất kỳ cấp nào) bên trong phần tử khác.</td></tr>
-          <tr><td>Child (con)</td><td><code>&gt;</code></td><td>Chỉ chọn phần tử là <strong>con trực tiếp</strong>.</td></tr>
-          <tr><td>Adjacent sibling (anh em liền kề)</td><td><code>+</code></td><td>Chọn phần tử đứng <strong>ngay sau</strong> và cùng cấp.</td></tr>
-          <tr><td>General sibling (anh em chung)</td><td><code>~</code></td><td>Chọn <strong>mọi phần tử cùng cấp</strong> đứng sau.</td></tr>
+          <tr><td><code>anh.png</code></td><td>Tệp nằm cùng thư mục với trang hiện tại.</td></tr>
+          <tr><td><code>images/anh.png</code></td><td>Tệp trong thư mục con <code>images</code>.</td></tr>
+          <tr><td><code>../anh.png</code></td><td>Lên thư mục cha một cấp.</td></tr>
+          <tr><td><code>../../anh.png</code></td><td>Lên thư mục cha hai cấp.</td></tr>
+          <tr><td><code>/images/anh.png</code></td><td>Bắt đầu từ thư mục gốc của website.</td></tr>
+          <tr><td><code>https://site.com/anh.png</code></td><td>Đường dẫn tuyệt đối tới tệp trên một website.</td></tr>
         </tbody>
       </table>
 
-      <h2 id="descendant">1. Descendant combinator ( )</h2>
-      <p>
-        Viết bằng <strong>dấu cách</strong> giữa hai selector. Chọn tất cả phần tử khớp nằm bên trong
-        phần tử cha — ở <strong>bất kỳ cấp nào</strong>.
-      </p>
-      <pre><code>/* Mọi &lt;p&gt; bên trong &lt;div&gt; (kể cả lồng sâu) */
-div p {
-  color: blue;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Đoạn <code>&lt;p&gt;</code> lồng sâu trong <code>&lt;section&gt;</code> có bị đổi màu không? Thử thêm một <code>&lt;p&gt;</code> nữa để kiểm chứng.</p>
-      <div id="mini-desc"></div>
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Ưu tiên <strong>đường dẫn tương đối</strong> cho tài nguyên trong dự án — dễ di chuyển, không phụ thuộc tên miền.</li>
+        <li>Dùng <strong>đường dẫn tuyệt đối</strong> khi trỏ tới tài nguyên ở website khác.</li>
+        <li>Chú ý chữ hoa/thường: máy chủ Linux phân biệt <code>Anh.png</code> và <code>anh.png</code>.</li>
+        <li>Dùng <code>/</code> (không dùng <code>\</code> kiểu Windows) làm dấu phân cách thư mục.</li>
+        <li>Tổ chức tệp gọn gàng: ảnh trong <code>images/</code>, CSS trong <code>css/</code>…</li>
+      </ul>
 
-      <h2 id="child">2. Child combinator (&gt;)</h2>
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
       <p>
-        Chỉ chọn phần tử là <strong>con trực tiếp</strong> của phần tử cha (không tính cháu, chắt).
-      </p>
-      <pre><code>/* Chỉ &lt;p&gt; là con trực tiếp của &lt;div&gt; */
-div &gt; p {
-  color: green;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> là con trực tiếp đổi màu, còn <code>&lt;p&gt;</code> nằm trong <code>&lt;section&gt;</code> thì không. Thử đổi <code>&gt;</code> thành dấu cách để thấy khác biệt.</p>
-      <div id="mini-child"></div>
-
-      <h2 id="adjacent">3. Adjacent sibling combinator (+)</h2>
-      <p>
-        Chọn phần tử đứng <strong>ngay liền sau</strong> một phần tử khác và <strong>cùng cấp</strong>
-        (cùng phần tử cha). Chỉ chọn <strong>một</strong> phần tử ngay kề.
-      </p>
-      <pre><code>/* &lt;p&gt; đứng ngay sau &lt;h2&gt; */
-h2 + p {
-  font-weight: bold;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> ngay liền sau <code>&lt;h2&gt;</code> được in đậm. Thử đổi vị trí các đoạn để xem đoạn nào bị ảnh hưởng.</p>
-      <div id="mini-adj"></div>
-
-      <h2 id="general">4. General sibling combinator (~)</h2>
-      <p>
-        Chọn <strong>tất cả</strong> phần tử cùng cấp đứng <strong>sau</strong> một phần tử khác (không
-        nhất thiết liền kề).
-      </p>
-      <pre><code>/* Mọi &lt;p&gt; đứng sau &lt;h2&gt; (cùng cấp) */
-h2 ~ p {
-  color: purple;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Tất cả <code>&lt;p&gt;</code> cùng cấp đứng sau <code>&lt;h2&gt;</code> đổi màu. Thử thêm một <code>&lt;p&gt;</code> trước <code>&lt;h2&gt;</code> — nó có đổi màu không?</p>
-      <div id="mini-gen"></div>
-
-      <h2 id="tryit">Thử ngay — các combinator hoạt động</h2>
-      <p>
-        Ví dụ dưới minh họa cả 4 combinator. Sửa CSS bên trái và xem phần tử nào bị ảnh hưởng bên phải.
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
       </p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>CSS Combinators Editor</span>
+          <span>HTML Editor</span>
           <span>
             <button onclick="runCode()">Chạy</button>
             <button onclick="resetCode()">Đặt lại</button>
@@ -245,7 +254,7 @@ h2 ~ p {
         </div>
         <div class="tryit-panes">
           <div>
-            <span class="lbl">Mã HTML + CSS</span>
+            <span class="lbl">Mã HTML</span>
             <textarea id="htmlInput" spellcheck="false"></textarea>
           </div>
           <div>
@@ -257,41 +266,41 @@ h2 ~ p {
 
       <h2 id="summary">Tóm tắt</h2>
       <p>
-        Combinator giúp chọn phần tử dựa trên quan hệ trong cây HTML. CSS có 4 loại:
-        <strong>descendant</strong> (dấu cách), <strong>child</strong> (<code>&gt;</code>),
-        <strong>adjacent sibling</strong> (<code>+</code>) và <strong>general sibling</strong>
-        (<code>~</code>). Nắm vững combinator giúp bạn viết bộ chọn chính xác và gọn gàng hơn, hạn chế
-        lạm dụng class thừa.
+        Đường dẫn tệp cho biết vị trí tài nguyên trong website. Có hai loại: <strong>tuyệt đối</strong> (URL đầy
+        đủ kèm tên miền) và <strong>tương đối</strong> (so với trang hiện tại). Với đường dẫn tương đối, dùng
+        tên tệp cho cùng thư mục, <code>thư-mục/tệp</code> cho thư mục con, <code>../</code> để lên cấp trên và
+        <code>/</code> ở đầu để bắt đầu từ gốc website. Nên ưu tiên đường dẫn tương đối trong cùng dự án.
       </p>
 
       <div class="note">
-        <strong>Bước tiếp theo:</strong> Tìm hiểu về <strong>pseudo-class</strong> (như
-        <code>:hover</code>, <code>:first-child</code>) để chọn phần tử theo trạng thái và vị trí.
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="html-images.html"><strong>HTML Images</strong></a> và
+        <a href="html-links.html"><strong>HTML Links</strong></a> để áp dụng đường dẫn vào ảnh và liên kết.
       </div>
     </main>
 
     <!-- Right rail -->
     <aside class="rail">
       <div class="ad">
-        <h4>Khóa học CSS</h4>
-        <p>Thành thạo selector, combinator và bố cục CSS hiện đại.</p>
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
         <button>Đăng ký ngay</button>
       </div>
       <div class="rail-card">
         <h4>Bài viết liên quan</h4>
         <ul>
-          <li><a href="css-introduction.html">CSS Introduction</a></li>
-          <li><a href="css-syntax.html">CSS Syntax</a></li>
-          <li><a href="#">CSS Selectors</a></li>
-          <li><a href="#">CSS Pseudo-classes</a></li>
+          <li><a href="html-images.html">HTML Images</a></li>
+          <li><a href="html-links.html">HTML Links</a></li>
+          <li><a href="html-layout.html">HTML Layout</a></li>
+          <li><a href="html-iframes.html">HTML Iframes</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
         </ul>
       </div>
       <div class="rail-card">
         <h4>Chủ đề phổ biến</h4>
         <ul>
-          <li><a href="#">CSS</a></li>
           <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
           <li><a href="#">Web Technologies</a></li>
         </ul>
       </div>
@@ -363,62 +372,17 @@ h2 ~ p {
       btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
 
-    // ----- Trình soạn HTML + CSS trực tiếp -----
-    const sampleCode = `<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-
-    /* Descendant: mọi p trong .box */
-    .box p { color: #1a73e8; }
-
-    /* Child: chỉ li là con trực tiếp của ul */
-    ul > li { font-weight: bold; }
-
-    /* Adjacent sibling: p ngay sau h2 */
-    h2 + p { background: #e8f0fe; }
-
-    /* General sibling: mọi p sau h2 */
-    h2 ~ p { border-left: 3px solid #1a73e8; padding-left: 8px; }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h2>Tiêu đề</h2>
-    <p>Đoạn ngay sau h2 (adjacent + general).</p>
-    <p>Đoạn thứ hai (general sibling).</p>
-    <ul>
-      <li>Mục con trực tiếp</li>
-    </ul>
-  </div>
-</body>
-</html>`;
-
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-
-    let typingTimer;
-    input.addEventListener('input', () => {
-      clearTimeout(typingTimer);
-      typingTimer = setTimeout(runCode, 300);
-    });
-
-    resetCode();
-
-    // ----- Mini editor cho từng combinator -----
+    // ----- Mini editor chạy code trực tiếp -----
     function makeMini(hostId, code) {
       const host = document.getElementById(hostId);
+      if (!host) return;
       const wrap = document.createElement('div');
       wrap.className = 'mini';
       wrap.innerHTML =
         '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
         '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
         '<div class="mini-panes">' +
-        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
         '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
       const ta = wrap.querySelector('textarea');
       const fr = wrap.querySelector('iframe');
@@ -432,79 +396,83 @@ h2 ~ p {
       reset();
     }
 
-    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;line-height:1.6}</style>';
+    // Ảnh tuyệt đối thật trên Internet
+    const GFG = 'images.jpeg';
+    // Ảnh "giả lập" dạng data URI để minh hoạ đường dẫn tương đối (luôn hiển thị được)
+    const LOCAL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='90'%3E%3Crect width='160' height='90' fill='%232da44e'/%3E%3Ctext x='80' y='50' font-size='14' fill='white' text-anchor='middle' font-family='Arial'%3Eanh.png%3C/text%3E%3C/svg%3E";
 
-    makeMini('mini-desc',
+    makeMini('mini-absolute',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Descendant: mọi p bên trong div (mọi cấp) */
-  div p { color: blue; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Đoạn con trực tiếp của div.</p>
-    <section>
-      <p>Đoạn lồng sâu trong section.</p>
-    </section>
-  </div>
-  <p>Đoạn NGOÀI div (không đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>Ảnh từ đường dẫn tuyệt đối (trên Internet):</p>
+  <img src="${GFG}" alt="Logo" width="180">
 </body>
 </html>`);
 
-    makeMini('mini-child',
+    makeMini('mini-same',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Child: chỉ p là con trực tiếp của div */
-  div > p { color: green; font-weight: bold; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Con trực tiếp của div (đổi màu).</p>
-    <section>
-      <p>p trong section (KHÔNG đổi màu).</p>
-    </section>
-  </div>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>&lt;img src="anh.png"&gt; — tệp cùng thư mục:</p>
+  <img src="${LOCAL}" alt="anh.png">
+  <p style="font-size:13px;color:#666">(Đây là ảnh minh hoạ tượng trưng cho "anh.png")</p>
 </body>
 </html>`);
 
-    makeMini('mini-adj',
+    makeMini('mini-sub',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Adjacent sibling: p ngay liền sau h2 */
-  h2 + p { background: #e8f0fe; padding: 6px; }
-</style>
-</head>
-<body>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn NGAY sau h2 (được tô nền).</p>
-  <p>Đoạn thứ hai (không tô).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>&lt;img src="images/anh.png"&gt; — trong thư mục con:</p>
+  <img src="${LOCAL}" alt="images/anh.png">
 </body>
 </html>`);
 
-    makeMini('mini-gen',
+    makeMini('mini-parent',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* General sibling: mọi p cùng cấp đứng sau h2 */
-  h2 ~ p { color: purple; }
-</style>
-</head>
-<body>
-  <p>Đoạn TRƯỚC h2 (không đổi màu).</p>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn sau h2 (đổi màu).</p>
-  <p>Đoạn nữa sau h2 (đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>&lt;img src="../anh.png"&gt; — lên thư mục cha một cấp:</p>
+  <img src="${LOCAL}" alt="../anh.png">
 </body>
 </html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <body style="font-family:Arial,sans-serif;">
+    <h2>Thử các loại đường dẫn</h2>
+
+    <p>Tuyệt đối:</p>
+    <img src="${GFG}" alt="Tuyệt đối" width="160">
+
+    <p>Tương đối (minh hoạ "images/anh.png"):</p>
+    <img src="${LOCAL}" alt="Tương đối">
+
+    <p>Liên kết tới trang khác:</p>
+    <a href="https://www.geeksforgeeks.org/">Mở GeeksforGeeks</a>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
   </script>
 </body>
 </html>

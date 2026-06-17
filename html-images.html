@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="CSS Combinators: combinator hậu duệ, con, anh em liền kề và anh em chung, kèm ví dụ chạy trực tiếp." />
-<title>CSS Combinators - HITech</title>
+<title>HTML Images - Hình ảnh trong HTML - HITech</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,7 +31,7 @@
   <nav class="subbar">
     <div class="subbar-inner">
       <div class="subbar-item">
-        <a href="index.html#html-basic">HTML</a>
+        <a href="index.html#html-basic" class="active">HTML</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">HTML Basic</span>
@@ -91,7 +90,7 @@
         </div>
       </div>
       <div class="subbar-item">
-        <a href="index.html#css" class="active">CSS</a>
+        <a href="index.html#css">CSS</a>
         <div class="mega">
           <div class="mega-col">
             <span class="mega-h">CSS Basic</span>
@@ -132,25 +131,30 @@
     <aside class="toc">
       <h3>Mục lục</h3>
       <ul>
-        <li><a href="#intro" class="active">Combinator là gì?</a></li>
-        <li><a href="#types">4 loại combinator</a></li>
-        <li><a href="#descendant">Descendant ( )</a></li>
-        <li><a href="#child">Child (&gt;)</a></li>
-        <li><a href="#adjacent">Adjacent sibling (+)</a></li>
-        <li><a href="#general">General sibling (~)</a></li>
-        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#intro" class="active">Thẻ &lt;img&gt; là gì?</a></li>
+        <li><a href="#example">Ví dụ cơ bản</a></li>
+        <li><a href="#alt">Thuộc tính alt</a></li>
+        <li><a href="#size">Kích thước (width/height)</a></li>
+        <li><a href="#style">Đặt kích thước bằng CSS</a></li>
+        <li><a href="#title">Thuộc tính title</a></li>
+        <li><a href="#border">Viền &amp; bo góc</a></li>
+        <li><a href="#link">Ảnh làm liên kết</a></li>
+        <li><a href="#paths">Đường dẫn ảnh</a></li>
+        <li><a href="#formats">Định dạng ảnh hỗ trợ</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
         <li><a href="#summary">Tóm tắt</a></li>
       </ul>
     </aside>
 
     <!-- Main article -->
     <main class="article">
-      <div class="crumbs">Home » CSS » CSS Basic » CSS Combinators</div>
-      <h1>CSS Combinators</h1>
+      <div class="crumbs">Home » HTML » HTML Images</div>
+      <h1>HTML Images — Hình ảnh trong HTML</h1>
       <div class="meta">
-        <span class="lvl">Cấp độ: Trung bình</span>
-        <span>Cập nhật: 16/06/2026</span>
-        <span>180K lượt đọc</span>
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>301K lượt đọc</span>
         <div class="actions">
           <button onclick="toggleLike(this)">Like</button>
           <button>Lưu</button>
@@ -159,85 +163,98 @@
       </div>
 
       <p id="intro">
-        <strong>Combinator (toán tử kết hợp)</strong> trong CSS là ký hiệu dùng để
-        <strong>kết hợp nhiều bộ chọn</strong>, qua đó mô tả <strong>mối quan hệ</strong> giữa các phần
-        tử trong cây HTML. Thay vì chọn phần tử một cách riêng lẻ, combinator giúp bạn chọn phần tử
-        dựa trên vị trí của nó so với phần tử khác (cha–con, anh em...). CSS có <strong>4 loại
-        combinator</strong> chính.
+        Thẻ <code>&lt;img&gt;</code> dùng để <strong>nhúng hình ảnh</strong> vào trang web. Đây là một
+        <strong>thẻ rỗng</strong> (không cần thẻ đóng), tạo "chỗ đặt" cho ảnh thông qua các thuộc tính như
+        <code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code>.
       </p>
 
       <div class="note">
-        <strong>Ghi nhớ:</strong> Combinator nằm <em>giữa</em> hai bộ chọn, ví dụ <code>A B</code>,
-        <code>A &gt; B</code>, <code>A + B</code>, <code>A ~ B</code>.
+        <strong>Hai cách chèn ảnh:</strong> dùng <strong>URL đầy đủ</strong> để lấy ảnh trên Internet, hoặc
+        dùng <strong>đường dẫn tương đối</strong> tới tệp ảnh trong dự án.
       </div>
 
-      <h2 id="types">4 loại combinator trong CSS</h2>
+      <h2 id="example">Ví dụ cơ bản</h2>
+      <p>Thuộc tính <code>src</code> chỉ đường dẫn ảnh; <code>alt</code> là văn bản thay thế:</p>
+      <pre><code>&lt;img src="logo.png" alt="Logo HITech"&gt;</code></pre>
+      <div id="mini-basic"></div>
+
+      <h2 id="alt">Thuộc tính <code>alt</code></h2>
+      <p>
+        <code>alt</code> cung cấp văn bản thay thế khi ảnh không hiển thị được — rất quan trọng cho
+        <strong>trợ năng</strong> và SEO. Thử "làm hỏng" đường dẫn để thấy <code>alt</code> hiển thị:
+      </p>
+      <ul>
+        <li>Hiển thị chữ khi ảnh tải lỗi.</li>
+        <li>Hỗ trợ người dùng mạng chậm.</li>
+        <li>Cần thiết cho trình đọc màn hình.</li>
+      </ul>
+      <div id="mini-alt"></div>
+
+      <h2 id="size">Kích thước với <code>width</code> và <code>height</code></h2>
+      <p>Đặt kích thước hiển thị (đơn vị pixel):</p>
+      <div id="mini-size"></div>
+
+      <h2 id="style">Đặt kích thước bằng CSS (khuyến nghị)</h2>
+      <p>Nên dùng <code>style</code>/CSS để linh hoạt và đáp ứng (responsive):</p>
+      <div id="mini-style"></div>
+
+      <h2 id="title">Thuộc tính <code>title</code> (tooltip)</h2>
+      <p>Hiển thị chú thích khi rê chuột lên ảnh:</p>
+      <div id="mini-title"></div>
+
+      <h2 id="border">Viền và bo góc</h2>
+      <p>
+        Thuộc tính <code>border</code> đã lỗi thời — hãy dùng CSS <code>border</code> và
+        <code>border-radius</code> để tạo viền và bo góc:
+      </p>
+      <div id="mini-border"></div>
+
+      <h2 id="link">Ảnh làm liên kết</h2>
+      <p>Bọc <code>&lt;img&gt;</code> trong <code>&lt;a&gt;</code> để ảnh có thể bấm được:</p>
+      <div id="mini-link"></div>
+
+      <h2 id="paths">Đường dẫn ảnh</h2>
+      <ul>
+        <li><strong>Đường dẫn tuyệt đối:</strong> chứa đầy đủ root và toàn bộ thư mục, ví dụ <code>https://hitech.com/img/logo.png</code>.</li>
+        <li><strong>Đường dẫn tương đối:</strong> so với trang hiện tại, ví dụ <code>img/logo.png</code> hoặc <code>../logo.png</code>.</li>
+      </ul>
+      <pre><code>&lt;img src="https://hitech.com/img/logo.png" alt="tuyệt đối"&gt;
+&lt;img src="img/logo.png" alt="tương đối"&gt;
+&lt;img src="../logo.png" alt="thư mục cha"&gt;</code></pre>
+
+      <h2 id="formats">Các định dạng ảnh hỗ trợ</h2>
       <table class="cmp">
         <thead>
-          <tr><th>Combinator</th><th>Ký hiệu</th><th>Ý nghĩa</th></tr>
+          <tr><th>Định dạng</th><th>Mô tả</th><th>Phần mở rộng</th></tr>
         </thead>
         <tbody>
-          <tr><td>Descendant (hậu duệ)</td><td><code>(dấu cách)</code></td><td>Chọn mọi phần tử con cháu (bất kỳ cấp nào) bên trong phần tử khác.</td></tr>
-          <tr><td>Child (con)</td><td><code>&gt;</code></td><td>Chỉ chọn phần tử là <strong>con trực tiếp</strong>.</td></tr>
-          <tr><td>Adjacent sibling (anh em liền kề)</td><td><code>+</code></td><td>Chọn phần tử đứng <strong>ngay sau</strong> và cùng cấp.</td></tr>
-          <tr><td>General sibling (anh em chung)</td><td><code>~</code></td><td>Chọn <strong>mọi phần tử cùng cấp</strong> đứng sau.</td></tr>
+          <tr><td>PNG</td><td>Portable Network Graphics — nền trong suốt, ít màu.</td><td>.png</td></tr>
+          <tr><td>JPEG</td><td>Joint Photographic Expert Group — ảnh chụp.</td><td>.jpg, .jpeg</td></tr>
+          <tr><td>SVG</td><td>Scalable Vector Graphics — vector, phóng to không vỡ.</td><td>.svg</td></tr>
+          <tr><td>GIF</td><td>Graphics Interchange Format — ảnh động.</td><td>.gif</td></tr>
+          <tr><td>WebP</td><td>Định dạng nén tốt cho web hiện đại.</td><td>.webp</td></tr>
+          <tr><td>ICO</td><td>Microsoft Icon — favicon.</td><td>.ico</td></tr>
+          <tr><td>APNG</td><td>Animated PNG — ảnh động chất lượng cao.</td><td>.apng</td></tr>
         </tbody>
       </table>
 
-      <h2 id="descendant">1. Descendant combinator ( )</h2>
-      <p>
-        Viết bằng <strong>dấu cách</strong> giữa hai selector. Chọn tất cả phần tử khớp nằm bên trong
-        phần tử cha — ở <strong>bất kỳ cấp nào</strong>.
-      </p>
-      <pre><code>/* Mọi &lt;p&gt; bên trong &lt;div&gt; (kể cả lồng sâu) */
-div p {
-  color: blue;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Đoạn <code>&lt;p&gt;</code> lồng sâu trong <code>&lt;section&gt;</code> có bị đổi màu không? Thử thêm một <code>&lt;p&gt;</code> nữa để kiểm chứng.</p>
-      <div id="mini-desc"></div>
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Tối ưu kích thước và chọn đúng định dạng (JPEG cho ảnh chụp, PNG cho ít màu/nền trong, SVG cho vector).</li>
+        <li>Luôn viết <code>alt</code> rõ ràng cho trợ năng.</li>
+        <li>Dùng <code>srcset</code> để có ảnh responsive theo kích thước màn hình.</li>
+        <li>Giữ đúng tỉ lệ khung hình (aspect ratio) để ảnh không bị méo.</li>
+        <li>Tôn trọng bản quyền hình ảnh.</li>
+      </ul>
 
-      <h2 id="child">2. Child combinator (&gt;)</h2>
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
       <p>
-        Chỉ chọn phần tử là <strong>con trực tiếp</strong> của phần tử cha (không tính cháu, chắt).
-      </p>
-      <pre><code>/* Chỉ &lt;p&gt; là con trực tiếp của &lt;div&gt; */
-div &gt; p {
-  color: green;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> là con trực tiếp đổi màu, còn <code>&lt;p&gt;</code> nằm trong <code>&lt;section&gt;</code> thì không. Thử đổi <code>&gt;</code> thành dấu cách để thấy khác biệt.</p>
-      <div id="mini-child"></div>
-
-      <h2 id="adjacent">3. Adjacent sibling combinator (+)</h2>
-      <p>
-        Chọn phần tử đứng <strong>ngay liền sau</strong> một phần tử khác và <strong>cùng cấp</strong>
-        (cùng phần tử cha). Chỉ chọn <strong>một</strong> phần tử ngay kề.
-      </p>
-      <pre><code>/* &lt;p&gt; đứng ngay sau &lt;h2&gt; */
-h2 + p {
-  font-weight: bold;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Chỉ <code>&lt;p&gt;</code> ngay liền sau <code>&lt;h2&gt;</code> được in đậm. Thử đổi vị trí các đoạn để xem đoạn nào bị ảnh hưởng.</p>
-      <div id="mini-adj"></div>
-
-      <h2 id="general">4. General sibling combinator (~)</h2>
-      <p>
-        Chọn <strong>tất cả</strong> phần tử cùng cấp đứng <strong>sau</strong> một phần tử khác (không
-        nhất thiết liền kề).
-      </p>
-      <pre><code>/* Mọi &lt;p&gt; đứng sau &lt;h2&gt; (cùng cấp) */
-h2 ~ p {
-  color: purple;
-}</code></pre>
-      <p><strong>Bài tập:</strong> Tất cả <code>&lt;p&gt;</code> cùng cấp đứng sau <code>&lt;h2&gt;</code> đổi màu. Thử thêm một <code>&lt;p&gt;</code> trước <code>&lt;h2&gt;</code> — nó có đổi màu không?</p>
-      <div id="mini-gen"></div>
-
-      <h2 id="tryit">Thử ngay — các combinator hoạt động</h2>
-      <p>
-        Ví dụ dưới minh họa cả 4 combinator. Sửa CSS bên trái và xem phần tử nào bị ảnh hưởng bên phải.
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
       </p>
       <div class="tryit">
         <div class="tryit-bar">
-          <span>CSS Combinators Editor</span>
+          <span>HTML Editor</span>
           <span>
             <button onclick="runCode()">Chạy</button>
             <button onclick="resetCode()">Đặt lại</button>
@@ -245,7 +262,7 @@ h2 ~ p {
         </div>
         <div class="tryit-panes">
           <div>
-            <span class="lbl">Mã HTML + CSS</span>
+            <span class="lbl">Mã HTML</span>
             <textarea id="htmlInput" spellcheck="false"></textarea>
           </div>
           <div>
@@ -257,41 +274,42 @@ h2 ~ p {
 
       <h2 id="summary">Tóm tắt</h2>
       <p>
-        Combinator giúp chọn phần tử dựa trên quan hệ trong cây HTML. CSS có 4 loại:
-        <strong>descendant</strong> (dấu cách), <strong>child</strong> (<code>&gt;</code>),
-        <strong>adjacent sibling</strong> (<code>+</code>) và <strong>general sibling</strong>
-        (<code>~</code>). Nắm vững combinator giúp bạn viết bộ chọn chính xác và gọn gàng hơn, hạn chế
-        lạm dụng class thừa.
+        Thẻ <code>&lt;img&gt;</code> nhúng ảnh qua <code>src</code> và nên kèm <code>alt</code> làm văn bản
+        thay thế. Đặt kích thước bằng <code>width</code>/<code>height</code> hoặc CSS, thêm
+        <code>title</code> làm chú thích, dùng CSS cho viền/bo góc, và bọc trong <code>&lt;a&gt;</code> để
+        biến ảnh thành liên kết. Có thể dùng đường dẫn tuyệt đối hoặc tương đối; các định dạng phổ biến gồm
+        PNG, JPEG, SVG, GIF, WebP.
       </p>
 
       <div class="note">
-        <strong>Bước tiếp theo:</strong> Tìm hiểu về <strong>pseudo-class</strong> (như
-        <code>:hover</code>, <code>:first-child</code>) để chọn phần tử theo trạng thái và vị trí.
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="html-links.html"><strong>HTML Links</strong></a> để liên kết ảnh, và
+        <a href="css-height-width.html"><strong>CSS Height &amp; Width</strong></a> để chỉnh kích thước ảnh chuyên sâu.
       </div>
     </main>
 
     <!-- Right rail -->
     <aside class="rail">
       <div class="ad">
-        <h4>Khóa học CSS</h4>
-        <p>Thành thạo selector, combinator và bố cục CSS hiện đại.</p>
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
         <button>Đăng ký ngay</button>
       </div>
       <div class="rail-card">
         <h4>Bài viết liên quan</h4>
         <ul>
-          <li><a href="css-introduction.html">CSS Introduction</a></li>
-          <li><a href="css-syntax.html">CSS Syntax</a></li>
-          <li><a href="#">CSS Selectors</a></li>
-          <li><a href="#">CSS Pseudo-classes</a></li>
+          <li><a href="html-links.html">HTML Links</a></li>
+          <li><a href="html-colors.html">HTML Colors</a></li>
+          <li><a href="html-attributes.html">HTML Attributes</a></li>
+          <li><a href="css-height-width.html">CSS Height &amp; Width</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
         </ul>
       </div>
       <div class="rail-card">
         <h4>Chủ đề phổ biến</h4>
         <ul>
-          <li><a href="#">CSS</a></li>
           <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
           <li><a href="#">Web Technologies</a></li>
         </ul>
       </div>
@@ -363,62 +381,17 @@ h2 ~ p {
       btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
     }
 
-    // ----- Trình soạn HTML + CSS trực tiếp -----
-    const sampleCode = `<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 16px; }
-
-    /* Descendant: mọi p trong .box */
-    .box p { color: #1a73e8; }
-
-    /* Child: chỉ li là con trực tiếp của ul */
-    ul > li { font-weight: bold; }
-
-    /* Adjacent sibling: p ngay sau h2 */
-    h2 + p { background: #e8f0fe; }
-
-    /* General sibling: mọi p sau h2 */
-    h2 ~ p { border-left: 3px solid #1a73e8; padding-left: 8px; }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h2>Tiêu đề</h2>
-    <p>Đoạn ngay sau h2 (adjacent + general).</p>
-    <p>Đoạn thứ hai (general sibling).</p>
-    <ul>
-      <li>Mục con trực tiếp</li>
-    </ul>
-  </div>
-</body>
-</html>`;
-
-    const input = document.getElementById('htmlInput');
-    const preview = document.getElementById('preview');
-
-    function runCode() { preview.srcdoc = input.value; }
-    function resetCode() { input.value = sampleCode; runCode(); }
-
-    let typingTimer;
-    input.addEventListener('input', () => {
-      clearTimeout(typingTimer);
-      typingTimer = setTimeout(runCode, 300);
-    });
-
-    resetCode();
-
-    // ----- Mini editor cho từng combinator -----
+    // ----- Mini editor chạy code trực tiếp -----
     function makeMini(hostId, code) {
       const host = document.getElementById(hostId);
+      if (!host) return;
       const wrap = document.createElement('div');
       wrap.className = 'mini';
       wrap.innerHTML =
         '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
         '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
         '<div class="mini-panes">' +
-        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
         '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
       const ta = wrap.querySelector('textarea');
       const fr = wrap.querySelector('iframe');
@@ -432,79 +405,103 @@ h2 ~ p {
       reset();
     }
 
-    const baseHead = '<style>body{font-family:Arial,sans-serif;padding:14px;line-height:1.6}</style>';
+    const GFG = 'images.jpeg';
 
-    makeMini('mini-desc',
+    makeMini('mini-basic',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Descendant: mọi p bên trong div (mọi cấp) */
-  div p { color: blue; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Đoạn con trực tiếp của div.</p>
-    <section>
-      <p>Đoạn lồng sâu trong section.</p>
-    </section>
-  </div>
-  <p>Đoạn NGOÀI div (không đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <img src="${GFG}" alt="Logo HITech" width="200">
 </body>
 </html>`);
 
-    makeMini('mini-child',
+    makeMini('mini-alt',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Child: chỉ p là con trực tiếp của div */
-  div > p { color: green; font-weight: bold; }
-</style>
-</head>
-<body>
-  <div>
-    <p>Con trực tiếp của div (đổi màu).</p>
-    <section>
-      <p>p trong section (KHÔNG đổi màu).</p>
-    </section>
-  </div>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>Đường dẫn đúng:</p>
+  <img src="${GFG}" alt="Logo HITech" width="160">
+  <p>Đường dẫn sai (hiển thị alt):</p>
+  <img src="anh-khong-ton-tai.png" alt="Đây là văn bản alt khi ảnh lỗi" width="160">
 </body>
 </html>`);
 
-    makeMini('mini-adj',
+    makeMini('mini-size',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* Adjacent sibling: p ngay liền sau h2 */
-  h2 + p { background: #e8f0fe; padding: 6px; }
-</style>
-</head>
-<body>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn NGAY sau h2 (được tô nền).</p>
-  <p>Đoạn thứ hai (không tô).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <img src="${GFG}" alt="Logo" width="120" height="120">
+  <img src="${GFG}" alt="Logo" width="200" height="200">
 </body>
 </html>`);
 
-    makeMini('mini-gen',
+    makeMini('mini-style',
 `<!DOCTYPE html>
 <html>
-<head>${baseHead}
-<style>
-  /* General sibling: mọi p cùng cấp đứng sau h2 */
-  h2 ~ p { color: purple; }
-</style>
-</head>
-<body>
-  <p>Đoạn TRƯỚC h2 (không đổi màu).</p>
-  <h2>Tiêu đề</h2>
-  <p>Đoạn sau h2 (đổi màu).</p>
-  <p>Đoạn nữa sau h2 (đổi màu).</p>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <img src="${GFG}" alt="Logo" style="width:50%; height:auto;">
 </body>
 </html>`);
+
+    makeMini('mini-title',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <img src="${GFG}" alt="Logo" width="180" title="Logo của HITech">
+</body>
+</html>`);
+
+    makeMini('mini-border',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <img src="${GFG}" alt="Logo" width="160"
+       style="border:5px solid #2da44e; border-radius:12px; padding:4px;">
+</body>
+</html>`);
+
+    makeMini('mini-link',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <a href="https://hitech.com/">
+    <img src="${GFG}" alt="Logo HITech" width="160">
+  </a>
+  <p>Bấm vào ảnh để mở liên kết.</p>
+</body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <body style="font-family:Arial,sans-serif;">
+    <h1>Ảnh của tôi</h1>
+    <img src="${GFG}"
+         alt="Logo HITech"
+         width="220"
+         style="border-radius:10px;">
+    <p>Thử đổi width hoặc src để xem kết quả.</p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
   </script>
 </body>
 </html>
