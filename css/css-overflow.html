@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CSS Overflow: xử lý nội dung tràn khỏi khung với visible, hidden, scroll, auto, clip và overflow-x/overflow-y kèm ví dụ chạy trực tiếp." />
+<title>CSS Overflow - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css" class="active">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Overflow là gì?</a></li>
+        <li><a href="#values">Các giá trị</a></li>
+        <li><a href="#visible">visible</a></li>
+        <li><a href="#hidden">hidden</a></li>
+        <li><a href="#scroll">scroll</a></li>
+        <li><a href="#auto">auto</a></li>
+        <li><a href="#xy">overflow-x &amp; overflow-y</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » CSS » Styling &amp; Properties » CSS Overflow</div>
+      <h1>CSS Overflow</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 16/06/2026</span>
+        <span>200K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        Thuộc tính <strong>overflow</strong> trong CSS quyết định điều gì xảy ra khi
+        <strong>nội dung tràn ra ngoài</strong> khung của một phần tử (khi nội dung lớn hơn kích thước
+        đã đặt). Bạn có thể cho phần thừa hiển thị tràn ra, bị cắt đi, hoặc thêm thanh cuộn.
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> <code>overflow</code> chỉ có tác dụng khi phần tử có kích thước giới
+        hạn (ví dụ đặt <code>height</code>) và nội dung vượt quá kích thước đó.
+      </div>
+
+      <h2 id="values">Các giá trị của overflow</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Giá trị</th><th>Tác dụng</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>visible</code></td><td>Mặc định — nội dung tràn vẫn hiển thị ra ngoài khung.</td></tr>
+          <tr><td><code>hidden</code></td><td>Phần tràn bị cắt và ẩn đi, không có thanh cuộn.</td></tr>
+          <tr><td><code>scroll</code></td><td>Luôn hiển thị thanh cuộn (cả khi không cần).</td></tr>
+          <tr><td><code>auto</code></td><td>Tự thêm thanh cuộn chỉ khi cần.</td></tr>
+          <tr><td><code>clip</code></td><td>Cắt phần tràn, không cho cuộn (nghiêm ngặt hơn hidden).</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="visible">1. overflow: visible</h2>
+      <p>Giá trị mặc định — nội dung thừa tràn ra ngoài khung và vẫn hiển thị.</p>
+      <div id="mini-visible"></div>
+
+      <h2 id="hidden">2. overflow: hidden</h2>
+      <p>Phần nội dung vượt khung bị cắt và ẩn đi; không có thanh cuộn.</p>
+      <div id="mini-hidden"></div>
+
+      <h2 id="scroll">3. overflow: scroll</h2>
+      <p>Luôn hiển thị thanh cuộn để xem phần nội dung bị tràn.</p>
+      <div id="mini-scroll"></div>
+
+      <h2 id="auto">4. overflow: auto</h2>
+      <p>Chỉ thêm thanh cuộn khi nội dung thực sự tràn — gọn gàng nhất trong đa số trường hợp.</p>
+      <div id="mini-auto"></div>
+
+      <h2 id="xy">5. overflow-x &amp; overflow-y</h2>
+      <p>
+        Điều khiển tràn theo từng trục: <code>overflow-x</code> (ngang) và <code>overflow-y</code>
+        (dọc). Ví dụ chỉ cho cuộn ngang, ẩn tràn dọc.
+      </p>
+      <div id="mini-xy"></div>
+
+      <h2 id="tryit">Thử ngay — chọn giá trị overflow</h2>
+      <p>Bấm từng giá trị để xem nội dung tràn được xử lý ra sao — dòng "Thuộc tính đang áp dụng" sẽ cập nhật theo.</p>
+      <div class="bgtry">
+        <div class="bgtry-panes">
+          <div class="bgtry-options">
+            <button data-ov="visible">visible</button>
+            <button data-ov="hidden">hidden</button>
+            <button data-ov="scroll">scroll</button>
+            <button data-ov="auto">auto</button>
+          </div>
+          <div class="bgtry-preview" id="ovPreview" style="height:150px;padding:10px;line-height:1.6;color:#1b1b32;background:#e8f0fe;border:2px solid #1a73e8;">
+            Đây là một đoạn văn bản khá dài đặt trong khung có kích thước cố định.
+            Vì nội dung vượt quá chiều cao của khung nên giá trị overflow bạn chọn
+            sẽ quyết định: cho tràn ra ngoài, cắt bỏ phần thừa, hay hiển thị thanh cuộn.
+            Hãy bấm thử các nút bên trái để so sánh kết quả.
+          </div>
+        </div>
+        <div class="bgtry-active">
+          <div class="lbl-out">Thuộc tính đang áp dụng:</div>
+          <code id="ovCode"></code>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        <code>overflow</code> xử lý nội dung tràn khỏi khung phần tử với các giá trị:
+        <code>visible</code> (tràn ra), <code>hidden</code> (cắt bỏ), <code>scroll</code> (luôn có
+        thanh cuộn), <code>auto</code> (cuộn khi cần) và <code>clip</code>. Có thể điều khiển riêng
+        từng trục bằng <code>overflow-x</code> và <code>overflow-y</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tìm hiểu <code>white-space</code> và
+        <code>text-overflow: ellipsis</code> để xử lý văn bản dài bị tràn.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học CSS</h4>
+        <p>Làm chủ box model, overflow và bố cục web hiện đại.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-margins-padding.html">CSS Margins &amp; Padding</a></li>
+          <li><a href="css-borders.html">CSS Borders</a></li>
+          <li><a href="#">CSS Box Model</a></li>
+          <li><a href="#">CSS text-overflow</a></li>
+          <li><a href="css-background.html">CSS Background</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    // Mẫu chung: một khung nhỏ chứa nhiều dòng để thấy hiệu ứng tràn
+    function demo(overflowRule, extra) {
+      return `<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .frame {
+    width: 220px;
+    height: 90px;
+    border: 2px solid #1a73e8;
+    background: #e8f0fe;
+    padding: 8px;
+
+    ${overflowRule}${extra || ''}
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    Đây là một đoạn văn bản khá dài được đặt trong một khung nhỏ.
+    Vì nội dung vượt quá chiều cao của khung nên đây là lúc thuộc tính
+    overflow phát huy tác dụng. Hãy quan sát phần nội dung thừa.
+  </div>
+</body>
+</html>`;
+    }
+
+    makeMini('mini-visible', demo('/* mặc định */\n    overflow: visible;'));
+    makeMini('mini-hidden',  demo('overflow: hidden;'));
+    makeMini('mini-scroll',  demo('overflow: scroll;'));
+    makeMini('mini-auto',    demo('overflow: auto;'));
+
+    makeMini('mini-xy',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .frame {
+    width: 220px;
+    height: 90px;
+    border: 2px solid #1a73e8;
+    background: #e8f0fe;
+    padding: 8px;
+    white-space: nowrap;
+
+    /* cuộn ngang, ẩn tràn dọc */
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    Một dòng văn bản rất dài không xuống dòng để minh họa cuộn ngang theo overflow-x.
+  </div>
+</body>
+</html>`);
+
+    // ----- Widget chọn giá trị overflow -----
+    const ovButtons = document.querySelectorAll('.bgtry-options button');
+    const ovPreview = document.getElementById('ovPreview');
+    const ovCode = document.getElementById('ovCode');
+
+    function selectOv(value) {
+      ovPreview.style.overflow = value;
+      ovCode.textContent = 'overflow: ' + value + ';';
+      ovButtons.forEach(b => b.classList.toggle('active', b.dataset.ov === value));
+    }
+    ovButtons.forEach(b => b.addEventListener('click', () => selectOv(b.dataset.ov)));
+    selectOv('auto');
+  </script>
+</body>
+</html>

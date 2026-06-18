@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML Paragraphs - Thẻ đoạn văn trong HTML - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic" class="active">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-editors.html">HTML Editors</a>
+            <a href="html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-paragraphs.html">HTML Paragraphs</a>
+            <a href="html-text-formatting.html">HTML Text Formatting</a>
+            <a href="html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="html-charsets.html">HTML Charsets</a>
+            <a href="html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-ordered-lists.html">Ordered Lists</a>
+            <a href="html-unordered-lists.html">Unordered Lists</a>
+            <a href="html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="html-colors.html">HTML Colors</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html5-video.html">HTML5 Video</a>
+            <a href="html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-iframes.html">HTML Iframes</a>
+            <a href="html-layout.html">HTML Layout</a>
+            <a href="html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="html-semantic-elements.html">Semantic Elements</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-url-encoding.html">HTML URL Encoding</a>
+            <a href="html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="../css/css-introduction.html">CSS Introduction</a>
+            <a href="../css/css-syntax.html">CSS Syntax</a>
+            <a href="../css/css-combinators.html">CSS Combinators</a>
+            <a href="../css/css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="../css/css-colors.html">CSS Colors</a>
+            <a href="../css/css-background.html">CSS Background</a>
+            <a href="../css/css-borders.html">CSS Borders</a>
+            <a href="../css/css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="../css/css-padding.html">CSS Padding</a>
+            <a href="../css/css-overflow.html">CSS Overflow</a>
+            <a href="../css/css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="../css/css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Thẻ đoạn văn là gì?</a></li>
+        <li><a href="#example">Ví dụ cơ bản</a></li>
+        <li><a href="#whitespace">Khoảng trắng &amp; xuống dòng</a></li>
+        <li><a href="#pre">Giữ định dạng với &lt;pre&gt;</a></li>
+        <li><a href="#br">Xuống dòng với &lt;br&gt;</a></li>
+        <li><a href="#hr">Đường kẻ ngang &lt;hr&gt;</a></li>
+        <li><a href="#align">Căn lề đoạn văn</a></li>
+        <li><a href="#block">Phần tử khối (block)</a></li>
+        <li><a href="#mistakes">Lỗi thường gặp</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » HTML Paragraphs</div>
+      <h1>HTML Paragraphs — Thẻ đoạn văn trong HTML</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>248K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        Một <strong>đoạn văn (paragraph)</strong> trong HTML đơn giản là một khối văn bản được bao trong
+        thẻ <code>&lt;p&gt;</code>. Thẻ này dùng để <strong>chia nội dung thành các phần dễ đọc</strong>,
+        và trình duyệt tự động thêm khoảng cách phía trên và dưới mỗi đoạn để tách bạch về mặt thị giác.
+      </p>
+
+      <div class="note">
+        <strong>Cú pháp:</strong> <code>&lt;p&gt; Nội dung đoạn văn... &lt;/p&gt;</code> — luôn cần thẻ
+        mở và thẻ đóng.
+      </div>
+
+      <h2 id="example">Ví dụ cơ bản</h2>
+      <p>Mỗi thẻ <code>&lt;p&gt;</code> tạo thành một đoạn riêng, nằm trên dòng mới:</p>
+      <div id="mini-basic"></div>
+
+      <h2 id="whitespace">Khoảng trắng và xuống dòng trong HTML</h2>
+      <p>
+        Một đặc điểm quan trọng: trình duyệt <strong>gộp nhiều khoảng trắng liên tiếp thành một</strong>,
+        và <strong>bỏ qua</strong> các ký tự xuống dòng, tab thừa trong mã nguồn — rồi hiển thị nội dung
+        thành một dòng liền mạch.
+      </p>
+      <div id="mini-whitespace"></div>
+
+      <h2 id="pre">Giữ nguyên định dạng với <code>&lt;pre&gt;</code></h2>
+      <p>
+        Để giữ <strong>đúng</strong> khoảng trắng và ngắt dòng như khi gõ, hãy dùng thẻ
+        <code>&lt;pre&gt;</code> (preformatted) — nội dung sẽ hiển thị y nguyên như trong mã:
+      </p>
+      <div id="mini-pre"></div>
+
+      <h2 id="br">Xuống dòng với thẻ <code>&lt;br&gt;</code></h2>
+      <p>
+        Thẻ <code>&lt;br&gt;</code> tạo một lần <strong>ngắt dòng</strong> mà không bắt đầu đoạn mới — hữu
+        ích khi cần xuống dòng ngay bên trong một đoạn. Đây là thẻ rỗng, không cần thẻ đóng:
+      </p>
+      <div id="mini-br"></div>
+
+      <h2 id="hr">Đường kẻ ngang với thẻ <code>&lt;hr&gt;</code></h2>
+      <p>
+        Thẻ <code>&lt;hr&gt;</code> tạo một <strong>đường kẻ ngang</strong>, dùng để phân tách trực quan
+        các phần nội dung trên trang:
+      </p>
+      <div id="mini-hr"></div>
+
+      <h2 id="align">Căn lề đoạn văn</h2>
+      <p>
+        Thuộc tính <code>align</code> cho phép căn trái/phải/giữa, nhưng nó đã <strong>lỗi thời trong
+        HTML5</strong>. Nên dùng CSS (<code>text-align</code>) thay thế để có thực hành tốt hơn:
+      </p>
+      <div id="mini-align"></div>
+      <div class="note">
+        <strong>Khuyến nghị:</strong> thay vì <code>&lt;p align="center"&gt;</code>, hãy dùng
+        <code>&lt;p style="text-align:center;"&gt;</code> hoặc đặt trong file CSS.
+      </div>
+
+      <h2 id="block">Đoạn văn là phần tử khối (block)</h2>
+      <p>
+        Mặc định, <code>&lt;p&gt;</code> có <code>display: block</code> — nghĩa là mỗi đoạn chiếm trọn
+        chiều rộng và nằm trên một dòng mới. Bạn có thể thay đổi hành vi này bằng CSS nếu cần.
+      </p>
+
+      <h2 id="mistakes">Lỗi thường gặp</h2>
+      <ul>
+        <li>
+          <strong>Không lồng đoạn văn vào nhau:</strong> bạn không thể đặt một <code>&lt;p&gt;</code> bên
+          trong <code>&lt;p&gt;</code> khác. Mỗi thẻ <code>&lt;p&gt;</code> chỉ nên chứa văn bản của một khối.
+        </li>
+        <li>
+          <strong>Không dùng <code>&lt;p&gt;</code> cho nội dung phi văn bản:</strong> thẻ này dành cho văn
+          bản. Nếu cần bọc ảnh, bảng hay phần tử khác, hãy dùng thẻ phù hợp như <code>&lt;img&gt;</code>,
+          <code>&lt;table&gt;</code> hoặc <code>&lt;div&gt;</code>.
+        </li>
+      </ul>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Thẻ <code>&lt;p&gt;</code> dùng để tạo đoạn văn, tự động thêm khoảng cách trên/dưới. HTML
+        <strong>gộp khoảng trắng thừa</strong> và bỏ qua xuống dòng trong mã; muốn giữ nguyên định dạng
+        hãy dùng <code>&lt;pre&gt;</code>, muốn ngắt dòng dùng <code>&lt;br&gt;</code>, muốn phân tách phần
+        nội dung dùng <code>&lt;hr&gt;</code>. Tránh lồng <code>&lt;p&gt;</code> vào nhau và đừng dùng nó
+        cho nội dung phi văn bản. Để căn lề, hãy dùng CSS thay vì thuộc tính <code>align</code> đã lỗi thời.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem thêm
+        <a href="html-headings.html"><strong>HTML Headings</strong></a> và
+        <a href="html-attributes.html"><strong>HTML Attributes</strong></a> để hoàn thiện kỹ năng cấu trúc nội dung.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="html-headings.html">HTML Headings</a></li>
+          <li><a href="html-attributes.html">HTML Attributes</a></li>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+          <li><a href="html-semantic-elements.html">Semantic Elements</a></li>
+          <li><a href="html-forms.html">HTML Forms</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-basic',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>HITech là một cổng học lập trình.</p>
+  <p>Nó chứa nhiều bài viết được trình bày rõ ràng.</p>
+</body>
+</html>`);
+
+    makeMini('mini-whitespace',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>
+    Đoạn văn này có nhiều dòng.
+    Nhưng HTML gộp chúng thành một dòng,
+    bỏ qua các lần xuống dòng đã gõ.
+  </p>
+  <p>
+    Đoạn này có        nhiều khoảng trắng.
+    Nhưng HTML gộp tất cả thành một khoảng trắng duy nhất.
+  </p>
+</body>
+</html>`);
+
+    makeMini('mini-pre',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <pre>
+Dòng 1   giữ nguyên   khoảng trắng
+   Dòng 2 thụt đầu dòng
+Dòng 3
+  </pre>
+</body>
+</html>`);
+
+    makeMini('mini-br',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p>
+    Đoạn này có nhiều
+    <br />dòng. HTML gộp chúng lại
+    <br />thành một dòng nếu không có
+    <br />thẻ br để ngắt dòng.
+  </p>
+</body>
+</html>`);
+
+    makeMini('mini-hr',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h1>Chào mừng đến với HITech</h1>
+  <p>HITech cung cấp tài nguyên khoa học máy tính và bài tập lập trình.</p>
+  <hr>
+  <p>Phần nội dung thứ hai, được ngăn cách bởi đường kẻ ngang.</p>
+</body>
+</html>`);
+
+    makeMini('mini-align',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <!-- Khuyến nghị dùng CSS text-align thay cho align -->
+  <p style="text-align:center;">Chào các bạn (căn giữa)</p>
+  <p style="text-align:left;">Căn trái — cổng học lập trình.</p>
+  <p style="text-align:right;">Căn phải — nhiều bài viết hay.</p>
+</body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Đoạn văn của tôi</title>
+  </head>
+  <body>
+    <h1>Bài viết về HTML</h1>
+    <p>Đây là đoạn văn đầu tiên giới thiệu nội dung.</p>
+    <hr>
+    <p>
+      Đoạn thứ hai có ngắt dòng:<br>
+      dòng mới nhờ thẻ br.
+    </p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    // Cập nhật trực tiếp khi gõ (debounce nhẹ)
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    // Khởi tạo
+    resetCode();
+  </script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CSS Colors: cách khai báo màu bằng tên, HEX, RGB, RGBA, HSL, HSLA kèm công cụ chọn màu và ví dụ chạy trực tiếp." />
+<title>CSS Colors - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css" class="active">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Màu trong CSS</a></li>
+        <li><a href="#where">Áp dụng màu ở đâu</a></li>
+        <li><a href="#formats">Các định dạng màu</a></li>
+        <li><a href="#named">Tên màu</a></li>
+        <li><a href="#hex">HEX</a></li>
+        <li><a href="#rgb">RGB &amp; RGBA</a></li>
+        <li><a href="#hsl">HSL &amp; HSLA</a></li>
+        <li><a href="#tool">Công cụ chọn màu</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » CSS » Styling &amp; Properties » CSS Colors</div>
+      <h1>CSS Colors</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 16/06/2026</span>
+        <span>260K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        Màu sắc là một phần quan trọng trong thiết kế web. CSS cho phép bạn đặt màu cho chữ, nền,
+        viền và nhiều thành phần khác bằng nhiều <strong>định dạng màu</strong> khác nhau: tên màu,
+        <strong>HEX</strong>, <strong>RGB/RGBA</strong> và <strong>HSL/HSLA</strong>. Hiểu các định
+        dạng này giúp bạn kiểm soát chính xác màu sắc và độ trong suốt.
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> Các thuộc tính màu phổ biến gồm <code>color</code> (màu chữ),
+        <code>background-color</code> (màu nền) và <code>border-color</code> (màu viền).
+      </div>
+
+      <h2 id="where">Áp dụng màu ở đâu?</h2>
+      <pre><code>p {
+  color: blue;              /* màu chữ */
+  background-color: #f0f0f0; /* màu nền */
+  border: 2px solid red;     /* màu viền */
+}</code></pre>
+
+      <h2 id="formats">Các định dạng màu trong CSS</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Định dạng</th><th>Ví dụ</th><th>Ghi chú</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tên màu</td><td><code>red</code>, <code>blue</code></td><td>~140 tên màu chuẩn.</td></tr>
+          <tr><td>HEX</td><td><code>#1a73e8</code></td><td>Hệ 16, dạng #RRGGBB.</td></tr>
+          <tr><td>RGB</td><td><code>rgb(26, 115, 232)</code></td><td>Đỏ, lục, lam (0–255).</td></tr>
+          <tr><td>RGBA</td><td><code>rgba(26,115,232,0.5)</code></td><td>RGB + độ mờ (alpha 0–1).</td></tr>
+          <tr><td>HSL</td><td><code>hsl(214, 82%, 51%)</code></td><td>Sắc độ, độ bão hòa, độ sáng.</td></tr>
+          <tr><td>HSLA</td><td><code>hsla(214,82%,51%,0.5)</code></td><td>HSL + alpha.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="named">1. Tên màu (Named colors)</h2>
+      <p>CSS hỗ trợ khoảng 140 tên màu có sẵn như <code>red</code>, <code>green</code>, <code>tomato</code>, <code>steelblue</code>.</p>
+      <div id="mini-named"></div>
+
+      <h2 id="hex">2. Màu HEX</h2>
+      <p>
+        Dạng <code>#RRGGBB</code> — mỗi cặp ký tự (00–FF) biểu diễn cường độ đỏ, lục, lam. Có thể viết
+        tắt 3 ký tự <code>#RGB</code> (ví dụ <code>#1a7</code>).
+      </p>
+      <div id="mini-hex"></div>
+
+      <h2 id="rgb">3. RGB &amp; RGBA</h2>
+      <p>
+        <code>rgb(r, g, b)</code> với mỗi giá trị 0–255. <code>rgba()</code> thêm kênh
+        <strong>alpha</strong> (0 = trong suốt, 1 = đục) để tạo độ mờ.
+      </p>
+      <div id="mini-rgb"></div>
+
+      <h2 id="hsl">4. HSL &amp; HSLA</h2>
+      <p>
+        <code>hsl(hue, saturation, lightness)</code>: <strong>hue</strong> (0–360 độ trên vòng màu),
+        <strong>saturation</strong> (% bão hòa), <strong>lightness</strong> (% độ sáng).
+        <code>hsla()</code> thêm alpha. HSL trực quan khi cần chỉnh sắc độ/độ sáng.
+      </p>
+      <div id="mini-hsl"></div>
+
+      <h2 id="tool">Công cụ chọn màu (thử ngay)</h2>
+      <p>Chọn một màu để xem giá trị tương ứng ở các định dạng HEX, RGB và HSL.</p>
+      <div class="color-tool">
+        <div class="picker-side">
+          <input type="color" id="colorPicker" value="#1a73e8" />
+          <p style="font-size:0.82rem;color:var(--gfg-muted);margin-top:6px;">Nhấn để chọn màu</p>
+        </div>
+        <div>
+          <div class="swatch" id="swatch"></div>
+          <div class="fmt-row"><span class="name">HEX</span><code id="outHex"></code><button class="copy" data-target="outHex">Copy</button></div>
+          <div class="fmt-row"><span class="name">RGB</span><code id="outRgb"></code><button class="copy" data-target="outRgb">Copy</button></div>
+          <div class="fmt-row"><span class="name">HSL</span><code id="outHsl"></code><button class="copy" data-target="outHsl">Copy</button></div>
+        </div>
+      </div>
+
+      <h2 id="tryit">Thử ngay — kết hợp các định dạng màu</h2>
+      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải. Thử đổi các giá trị màu xem sao!</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>CSS Colors Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML + CSS</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        CSS cho phép khai báo màu bằng tên, HEX, RGB/RGBA và HSL/HSLA. HEX và RGB phổ biến nhất; RGBA
+        và HSLA hỗ trợ độ trong suốt; HSL trực quan khi điều chỉnh sắc độ và độ sáng. Áp dụng màu qua
+        các thuộc tính như <code>color</code>, <code>background-color</code> và <code>border-color</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tìm hiểu về <strong>background</strong> (gradient, hình nền)
+        và <strong>đơn vị</strong> trong CSS.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học CSS</h4>
+        <p>Làm chủ màu sắc, typography và bố cục để thiết kế web đẹp.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-introduction.html">CSS Introduction</a></li>
+          <li><a href="css-selectors.html">CSS Selectors</a></li>
+          <li><a href="#">CSS Background</a></li>
+          <li><a href="#">CSS Units</a></li>
+          <li><a href="css-syntax.html">CSS Syntax</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-named',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; }
+
+  /* Dùng tên màu có sẵn của CSS */
+  .text { color: tomato; }
+  .bg1  { background: steelblue; color: white; }
+  .bg2  { background: gold; }
+</style>
+</head>
+<body>
+  <p class="text">Chữ màu tomato</p>
+  <div class="box bg1">Nền steelblue</div>
+  <div class="box bg2">Nền gold</div>
+</body>
+</html>`);
+
+    makeMini('mini-hex',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; color: #fff; }
+
+  /* Màu dạng HEX: #RRGGBB */
+  .c1 { background: #1a73e8; }
+  .c2 { background: #e8f0fe; color: #1557b0; }
+  .c3 { background: #1a7; }   /* viết tắt 3 ký tự */
+</style>
+</head>
+<body>
+  <div class="box c1">#1a73e8</div>
+  <div class="box c2">#e8f0fe</div>
+  <div class="box c3">Viết tắt #1a7</div>
+</body>
+</html>`);
+
+    makeMini('mini-rgb',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; }
+
+  /* rgb() và rgba() — kênh alpha tạo độ mờ */
+  .full  { background: rgb(26, 115, 232); color: #fff; }
+  .half  { background: rgba(26, 115, 232, 0.5); }
+  .light { background: rgba(26, 115, 232, 0.15); }
+</style>
+</head>
+<body>
+  <div class="box full">rgb(26, 115, 232)</div>
+  <div class="box half">rgba(..., 0.5) — mờ 50%</div>
+  <div class="box light">rgba(..., 0.15) — mờ 15%</div>
+</body>
+</html>`);
+
+    makeMini('mini-hsl',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { padding: 14px; border-radius: 8px; margin-bottom: 8px; }
+
+  /* hsl(hue, saturation, lightness) */
+  .base    { background: hsl(214, 82%, 51%); color: #fff; }
+  .lighter { background: hsl(214, 82%, 75%); }
+  .alpha   { background: hsla(214, 82%, 51%, 0.4); }
+</style>
+</head>
+<body>
+  <div class="box base">hsl(214, 82%, 51%)</div>
+  <div class="box lighter">Tăng lightness → sáng hơn</div>
+  <div class="box alpha">hsla(..., 0.4) — mờ</div>
+</body>
+</html>`);
+
+    // ----- Editor lớn: Thử ngay -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    .card {
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .named { background: steelblue; }
+    .hex   { background: #1a73e8; }
+    .rgb   { background: rgb(192, 52, 29); }
+    .rgba  { background: rgba(26, 115, 232, 0.45); color: #1b1b32; }
+    .hsl   { background: hsl(140, 60%, 40%); }
+    h1 { color: #1a73e8; }
+  </style>
+</head>
+<body>
+  <h1>Bảng màu CSS</h1>
+  <div class="card named">Tên màu: steelblue</div>
+  <div class="card hex">HEX: #1a73e8</div>
+  <div class="card rgb">RGB: rgb(192, 52, 29)</div>
+  <div class="card rgba">RGBA: rgba(26,115,232,0.45)</div>
+  <div class="card hsl">HSL: hsl(140, 60%, 40%)</div>
+</body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let bigTimer;
+    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
+    resetCode();
+
+    // ----- Công cụ chọn màu -----
+    const picker = document.getElementById('colorPicker');
+    const swatch = document.getElementById('swatch');
+    const outHex = document.getElementById('outHex');
+    const outRgb = document.getElementById('outRgb');
+    const outHsl = document.getElementById('outHsl');
+
+    function hexToRgb(hex) {
+      const n = parseInt(hex.slice(1), 16);
+      return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+    }
+    function rgbToHsl(r, g, b) {
+      r /= 255; g /= 255; b /= 255;
+      const max = Math.max(r, g, b), min = Math.min(r, g, b);
+      let h = 0, s = 0; const l = (max + min) / 2;
+      if (max !== min) {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        if (max === r) h = (g - b) / d + (g < b ? 6 : 0);
+        else if (max === g) h = (b - r) / d + 2;
+        else h = (r - g) / d + 4;
+        h *= 60;
+      }
+      return { h: Math.round(h), s: Math.round(s * 100), l: Math.round(l * 100) };
+    }
+    function updateColor() {
+      const hex = picker.value;
+      const { r, g, b } = hexToRgb(hex);
+      const { h, s, l } = rgbToHsl(r, g, b);
+      swatch.style.background = hex;
+      outHex.textContent = hex;
+      outRgb.textContent = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+      outHsl.textContent = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
+    }
+    picker.addEventListener('input', updateColor);
+    updateColor();
+
+    document.querySelectorAll('.color-tool .copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const txt = document.getElementById(btn.dataset.target).textContent;
+        navigator.clipboard && navigator.clipboard.writeText(txt);
+        const old = btn.textContent;
+        btn.textContent = 'Đã copy';
+        setTimeout(() => btn.textContent = old, 1000);
+      });
+    });
+  </script>
+</body>
+</html>

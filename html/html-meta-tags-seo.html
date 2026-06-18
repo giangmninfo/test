@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Hướng dẫn dùng các thẻ meta HTML cho SEO: description, keywords, robots, viewport, Open Graph và công cụ xem trước kết quả tìm kiếm." />
+<title>Hướng dẫn Meta Tags HTML cho SEO - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic" class="active">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-editors.html">HTML Editors</a>
+            <a href="html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-paragraphs.html">HTML Paragraphs</a>
+            <a href="html-text-formatting.html">HTML Text Formatting</a>
+            <a href="html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="html-charsets.html">HTML Charsets</a>
+            <a href="html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-ordered-lists.html">Ordered Lists</a>
+            <a href="html-unordered-lists.html">Unordered Lists</a>
+            <a href="html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="html-colors.html">HTML Colors</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html5-video.html">HTML5 Video</a>
+            <a href="html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-iframes.html">HTML Iframes</a>
+            <a href="html-layout.html">HTML Layout</a>
+            <a href="html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="html-semantic-elements.html">Semantic Elements</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-url-encoding.html">HTML URL Encoding</a>
+            <a href="html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="../css/css-introduction.html">CSS Introduction</a>
+            <a href="../css/css-syntax.html">CSS Syntax</a>
+            <a href="../css/css-combinators.html">CSS Combinators</a>
+            <a href="../css/css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="../css/css-colors.html">CSS Colors</a>
+            <a href="../css/css-background.html">CSS Background</a>
+            <a href="../css/css-borders.html">CSS Borders</a>
+            <a href="../css/css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="../css/css-padding.html">CSS Padding</a>
+            <a href="../css/css-overflow.html">CSS Overflow</a>
+            <a href="../css/css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="../css/css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Meta tag là gì?</a></li>
+        <li><a href="#where">Đặt ở đâu?</a></li>
+        <li><a href="#important">Các meta tag quan trọng</a></li>
+        <li><a href="#examples">Ví dụ &amp; cú pháp</a></li>
+        <li><a href="#tool">Công cụ xem trước SEO</a></li>
+        <li><a href="#tips">Mẹo SEO</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » Meta Tags cho SEO</div>
+      <h1>Hướng dẫn cơ bản về Meta Tags HTML cho SEO</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 15/06/2026</span>
+        <span>165K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Meta tag (thẻ meta)</strong> là các thẻ HTML cung cấp <strong>thông tin mô tả
+        (metadata)</strong> về trang web — như nội dung, tác giả, từ khóa, cách hiển thị trên thiết
+        bị di động. Chúng <strong>không hiển thị</strong> trên trang nhưng được trình duyệt và đặc
+        biệt là <strong>công cụ tìm kiếm</strong> (Google, Bing) đọc để hiểu và xếp hạng trang. Dùng
+        meta tag đúng cách là một phần quan trọng của <strong>SEO</strong> (tối ưu công cụ tìm kiếm).
+      </p>
+
+      <div class="note">
+        <strong>Lưu ý:</strong> Meta tag luôn được đặt bên trong phần <code>&lt;head&gt;</code> của
+        tài liệu HTML và phần lớn là thẻ rỗng (không có thẻ đóng).
+      </div>
+
+      <h2 id="where">Meta tag đặt ở đâu?</h2>
+      <p>Tất cả thẻ meta nằm trong <code>&lt;head&gt;</code>:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="Mô tả ngắn gọn về trang."&gt;
+    &lt;title&gt;Tiêu đề trang&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt; ... &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h2 id="important">Các meta tag quan trọng cho SEO</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Meta tag</th><th>Vai trò</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>charset</code></td><td>Khai báo bảng mã ký tự (nên dùng <code>UTF-8</code>).</td></tr>
+          <tr><td><code>viewport</code></td><td>Giúp trang hiển thị tốt trên di động (responsive).</td></tr>
+          <tr><td><code>description</code></td><td>Mô tả ngắn nội dung trang — hiển thị dưới tiêu đề trên Google.</td></tr>
+          <tr><td><code>keywords</code></td><td>Danh sách từ khóa (ngày nay ít quan trọng với Google).</td></tr>
+          <tr><td><code>robots</code></td><td>Chỉ dẫn cho bot: <code>index/noindex</code>, <code>follow/nofollow</code>.</td></tr>
+          <tr><td><code>author</code></td><td>Tên tác giả của trang.</td></tr>
+          <tr><td><code>og:title</code>, <code>og:description</code>, <code>og:image</code></td><td>Open Graph — điều khiển hiển thị khi chia sẻ lên mạng xã hội.</td></tr>
+          <tr><td><code>twitter:card</code></td><td>Định dạng thẻ khi chia sẻ trên Twitter/X.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="examples">Ví dụ &amp; cú pháp các meta tag</h2>
+
+      <h3>Description &amp; Keywords</h3>
+      <pre><code>&lt;meta name="description" content="HITech - học lập trình web và mạng máy tính miễn phí."&gt;
+&lt;meta name="keywords" content="HTML, CSS, JavaScript, lập trình web"&gt;</code></pre>
+
+      <h3>Robots — điều khiển bot tìm kiếm</h3>
+      <pre><code>&lt;!-- Cho phép lập chỉ mục và theo dõi liên kết --&gt;
+&lt;meta name="robots" content="index, follow"&gt;
+
+&lt;!-- Không lập chỉ mục trang này --&gt;
+&lt;meta name="robots" content="noindex, nofollow"&gt;</code></pre>
+
+      <h3>Open Graph — chia sẻ mạng xã hội</h3>
+      <pre><code>&lt;meta property="og:title" content="Hướng dẫn Meta Tags cho SEO"&gt;
+&lt;meta property="og:description" content="Tìm hiểu cách dùng meta tag để tối ưu SEO."&gt;
+&lt;meta property="og:image" content="https://hitech.com/banner.png"&gt;
+&lt;meta property="og:url" content="https://hitech.com/meta-tags"&gt;</code></pre>
+
+      <h3>Canonical — tránh trùng lặp nội dung</h3>
+      <pre><code>&lt;link rel="canonical" href="https://hitech.com/meta-tags"&gt;</code></pre>
+
+      <h2 id="tool">Công cụ xem trước SEO (thử ngay)</h2>
+      <p>
+        Nhập tiêu đề, mô tả và đường dẫn — xem ngay trang của bạn sẽ trông như thế nào trên
+        <strong>kết quả tìm kiếm Google</strong> và khi <strong>chia sẻ lên mạng xã hội</strong>.
+        Công cụ cũng cảnh báo nếu độ dài vượt khuyến nghị.
+      </p>
+
+      <div class="seo-tool">
+        <div class="seo-inputs">
+          <label for="seoTitle">Tiêu đề trang (title)</label>
+          <input type="text" id="seoTitle" value="Hướng dẫn Meta Tags HTML cho SEO - HITech" />
+          <div class="hint" id="titleHint"></div>
+
+          <label for="seoDesc">Mô tả (description)</label>
+          <textarea id="seoDesc">Tìm hiểu cách dùng các thẻ meta HTML như description, robots và Open Graph để tối ưu SEO cho website của bạn.</textarea>
+          <div class="hint" id="descHint"></div>
+
+          <label for="seoUrl">Đường dẫn (URL)</label>
+          <input type="text" id="seoUrl" value="https://hitech.com/meta-tags-seo" />
+        </div>
+
+        <div class="seo-previews">
+          <div class="preview-box">
+            <div class="pv-title">Kết quả tìm kiếm Google</div>
+            <div class="serp">
+              <div class="serp-url"><span id="pvDomain">hitech.com</span> <span class="serp-path" id="pvPath">› meta-tags-seo</span></div>
+              <div class="serp-head" id="pvTitle">Tiêu đề trang</div>
+              <div class="serp-desc" id="pvDesc">Mô tả trang...</div>
+            </div>
+          </div>
+
+          <div class="preview-box">
+            <div class="pv-title">Thẻ chia sẻ mạng xã hội</div>
+            <div class="social-card">
+              <div class="sc-img"></div>
+              <div class="sc-body">
+                <div class="sc-domain" id="scDomain">HITECH.COM</div>
+                <div class="sc-title" id="scTitle">Tiêu đề trang</div>
+                <div class="sc-desc" id="scDesc">Mô tả trang...</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-box">
+            <div class="pv-title">Mã meta tag sinh ra</div>
+            <pre style="margin:0;"><code id="genCode"></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="tips">Mẹo SEO khi dùng meta tag</h2>
+      <ul>
+        <li><strong>Title:</strong> giữ trong khoảng <strong>50–60 ký tự</strong>, chứa từ khóa chính.</li>
+        <li><strong>Description:</strong> khoảng <strong>150–160 ký tự</strong>, hấp dẫn, mô tả đúng nội dung.</li>
+        <li>Mỗi trang nên có <strong>title và description riêng</strong>, không trùng lặp.</li>
+        <li>Luôn khai báo <code>charset</code> và <code>viewport</code>.</li>
+        <li>Dùng <strong>Open Graph</strong> để kiểm soát hình ảnh/tiêu đề khi chia sẻ.</li>
+        <li>Dùng <code>canonical</code> khi có nhiều URL cùng nội dung.</li>
+      </ul>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Meta tag là metadata trong <code>&lt;head&gt;</code> giúp trình duyệt và công cụ tìm kiếm hiểu
+        trang web. Các thẻ quan trọng cho SEO gồm <code>description</code>, <code>viewport</code>,
+        <code>robots</code> và nhóm <strong>Open Graph</strong>. Viết title/description chuẩn độ dài và
+        đúng nội dung sẽ cải thiện thứ hạng cũng như tỷ lệ nhấp (CTR) từ kết quả tìm kiếm.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Kết hợp meta tag với <strong>nội dung chất lượng</strong>,
+        <strong>tốc độ tải nhanh</strong> và <strong>HTTPS</strong> để SEO hiệu quả nhất.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học SEO &amp; Web</h4>
+        <p>Tối ưu website lên top tìm kiếm với kỹ thuật SEO bài bản.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="html-semantic-elements.html">Semantic Elements HTML5</a></li>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+          <li><a href="../networks/httpsworkinggfg.html">HTTPS và SEO</a></li>
+          <li><a href="../networks/web-browser.html">Trình duyệt web là gì?</a></li>
+          <li><a href="#">Sitemap &amp; robots.txt</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Công cụ xem trước SEO -----
+    const elTitle = document.getElementById('seoTitle');
+    const elDesc = document.getElementById('seoDesc');
+    const elUrl = document.getElementById('seoUrl');
+
+    const pvTitle = document.getElementById('pvTitle');
+    const pvDesc = document.getElementById('pvDesc');
+    const pvDomain = document.getElementById('pvDomain');
+    const pvPath = document.getElementById('pvPath');
+    const scTitle = document.getElementById('scTitle');
+    const scDesc = document.getElementById('scDesc');
+    const scDomain = document.getElementById('scDomain');
+    const genCode = document.getElementById('genCode');
+    const titleHint = document.getElementById('titleHint');
+    const descHint = document.getElementById('descHint');
+
+    function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function clip(s, n) { return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+
+    function parseUrl(url) {
+      let domain = url, path = '';
+      try {
+        const u = new URL(url);
+        domain = u.hostname;
+        path = u.pathname.replace(/\//g, ' › ').replace(/\s+›\s*$/, '');
+      } catch (e) {
+        domain = url.replace(/^https?:\/\//, '').split('/')[0] || 'example.com';
+      }
+      return { domain, path };
+    }
+
+    function updateSeo() {
+      const title = elTitle.value || 'Tiêu đề trang';
+      const desc = elDesc.value || 'Mô tả trang...';
+      const { domain, path } = parseUrl(elUrl.value);
+
+      // Google SERP
+      pvTitle.textContent = clip(title, 60);
+      pvDesc.textContent = clip(desc, 160);
+      pvDomain.textContent = domain;
+      pvPath.textContent = path ? path : '';
+
+      // Social card
+      scTitle.textContent = clip(title, 70);
+      scDesc.textContent = clip(desc, 120);
+      scDomain.textContent = domain.toUpperCase();
+
+      // Generated meta code
+      genCode.textContent =
+        '<title>' + title + '</title>\n' +
+        '<meta name="description" content="' + esc(desc) + '">\n' +
+        '<meta property="og:title" content="' + esc(title) + '">\n' +
+        '<meta property="og:description" content="' + esc(desc) + '">\n' +
+        '<meta property="og:url" content="' + esc(elUrl.value) + '">';
+
+      // Hints về độ dài
+      const tl = title.length;
+      titleHint.innerHTML = 'Độ dài title: <b class="' + (tl >= 50 && tl <= 60 ? 'ok' : 'warn') + '">' +
+        tl + '</b> ký tự (khuyến nghị 50–60).';
+      const dl = desc.length;
+      descHint.innerHTML = 'Độ dài description: <b class="' + (dl >= 150 && dl <= 160 ? 'ok' : 'warn') + '">' +
+        dl + '</b> ký tự (khuyến nghị 150–160).';
+    }
+
+    [elTitle, elDesc, elUrl].forEach(el => el.addEventListener('input', updateSeo));
+    updateSeo();
+  </script>
+</body>
+</html>

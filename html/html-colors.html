@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML Colors - Màu sắc trong HTML - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  /* Bảng màu mẫu (chỉ dùng trong trang này) */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin: 18px 0; }
+  .swatch { border: 1px solid var(--gfg-border); border-radius: 8px; overflow: hidden; font-size: 0.8rem; }
+  .swatch .chip { height: 54px; }
+  .swatch .info { padding: 6px 8px; background: #fff; }
+  .swatch .nm { font-weight: 700; }
+  .swatch .hx { color: var(--gfg-muted); font-family: 'Consolas','Monaco',monospace; font-size: 0.74rem; }
+</style>
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic" class="active">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-editors.html">HTML Editors</a>
+            <a href="html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-paragraphs.html">HTML Paragraphs</a>
+            <a href="html-text-formatting.html">HTML Text Formatting</a>
+            <a href="html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="html-charsets.html">HTML Charsets</a>
+            <a href="html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-ordered-lists.html">Ordered Lists</a>
+            <a href="html-unordered-lists.html">Unordered Lists</a>
+            <a href="html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="html-colors.html">HTML Colors</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html5-video.html">HTML5 Video</a>
+            <a href="html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-iframes.html">HTML Iframes</a>
+            <a href="html-layout.html">HTML Layout</a>
+            <a href="html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="html-semantic-elements.html">Semantic Elements</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-url-encoding.html">HTML URL Encoding</a>
+            <a href="html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="../css/css-introduction.html">CSS Introduction</a>
+            <a href="../css/css-syntax.html">CSS Syntax</a>
+            <a href="../css/css-combinators.html">CSS Combinators</a>
+            <a href="../css/css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="../css/css-colors.html">CSS Colors</a>
+            <a href="../css/css-background.html">CSS Background</a>
+            <a href="../css/css-borders.html">CSS Borders</a>
+            <a href="../css/css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="../css/css-padding.html">CSS Padding</a>
+            <a href="../css/css-overflow.html">CSS Overflow</a>
+            <a href="../css/css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="../css/css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Màu trong HTML là gì?</a></li>
+        <li><a href="#apply">Cách áp dụng màu</a></li>
+        <li><a href="#names">Tên màu (Color Names)</a></li>
+        <li><a href="#rgb">RGB</a></li>
+        <li><a href="#rgba">RGBA (độ trong suốt)</a></li>
+        <li><a href="#hex">HEX</a></li>
+        <li><a href="#hsl">HSL</a></li>
+        <li><a href="#hsla">HSLA</a></li>
+        <li><a href="#compare">Bảng so sánh định dạng</a></li>
+        <li><a href="#tryit">Thử viết HTML</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » HTML » HTML Colors</div>
+      <h1>HTML Colors — Màu sắc trong HTML</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>256K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Màu trong HTML</strong> có thể áp dụng cho văn bản, nền, viền, liên kết, biểu mẫu, bảng...
+        Có nhiều cách để chỉ định màu: <strong>tên màu (color names)</strong>, <strong>RGB</strong>,
+        <strong>RGBA</strong>, <strong>HEX</strong>, <strong>HSL</strong> và <strong>HSLA</strong> — tất cả
+        đều dùng được qua thuộc tính <code>style</code> (CSS nội tuyến).
+      </p>
+
+      <h2 id="apply">Cách áp dụng màu</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Mục đích</th><th>Thuộc tính CSS</th><th>Ví dụ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Màu nền</td><td><code>background-color</code></td><td><code>style="background-color: red;"</code></td></tr>
+          <tr><td>Màu chữ</td><td><code>color</code></td><td><code>style="color: blue;"</code></td></tr>
+          <tr><td>Màu viền</td><td><code>border-color</code></td><td><code>style="border: 2px solid green;"</code></td></tr>
+          <tr><td>Màu liên kết</td><td><code>color</code> (trên <code>&lt;a&gt;</code>)</td><td><code>style="color: purple;"</code></td></tr>
+        </tbody>
+      </table>
+      <div id="mini-apply"></div>
+
+      <h2 id="names">Tên màu (Color Names)</h2>
+      <p>
+        HTML hỗ trợ <strong>140 tên màu chuẩn</strong> — cách chỉ định màu thân thiện, dễ nhớ. Một số tên
+        thông dụng:
+      </p>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:Red"></div><div class="info"><div class="nm">Red</div><div class="hx">#FF0000</div></div></div>
+        <div class="swatch"><div class="chip" style="background:Green"></div><div class="info"><div class="nm">Green</div><div class="hx">#008000</div></div></div>
+        <div class="swatch"><div class="chip" style="background:Blue"></div><div class="info"><div class="nm">Blue</div><div class="hx">#0000FF</div></div></div>
+        <div class="swatch"><div class="chip" style="background:Pink"></div><div class="info"><div class="nm">Pink</div><div class="hx">#FFC0CB</div></div></div>
+        <div class="swatch"><div class="chip" style="background:Purple"></div><div class="info"><div class="nm">Purple</div><div class="hx">#800080</div></div></div>
+        <div class="swatch"><div class="chip" style="background:SkyBlue"></div><div class="info"><div class="nm">SkyBlue</div><div class="hx">#87CEEB</div></div></div>
+        <div class="swatch"><div class="chip" style="background:Gray"></div><div class="info"><div class="nm">Gray</div><div class="hx">#808080</div></div></div>
+        <div class="swatch"><div class="chip" style="background:Orange"></div><div class="info"><div class="nm">Orange</div><div class="hx">#FFA500</div></div></div>
+      </div>
+      <div id="mini-names"></div>
+
+      <h2 id="rgb">RGB (Red, Green, Blue)</h2>
+      <p>
+        Pha trộn ba màu cơ bản với giá trị từ <strong>0 đến 255</strong>, tạo ra <strong>16.777.216</strong>
+        màu khác nhau. Cú pháp: <code>rgb(đỏ, lục, lam)</code>.
+      </p>
+      <ul>
+        <li><code>rgb(0, 255, 0)</code> = xanh lá</li>
+        <li><code>rgb(255, 255, 255)</code> = trắng</li>
+        <li><code>rgb(0, 0, 0)</code> = đen</li>
+      </ul>
+      <div id="mini-rgb"></div>
+
+      <h2 id="rgba">RGBA (RGB + Alpha/độ trong suốt)</h2>
+      <p>
+        Mở rộng RGB với kênh <strong>alpha</strong> điều khiển độ trong suốt: từ <strong>0</strong> (trong
+        suốt hoàn toàn) đến <strong>1</strong> (đục hoàn toàn). Cú pháp: <code>rgba(đỏ, lục, lam, alpha)</code>.
+      </p>
+      <div id="mini-rgba"></div>
+
+      <h2 id="hex">HEX (Hexadecimal)</h2>
+      <p>
+        Mã 6 chữ số theo cặp <code>#rrggbb</code>, mỗi kênh từ <code>00</code> đến <code>ff</code>.
+      </p>
+      <ul>
+        <li><code>#FF6347</code> = đỏ cà chua (tomato)</li>
+        <li><code>#000000</code> = đen</li>
+        <li><code>#FFFFFF</code> = trắng</li>
+      </ul>
+      <div id="mini-hex"></div>
+
+      <h2 id="hsl">HSL (Hue, Saturation, Lightness)</h2>
+      <p>Cách chỉ định màu trực quan hơn RGB, gồm ba thành phần:</p>
+      <ul>
+        <li><strong>Hue (sắc độ):</strong> 0–360 độ — loại màu.</li>
+        <li><strong>Saturation (độ bão hòa):</strong> 0–100% — độ đậm của màu.</li>
+        <li><strong>Lightness (độ sáng):</strong> 0–100% — độ sáng/tối.</li>
+      </ul>
+      <p>Cú pháp: <code>hsl(sắc độ, bão hòa%, độ sáng%)</code> — ví dụ <code>hsl(45, 100%, 50%)</code> = vàng kim.</p>
+      <div id="mini-hsl"></div>
+
+      <h2 id="hsla">HSLA (HSL + Alpha)</h2>
+      <p>
+        HSL kèm kênh alpha điều khiển độ trong suốt. Cú pháp:
+        <code>hsla(sắc độ, bão hòa%, độ sáng%, alpha)</code> — ví dụ <code>hsla(120, 100%, 50%, 0.5)</code>
+        = xanh lá nửa trong suốt.
+      </p>
+      <div id="mini-hsla"></div>
+
+      <h2 id="compare">Bảng so sánh các định dạng màu</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Định dạng</th><th>Cú pháp</th><th>Hỗ trợ alpha</th><th>Ghi chú</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tên màu</td><td><code>red</code></td><td>Không</td><td>Dễ nhớ, 140 tên chuẩn.</td></tr>
+          <tr><td>RGB</td><td><code>rgb(255,0,0)</code></td><td>Không</td><td>0–255 mỗi kênh.</td></tr>
+          <tr><td>RGBA</td><td><code>rgba(255,0,0,0.5)</code></td><td>Có</td><td>RGB + độ trong suốt.</td></tr>
+          <tr><td>HEX</td><td><code>#FF0000</code></td><td>Không*</td><td>Phổ biến nhất trong web.</td></tr>
+          <tr><td>HSL</td><td><code>hsl(0,100%,50%)</code></td><td>Không</td><td>Trực quan: sắc độ/bão hòa/sáng.</td></tr>
+          <tr><td>HSLA</td><td><code>hsla(0,100%,50%,0.5)</code></td><td>Có</td><td>HSL + độ trong suốt.</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.85rem; color:var(--gfg-muted);">* HEX có thể kèm alpha ở dạng 8 chữ số <code>#RRGGBBAA</code> trên trình duyệt hiện đại.</p>
+
+      <h2 id="tryit">Thử viết HTML ngay (Try it yourself)</h2>
+      <p>
+        Gõ hoặc chỉnh sửa mã HTML trong ô bên trái, kết quả sẽ hiển thị ngay bên phải. Bấm
+        <strong>Chạy</strong> để cập nhật thủ công, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        HTML cho phép tô màu văn bản, nền, viền, liên kết... qua thuộc tính <code>style</code>. Có thể chỉ
+        định màu bằng <strong>tên màu</strong>, <strong>RGB</strong>/<strong>RGBA</strong>,
+        <strong>HEX</strong>, <strong>HSL</strong>/<strong>HSLA</strong>. RGB cho 16,7 triệu màu; kênh
+        <strong>alpha</strong> (trong RGBA/HSLA) tạo độ trong suốt; HSL giúp chọn màu trực quan hơn. HEX là
+        định dạng phổ biến nhất trong thực tế.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="../css/css-colors.html"><strong>CSS Colors</strong></a> để dùng màu chuyên sâu hơn với CSS, và
+        <a href="../css/css-background.html"><strong>CSS Background</strong></a> cho màu nền &amp; gradient.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="../css/css-colors.html">CSS Colors</a></li>
+          <li><a href="../css/css-background.html">CSS Background</a></li>
+          <li><a href="html-attributes.html">HTML Attributes</a></li>
+          <li><a href="html-text-formatting.html">HTML Text Formatting</a></li>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-apply',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p style="background-color: gold;">Đoạn có màu nền (background-color)</p>
+  <p style="color: blue;">Đoạn có màu chữ (color)</p>
+  <p style="border: 2px solid green; padding:6px;">Đoạn có màu viền (border)</p>
+  <a href="#" style="color: purple;">Liên kết màu tím</a>
+</body>
+</html>`);
+
+    makeMini('mini-names',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <h2 style="color: Red;">Tiêu đề màu Red</h2>
+  <p style="background-color: SkyBlue; padding:6px;">Nền màu SkyBlue</p>
+  <p style="color: Orange;">Chữ màu Orange</p>
+</body>
+</html>`);
+
+    makeMini('mini-rgb',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p style="color: rgb(0, 255, 0);">rgb(0, 255, 0) — xanh lá</p>
+  <p style="background-color: rgb(255, 99, 71); padding:6px;">rgb(255, 99, 71) — đỏ cà chua</p>
+</body>
+</html>`);
+
+    makeMini('mini-rgba',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px; background:#eee;">
+  <p style="background-color: rgba(255, 99, 71, 1); padding:8px;">alpha = 1 (đục)</p>
+  <p style="background-color: rgba(255, 99, 71, 0.5); padding:8px;">alpha = 0.5 (nửa trong suốt)</p>
+  <p style="background-color: rgba(255, 99, 71, 0.2); padding:8px;">alpha = 0.2 (rất trong)</p>
+</body>
+</html>`);
+
+    makeMini('mini-hex',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p style="color: #FF6347;">#FF6347 — tomato</p>
+  <p style="background-color: #000000; color:#FFFFFF; padding:6px;">#000000 nền đen, #FFFFFF chữ trắng</p>
+</body>
+</html>`);
+
+    makeMini('mini-hsl',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px;">
+  <p style="background-color: hsl(45, 100%, 50%); padding:6px;">hsl(45, 100%, 50%) — vàng kim</p>
+  <p style="background-color: hsl(0, 100%, 50%); color:#fff; padding:6px;">hsl(0, 100%, 50%) — đỏ</p>
+  <p style="background-color: hsl(240, 100%, 50%); color:#fff; padding:6px;">hsl(240, 100%, 50%) — xanh dương</p>
+</body>
+</html>`);
+
+    makeMini('mini-hsla',
+`<!DOCTYPE html>
+<html>
+<body style="font-family:Arial,sans-serif; padding:14px; background:#eee;">
+  <p style="background-color: hsla(120, 100%, 50%, 1); padding:8px;">alpha = 1</p>
+  <p style="background-color: hsla(120, 100%, 50%, 0.5); padding:8px;">alpha = 0.5</p>
+  <p style="background-color: hsla(120, 100%, 50%, 0.2); padding:8px;">alpha = 0.2</p>
+</body>
+</html>`);
+
+    // ----- Trình soạn HTML trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <body style="font-family:Arial,sans-serif;">
+    <h1 style="color: #FF6347;">Thử màu sắc HTML</h1>
+    <p style="background-color: rgba(26,115,232,0.15); padding:8px;">
+      Nền RGBA nhạt.
+    </p>
+    <p style="color: hsl(280, 70%, 45%);">Chữ màu HSL.</p>
+    <a href="#" style="color: green;">Liên kết màu xanh</a>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
+  </script>
+</body>
+</html>

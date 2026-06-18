@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CSS Text Formatting - Định dạng văn bản với CSS - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css" class="active">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Định dạng văn bản là gì?</a></li>
+        <li><a href="#color">Màu chữ (color)</a></li>
+        <li><a href="#align">Căn lề (text-align)</a></li>
+        <li><a href="#decoration">Gạch chân (text-decoration)</a></li>
+        <li><a href="#transform">Biến đổi chữ (text-transform)</a></li>
+        <li><a href="#indent">Thụt đầu dòng (text-indent)</a></li>
+        <li><a href="#spacing">Khoảng cách chữ &amp; từ</a></li>
+        <li><a href="#lineheight">Chiều cao dòng (line-height)</a></li>
+        <li><a href="#shadow">Bóng chữ (text-shadow)</a></li>
+        <li><a href="#table">Bảng tổng hợp</a></li>
+        <li><a href="#tryit">Thử viết CSS</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » CSS » CSS Text Formatting</div>
+      <h1>CSS Text Formatting — Định dạng văn bản với CSS</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 17/06/2026</span>
+        <span>274K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>CSS Text Formatting</strong> là tập hợp các thuộc tính giúp <strong>định dạng và trình bày văn
+        bản</strong> trên trang web: đổi màu chữ, căn lề, gạch chân, viết hoa/thường, giãn dòng, khoảng cách ký
+        tự, bóng chữ… Nhờ đó nội dung trở nên dễ đọc và đẹp mắt hơn.
+      </p>
+
+      <div class="note">
+        <strong>Lưu ý:</strong> Các thuộc tính <em>định dạng văn bản</em> (text-*) khác với <em>thuộc tính
+        font</em> (font-family, font-size, font-weight…). Trang này tập trung vào nhóm <code>text-*</code> và
+        khoảng cách.
+      </div>
+
+      <h2 id="color">Màu chữ — <code>color</code></h2>
+      <p>Đặt màu cho văn bản bằng tên màu, HEX, RGB hoặc HSL:</p>
+      <pre><code>p { color: #2da44e; }</code></pre>
+      <div id="mini-color"></div>
+
+      <h2 id="align">Căn lề — <code>text-align</code></h2>
+      <p>
+        Căn văn bản theo chiều ngang: <code>left</code>, <code>right</code>, <code>center</code>,
+        <code>justify</code> (căn đều hai bên):
+      </p>
+      <div id="mini-align"></div>
+
+      <h2 id="decoration">Gạch chân/ngang — <code>text-decoration</code></h2>
+      <p>
+        Thêm hoặc bỏ đường kẻ: <code>underline</code> (gạch chân), <code>overline</code> (gạch trên),
+        <code>line-through</code> (gạch ngang), <code>none</code> (bỏ — thường dùng cho liên kết):
+      </p>
+      <div id="mini-decoration"></div>
+
+      <h2 id="transform">Biến đổi chữ — <code>text-transform</code></h2>
+      <p>
+        Đổi kiểu chữ hoa/thường: <code>uppercase</code> (HOA), <code>lowercase</code> (thường),
+        <code>capitalize</code> (Viết Hoa Đầu Mỗi Từ):
+      </p>
+      <div id="mini-transform"></div>
+
+      <h2 id="indent">Thụt đầu dòng — <code>text-indent</code></h2>
+      <p>Thụt lề dòng đầu tiên của đoạn văn:</p>
+      <div id="mini-indent"></div>
+
+      <h2 id="spacing">Khoảng cách chữ &amp; từ</h2>
+      <p>
+        <code>letter-spacing</code> chỉnh khoảng cách giữa các ký tự; <code>word-spacing</code> chỉnh khoảng
+        cách giữa các từ:
+      </p>
+      <div id="mini-spacing"></div>
+
+      <h2 id="lineheight">Chiều cao dòng — <code>line-height</code></h2>
+      <p>Tăng/giảm khoảng cách giữa các dòng để dễ đọc hơn:</p>
+      <div id="mini-lineheight"></div>
+
+      <h2 id="shadow">Bóng chữ — <code>text-shadow</code></h2>
+      <p>
+        Tạo hiệu ứng bóng đổ: <code>text-shadow: x y blur color;</code> (độ lệch ngang, dọc, độ nhòe, màu):
+      </p>
+      <div id="mini-shadow"></div>
+
+      <h2 id="table">Bảng tổng hợp các thuộc tính</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th>Thuộc tính</th><th>Công dụng</th><th>Giá trị ví dụ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>color</code></td><td>Màu chữ.</td><td><code>red</code>, <code>#333</code></td></tr>
+          <tr><td><code>text-align</code></td><td>Căn lề ngang.</td><td><code>center</code>, <code>justify</code></td></tr>
+          <tr><td><code>text-decoration</code></td><td>Gạch chân/ngang.</td><td><code>underline</code>, <code>none</code></td></tr>
+          <tr><td><code>text-transform</code></td><td>Hoa/thường.</td><td><code>uppercase</code></td></tr>
+          <tr><td><code>text-indent</code></td><td>Thụt đầu dòng.</td><td><code>30px</code></td></tr>
+          <tr><td><code>letter-spacing</code></td><td>Khoảng cách ký tự.</td><td><code>2px</code></td></tr>
+          <tr><td><code>word-spacing</code></td><td>Khoảng cách từ.</td><td><code>8px</code></td></tr>
+          <tr><td><code>line-height</code></td><td>Chiều cao dòng.</td><td><code>1.6</code></td></tr>
+          <tr><td><code>text-shadow</code></td><td>Bóng chữ.</td><td><code>2px 2px 4px gray</code></td></tr>
+          <tr><td><code>direction</code></td><td>Hướng văn bản.</td><td><code>ltr</code>, <code>rtl</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="tryit">Thử viết CSS ngay (Try it yourself)</h2>
+      <p>
+        Chỉnh sửa mã trong ô bên trái, kết quả hiển thị ngay bên phải. Bấm <strong>Chạy</strong> để cập nhật,
+        hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML + CSS Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML/CSS</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        CSS cung cấp nhiều thuộc tính để định dạng văn bản: <code>color</code> (màu), <code>text-align</code>
+        (căn lề), <code>text-decoration</code> (gạch chân/ngang), <code>text-transform</code> (hoa/thường),
+        <code>text-indent</code> (thụt đầu dòng), <code>letter-spacing</code>/<code>word-spacing</code> (khoảng
+        cách), <code>line-height</code> (chiều cao dòng) và <code>text-shadow</code> (bóng chữ). Kết hợp khéo
+        léo giúp văn bản dễ đọc và hấp dẫn hơn.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem
+        <a href="css-colors.html"><strong>CSS Colors</strong></a> để tô màu chữ và
+        <a href="css-borders.html"><strong>CSS Borders</strong></a> để trang trí khối văn bản.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-colors.html">CSS Colors</a></li>
+          <li><a href="css-background.html">CSS Background</a></li>
+          <li><a href="css-borders.html">CSS Borders</a></li>
+          <li><a href="../html/html-text-formatting.html">HTML Text Formatting</a></li>
+          <li><a href="css-introduction.html">CSS Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML/CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    const HEAD = '<style>body{font-family:Arial,sans-serif;padding:14px;}</style>';
+
+    makeMini('mini-color',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  .a { color: #2da44e; }
+  .b { color: crimson; }
+  .c { color: rgb(9,105,218); }
+</style></head>
+<body>
+  <p class="a">Màu HEX (#2da44e)</p>
+  <p class="b">Tên màu (crimson)</p>
+  <p class="c">Màu RGB</p>
+</body></html>`);
+
+    makeMini('mini-align',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  p { border:1px solid #ddd; padding:6px; }
+  .l { text-align:left; }
+  .c { text-align:center; }
+  .r { text-align:right; }
+  .j { text-align:justify; }
+</style></head>
+<body>
+  <p class="l">Căn trái (left)</p>
+  <p class="c">Căn giữa (center)</p>
+  <p class="r">Căn phải (right)</p>
+  <p class="j">Căn đều hai bên (justify) — dòng văn bản dài sẽ được giãn để hai mép thẳng hàng nhau.</p>
+</body></html>`);
+
+    makeMini('mini-decoration',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  .u { text-decoration: underline; }
+  .o { text-decoration: overline; }
+  .t { text-decoration: line-through; }
+  a.n { text-decoration: none; color:#0969da; }
+</style></head>
+<body>
+  <p class="u">Gạch chân (underline)</p>
+  <p class="o">Gạch trên (overline)</p>
+  <p class="t">Gạch ngang (line-through)</p>
+  <a class="n" href="#">Liên kết bỏ gạch chân (none)</a>
+</body></html>`);
+
+    makeMini('mini-transform',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  .up { text-transform: uppercase; }
+  .lo { text-transform: lowercase; }
+  .ca { text-transform: capitalize; }
+</style></head>
+<body>
+  <p class="up">html va css that thu vi</p>
+  <p class="lo">HTML VA CSS THAT THU VI</p>
+  <p class="ca">html va css that thu vi</p>
+</body></html>`);
+
+    makeMini('mini-indent',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  p { text-indent: 40px; }
+</style></head>
+<body>
+  <p>Dòng đầu tiên của đoạn văn này được thụt vào 40px. Các dòng tiếp theo vẫn bắt đầu từ lề trái như bình thường.</p>
+</body></html>`);
+
+    makeMini('mini-spacing',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  .ls { letter-spacing: 4px; }
+  .ws { word-spacing: 16px; }
+</style></head>
+<body>
+  <p class="ls">Giãn ký tự (letter-spacing)</p>
+  <p class="ws">Giãn khoảng cách giữa các từ</p>
+</body></html>`);
+
+    makeMini('mini-lineheight',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  .tight { line-height: 1; }
+  .loose { line-height: 2; }
+  div { border:1px solid #ddd; padding:6px; margin-bottom:8px; }
+</style></head>
+<body>
+  <div class="tight">Dòng sát nhau (line-height:1). Văn bản nhiều dòng sẽ nằm khít lại với nhau hơn.</div>
+  <div class="loose">Dòng thưa (line-height:2). Văn bản nhiều dòng sẽ thoáng và dễ đọc hơn.</div>
+</body></html>`);
+
+    makeMini('mini-shadow',
+`<!DOCTYPE html>
+<html><head>${HEAD}
+<style>
+  h2 { color:#2da44e; text-shadow: 2px 2px 4px #888; }
+  .neon { color:#fff; background:#222; padding:10px; text-shadow:0 0 8px #2da44e, 0 0 16px #2da44e; }
+</style></head>
+<body>
+  <h2>Bóng chữ cơ bản</h2>
+  <p class="neon">Hiệu ứng phát sáng (neon)</p>
+</body></html>`);
+
+    // ----- Trình soạn trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 16px; }
+      h1 {
+        color: #2da44e;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px #aaa;
+        letter-spacing: 2px;
+      }
+      p {
+        text-align: justify;
+        text-indent: 30px;
+        line-height: 1.7;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tiêu đề mẫu</h1>
+    <p>Thử thay đổi các thuộc tính text-align, text-transform, letter-spacing,
+       line-height hay text-shadow để xem văn bản thay đổi như thế nào.</p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      preview.srcdoc = input.value;
+    }
+    function resetCode() {
+      input.value = sampleCode;
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
+  </script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bootstrap 5 Columns - Cột - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="../css/css-introduction.html">CSS Introduction</a>
+            <a href="../css/css-syntax.html">CSS Syntax</a>
+            <a href="../css/css-combinators.html">CSS Combinators</a>
+            <a href="../css/css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="../css/css-colors.html">CSS Colors</a>
+            <a href="../css/css-background.html">CSS Background</a>
+            <a href="../css/css-borders.html">CSS Borders</a>
+            <a href="../css/css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="../css/css-padding.html">CSS Padding</a>
+            <a href="../css/css-overflow.html">CSS Overflow</a>
+            <a href="../css/css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="../css/css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5" class="active">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+            <a href="bootstrap-5-layout-containers.html">Layout Containers</a>
+            <a href="bootstrap-5-layout-grid-system.html">Grid System</a>
+            <a href="bootstrap-5-columns.html">Columns</a>
+            <a href="bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="bootstrap-5-reboot.html">Reboot</a>
+            <a href="bootstrap-5-typography.html">Typography</a>
+            <a href="bootstrap-5-images.html">Images</a>
+            <a href="bootstrap-5-tables.html">Tables</a>
+            <a href="bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="bootstrap-5-forms.html">Forms</a>
+            <a href="bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="bootstrap-5-utilities.html">Utilities</a>
+            <a href="bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Cột là gì?</a></li>
+        <li><a href="#equal">Cột chia đều</a></li>
+        <li><a href="#one">Đặt một cột</a></li>
+        <li><a href="#auto">Cột theo nội dung (col-auto)</a></li>
+        <li><a href="#responsive">Cột responsive</a></li>
+        <li><a href="#order">Đổi thứ tự (order)</a></li>
+        <li><a href="#offset">Đẩy cột (offset)</a></li>
+        <li><a href="#alignself">Tự căn (align-self)</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » Bootstrap 5 » Columns</div>
+      <h1>Bootstrap 5 Columns — Cột trong lưới</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 18/06/2026</span>
+        <span>228K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Cột (column)</strong> là vùng đặt nội dung bên trong một <code>.row</code>. Bootstrap 5 cho
+        phép chia đều tự động, đặt độ rộng cố định, độ rộng theo nội dung, đổi thứ tự, đẩy lề (offset) và căn
+        chỉnh từng cột — tất cả dựa trên lưới 12 cột.
+      </p>
+
+      <div class="note">
+        <strong>Mẹo:</strong> Nếu tổng số cột vượt quá 12, các cột thừa sẽ tự xuống hàng mới.
+      </div>
+
+      <h2 id="equal">Cột chia đều</h2>
+      <p>Dùng <code>.col</code> không số — các cột tự chia đều phần rộng:</p>
+      <div id="mini-equal"></div>
+
+      <h2 id="one">Đặt độ rộng một cột</h2>
+      <p>Đặt số cho một cột, các cột <code>.col</code> còn lại tự lấp phần trống:</p>
+      <div id="mini-one"></div>
+
+      <h2 id="auto">Cột theo nội dung — <code>col-auto</code></h2>
+      <p><code>.col-auto</code> rộng vừa đúng nội dung bên trong:</p>
+      <div id="mini-auto"></div>
+
+      <h2 id="responsive">Cột responsive</h2>
+      <p>Kết hợp nhiều infix để đổi độ rộng theo breakpoint:</p>
+      <div id="mini-responsive"></div>
+
+      <h2 id="order">Đổi thứ tự — <code>order-*</code></h2>
+      <p>Dùng <code>order-1…5</code>, <code>order-first</code>, <code>order-last</code> để đổi thứ tự hiển thị:</p>
+      <div id="mini-order"></div>
+
+      <h2 id="offset">Đẩy cột — <code>offset-*</code></h2>
+      <p><code>offset-md-*</code> đẩy cột sang phải một số cột nhất định:</p>
+      <div id="mini-offset"></div>
+
+      <h2 id="alignself">Tự căn — <code>align-self-*</code></h2>
+      <p>Căn riêng một cột theo chiều dọc: <code>align-self-start|center|end</code>:</p>
+      <div id="mini-alignself"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Ưu tiên <code>.col</code> tự cân bằng khi không cần độ rộng cụ thể.</li>
+        <li>Dùng <code>col-auto</code> cho nội dung ngắn (nút, nhãn).</li>
+        <li>Dùng <code>offset-*</code> hoặc tiện ích margin (<code>ms-auto</code>) để canh.</li>
+        <li>Dùng <code>order-*</code> để đổi thứ tự thị giác mà không đổi HTML.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Chỉnh sửa mã (đã nhúng Bootstrap 5), kết quả hiển thị ngay bên phải.</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML + Bootstrap Editor</span>
+          <span><button onclick="runCode()">Chạy</button><button onclick="resetCode()">Đặt lại</button></span>
+        </div>
+        <div class="tryit-panes">
+          <div><span class="lbl">Mã HTML</span><textarea id="htmlInput" spellcheck="false"></textarea></div>
+          <div><span class="lbl">Kết quả</span><iframe id="preview" title="Kết quả xem trước"></iframe></div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Cột trong Bootstrap 5 nằm trong <code>.row</code> và dựa trên lưới 12 cột. Có thể chia đều
+        (<code>.col</code>), đặt số cố định (<code>col-6</code>), rộng theo nội dung (<code>col-auto</code>),
+        responsive theo breakpoint, đổi thứ tự (<code>order-*</code>), đẩy lề (<code>offset-*</code>) và căn
+        từng cột (<code>align-self-*</code>).
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem <a href="bootstrap-5-gutters.html"><strong>Gutters</strong></a> để chỉnh khoảng cách giữa cột và
+        <a href="bootstrap-5-layout-grid-system.html"><strong>Grid System</strong></a> để nắm tổng quan lưới.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học Front-end</h4>
+        <p>Học HTML, CSS và Bootstrap để dựng giao diện web chuyên nghiệp.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="bootstrap-5-layout-grid-system.html">Grid System</a></li>
+          <li><a href="bootstrap-5-gutters.html">Gutters</a></li>
+          <li><a href="bootstrap-5-layout-containers.html">Layout Containers</a></li>
+          <li><a href="bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a></li>
+          <li><a href="bootstrap-5.html">Bootstrap 5 Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Bootstrap 5</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Bootstrap 5</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id)); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử (có Bootstrap 5)</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+    const BS =
+`  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>`;
+
+    makeMini('mini-equal',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="container"><div class="row text-center">
+    <div class="col"><div class="bg-success text-white p-3">col</div></div>
+    <div class="col"><div class="bg-primary text-white p-3">col</div></div>
+    <div class="col"><div class="bg-secondary text-white p-3">col</div></div>
+  </div></div>
+</body>
+</html>`);
+
+    makeMini('mini-one',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="container"><div class="row text-center">
+    <div class="col"><div class="bg-success text-white p-3">col</div></div>
+    <div class="col-6"><div class="bg-primary text-white p-3">col-6</div></div>
+    <div class="col"><div class="bg-secondary text-white p-3">col</div></div>
+  </div></div>
+</body>
+</html>`);
+
+    makeMini('mini-auto',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="container"><div class="row text-center">
+    <div class="col-auto"><div class="bg-success text-white p-3">col-auto (vừa nội dung)</div></div>
+    <div class="col"><div class="bg-primary text-white p-3">col (phần còn lại)</div></div>
+  </div></div>
+</body>
+</html>`);
+
+    makeMini('mini-responsive',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="container"><div class="row g-2 text-center">
+    <div class="col-12 col-sm-6 col-lg-3"><div class="bg-success text-white p-3">12/6/3</div></div>
+    <div class="col-12 col-sm-6 col-lg-3"><div class="bg-primary text-white p-3">12/6/3</div></div>
+    <div class="col-12 col-sm-6 col-lg-3"><div class="bg-secondary text-white p-3">12/6/3</div></div>
+    <div class="col-12 col-sm-6 col-lg-3"><div class="bg-dark text-white p-3">12/6/3</div></div>
+  </div></div>
+</body>
+</html>`);
+
+    makeMini('mini-order',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="container"><div class="row text-center">
+    <div class="col order-3"><div class="bg-success text-white p-3">HTML 1 (order-3)</div></div>
+    <div class="col order-1"><div class="bg-primary text-white p-3">HTML 2 (order-1)</div></div>
+    <div class="col order-2"><div class="bg-secondary text-white p-3">HTML 3 (order-2)</div></div>
+  </div></div>
+</body>
+</html>`);
+
+    makeMini('mini-offset',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="container"><div class="row text-center">
+    <div class="col-md-4"><div class="bg-success text-white p-3">col-md-4</div></div>
+    <div class="col-md-4 offset-md-4"><div class="bg-primary text-white p-3">offset-md-4</div></div>
+  </div></div>
+</body>
+</html>`);
+
+    makeMini('mini-alignself',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="container"><div class="row text-center" style="height:140px; background:#eef;">
+    <div class="col align-self-start"><div class="bg-success text-white p-2">start</div></div>
+    <div class="col align-self-center"><div class="bg-primary text-white p-2">center</div></div>
+    <div class="col align-self-end"><div class="bg-secondary text-white p-2">end</div></div>
+  </div></div>
+</body>
+</html>`);
+
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>
+  </head>
+  <body class="p-3">
+    <div class="container">
+      <div class="row g-2 text-center">
+        <div class="col-6 col-md-3"><div class="bg-success text-white p-3">A</div></div>
+        <div class="col-6 col-md-3"><div class="bg-primary text-white p-3">B</div></div>
+        <div class="col-12 col-md-6"><div class="bg-secondary text-white p-3">C (rộng hơn)</div></div>
+      </div>
+    </div>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let typingTimer;
+    input.addEventListener('input', () => { clearTimeout(typingTimer); typingTimer = setTimeout(runCode, 300); });
+    resetCode();
+  </script>
+</body>
+</html>

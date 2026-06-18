@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CSS Margins & Padding: khoảng cách ngoài và trong, cú pháp rút gọn, từng cạnh, căn giữa bằng margin auto kèm ví dụ chạy trực tiếp." />
+<title>CSS Margins &amp; Padding - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css" class="active">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <!-- ===== Layout ===== -->
+  <div class="layout">
+
+    <!-- Left TOC -->
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Margin &amp; Padding</a></li>
+        <li><a href="#boxmodel">Mô hình hộp</a></li>
+        <li><a href="#diff">Phân biệt</a></li>
+        <li><a href="#margin">Margin</a></li>
+        <li><a href="#padding">Padding</a></li>
+        <li><a href="#shorthand">Cú pháp rút gọn</a></li>
+        <li><a href="#sides">Từng cạnh</a></li>
+        <li><a href="#center">Căn giữa với auto</a></li>
+        <li><a href="#tryit">Thử ngay</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main article -->
+    <main class="article">
+      <div class="crumbs">Home » CSS » Styling &amp; Properties » CSS Margins &amp; Padding</div>
+      <h1>CSS Margins &amp; Padding</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 16/06/2026</span>
+        <span>250K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Margin</strong> và <strong>Padding</strong> là hai thuộc tính tạo khoảng cách trong
+        CSS. <strong>Padding</strong> là khoảng cách <em>bên trong</em> — giữa nội dung và viền
+        (border). <strong>Margin</strong> là khoảng cách <em>bên ngoài</em> — giữa viền của phần tử và
+        các phần tử xung quanh. Cả hai là thành phần quan trọng của <strong>Box Model</strong>.
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> Thứ tự từ trong ra ngoài của Box Model là:
+        <code>content → padding → border → margin</code>.
+      </div>
+
+      <h2 id="boxmodel">Mô hình hộp (Box Model)</h2>
+      <p>Sơ đồ dưới đây minh họa các lớp bao quanh nội dung — từ trong ra ngoài: content, padding, border, margin.</p>
+      <figure style="margin:0 0 18px;background:var(--gfg-bg-alt);border-radius:10px;padding:10px;">
+        <svg viewBox="0 0 480 400" width="100%" role="img" aria-label="Sơ đồ Box Model: margin, border, padding, content" style="display:block;max-width:460px;margin:0 auto;font-family:Arial,sans-serif;">
+          <!-- Margin -->
+          <rect x="8" y="8" width="464" height="384" rx="4" fill="#fbe3cf" stroke="#e08a3c" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="26" y="34" font-size="18" font-weight="700" fill="#1b1b32">margin</text>
+          <text x="240" y="34" font-size="15" fill="#444" text-anchor="middle">20</text>
+          <text x="240" y="384" font-size="15" fill="#444" text-anchor="middle">20</text>
+          <text x="24" y="205" font-size="15" fill="#444">20</text>
+          <text x="456" y="205" font-size="15" fill="#444" text-anchor="end">20</text>
+
+          <!-- Border -->
+          <rect x="70" y="62" width="340" height="276" fill="#fbf3c4" stroke="#b59a00" stroke-width="2"/>
+          <text x="86" y="86" font-size="16" font-weight="700" fill="#1b1b32">border</text>
+          <text x="240" y="90" font-size="14" fill="#888" text-anchor="middle">-</text>
+          <text x="240" y="326" font-size="14" fill="#888" text-anchor="middle">-</text>
+          <text x="86" y="205" font-size="14" fill="#888">-</text>
+          <text x="394" y="205" font-size="14" fill="#888" text-anchor="end">-</text>
+
+          <!-- Padding -->
+          <rect x="120" y="120" width="240" height="160" fill="#d7ebcd" stroke="#5a9e5a" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <text x="136" y="144" font-size="15" font-weight="700" fill="#1b1b32">padding</text>
+          <text x="240" y="150" font-size="14" fill="#888" text-anchor="middle">-</text>
+          <text x="240" y="268" font-size="14" fill="#888" text-anchor="middle">-</text>
+          <text x="136" y="205" font-size="14" fill="#888">-</text>
+          <text x="344" y="205" font-size="14" fill="#888" text-anchor="end">-</text>
+
+          <!-- Content -->
+          <rect x="170" y="178" width="140" height="46" fill="#c5d8f7" stroke="#4571c4" stroke-width="2"/>
+          <text x="240" y="206" font-size="15" font-weight="700" fill="#1b1b32" text-anchor="middle">152×152</text>
+        </svg>
+        <figcaption style="text-align:center;font-size:0.82rem;color:var(--gfg-muted);margin-top:6px;">Hình 1: Mô hình hộp (Box Model) trong CSS</figcaption>
+      </figure>
+
+      <h2 id="diff">Phân biệt Margin và Padding</h2>
+      <table class="cmp">
+        <thead>
+          <tr><th></th><th>Padding</th><th>Margin</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Vị trí</td><td>Bên trong viền</td><td>Bên ngoài viền</td></tr>
+          <tr><td>Ảnh hưởng</td><td>Tăng khoảng trống quanh nội dung</td><td>Tạo khoảng cách với phần tử khác</td></tr>
+          <tr><td>Màu nền</td><td>Bị phủ bởi background</td><td>Luôn trong suốt</td></tr>
+          <tr><td>Giá trị âm</td><td>Không hỗ trợ</td><td>Có hỗ trợ</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="margin">1. Margin (khoảng cách ngoài)</h2>
+      <p>Tạo khoảng trống bên ngoài phần tử, đẩy các phần tử khác ra xa.</p>
+      <div id="mini-margin"></div>
+
+      <h2 id="padding">2. Padding (khoảng cách trong)</h2>
+      <p>Tạo khoảng trống bên trong, giữa nội dung và viền.</p>
+      <div id="mini-padding"></div>
+
+      <h2 id="shorthand">3. Cú pháp rút gọn</h2>
+      <p>Có thể khai báo 1–4 giá trị cho cả <code>margin</code> và <code>padding</code>:</p>
+      <table class="cmp">
+        <thead>
+          <tr><th>Số giá trị</th><th>Ý nghĩa</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>padding: 10px;</code></td><td>cả 4 cạnh = 10px.</td></tr>
+          <tr><td><code>padding: 10px 20px;</code></td><td>trên/dưới = 10px, trái/phải = 20px.</td></tr>
+          <tr><td><code>padding: 10px 20px 30px;</code></td><td>trên = 10, trái/phải = 20, dưới = 30.</td></tr>
+          <tr><td><code>padding: 10px 20px 30px 40px;</code></td><td>trên, phải, dưới, trái (theo chiều kim đồng hồ).</td></tr>
+        </tbody>
+      </table>
+      <div id="mini-shorthand"></div>
+
+      <h2 id="sides">4. Đặt cho từng cạnh</h2>
+      <p>
+        Dùng <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>,
+        <code>margin-left</code> (tương tự với <code>padding-*</code>).
+      </p>
+      <div id="mini-sides"></div>
+
+      <h2 id="center">5. Căn giữa khối với margin auto</h2>
+      <p>
+        Đặt <code>margin: 0 auto;</code> cho một phần tử khối có <code>width</code> xác định sẽ căn nó
+        vào giữa theo chiều ngang.
+      </p>
+      <div id="mini-center"></div>
+
+      <h2 id="tryit">Thử ngay — kết hợp margin &amp; padding</h2>
+      <p>Chỉnh sửa mã bên trái và xem kết quả ngay bên phải.</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>CSS Margin &amp; Padding Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div>
+            <span class="lbl">Mã HTML + CSS</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        <strong>Padding</strong> tạo khoảng cách bên trong (giữa nội dung và viền), còn
+        <strong>margin</strong> tạo khoảng cách bên ngoài (giữa phần tử và các phần tử khác). Cả hai
+        hỗ trợ cú pháp rút gọn 1–4 giá trị và đặt riêng cho từng cạnh. <code>margin: 0 auto;</code>
+        là cách phổ biến để căn giữa một khối theo chiều ngang.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tìm hiểu <strong>Box Model</strong> và
+        <code>box-sizing</code> để kiểm soát kích thước phần tử chính xác.
+      </div>
+    </main>
+
+    <!-- Right rail -->
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học CSS</h4>
+        <p>Làm chủ box model, khoảng cách và bố cục web hiện đại.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-borders.html">CSS Borders</a></li>
+          <li><a href="css-background.html">CSS Background</a></li>
+          <li><a href="#">CSS Box Model</a></li>
+          <li><a href="#">CSS box-sizing</a></li>
+          <li><a href="css-colors.html">CSS Colors</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Tutorials</h5>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML + CSS</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeMini('mini-margin',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    background: #1a73e8;
+    color: #fff;
+    padding: 10px;
+  }
+
+  /* margin tạo khoảng cách bên ngoài */
+  .no-margin { margin: 0; }
+  .big-margin { margin: 30px; }
+</style>
+</head>
+<body>
+  <div class="box no-margin">margin: 0</div>
+  <div class="box big-margin">margin: 30px (cách ra xa)</div>
+</body>
+</html>`);
+
+    makeMini('mini-padding',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    background: #e8f0fe;
+    border: 1px solid #1a73e8;
+    margin-bottom: 10px;
+  }
+
+  /* padding tạo khoảng cách bên trong */
+  .small { padding: 5px; }
+  .large { padding: 30px; }
+</style>
+</head>
+<body>
+  <div class="box small">padding: 5px</div>
+  <div class="box large">padding: 30px (rộng bên trong)</div>
+</body>
+</html>`);
+
+    makeMini('mini-shorthand',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    background: #e8f0fe;
+    border: 1px solid #1a73e8;
+    margin-bottom: 10px;
+  }
+
+  /* 2 giá trị: trên-dưới | trái-phải */
+  .two { padding: 10px 40px; }
+
+  /* 4 giá trị: trên | phải | dưới | trái */
+  .four { padding: 5px 10px 25px 40px; }
+</style>
+</head>
+<body>
+  <div class="box two">padding: 10px 40px</div>
+  <div class="box four">padding: 5px 10px 25px 40px</div>
+</body>
+</html>`);
+
+    makeMini('mini-sides',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box {
+    background: #1a73e8;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Đặt riêng cho từng cạnh */
+  .demo {
+    margin-left: 50px;
+    padding-top: 24px;
+  }
+</style>
+</head>
+<body>
+  <div class="box">Khối thường</div>
+  <div class="box demo">margin-left: 50px + padding-top: 24px</div>
+</body>
+</html>`);
+
+    makeMini('mini-center',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .center-box {
+    width: 160px;
+    background: #1a73e8;
+    color: #fff;
+    padding: 14px;
+    text-align: center;
+
+    /* căn giữa theo chiều ngang */
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+  <div class="center-box">margin: 0 auto</div>
+</body>
+</html>`);
+
+    // ----- Editor lớn: Thử ngay -----
+    const sampleCode =
+`<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    .card {
+      width: 220px;
+      background: #e8f0fe;
+      border: 2px solid #1a73e8;
+
+      /* khoảng cách trong */
+      padding: 20px;
+
+      /* căn giữa + cách trên 20px */
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>Thẻ có margin &amp; padding</h3>
+    <p>Thử đổi giá trị padding và margin!</p>
+  </div>
+</body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let bigTimer;
+    input.addEventListener('input', () => { clearTimeout(bigTimer); bigTimer = setTimeout(runCode, 300); });
+    resetCode();
+  </script>
+</body>
+</html>
