@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bootstrap 5 Ratios - Tỉ lệ khung - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="../css/css-introduction.html">CSS Introduction</a>
+            <a href="../css/css-syntax.html">CSS Syntax</a>
+            <a href="../css/css-combinators.html">CSS Combinators</a>
+            <a href="../css/css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="../css/css-colors.html">CSS Colors</a>
+            <a href="../css/css-background.html">CSS Background</a>
+            <a href="../css/css-borders.html">CSS Borders</a>
+            <a href="../css/css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="../css/css-padding.html">CSS Padding</a>
+            <a href="../css/css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="../css/css-text-formatting.html">CSS Text Formatting</a>
+            <a href="../css/css-fonts.html">CSS Fonts</a>
+            <a href="../css/css-text-align.html">CSS text-align</a>
+            <a href="../css/css-text-decoration.html">CSS text-decoration</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Design</span>
+            <a href="../css/css-box-model.html">CSS Box Model</a>
+            <a href="../css/css-display.html">CSS Display</a>
+            <a href="../css/css-float-clear.html">CSS Float &amp; Clear</a>
+            <a href="../css/css-overflow.html">CSS Overflow</a>
+            <a href="../css/css-z-index.html">CSS Z-index</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Modern Layout Systems</span>
+            <a href="../css/css-flexbox.html">CSS Flexbox</a>
+            <a href="../css/css-justify-content.html">CSS justify-content</a>
+            <a href="../css/css-align-items.html">CSS align-items</a>
+            <a href="../css/css-align-content.html">CSS align-content</a>
+            <a href="../css/css-grid.html">CSS Grid Layout</a>
+            <a href="../css/css-grid-template-columns.html">CSS grid-template-columns</a>
+            <a href="../css/css-grid-gap.html">CSS grid gap</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Effects, Animations &amp; Advanced CSS</span>
+            <a href="../css/css-transitions.html">CSS Transitions</a>
+            <a href="../css/css-transforms.html">CSS Transform</a>
+            <a href="../css/css-animations.html">CSS Animations</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5" class="active">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+            <a href="bootstrap-5-layout-containers.html">Layout Containers</a>
+            <a href="bootstrap-5-layout-grid-system.html">Grid System</a>
+            <a href="bootstrap-5-columns.html">Columns</a>
+            <a href="bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="bootstrap-5-reboot.html">Reboot</a>
+            <a href="bootstrap-5-typography.html">Typography</a>
+            <a href="bootstrap-5-images.html">Images</a>
+            <a href="bootstrap-5-tables.html">Tables</a>
+            <a href="bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="bootstrap-5-forms.html">Forms</a>
+            <a href="bootstrap-5-form-controls.html">Form Controls</a>
+            <a href="bootstrap-5-select.html">Select</a>
+            <a href="bootstrap-5-checks-and-radios.html">Checks &amp; Radios</a>
+            <a href="bootstrap-5-range.html">Range</a>
+            <a href="bootstrap-5-input-group.html">Input Group</a>
+            <a href="bootstrap-5-floating-labels.html">Floating Labels</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms Layout</span>
+            <a href="bootstrap-5-layout-forms.html">Forms Layout</a>
+            <a href="bootstrap-5-layout-utilities.html">Layout Utilities</a>
+            <a href="bootstrap-5-layout-form-grid.html">Form Grid</a>
+            <a href="bootstrap-5-layout-gutters.html">Layout Gutters</a>
+            <a href="bootstrap-5-layout-horizontal-form.html">Horizontal Form</a>
+            <a href="bootstrap-5-layout-horizontal-form-label-sizing.html">Horizontal Form Label Sizing</a>
+            <a href="bootstrap-5-layout-column-sizing.html">Column Sizing</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Components</span>
+            <a href="bootstrap-5-accordion.html">Accordion</a>
+            <a href="bootstrap-5-alerts.html">Alerts</a>
+            <a href="bootstrap-5-badges.html">Badges</a>
+            <a href="bootstrap-5-breadcrumb.html">Breadcrumb</a>
+            <a href="bootstrap-5-buttons.html">Buttons</a>
+            <a href="bootstrap-5-button-group.html">Button Group</a>
+            <a href="bootstrap-5-card.html">Card</a>
+            <a href="bootstrap-5-carousel.html">Carousel</a>
+            <a href="bootstrap-5-close-button.html">Close Button</a>
+            <a href="bootstrap-5-collapse.html">Collapse</a>
+            <a href="bootstrap-5-dropdowns.html">Dropdowns</a>
+            <a href="bootstrap-5-list-group.html">List Group</a>
+            <a href="bootstrap-5-modal.html">Modal</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Navbar</span>
+            <a href="bootstrap-5-navbar-brand.html">Navbar Brand</a>
+            <a href="bootstrap-5-navbar-brand-text.html">Navbar Brand Text</a>
+            <a href="bootstrap-5-navbar-brand-image.html">Navbar Brand Image</a>
+            <a href="bootstrap-5-navbar-nav.html">Navbar Nav</a>
+            <a href="bootstrap-5-navbar-forms.html">Navbar Forms</a>
+            <a href="bootstrap-5-navbar-text.html">Navbar Text</a>
+            <a href="bootstrap-5-offcanvas.html">Offcanvas</a>
+            <a href="bootstrap-5-popovers.html">Popovers</a>
+            <a href="bootstrap-5-progress.html">Progress</a>
+            <a href="bootstrap-5-scrollspy.html">Scrollspy</a>
+            <a href="bootstrap-5-spinners.html">Spinners</a>
+            <a href="bootstrap-5-toasts.html">Toasts</a>
+            <a href="bootstrap-5-tooltips.html">Tooltips</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Helpers</span>
+            <a href="bootstrap-5-clearfix.html">Clearfix</a>
+            <a href="bootstrap-5-colored-links.html">Colored Links</a>
+            <a href="bootstrap-5-ratios.html">Ratios</a>
+            <a href="bootstrap-5-position.html">Position</a>
+            <a href="bootstrap-5-visually-hidden.html">Visually Hidden</a>
+            <a href="bootstrap-5-stretched-link.html">Stretched Link</a>
+            <a href="bootstrap-5-text-truncation.html">Text Truncation</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Extend</span>
+            <a href="bootstrap-5-approach.html">Approach</a>
+            <a href="bootstrap-5-icons.html">Icons</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="bootstrap-5-utilities.html">Utilities</a>
+            <a href="bootstrap-5-z-index.html">Z-index</a>
+            <a href="bootstrap-5-background.html">Background</a>
+            <a href="bootstrap-5-borders.html">Borders</a>
+            <a href="bootstrap-5-colors.html">Colors</a>
+            <a href="bootstrap-5-display.html">Display</a>
+            <a href="bootstrap-5-flex.html">Flex</a>
+            <a href="bootstrap-5-float.html">Float</a>
+            <a href="bootstrap-5-interactions.html">Interactions</a>
+            <a href="bootstrap-5-overflow.html">Overflow</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Ratios là gì?</a></li>
+        <li><a href="#basic">Tỉ lệ cơ bản</a></li>
+        <li><a href="#list">Các tỉ lệ có sẵn</a></li>
+        <li><a href="#custom">Tỉ lệ tùy chỉnh</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » Bootstrap 5 » Ratios</div>
+      <h1>Bootstrap 5 Ratios — Tỉ lệ khung hình</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 21/06/2026</span>
+        <span>174K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Ratios</strong> giúp giữ <strong>tỉ lệ khung hình</strong> (aspect ratio) cho nội dung nhúng như
+        video, iframe, bản đồ… Bootstrap 5 dùng lớp bọc <code>.ratio</code> kèm một lớp tỉ lệ
+        (<code>.ratio-16x9</code>…); phần tử con sẽ tự lấp đầy khung theo đúng tỉ lệ, responsive.
+      </p>
+
+      <div class="note">
+        <strong>Cách dùng:</strong> <code>&lt;div class="ratio ratio-16x9"&gt;</code> bọc một
+        <code>&lt;iframe&gt;</code>/<code>&lt;video&gt;</code>/phần tử con; con sẽ tự được kéo giãn lấp đầy.
+      </div>
+
+      <h2 id="basic">Tỉ lệ cơ bản (16x9)</h2>
+      <div id="mini-basic"></div>
+
+      <h2 id="list">Các tỉ lệ có sẵn</h2>
+      <p><code>.ratio-1x1</code>, <code>.ratio-4x3</code>, <code>.ratio-16x9</code>, <code>.ratio-21x9</code>:</p>
+      <div id="mini-list"></div>
+
+      <h2 id="custom">Tỉ lệ tùy chỉnh</h2>
+      <p>Đặt biến CSS <code>--bs-aspect-ratio</code> (vd 50% = 2x1) trên phần tử <code>.ratio</code>:</p>
+      <div id="mini-custom"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Bọc nội dung nhúng (iframe/video) trong <code>.ratio</code> để responsive.</li>
+        <li>Chọn tỉ lệ phù hợp nội dung (16x9 cho video, 1x1 cho ảnh vuông).</li>
+        <li>Phần tử con không cần đặt width/height — khung lo việc đó.</li>
+        <li>Dùng <code>--bs-aspect-ratio</code> cho tỉ lệ không có sẵn.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Chỉnh sửa mã (đã nhúng Bootstrap 5), kết quả hiển thị ngay bên phải.</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML + Bootstrap Editor</span>
+          <span><button onclick="runCode()">Chạy</button><button onclick="resetCode()">Đặt lại</button></span>
+        </div>
+        <div class="tryit-panes">
+          <div><span class="lbl">Mã HTML</span><textarea id="htmlInput" spellcheck="false"></textarea></div>
+          <div><span class="lbl">Kết quả</span><iframe id="preview" title="Kết quả xem trước"></iframe></div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Ratios giữ tỉ lệ khung cho nội dung nhúng bằng <code>.ratio</code> + lớp tỉ lệ
+        (<code>.ratio-1x1/4x3/16x9/21x9</code>). Con tự lấp đầy khung, responsive; tỉ lệ tùy chỉnh đặt qua biến
+        <code>--bs-aspect-ratio</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem <a href="bootstrap-5-position.html"><strong>Position</strong></a> để đặt vị trí phần tử bằng tiện ích.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học Front-end</h4>
+        <p>Học HTML, CSS và Bootstrap để dựng giao diện web chuyên nghiệp.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="bootstrap-5-clearfix.html">Clearfix</a></li>
+          <li><a href="bootstrap-5-colored-links.html">Colored Links</a></li>
+          <li><a href="bootstrap-5-position.html">Position</a></li>
+          <li><a href="bootstrap-5.html">Bootstrap 5 Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Bootstrap 5</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Chủ đề</h5>
+        <ul>
+          <li><a href="../index.html#networks">Networks</a></li>
+          <li><a href="../index.html#html-basic">HTML</a></li>
+          <li><a href="../index.html#html5">HTML5</a></li>
+          <li><a href="../index.html#css">CSS</a></li>
+          <li><a href="../index.html#bootstrap5">Bootstrap 5</a></li>
+          <li><a href="../index.html#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id)); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử (có Bootstrap 5)</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+    const BS =
+`  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>`;
+
+    makeMini('mini-basic',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="ratio ratio-16x9">
+    <div class="bg-primary text-white d-flex align-items-center justify-content-center">16 : 9</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-list',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="row">
+    <div class="col-6 mb-2">
+      <div class="ratio ratio-1x1"><div class="bg-info text-white d-flex align-items-center justify-content-center">1 : 1</div></div>
+    </div>
+    <div class="col-6 mb-2">
+      <div class="ratio ratio-4x3"><div class="bg-success text-white d-flex align-items-center justify-content-center">4 : 3</div></div>
+    </div>
+    <div class="col-6">
+      <div class="ratio ratio-16x9"><div class="bg-warning d-flex align-items-center justify-content-center">16 : 9</div></div>
+    </div>
+    <div class="col-6">
+      <div class="ratio ratio-21x9"><div class="bg-danger text-white d-flex align-items-center justify-content-center">21 : 9</div></div>
+    </div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-custom',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="ratio" style="--bs-aspect-ratio: 50%">
+    <div class="bg-dark text-white d-flex align-items-center justify-content-center">Tùy chỉnh 2 : 1 (50%)</div>
+  </div>
+</body>
+</html>`);
+
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>
+  </head>
+  <body class="p-4">
+    <h6>Khung video 16:9 (giữ tỉ lệ khi co giãn)</h6>
+    <div class="ratio ratio-16x9">
+      <div class="bg-primary text-white d-flex align-items-center justify-content-center fs-4">Nội dung 16:9</div>
+    </div>
+    <p class="text-muted mt-2">Thử đổi ratio-16x9 thành ratio-1x1 hoặc ratio-4x3.</p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let typingTimer;
+    input.addEventListener('input', () => { clearTimeout(typingTimer); typingTimer = setTimeout(runCode, 300); });
+    resetCode();
+  </script>
+</body>
+</html>

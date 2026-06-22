@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CSS Flexbox - Bố cục linh hoạt - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css" class="active">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text-align.html">CSS text-align</a>
+            <a href="css-text-decoration.html">CSS text-decoration</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Design</span>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-float-clear.html">CSS Float &amp; Clear</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Modern Layout Systems</span>
+            <a href="css-flexbox.html">CSS Flexbox</a>
+            <a href="css-justify-content.html">CSS justify-content</a>
+            <a href="css-align-items.html">CSS align-items</a>
+            <a href="css-align-content.html">CSS align-content</a>
+            <a href="css-grid.html">CSS Grid Layout</a>
+            <a href="css-grid-template-columns.html">CSS grid-template-columns</a>
+            <a href="css-grid-gap.html">CSS grid gap</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Effects, Animations &amp; Advanced CSS</span>
+            <a href="css-transitions.html">CSS Transitions</a>
+            <a href="css-transforms.html">CSS Transform</a>
+            <a href="css-animations.html">CSS Animations</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+            <a href="../bootstrap5/bootstrap-5-select.html">Select</a>
+            <a href="../bootstrap5/bootstrap-5-checks-and-radios.html">Checks &amp; Radios</a>
+            <a href="../bootstrap5/bootstrap-5-range.html">Range</a>
+            <a href="../bootstrap5/bootstrap-5-input-group.html">Input Group</a>
+            <a href="../bootstrap5/bootstrap-5-floating-labels.html">Floating Labels</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms Layout</span>
+            <a href="../bootstrap5/bootstrap-5-layout-forms.html">Forms Layout</a>
+            <a href="../bootstrap5/bootstrap-5-layout-utilities.html">Layout Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-layout-form-grid.html">Form Grid</a>
+            <a href="../bootstrap5/bootstrap-5-layout-gutters.html">Layout Gutters</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form.html">Horizontal Form</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form-label-sizing.html">Horizontal Form Label Sizing</a>
+            <a href="../bootstrap5/bootstrap-5-layout-column-sizing.html">Column Sizing</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Components</span>
+            <a href="../bootstrap5/bootstrap-5-accordion.html">Accordion</a>
+            <a href="../bootstrap5/bootstrap-5-alerts.html">Alerts</a>
+            <a href="../bootstrap5/bootstrap-5-badges.html">Badges</a>
+            <a href="../bootstrap5/bootstrap-5-breadcrumb.html">Breadcrumb</a>
+            <a href="../bootstrap5/bootstrap-5-buttons.html">Buttons</a>
+            <a href="../bootstrap5/bootstrap-5-button-group.html">Button Group</a>
+            <a href="../bootstrap5/bootstrap-5-card.html">Card</a>
+            <a href="../bootstrap5/bootstrap-5-carousel.html">Carousel</a>
+            <a href="../bootstrap5/bootstrap-5-close-button.html">Close Button</a>
+            <a href="../bootstrap5/bootstrap-5-collapse.html">Collapse</a>
+            <a href="../bootstrap5/bootstrap-5-dropdowns.html">Dropdowns</a>
+            <a href="../bootstrap5/bootstrap-5-list-group.html">List Group</a>
+            <a href="../bootstrap5/bootstrap-5-modal.html">Modal</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Navbar</span>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand.html">Navbar Brand</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-text.html">Navbar Brand Text</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-image.html">Navbar Brand Image</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-nav.html">Navbar Nav</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-forms.html">Navbar Forms</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-text.html">Navbar Text</a>
+            <a href="../bootstrap5/bootstrap-5-offcanvas.html">Offcanvas</a>
+            <a href="../bootstrap5/bootstrap-5-popovers.html">Popovers</a>
+            <a href="../bootstrap5/bootstrap-5-progress.html">Progress</a>
+            <a href="../bootstrap5/bootstrap-5-scrollspy.html">Scrollspy</a>
+            <a href="../bootstrap5/bootstrap-5-spinners.html">Spinners</a>
+            <a href="../bootstrap5/bootstrap-5-toasts.html">Toasts</a>
+            <a href="../bootstrap5/bootstrap-5-tooltips.html">Tooltips</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Helpers</span>
+            <a href="../bootstrap5/bootstrap-5-clearfix.html">Clearfix</a>
+            <a href="../bootstrap5/bootstrap-5-colored-links.html">Colored Links</a>
+            <a href="../bootstrap5/bootstrap-5-ratios.html">Ratios</a>
+            <a href="../bootstrap5/bootstrap-5-position.html">Position</a>
+            <a href="../bootstrap5/bootstrap-5-visually-hidden.html">Visually Hidden</a>
+            <a href="../bootstrap5/bootstrap-5-stretched-link.html">Stretched Link</a>
+            <a href="../bootstrap5/bootstrap-5-text-truncation.html">Text Truncation</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Extend</span>
+            <a href="../bootstrap5/bootstrap-5-approach.html">Approach</a>
+            <a href="../bootstrap5/bootstrap-5-icons.html">Icons</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+            <a href="../bootstrap5/bootstrap-5-background.html">Background</a>
+            <a href="../bootstrap5/bootstrap-5-borders.html">Borders</a>
+            <a href="../bootstrap5/bootstrap-5-colors.html">Colors</a>
+            <a href="../bootstrap5/bootstrap-5-display.html">Display</a>
+            <a href="../bootstrap5/bootstrap-5-flex.html">Flex</a>
+            <a href="../bootstrap5/bootstrap-5-float.html">Float</a>
+            <a href="../bootstrap5/bootstrap-5-interactions.html">Interactions</a>
+            <a href="../bootstrap5/bootstrap-5-overflow.html">Overflow</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Flexbox là gì?</a></li>
+        <li><a href="#axes">Container, items &amp; trục</a></li>
+        <li><a href="#display">display: flex</a></li>
+        <li><a href="#direction">flex-direction</a></li>
+        <li><a href="#justify">justify-content</a></li>
+        <li><a href="#align">align-items</a></li>
+        <li><a href="#wrap">flex-wrap</a></li>
+        <li><a href="#gap">gap</a></li>
+        <li><a href="#items">Thuộc tính trên item</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » CSS » CSS Flexbox</div>
+      <h1>CSS Flexbox — Giới thiệu bố cục linh hoạt</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 22/06/2026</span>
+        <span>458K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Flexbox</strong> (Flexible Box Layout) là mô hình bố cục <strong>một chiều</strong> giúp sắp xếp,
+        căn chỉnh và phân bố khoảng trống cho các phần tử con <strong>linh hoạt</strong> theo hàng hoặc cột — kể cả
+        khi kích thước chưa biết trước. Đây là cách hiện đại thay cho float để dựng layout.
+      </p>
+
+      <div class="note">
+        <strong>Hai khái niệm:</strong> phần tử cha đặt <code>display:flex</code> là <strong>flex container</strong>;
+        các con trực tiếp là <strong>flex items</strong>. Thuộc tính chia làm 2 nhóm: đặt trên <em>container</em>
+        và đặt trên <em>item</em>.
+      </div>
+
+      <h2 id="axes">Container, items &amp; trục</h2>
+      <p>Flexbox hoạt động theo <strong>2 trục</strong>: trục chính (main axis) và trục phụ (cross axis):</p>
+      <figure class="flex-fig">
+        <div class="ff-cont">
+          <div class="ff-item">1</div>
+          <div class="ff-item">2</div>
+          <div class="ff-item">3</div>
+        </div>
+        <div class="ff-axis">
+          <span>→ Trục chính (main axis)</span>
+          <span class="ff-cross">↓ Trục phụ (cross)</span>
+        </div>
+        <figcaption>
+          Khung ngoài là <strong>flex container</strong> (<code>display:flex</code>); các ô 1–2–3 là
+          <strong>flex items</strong>. Mặc định items xếp theo <strong>trục chính</strong> (ngang).
+        </figcaption>
+      </figure>
+
+      <h2 id="display">Kích hoạt — <code>display: flex</code></h2>
+      <p>Đặt <code>display:flex</code> lên cha; các con tự xếp thành hàng:</p>
+      <div id="mini-display"></div>
+
+      <h2 id="direction">flex-direction — hướng trục chính</h2>
+      <p><code>row</code> (mặc định), <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>:</p>
+      <figure class="fd-fig">
+        <div class="fd-card"><h5>row</h5><div class="fd-box"><i>1</i><i>2</i><i>3</i></div></div>
+        <div class="fd-card"><h5>row-reverse</h5><div class="fd-box rowr"><i>1</i><i>2</i><i>3</i></div></div>
+        <div class="fd-card"><h5>column</h5><div class="fd-box col"><i>1</i><i>2</i><i>3</i></div></div>
+        <div class="fd-card"><h5>column-reverse</h5><div class="fd-box colr"><i>1</i><i>2</i><i>3</i></div></div>
+      </figure>
+      <div id="mini-direction"></div>
+
+      <h2 id="justify">justify-content — căn theo trục chính</h2>
+      <p><code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>:</p>
+      <figure class="flexillu">
+        <div class="frow"><span class="fname">flex-start</span><div class="ftrack jc-start"><i></i><i></i><i></i></div></div>
+        <div class="frow"><span class="fname">center</span><div class="ftrack jc-center"><i></i><i></i><i></i></div></div>
+        <div class="frow"><span class="fname">flex-end</span><div class="ftrack jc-end"><i></i><i></i><i></i></div></div>
+        <div class="frow"><span class="fname">space-between</span><div class="ftrack jc-between"><i></i><i></i><i></i></div></div>
+        <div class="frow"><span class="fname">space-around</span><div class="ftrack jc-around"><i></i><i></i><i></i></div></div>
+        <div class="frow"><span class="fname">space-evenly</span><div class="ftrack jc-evenly"><i></i><i></i><i></i></div></div>
+      </figure>
+      <div id="mini-justify"></div>
+
+      <h2 id="align">align-items — căn theo trục phụ</h2>
+      <p><code>stretch</code> (mặc định), <code>flex-start</code>, <code>center</code>, <code>flex-end</code>:</p>
+      <figure class="flexillu align">
+        <div class="frow"><span class="fname">flex-start</span><div class="ftrack ai-start"><i></i><i class="b"></i><i></i></div></div>
+        <div class="frow"><span class="fname">center</span><div class="ftrack ai-center"><i></i><i class="b"></i><i></i></div></div>
+        <div class="frow"><span class="fname">flex-end</span><div class="ftrack ai-end"><i></i><i class="b"></i><i></i></div></div>
+        <div class="frow"><span class="fname">stretch</span><div class="ftrack ai-stretch"><i></i><i></i><i></i></div></div>
+      </figure>
+      <div id="mini-align"></div>
+
+      <h2 id="wrap">flex-wrap — cho xuống dòng</h2>
+      <p>Mặc định items ép trên một dòng; <code>flex-wrap: wrap</code> cho phép xuống dòng:</p>
+      <div id="mini-wrap"></div>
+
+      <h2 id="gap">gap — khoảng cách giữa items</h2>
+      <div id="mini-gap"></div>
+
+      <h2 id="items">Thuộc tính trên item</h2>
+      <p>
+        <code>flex-grow</code> (giãn), <code>flex-shrink</code> (co), <code>flex-basis</code> (cỡ cơ sở) — thường viết
+        gộp bằng <code>flex</code>; <code>align-self</code> căn riêng một item; <code>order</code> đổi thứ tự:
+      </p>
+      <div id="mini-items"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Nhớ <code>justify-content</code> = trục chính, <code>align-items</code> = trục phụ.</li>
+        <li>Dùng <code>gap</code> thay cho margin để giãn cách items.</li>
+        <li>Dùng <code>flex: 1</code> để các item chia đều phần còn lại.</li>
+        <li>Căn giữa hoàn hảo: <code>display:flex; justify-content:center; align-items:center</code>.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Đổi các thuộc tính flex ở ô CSS để xem bố cục thay đổi.</p>
+
+      <h2 id="tryit">Thử viết CSS ngay (Try it yourself)</h2>
+      <p>
+        Chỉnh sửa <strong>Mã HTML</strong> và <strong>Mã CSS</strong> ở hai ô bên trái, kết quả hiển thị ngay bên
+        phải. Bấm <strong>Chạy</strong> để cập nhật, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML + CSS Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes split3">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div id="cssPane">
+            <span class="lbl">Mã CSS</span>
+            <textarea id="cssInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Flexbox là mô hình bố cục một chiều: cha <code>display:flex</code> (container), con là items. Trên container
+        dùng <code>flex-direction</code>, <code>justify-content</code> (trục chính), <code>align-items</code> (trục phụ),
+        <code>flex-wrap</code>, <code>gap</code>; trên item dùng <code>flex</code> (grow/shrink/basis),
+        <code>align-self</code>, <code>order</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Flexbox là bố cục một chiều; với lưới hai chiều, hãy xem <strong>CSS Grid</strong> (sắp ra mắt). Ôn lại
+        <a href="css-display.html"><strong>CSS Display</strong></a> để hiểu <code>display:flex</code>.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML &amp; CSS từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-display.html">CSS Display</a></li>
+          <li><a href="css-box-model.html">CSS Box Model</a></li>
+          <li><a href="css-float-clear.html">CSS Float &amp; Clear</a></li>
+          <li><a href="css-height-width.html">CSS Height &amp; Width</a></li>
+          <li><a href="css-introduction.html">CSS Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Chủ đề</h5>
+        <ul>
+          <li><a href="../index.html#networks">Networks</a></li>
+          <li><a href="../index.html#html-basic">HTML</a></li>
+          <li><a href="../index.html#html5">HTML5</a></li>
+          <li><a href="../index.html#css">CSS</a></li>
+          <li><a href="../index.html#bootstrap5">Bootstrap 5</a></li>
+          <li><a href="../index.html#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+          const host = document.getElementById(hostId);
+          if (!host) return;
+          // Tách CSS (từ <style>) và HTML (từ <body>) thành 2 ô soạn riêng
+          const styleMatch = code.match(/<style[^>]*>([\s\S]*?)<\/style>/i);
+          const hasCss = !!styleMatch;
+          const bodyMatch = code.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+          const dedent = (s) => {
+            s = s.replace(/^\n+/, '').replace(/\s+$/, '');
+            const lines = s.split('\n');
+            const ind = lines.filter(l => l.trim()).map(l => l.match(/^[ \t]*/)[0].length);
+            const min = ind.length ? Math.min.apply(null, ind) : 0;
+            return lines.map(l => l.slice(min)).join('\n');
+          };
+          const wrap = document.createElement('div');
+          wrap.className = 'mini' + (hasCss ? ' split' : '');
+          if (hasCss) {
+            const css = dedent(styleMatch[1]);
+            const htmlPart = dedent(bodyMatch ? bodyMatch[1] : code.replace(/<style[^>]*>[\s\S]*?<\/style>/i, ''));
+            wrap.innerHTML =
+              '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+              '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+              '<div class="mini-panes">' +
+              '<div><span class="lbl">Mã HTML</span><textarea class="ta-html" spellcheck="false"></textarea></div>' +
+              '<div><span class="lbl">Mã CSS</span><textarea class="ta-css" spellcheck="false"></textarea></div>' +
+              '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+            const taH = wrap.querySelector('.ta-html');
+            const taC = wrap.querySelector('.ta-css');
+            const fr = wrap.querySelector('iframe');
+            const run = () => { fr.srcdoc = '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>\n' + taC.value + '\n</style></head><body>\n' + taH.value + '\n</body></html>'; };
+            const reset = () => { taH.value = htmlPart; taC.value = css; run(); };
+            let t;
+            const deb = () => { clearTimeout(t); t = setTimeout(run, 300); };
+            taH.addEventListener('input', deb);
+            taC.addEventListener('input', deb);
+            wrap.querySelector('[data-run]').addEventListener('click', run);
+            wrap.querySelector('[data-reset]').addEventListener('click', reset);
+            host.appendChild(wrap);
+            reset();
+          } else {
+            wrap.innerHTML =
+              '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+              '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+              '<div class="mini-panes">' +
+              '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+              '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+            const ta = wrap.querySelector('textarea');
+            const fr = wrap.querySelector('iframe');
+            const run = () => { fr.srcdoc = ta.value; };
+            const reset = () => { ta.value = code; run(); };
+            let t;
+            ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+            wrap.querySelector('[data-run]').addEventListener('click', run);
+            wrap.querySelector('[data-reset]').addEventListener('click', reset);
+            host.appendChild(wrap);
+            reset();
+          }
+        }
+
+
+    makeMini('mini-display',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .cont { display: flex; gap: 8px; }
+  .cont > div { background: #1a73e8; color: #fff; padding: 16px; flex: 1; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="cont">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-direction',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .cont { display: flex; flex-direction: column; gap: 8px; }
+  .cont > div { background: #2da44e; color: #fff; padding: 12px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="cont">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-justify',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .cont { display: flex; justify-content: space-between; background: #e8f0fe; padding: 8px; }
+  .cont > div { background: #1a73e8; color: #fff; padding: 12px 16px; }
+</style>
+</head>
+<body>
+  <div class="cont">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-align',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .cont { display: flex; align-items: center; gap: 8px; height: 120px; background: #e8f0fe; padding: 8px; }
+  .cont > div { background: #1a73e8; color: #fff; padding: 12px; }
+</style>
+</head>
+<body>
+  <div class="cont">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-wrap',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .cont { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cont > div { background: #e8710a; color: #fff; padding: 16px; width: 120px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="cont">
+    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-gap',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .cont { display: flex; gap: 20px; }
+  .cont > div { background: #1a73e8; color: #fff; padding: 16px; flex: 1; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="cont">
+    <div>gap</div>
+    <div>20px</div>
+    <div>giữa items</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-items',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .cont { display: flex; gap: 8px; }
+  .cont > div { background: #2da44e; color: #fff; padding: 16px; text-align: center; }
+  .grow2 { flex: 2; }          /* chiếm gấp đôi */
+  .self  { align-self: flex-end; }
+</style>
+</head>
+<body>
+  <div class="cont" style="height:100px; align-items:flex-start;">
+    <div>flex 1</div>
+    <div class="grow2">flex 2 (rộng gấp đôi)</div>
+    <div class="self">align-self: flex-end</div>
+  </div>
+</body>
+</html>`);
+
+    // ----- Trình soạn trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 16px; }
+      .cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        height: 160px;
+        background: #e8f0fe;
+        border: 2px solid #1a73e8;
+        border-radius: 8px;
+      }
+      .cont > div {
+        background: #1a73e8;
+        color: #fff;
+        padding: 18px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+    <p>Thử đổi justify-content, align-items, flex-direction để xem cách sắp xếp thay đổi.</p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      const cssEl = document.getElementById('cssInput');
+      const pane = document.getElementById('cssPane');
+      if (cssEl && pane && !pane.hidden) {
+        preview.srcdoc = '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>\n' + cssEl.value + '\n</style></head><body>\n' + input.value + '\n</body></html>';
+      } else {
+        preview.srcdoc = input.value;
+      }
+    }
+    function resetCode() {
+      const cssEl = document.getElementById('cssInput');
+      const pane = document.getElementById('cssPane');
+      const sm = sampleCode.match(/<style[^>]*>([\s\S]*?)<\/style>/i);
+      const bm = sampleCode.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+      const ded = (s) => { s = s.replace(/^\n+/, '').replace(/\s+$/, ''); const ls = s.split('\n'); const ind = ls.filter(l => l.trim()).map(l => l.match(/^[ \t]*/)[0].length); const mn = ind.length ? Math.min.apply(null, ind) : 0; return ls.map(l => l.slice(mn)).join('\n'); };
+      if (sm && cssEl && pane) {
+        pane.hidden = false;
+        const panes = document.querySelector('.tryit-panes');
+        if (panes) panes.classList.add('split3');
+        input.value = ded(bm ? bm[1] : sampleCode.replace(/<style[^>]*>[\s\S]*?<\/style>/i, ''));
+        cssEl.value = ded(sm[1]);
+        if (!cssEl._bound) { cssEl._bound = true; let tt; cssEl.addEventListener('input', () => { clearTimeout(tt); tt = setTimeout(runCode, 300); }); }
+      } else {
+        if (pane) { pane.hidden = true; const panes = document.querySelector('.tryit-panes'); if (panes) panes.classList.remove('split3'); }
+        input.value = sampleCode;
+      }
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
+  </script>
+</body>
+</html>

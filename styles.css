@@ -819,7 +819,7 @@ footer.site {
   outline: none;
   resize: vertical;
   width: 100%;
-  min-height: 210px;
+  min-height: 380px;
   padding: 14px 16px;
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 0.86rem;
@@ -842,7 +842,7 @@ footer.site {
   border: none;
   border-left: 1px solid #242b3a;
   width: 100%;
-  min-height: 210px;
+  min-height: 380px;
   background: #fff;
   flex: 1;
 }
@@ -851,6 +851,25 @@ footer.site {
   .mini-panes > div:last-child .lbl,
   .mini iframe { border-left: none; }
   .mini textarea { border-bottom: 1px solid #242b3a; }
+}
+
+/* ---------- Trình soạn ví dụ tách HTML + CSS (3 ô) ---------- */
+.mini.split .mini-panes { grid-template-columns: 1fr 1fr 1.25fr; }
+/* Ô CSS (giữa) — nền tối kiểu editor */
+.mini.split .mini-panes > div:nth-child(2) .lbl {
+  color: #8b95a7;
+  background: #161922;
+  border-bottom: 1px solid #242b3a;
+  border-left: 1px solid #242b3a;
+}
+.mini.split .mini-panes > div:nth-child(2) .lbl::before {
+  content: "{ }"; color: #e6b450; font-family: 'Consolas','Monaco',monospace;
+}
+.mini.split .mini-panes > div:nth-child(2) textarea { border-left: 1px solid #242b3a; }
+@media (max-width: 700px) {
+  .mini.split .mini-panes { grid-template-columns: 1fr; }
+  .mini.split .mini-panes > div:nth-child(2) .lbl,
+  .mini.split .mini-panes > div:nth-child(2) textarea { border-left: none; }
 }
 
 /* ---------- Form demo (trang HTML Forms) ---------- */
@@ -1087,8 +1106,10 @@ footer.site {
   min-height: 70vh;
   background: #fff;
 }
+.tryit-panes.split3 { grid-template-columns: 1fr 1fr 1.25fr; }
 @media (max-width: 700px) {
   .tryit-panes { grid-template-columns: 1fr; }
+  .tryit-panes.split3 { grid-template-columns: 1fr; }
   .tryit textarea { border-right: none; border-bottom: 1px solid var(--gfg-border); }
 }
 
@@ -1267,3 +1288,193 @@ footer.site {
   .h5-vs { grid-template-columns: 1fr; }
   .h5-vs-mid { padding: 6px 0; }
 }
+
+/* ---------- Sơ đồ minh hoạ CSS Box Model ---------- */
+.boxmodel-fig {
+  margin: 20px 0;
+  text-align: center;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+.boxmodel-fig .bm-layer { position: relative; border-radius: 4px; }
+.boxmodel-fig .bm-margin {
+  display: inline-block;
+  background: #f8cfa0;
+  border: 1px dashed #c98b4f;
+  padding: 34px 58px;
+}
+.boxmodel-fig .bm-border {
+  background: #f4dca2;
+  border: 1px dashed #c2a04a;
+  padding: 30px 54px;
+}
+.boxmodel-fig .bm-padding {
+  background: #bcd6a0;
+  border: 1px dashed #6f9a52;
+  padding: 26px 46px;
+}
+.boxmodel-fig .bm-content {
+  background: #a9cdeb;
+  border: 1px solid #5a86b3;
+  padding: 24px 32px;
+  color: #0b3a5b;
+  font-weight: 700;
+}
+.boxmodel-fig .bm-tag {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #5a4632;
+}
+.boxmodel-fig figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--gfg-muted);
+  font-family: var(--gfg-font, inherit);
+}
+
+/* ---------- Sơ đồ minh hoạ CSS Display ---------- */
+.disp-fig {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 760px) { .disp-fig { grid-template-columns: 1fr; } }
+.disp-card {
+  border: 1px solid var(--gfg-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.disp-card > h4 {
+  margin: 0;
+  padding: 9px 12px;
+  background: var(--gfg-green);
+  color: #fff;
+  font-size: 0.88rem;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-weight: 700;
+}
+.disp-demo {
+  padding: 14px;
+  background: var(--gfg-bg-alt);
+  min-height: 120px;
+  line-height: 2;
+}
+.disp-demo .it {
+  background: #a9cdeb;
+  border: 1px solid #5a86b3;
+  color: #0b3a5b;
+  padding: 6px 10px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-align: center;
+}
+.disp-fig .blk .it    { display: block; margin-bottom: 6px; }
+.disp-fig .inl .it    { display: inline; }
+.disp-fig .inlblk .it { display: inline-block; width: 46px; margin: 3px; }
+.disp-card > p {
+  margin: 0;
+  padding: 9px 12px;
+  font-size: 0.82rem;
+  color: var(--gfg-muted);
+  border-top: 1px solid var(--gfg-border);
+}
+
+/* ---------- Sơ đồ minh hoạ Flexbox ---------- */
+.flex-fig { margin: 20px 0; max-width: 480px; }
+.flex-fig .ff-cont {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  background: var(--gfg-green-light);
+  border: 2px solid var(--gfg-green);
+  border-radius: 8px;
+}
+.flex-fig .ff-item {
+  flex: 1;
+  background: var(--gfg-green);
+  color: #fff;
+  text-align: center;
+  padding: 18px 0;
+  border-radius: 6px;
+  font-weight: 700;
+}
+.flex-fig .ff-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-family: 'Consolas','Monaco',monospace;
+  font-size: 0.82rem;
+  color: var(--gfg-green-dark);
+  font-weight: 700;
+}
+.flex-fig .ff-cross { color: #e8710a; }
+.flex-fig figcaption { margin-top: 6px; font-size: 0.84rem; color: var(--gfg-muted); }
+
+/* ---------- Minh hoạ giá trị Flexbox (justify/align/direction) ---------- */
+.flexillu { margin: 14px 0; }
+.flexillu .frow { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.flexillu .fname {
+  width: 168px; flex: none;
+  font-family: 'Consolas','Monaco',monospace;
+  font-size: 0.78rem; font-weight: 700; color: var(--gfg-green-dark);
+}
+.flexillu .ftrack {
+  flex: 1; display: flex; gap: 6px;
+  background: var(--gfg-green-light);
+  border: 1px solid var(--gfg-border);
+  border-radius: 6px; padding: 6px; min-height: 40px;
+}
+.flexillu .ftrack > i {
+  background: var(--gfg-green);
+  border-radius: 4px; width: 30px; height: 26px; font-style: normal;
+}
+/* justify-content */
+.jc-start   { justify-content: flex-start; }
+.jc-center  { justify-content: center; }
+.jc-end     { justify-content: flex-end; }
+.jc-between { justify-content: space-between; }
+.jc-around  { justify-content: space-around; }
+.jc-evenly  { justify-content: space-evenly; }
+/* align-items (track cao hơn để thấy căn dọc) */
+.flexillu.align .ftrack { height: 70px; }
+.ai-start   { align-items: flex-start; }
+.ai-center  { align-items: center; }
+.ai-end     { align-items: flex-end; }
+.ai-stretch { align-items: stretch; }
+.flexillu.align .ftrack > i { height: 24px; }
+.flexillu.align .ftrack > i.b { height: 40px; }
+.flexillu.align .ai-stretch > i { height: auto; align-self: stretch; }
+/* flex-direction */
+.fd-fig { display: flex; gap: 16px; flex-wrap: wrap; margin: 14px 0; }
+.fd-fig .fd-card { flex: 1; min-width: 180px; border: 1px solid var(--gfg-border); border-radius: 8px; overflow: hidden; }
+.fd-fig .fd-card h5 { margin: 0; padding: 7px 10px; background: var(--gfg-green); color: #fff; font-family: 'Consolas','Monaco',monospace; font-size: 0.8rem; }
+.fd-fig .fd-box { display: flex; gap: 6px; padding: 10px; background: var(--gfg-green-light); }
+.fd-fig .fd-box.col { flex-direction: column; }
+.fd-fig .fd-box.rowr { flex-direction: row-reverse; }
+.fd-fig .fd-box.colr { flex-direction: column-reverse; }
+.fd-fig .fd-box > i { background: var(--gfg-green); color: #fff; font-style: normal; text-align: center; padding: 8px 12px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; }
+
+/* ---------- Sơ đồ minh hoạ CSS Grid ---------- */
+.grid-fig {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-width: 380px;
+  margin: 16px 0;
+}
+.grid-fig > div {
+  background: var(--gfg-green);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 6px;
+  font-weight: 700;
+  font-family: 'Consolas','Monaco',monospace;
+  font-size: 0.85rem;
+}
+.grid-fig .span2 { grid-column: span 2; background: #e8710a; }

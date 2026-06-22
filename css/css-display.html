@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CSS Display Property - Thuộc tính display - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css" class="active">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text-align.html">CSS text-align</a>
+            <a href="css-text-decoration.html">CSS text-decoration</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Design</span>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-float-clear.html">CSS Float &amp; Clear</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Modern Layout Systems</span>
+            <a href="css-flexbox.html">CSS Flexbox</a>
+            <a href="css-justify-content.html">CSS justify-content</a>
+            <a href="css-align-items.html">CSS align-items</a>
+            <a href="css-align-content.html">CSS align-content</a>
+            <a href="css-grid.html">CSS Grid Layout</a>
+            <a href="css-grid-template-columns.html">CSS grid-template-columns</a>
+            <a href="css-grid-gap.html">CSS grid gap</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Effects, Animations &amp; Advanced CSS</span>
+            <a href="css-transitions.html">CSS Transitions</a>
+            <a href="css-transforms.html">CSS Transform</a>
+            <a href="css-animations.html">CSS Animations</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+            <a href="../bootstrap5/bootstrap-5-select.html">Select</a>
+            <a href="../bootstrap5/bootstrap-5-checks-and-radios.html">Checks &amp; Radios</a>
+            <a href="../bootstrap5/bootstrap-5-range.html">Range</a>
+            <a href="../bootstrap5/bootstrap-5-input-group.html">Input Group</a>
+            <a href="../bootstrap5/bootstrap-5-floating-labels.html">Floating Labels</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms Layout</span>
+            <a href="../bootstrap5/bootstrap-5-layout-forms.html">Forms Layout</a>
+            <a href="../bootstrap5/bootstrap-5-layout-utilities.html">Layout Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-layout-form-grid.html">Form Grid</a>
+            <a href="../bootstrap5/bootstrap-5-layout-gutters.html">Layout Gutters</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form.html">Horizontal Form</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form-label-sizing.html">Horizontal Form Label Sizing</a>
+            <a href="../bootstrap5/bootstrap-5-layout-column-sizing.html">Column Sizing</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Components</span>
+            <a href="../bootstrap5/bootstrap-5-accordion.html">Accordion</a>
+            <a href="../bootstrap5/bootstrap-5-alerts.html">Alerts</a>
+            <a href="../bootstrap5/bootstrap-5-badges.html">Badges</a>
+            <a href="../bootstrap5/bootstrap-5-breadcrumb.html">Breadcrumb</a>
+            <a href="../bootstrap5/bootstrap-5-buttons.html">Buttons</a>
+            <a href="../bootstrap5/bootstrap-5-button-group.html">Button Group</a>
+            <a href="../bootstrap5/bootstrap-5-card.html">Card</a>
+            <a href="../bootstrap5/bootstrap-5-carousel.html">Carousel</a>
+            <a href="../bootstrap5/bootstrap-5-close-button.html">Close Button</a>
+            <a href="../bootstrap5/bootstrap-5-collapse.html">Collapse</a>
+            <a href="../bootstrap5/bootstrap-5-dropdowns.html">Dropdowns</a>
+            <a href="../bootstrap5/bootstrap-5-list-group.html">List Group</a>
+            <a href="../bootstrap5/bootstrap-5-modal.html">Modal</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Navbar</span>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand.html">Navbar Brand</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-text.html">Navbar Brand Text</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-image.html">Navbar Brand Image</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-nav.html">Navbar Nav</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-forms.html">Navbar Forms</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-text.html">Navbar Text</a>
+            <a href="../bootstrap5/bootstrap-5-offcanvas.html">Offcanvas</a>
+            <a href="../bootstrap5/bootstrap-5-popovers.html">Popovers</a>
+            <a href="../bootstrap5/bootstrap-5-progress.html">Progress</a>
+            <a href="../bootstrap5/bootstrap-5-scrollspy.html">Scrollspy</a>
+            <a href="../bootstrap5/bootstrap-5-spinners.html">Spinners</a>
+            <a href="../bootstrap5/bootstrap-5-toasts.html">Toasts</a>
+            <a href="../bootstrap5/bootstrap-5-tooltips.html">Tooltips</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Helpers</span>
+            <a href="../bootstrap5/bootstrap-5-clearfix.html">Clearfix</a>
+            <a href="../bootstrap5/bootstrap-5-colored-links.html">Colored Links</a>
+            <a href="../bootstrap5/bootstrap-5-ratios.html">Ratios</a>
+            <a href="../bootstrap5/bootstrap-5-position.html">Position</a>
+            <a href="../bootstrap5/bootstrap-5-visually-hidden.html">Visually Hidden</a>
+            <a href="../bootstrap5/bootstrap-5-stretched-link.html">Stretched Link</a>
+            <a href="../bootstrap5/bootstrap-5-text-truncation.html">Text Truncation</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Extend</span>
+            <a href="../bootstrap5/bootstrap-5-approach.html">Approach</a>
+            <a href="../bootstrap5/bootstrap-5-icons.html">Icons</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+            <a href="../bootstrap5/bootstrap-5-background.html">Background</a>
+            <a href="../bootstrap5/bootstrap-5-borders.html">Borders</a>
+            <a href="../bootstrap5/bootstrap-5-colors.html">Colors</a>
+            <a href="../bootstrap5/bootstrap-5-display.html">Display</a>
+            <a href="../bootstrap5/bootstrap-5-flex.html">Flex</a>
+            <a href="../bootstrap5/bootstrap-5-float.html">Float</a>
+            <a href="../bootstrap5/bootstrap-5-interactions.html">Interactions</a>
+            <a href="../bootstrap5/bootstrap-5-overflow.html">Overflow</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">display là gì?</a></li>
+        <li><a href="#values">Bảng giá trị display</a></li>
+        <li><a href="#compare">So sánh trực quan</a></li>
+        <li><a href="#block">block</a></li>
+        <li><a href="#inline">inline</a></li>
+        <li><a href="#inlineblock">inline-block</a></li>
+        <li><a href="#none">none &amp; visibility</a></li>
+        <li><a href="#flex">flex</a></li>
+        <li><a href="#grid">grid</a></li>
+        <li><a href="#table">Các giá trị khác</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » CSS » CSS Display</div>
+      <h1>CSS Display Property — Thuộc tính display</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 22/06/2026</span>
+        <span>421K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong><code>display</code></strong> là một trong những thuộc tính <strong>quan trọng nhất của CSS</strong>:
+        nó quyết định <strong>cách một phần tử được hiển thị</strong> và cách nó chiếm chỗ, sắp xếp cùng các phần tử
+        khác. Mỗi phần tử HTML đều có giá trị <code>display</code> mặc định (vd <code>&lt;div&gt;</code> là
+        <code>block</code>, <code>&lt;span&gt;</code> là <code>inline</code>).
+      </p>
+
+      <div class="note">
+        <strong>3 giá trị nền tảng:</strong> <code>block</code> (khối), <code>inline</code> (nội tuyến),
+        <code>inline-block</code> (nội tuyến nhưng có kích thước). Ngoài ra còn <code>none</code>,
+        <code>flex</code>, <code>grid</code>…
+      </div>
+
+      <h2 id="values">Bảng các giá trị display</h2>
+      <p>Bảng tổng hợp các giá trị <code>display</code> thường gặp và ý nghĩa của chúng:</p>
+      <table class="cmp">
+        <thead>
+          <tr><th>Giá trị</th><th>Mô tả</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>inline</code></td>
+            <td>Hiển thị phần tử dạng <strong>nội tuyến</strong> — nằm chung dòng với nội dung xung quanh; bỏ qua <code>width</code>/<code>height</code>. (Mặc định của <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>.)</td>
+          </tr>
+          <tr>
+            <td><code>block</code></td>
+            <td>Hiển thị dạng <strong>khối</strong> — chiếm trọn chiều rộng và bắt đầu trên một dòng mới. (Mặc định của <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>.)</td>
+          </tr>
+          <tr>
+            <td><code>inline-block</code></td>
+            <td>Như <code>inline</code> (chung dòng) nhưng <strong>vẫn nhận</strong> <code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>.</td>
+          </tr>
+          <tr>
+            <td><code>none</code></td>
+            <td>Phần tử <strong>bị ẩn hoàn toàn</strong> và <strong>không chiếm chỗ</strong> trong bố cục (khác <code>visibility: hidden</code> — vẫn giữ chỗ).</td>
+          </tr>
+          <tr>
+            <td><code>flex</code></td>
+            <td>Biến phần tử thành <strong>flex container</strong>; các con xếp linh hoạt theo hàng/cột (Flexbox).</td>
+          </tr>
+          <tr>
+            <td><code>inline-flex</code></td>
+            <td>Như <code>flex</code> nhưng bản thân container hiển thị dạng nội tuyến.</td>
+          </tr>
+          <tr>
+            <td><code>grid</code></td>
+            <td>Biến phần tử thành <strong>grid container</strong> — bố cục lưới 2 chiều (hàng &amp; cột).</td>
+          </tr>
+          <tr>
+            <td><code>inline-grid</code></td>
+            <td>Như <code>grid</code> nhưng container hiển thị dạng nội tuyến.</td>
+          </tr>
+          <tr>
+            <td><code>list-item</code></td>
+            <td>Hiển thị như một <strong>mục danh sách</strong> (có dấu đầu dòng), giống <code>&lt;li&gt;</code>.</td>
+          </tr>
+          <tr>
+            <td><code>table</code></td>
+            <td>Hành xử như phần tử <code>&lt;table&gt;</code> (kèm <code>table-row</code>, <code>table-cell</code>…).</td>
+          </tr>
+          <tr>
+            <td><code>contents</code></td>
+            <td>Phần tử "tàng hình": bỏ hộp của chính nó nhưng <strong>vẫn hiển thị các con</strong>.</td>
+          </tr>
+          <tr>
+            <td><code>inherit</code> / <code>initial</code></td>
+            <td>Kế thừa giá trị <code>display</code> từ phần tử cha (<code>inherit</code>) hoặc đặt về giá trị mặc định (<code>initial</code>).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="compare">So sánh trực quan</h2>
+      <p>Cùng ba hộp A, B, C với ba giá trị <code>display</code> khác nhau:</p>
+      <figure class="disp-fig">
+        <div class="disp-card">
+          <h4>display: block</h4>
+          <div class="disp-demo blk"><span class="it">A</span><span class="it">B</span><span class="it">C</span></div>
+          <p>Mỗi hộp chiếm trọn chiều rộng và xếp xuống dòng.</p>
+        </div>
+        <div class="disp-card">
+          <h4>display: inline</h4>
+          <div class="disp-demo inl"><span class="it">A</span><span class="it">B</span><span class="it">C</span> chữ chảy cùng dòng…</div>
+          <p>Nằm chung dòng với chữ; <strong>bỏ qua</strong> width/height.</p>
+        </div>
+        <div class="disp-card">
+          <h4>display: inline-block</h4>
+          <div class="disp-demo inlblk"><span class="it">A</span><span class="it">B</span><span class="it">C</span></div>
+          <p>Chung dòng nhưng <strong>vẫn nhận</strong> width/height.</p>
+        </div>
+      </figure>
+
+      <h2 id="block">display: block</h2>
+      <p>
+        Phần tử khối <strong>chiếm trọn chiều rộng</strong> sẵn có và luôn <strong>bắt đầu trên một dòng mới</strong>;
+        nhận đầy đủ <code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>. Vd:
+        <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>.
+      </p>
+      <div id="mini-block"></div>
+
+      <h2 id="inline">display: inline</h2>
+      <p>
+        Phần tử nội tuyến <strong>nằm chung dòng</strong> với nội dung xung quanh, chỉ rộng vừa nội dung và
+        <strong>bỏ qua</strong> <code>width</code>/<code>height</code> (margin/padding dọc không đẩy được khối khác).
+        Vd: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>.
+      </p>
+      <div id="mini-inline"></div>
+
+      <h2 id="inlineblock">display: inline-block</h2>
+      <p>
+        Kết hợp ưu điểm cả hai: <strong>nằm chung dòng</strong> như inline nhưng <strong>vẫn nhận</strong>
+        <code>width</code>/<code>height</code> và margin/padding như block — rất hợp để xếp các "thẻ" cạnh nhau.
+      </p>
+      <div id="mini-inlineblock"></div>
+
+      <h2 id="none">display: none &amp; visibility</h2>
+      <p>
+        <code>display: none</code> <strong>loại bỏ</strong> phần tử khỏi bố cục (không chiếm chỗ). Khác với
+        <code>visibility: hidden</code> (ẩn nhưng <strong>vẫn giữ chỗ</strong>):
+      </p>
+      <div id="mini-none"></div>
+
+      <h2 id="flex">display: flex</h2>
+      <p>Biến phần tử thành <strong>flex container</strong> để bố trí con theo hàng/cột linh hoạt:</p>
+      <div id="mini-flex"></div>
+
+      <h2 id="grid">display: grid</h2>
+      <p>Biến phần tử thành <strong>lưới 2 chiều</strong> với hàng &amp; cột:</p>
+      <div id="mini-grid"></div>
+
+      <h2 id="table">Các giá trị khác</h2>
+      <ul>
+        <li><code>inline-flex</code> / <code>inline-grid</code>: như flex/grid nhưng container nằm nội tuyến.</li>
+        <li><code>list-item</code>: hiển thị như mục danh sách (có dấu đầu dòng).</li>
+        <li><code>table</code>, <code>table-row</code>, <code>table-cell</code>: hành xử như bảng.</li>
+        <li><code>contents</code>: phần tử "tàng hình" nhưng vẫn hiện các con.</li>
+      </ul>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Hiểu giá trị <code>display</code> mặc định của thẻ trước khi đổi.</li>
+        <li>Dùng <code>inline-block</code> để xếp thẻ cạnh nhau khi không cần flex/grid.</li>
+        <li>Dùng <code>flex</code>/<code>grid</code> cho bố cục hiện đại thay cho float.</li>
+        <li>Phân biệt <code>display:none</code> (mất chỗ) với <code>visibility:hidden</code> (giữ chỗ).</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Đổi giá trị <code>display</code> ở ô CSS để xem cách hiển thị thay đổi.</p>
+
+      <h2 id="tryit">Thử viết CSS ngay (Try it yourself)</h2>
+      <p>
+        Chỉnh sửa <strong>Mã HTML</strong> và <strong>Mã CSS</strong> ở hai ô bên trái, kết quả hiển thị ngay bên
+        phải. Bấm <strong>Chạy</strong> để cập nhật, hoặc <strong>Đặt lại</strong> để khôi phục ví dụ mẫu.
+      </p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML + CSS Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes split3">
+          <div>
+            <span class="lbl">Mã HTML</span>
+            <textarea id="htmlInput" spellcheck="false"></textarea>
+          </div>
+          <div id="cssPane">
+            <span class="lbl">Mã CSS</span>
+            <textarea id="cssInput" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <span class="lbl">Kết quả</span>
+            <iframe id="preview" title="Kết quả xem trước"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        <code>display</code> quyết định cách phần tử hiển thị &amp; chiếm chỗ. Ba giá trị nền tảng:
+        <code>block</code> (trọn dòng), <code>inline</code> (chung dòng, bỏ width/height),
+        <code>inline-block</code> (chung dòng nhưng có kích thước). Ngoài ra có <code>none</code> (ẩn, mất chỗ),
+        <code>flex</code> và <code>grid</code> cho bố cục hiện đại.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem <a href="css-box-model.html"><strong>CSS Box Model</strong></a> để hiểu cách hộp chiếm chỗ, và
+        <a href="css-height-width.html"><strong>CSS Height &amp; Width</strong></a> để đặt kích thước.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học HTML &amp; CSS</h4>
+        <p>Bắt đầu hành trình lập trình web với HTML &amp; CSS từ con số 0.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="css-box-model.html">CSS Box Model</a></li>
+          <li><a href="css-height-width.html">CSS Height &amp; Width</a></li>
+          <li><a href="css-margins-padding.html">CSS Margins &amp; Padding</a></li>
+          <li><a href="css-overflow.html">CSS Overflow</a></li>
+          <li><a href="css-introduction.html">CSS Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Web Technologies</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Chủ đề</h5>
+        <ul>
+          <li><a href="../index.html#networks">Networks</a></li>
+          <li><a href="../index.html#html-basic">HTML</a></li>
+          <li><a href="../index.html#html5">HTML5</a></li>
+          <li><a href="../index.html#css">CSS</a></li>
+          <li><a href="../index.html#bootstrap5">Bootstrap 5</a></li>
+          <li><a href="../index.html#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Mini editor chạy code trực tiếp -----
+    function makeMini(hostId, code) {
+          const host = document.getElementById(hostId);
+          if (!host) return;
+          // Tách CSS (từ <style>) và HTML (từ <body>) thành 2 ô soạn riêng
+          const styleMatch = code.match(/<style[^>]*>([\s\S]*?)<\/style>/i);
+          const hasCss = !!styleMatch;
+          const bodyMatch = code.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+          const dedent = (s) => {
+            s = s.replace(/^\n+/, '').replace(/\s+$/, '');
+            const lines = s.split('\n');
+            const ind = lines.filter(l => l.trim()).map(l => l.match(/^[ \t]*/)[0].length);
+            const min = ind.length ? Math.min.apply(null, ind) : 0;
+            return lines.map(l => l.slice(min)).join('\n');
+          };
+          const wrap = document.createElement('div');
+          wrap.className = 'mini' + (hasCss ? ' split' : '');
+          if (hasCss) {
+            const css = dedent(styleMatch[1]);
+            const htmlPart = dedent(bodyMatch ? bodyMatch[1] : code.replace(/<style[^>]*>[\s\S]*?<\/style>/i, ''));
+            wrap.innerHTML =
+              '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+              '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+              '<div class="mini-panes">' +
+              '<div><span class="lbl">Mã HTML</span><textarea class="ta-html" spellcheck="false"></textarea></div>' +
+              '<div><span class="lbl">Mã CSS</span><textarea class="ta-css" spellcheck="false"></textarea></div>' +
+              '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+            const taH = wrap.querySelector('.ta-html');
+            const taC = wrap.querySelector('.ta-css');
+            const fr = wrap.querySelector('iframe');
+            const run = () => { fr.srcdoc = '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>\n' + taC.value + '\n</style></head><body>\n' + taH.value + '\n</body></html>'; };
+            const reset = () => { taH.value = htmlPart; taC.value = css; run(); };
+            let t;
+            const deb = () => { clearTimeout(t); t = setTimeout(run, 300); };
+            taH.addEventListener('input', deb);
+            taC.addEventListener('input', deb);
+            wrap.querySelector('[data-run]').addEventListener('click', run);
+            wrap.querySelector('[data-reset]').addEventListener('click', reset);
+            host.appendChild(wrap);
+            reset();
+          } else {
+            wrap.innerHTML =
+              '<div class="mini-bar"><span>Ví dụ chạy thử</span>' +
+              '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+              '<div class="mini-panes">' +
+              '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+              '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+            const ta = wrap.querySelector('textarea');
+            const fr = wrap.querySelector('iframe');
+            const run = () => { fr.srcdoc = ta.value; };
+            const reset = () => { ta.value = code; run(); };
+            let t;
+            ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+            wrap.querySelector('[data-run]').addEventListener('click', run);
+            wrap.querySelector('[data-reset]').addEventListener('click', reset);
+            host.appendChild(wrap);
+            reset();
+          }
+        }
+
+
+    makeMini('mini-block',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .b {
+    display: block;
+    width: 60%;
+    background: #1a73e8;
+    color: #fff;
+    padding: 8px;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+  <span class="b">Hộp A (block)</span>
+  <span class="b">Hộp B (block)</span>
+  <span class="b">Hộp C (block)</span>
+</body>
+</html>`);
+
+    makeMini('mini-inline',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .i {
+    display: inline;
+    width: 200px;        /* bị bỏ qua */
+    height: 80px;        /* bị bỏ qua */
+    background: #e8710a;
+    color: #fff;
+    padding: 4px 8px;
+  }
+</style>
+</head>
+<body>
+  Văn bản <span class="i">A</span> <span class="i">B</span> <span class="i">C</span> nằm chung một dòng.
+</body>
+</html>`);
+
+    makeMini('mini-inlineblock',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .ib {
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    background: #2da44e;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    margin: 4px;
+  }
+</style>
+</head>
+<body>
+  <span class="ib">A</span>
+  <span class="ib">B</span>
+  <span class="ib">C</span>
+</body>
+</html>`);
+
+    makeMini('mini-none',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .box { background: #1a73e8; color: #fff; padding: 8px; margin: 4px 0; }
+  .gone { display: none; }
+  .invisible { visibility: hidden; }
+</style>
+</head>
+<body>
+  <div class="box">Hộp 1</div>
+  <div class="box gone">Hộp 2 — display:none (biến mất, không chiếm chỗ)</div>
+  <div class="box invisible">Hộp 3 — visibility:hidden (ẩn nhưng giữ chỗ)</div>
+  <div class="box">Hộp 4</div>
+</body>
+</html>`);
+
+    makeMini('mini-flex',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .row {
+    display: flex;
+    gap: 8px;
+  }
+  .row > div {
+    flex: 1;
+    background: #1a73e8;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-grid',
+`<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; padding: 14px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .grid > div {
+    background: #2da44e;
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div>1</div><div>2</div><div>3</div>
+    <div>4</div><div>5</div><div>6</div>
+  </div>
+</body>
+</html>`);
+
+    // ----- Trình soạn trực tiếp -----
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 16px; }
+      .item {
+        display: inline-block;
+        width: 100px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background: #2da44e;
+        color: #fff;
+        margin: 4px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="item">A</span>
+    <span class="item">B</span>
+    <span class="item">C</span>
+    <p>Thử đổi display: inline-block → block / inline / flex để xem cách sắp xếp thay đổi.</p>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+
+    function runCode() {
+      const cssEl = document.getElementById('cssInput');
+      const pane = document.getElementById('cssPane');
+      if (cssEl && pane && !pane.hidden) {
+        preview.srcdoc = '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>\n' + cssEl.value + '\n</style></head><body>\n' + input.value + '\n</body></html>';
+      } else {
+        preview.srcdoc = input.value;
+      }
+    }
+    function resetCode() {
+      const cssEl = document.getElementById('cssInput');
+      const pane = document.getElementById('cssPane');
+      const sm = sampleCode.match(/<style[^>]*>([\s\S]*?)<\/style>/i);
+      const bm = sampleCode.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+      const ded = (s) => { s = s.replace(/^\n+/, '').replace(/\s+$/, ''); const ls = s.split('\n'); const ind = ls.filter(l => l.trim()).map(l => l.match(/^[ \t]*/)[0].length); const mn = ind.length ? Math.min.apply(null, ind) : 0; return ls.map(l => l.slice(mn)).join('\n'); };
+      if (sm && cssEl && pane) {
+        pane.hidden = false;
+        const panes = document.querySelector('.tryit-panes');
+        if (panes) panes.classList.add('split3');
+        input.value = ded(bm ? bm[1] : sampleCode.replace(/<style[^>]*>[\s\S]*?<\/style>/i, ''));
+        cssEl.value = ded(sm[1]);
+        if (!cssEl._bound) { cssEl._bound = true; let tt; cssEl.addEventListener('input', () => { clearTimeout(tt); tt = setTimeout(runCode, 300); }); }
+      } else {
+        if (pane) { pane.hidden = true; const panes = document.querySelector('.tryit-panes'); if (panes) panes.classList.remove('split3'); }
+        input.value = sampleCode;
+      }
+      runCode();
+    }
+
+    let typingTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(runCode, 300);
+    });
+
+    resetCode();
+  </script>
+</body>
+</html>

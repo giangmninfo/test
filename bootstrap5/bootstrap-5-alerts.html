@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bootstrap 5 Alerts - Thông báo - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="../css/css-introduction.html">CSS Introduction</a>
+            <a href="../css/css-syntax.html">CSS Syntax</a>
+            <a href="../css/css-combinators.html">CSS Combinators</a>
+            <a href="../css/css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="../css/css-colors.html">CSS Colors</a>
+            <a href="../css/css-background.html">CSS Background</a>
+            <a href="../css/css-borders.html">CSS Borders</a>
+            <a href="../css/css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="../css/css-padding.html">CSS Padding</a>
+            <a href="../css/css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="../css/css-text-formatting.html">CSS Text Formatting</a>
+            <a href="../css/css-fonts.html">CSS Fonts</a>
+            <a href="../css/css-text-align.html">CSS text-align</a>
+            <a href="../css/css-text-decoration.html">CSS text-decoration</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Design</span>
+            <a href="../css/css-box-model.html">CSS Box Model</a>
+            <a href="../css/css-display.html">CSS Display</a>
+            <a href="../css/css-float-clear.html">CSS Float &amp; Clear</a>
+            <a href="../css/css-overflow.html">CSS Overflow</a>
+            <a href="../css/css-z-index.html">CSS Z-index</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Modern Layout Systems</span>
+            <a href="../css/css-flexbox.html">CSS Flexbox</a>
+            <a href="../css/css-justify-content.html">CSS justify-content</a>
+            <a href="../css/css-align-items.html">CSS align-items</a>
+            <a href="../css/css-align-content.html">CSS align-content</a>
+            <a href="../css/css-grid.html">CSS Grid Layout</a>
+            <a href="../css/css-grid-template-columns.html">CSS grid-template-columns</a>
+            <a href="../css/css-grid-gap.html">CSS grid gap</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Effects, Animations &amp; Advanced CSS</span>
+            <a href="../css/css-transitions.html">CSS Transitions</a>
+            <a href="../css/css-transforms.html">CSS Transform</a>
+            <a href="../css/css-animations.html">CSS Animations</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5" class="active">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+            <a href="bootstrap-5-layout-containers.html">Layout Containers</a>
+            <a href="bootstrap-5-layout-grid-system.html">Grid System</a>
+            <a href="bootstrap-5-columns.html">Columns</a>
+            <a href="bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="bootstrap-5-reboot.html">Reboot</a>
+            <a href="bootstrap-5-typography.html">Typography</a>
+            <a href="bootstrap-5-images.html">Images</a>
+            <a href="bootstrap-5-tables.html">Tables</a>
+            <a href="bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="bootstrap-5-forms.html">Forms</a>
+            <a href="bootstrap-5-form-controls.html">Form Controls</a>
+            <a href="bootstrap-5-select.html">Select</a>
+            <a href="bootstrap-5-checks-and-radios.html">Checks &amp; Radios</a>
+            <a href="bootstrap-5-range.html">Range</a>
+            <a href="bootstrap-5-input-group.html">Input Group</a>
+            <a href="bootstrap-5-floating-labels.html">Floating Labels</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms Layout</span>
+            <a href="bootstrap-5-layout-forms.html">Forms Layout</a>
+            <a href="bootstrap-5-layout-utilities.html">Layout Utilities</a>
+            <a href="bootstrap-5-layout-form-grid.html">Form Grid</a>
+            <a href="bootstrap-5-layout-gutters.html">Layout Gutters</a>
+            <a href="bootstrap-5-layout-horizontal-form.html">Horizontal Form</a>
+            <a href="bootstrap-5-layout-horizontal-form-label-sizing.html">Horizontal Form Label Sizing</a>
+            <a href="bootstrap-5-layout-column-sizing.html">Column Sizing</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Components</span>
+            <a href="bootstrap-5-accordion.html">Accordion</a>
+            <a href="bootstrap-5-alerts.html">Alerts</a>
+            <a href="bootstrap-5-badges.html">Badges</a>
+            <a href="bootstrap-5-breadcrumb.html">Breadcrumb</a>
+            <a href="bootstrap-5-buttons.html">Buttons</a>
+            <a href="bootstrap-5-button-group.html">Button Group</a>
+            <a href="bootstrap-5-card.html">Card</a>
+            <a href="bootstrap-5-carousel.html">Carousel</a>
+            <a href="bootstrap-5-close-button.html">Close Button</a>
+            <a href="bootstrap-5-collapse.html">Collapse</a>
+            <a href="bootstrap-5-dropdowns.html">Dropdowns</a>
+            <a href="bootstrap-5-list-group.html">List Group</a>
+            <a href="bootstrap-5-modal.html">Modal</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Navbar</span>
+            <a href="bootstrap-5-navbar-brand.html">Navbar Brand</a>
+            <a href="bootstrap-5-navbar-brand-text.html">Navbar Brand Text</a>
+            <a href="bootstrap-5-navbar-brand-image.html">Navbar Brand Image</a>
+            <a href="bootstrap-5-navbar-nav.html">Navbar Nav</a>
+            <a href="bootstrap-5-navbar-forms.html">Navbar Forms</a>
+            <a href="bootstrap-5-navbar-text.html">Navbar Text</a>
+            <a href="bootstrap-5-offcanvas.html">Offcanvas</a>
+            <a href="bootstrap-5-popovers.html">Popovers</a>
+            <a href="bootstrap-5-progress.html">Progress</a>
+            <a href="bootstrap-5-scrollspy.html">Scrollspy</a>
+            <a href="bootstrap-5-spinners.html">Spinners</a>
+            <a href="bootstrap-5-toasts.html">Toasts</a>
+            <a href="bootstrap-5-tooltips.html">Tooltips</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Helpers</span>
+            <a href="bootstrap-5-clearfix.html">Clearfix</a>
+            <a href="bootstrap-5-colored-links.html">Colored Links</a>
+            <a href="bootstrap-5-ratios.html">Ratios</a>
+            <a href="bootstrap-5-position.html">Position</a>
+            <a href="bootstrap-5-visually-hidden.html">Visually Hidden</a>
+            <a href="bootstrap-5-stretched-link.html">Stretched Link</a>
+            <a href="bootstrap-5-text-truncation.html">Text Truncation</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Extend</span>
+            <a href="bootstrap-5-approach.html">Approach</a>
+            <a href="bootstrap-5-icons.html">Icons</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="bootstrap-5-utilities.html">Utilities</a>
+            <a href="bootstrap-5-z-index.html">Z-index</a>
+            <a href="bootstrap-5-background.html">Background</a>
+            <a href="bootstrap-5-borders.html">Borders</a>
+            <a href="bootstrap-5-colors.html">Colors</a>
+            <a href="bootstrap-5-display.html">Display</a>
+            <a href="bootstrap-5-flex.html">Flex</a>
+            <a href="bootstrap-5-float.html">Float</a>
+            <a href="bootstrap-5-interactions.html">Interactions</a>
+            <a href="bootstrap-5-overflow.html">Overflow</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">JavaScript</a>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Alerts là gì?</a></li>
+        <li><a href="#basic">Alert cơ bản</a></li>
+        <li><a href="#variants">Các màu ngữ cảnh</a></li>
+        <li><a href="#link">Liên kết trong alert</a></li>
+        <li><a href="#content">Tiêu đề &amp; nội dung</a></li>
+        <li><a href="#dismiss">Alert đóng được</a></li>
+        <li><a href="#icon">Kèm biểu tượng</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » Bootstrap 5 » Alerts</div>
+      <h1>Bootstrap 5 Alerts — Thông báo</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 21/06/2026</span>
+        <span>287K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Alerts</strong> (thông báo) là các hộp thông điệp giúp phản hồi cho người dùng — thành công, cảnh
+        báo, lỗi, thông tin… Bootstrap 5 tạo alert bằng lớp <code>.alert</code> kết hợp một lớp màu ngữ cảnh
+        <code>.alert-{màu}</code>.
+      </p>
+
+      <div class="note">
+        <strong>Cốt lõi:</strong> <code>.alert</code> + một trong các màu: <code>primary, secondary, success,
+        danger, warning, info, light, dark</code>. Thêm <code>role="alert"</code> cho trợ năng.
+      </div>
+
+      <h2 id="basic">Alert cơ bản</h2>
+      <div id="mini-basic"></div>
+
+      <h2 id="variants">Các màu ngữ cảnh</h2>
+      <p>Mỗi màu truyền tải một ý nghĩa khác nhau:</p>
+      <div id="mini-variants"></div>
+
+      <h2 id="link">Liên kết trong alert — <code>.alert-link</code></h2>
+      <p>Dùng <code>.alert-link</code> để liên kết có màu hợp tông với alert:</p>
+      <div id="mini-link"></div>
+
+      <h2 id="content">Tiêu đề &amp; nội dung</h2>
+      <p>Thêm tiêu đề bằng <code>.alert-heading</code>, đường kẻ bằng <code>&lt;hr&gt;</code>:</p>
+      <div id="mini-content"></div>
+
+      <h2 id="dismiss">Alert đóng được (dismissible)</h2>
+      <p>
+        Thêm <code>.alert-dismissible</code>, nút <code>.btn-close</code> với
+        <code>data-bs-dismiss="alert"</code> để người dùng đóng (cần Bootstrap JS):
+      </p>
+      <div id="mini-dismiss"></div>
+
+      <h2 id="icon">Kèm biểu tượng &amp; nội dung phong phú</h2>
+      <p>Có thể đặt biểu tượng/emoji và các phần tử khác bên trong alert:</p>
+      <div id="mini-icon"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Chọn màu đúng ngữ nghĩa: <code>success</code> (thành công), <code>danger</code> (lỗi), <code>warning</code> (cảnh báo).</li>
+        <li>Thêm <code>role="alert"</code> để trình đọc màn hình nhận biết.</li>
+        <li>Với alert đóng được, luôn kèm Bootstrap JS và <code>data-bs-dismiss="alert"</code>.</li>
+        <li>Dùng <code>.alert-link</code> cho liên kết bên trong để giữ tông màu.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Chỉnh sửa mã (đã nhúng Bootstrap 5), kết quả hiển thị ngay bên phải.</p>
+      <div class="tryit">
+        <div class="tryit-bar">
+          <span>HTML + Bootstrap Editor</span>
+          <span><button onclick="runCode()">Chạy</button><button onclick="resetCode()">Đặt lại</button></span>
+        </div>
+        <div class="tryit-panes">
+          <div><span class="lbl">Mã HTML</span><textarea id="htmlInput" spellcheck="false"></textarea></div>
+          <div><span class="lbl">Kết quả</span><iframe id="preview" title="Kết quả xem trước"></iframe></div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        Alerts dùng <code>.alert</code> + màu ngữ cảnh (<code>.alert-success</code>, <code>.alert-danger</code>…)
+        để hiển thị thông báo. Thêm <code>.alert-heading</code> cho tiêu đề, <code>.alert-link</code> cho liên kết,
+        và <code>.alert-dismissible</code> + <code>.btn-close</code> để cho phép đóng.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Xem <a href="bootstrap-5-badges.html"><strong>Badges</strong></a> để hiển thị nhãn/đếm số nhỏ gọn.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học Front-end</h4>
+        <p>Học HTML, CSS và Bootstrap để dựng giao diện web chuyên nghiệp.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="bootstrap-5-accordion.html">Accordion</a></li>
+          <li><a href="bootstrap-5-badges.html">Badges</a></li>
+          <li><a href="bootstrap-5-breadcrumb.html">Breadcrumb</a></li>
+          <li><a href="bootstrap-5.html">Bootstrap 5 Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Bootstrap 5</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Chủ đề</h5>
+        <ul>
+          <li><a href="../index.html#networks">Networks</a></li>
+          <li><a href="../index.html#html-basic">HTML</a></li>
+          <li><a href="../index.html#html5">HTML5</a></li>
+          <li><a href="../index.html#css">CSS</a></li>
+          <li><a href="../index.html#bootstrap5">Bootstrap 5</a></li>
+          <li><a href="../index.html#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id)); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+    function makeMini(hostId, code) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử (có Bootstrap 5)</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+        '<div><span class="lbl">Mã HTML</span><textarea spellcheck="false"></textarea></div>' +
+        '<div><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div></div>';
+      const ta = wrap.querySelector('textarea');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = ta.value; };
+      const reset = () => { ta.value = code; run(); };
+      let t;
+      ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 300); });
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+    const BS =
+`  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>`;
+
+    makeMini('mini-basic',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="alert alert-primary" role="alert">
+    Đây là một thông báo cơ bản (alert-primary).
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-variants',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="alert alert-success">alert-success — Thành công!</div>
+  <div class="alert alert-danger">alert-danger — Có lỗi xảy ra.</div>
+  <div class="alert alert-warning">alert-warning — Hãy cẩn thận.</div>
+  <div class="alert alert-info">alert-info — Thông tin tham khảo.</div>
+</body>
+</html>`);
+
+    makeMini('mini-link',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="alert alert-warning" role="alert">
+    Cảnh báo! Vui lòng <a href="#" class="alert-link">đọc kỹ hướng dẫn</a> trước khi tiếp tục.
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-content',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Hoàn tất!</h4>
+    <p>Bạn đã đăng ký thành công khóa học.</p>
+    <hr>
+    <p class="mb-0">Kiểm tra email để xem chi tiết.</p>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-dismiss',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Không thể lưu dữ liệu. Vui lòng thử lại.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Đóng"></button>
+  </div>
+</body>
+</html>`);
+
+    makeMini('mini-icon',
+`<!DOCTYPE html>
+<html>
+<head>
+${BS}
+</head>
+<body class="p-3">
+  <div class="alert alert-info d-flex align-items-center" role="alert">
+    <span class="me-2" style="font-size:1.4rem">ℹ️</span>
+    <div>Mẹo: bạn có thể lưu bài viết để đọc sau.</div>
+  </div>
+</body>
+</html>`);
+
+    const sampleCode = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>
+  </head>
+  <body class="p-4">
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Thành công!</h4>
+      <p class="mb-0">Hồ sơ của bạn đã được cập nhật.</p>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      Mật khẩu sắp hết hạn. <a href="#" class="alert-link">Đổi ngay</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  </body>
+</html>`;
+
+    const input = document.getElementById('htmlInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = input.value; }
+    function resetCode() { input.value = sampleCode; runCode(); }
+    let typingTimer;
+    input.addEventListener('input', () => { clearTimeout(typingTimer); typingTimer = setTimeout(runCode, 300); });
+    resetCode();
+  </script>
+</body>
+</html>
