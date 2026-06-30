@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JavaScript Strings - Chuỗi trong JavaScript - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text-align.html">CSS text-align</a>
+            <a href="css-text-decoration.html">CSS text-decoration</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Design</span>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-float-clear.html">CSS Float &amp; Clear</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Modern Layout Systems</span>
+            <a href="css-flexbox.html">CSS Flexbox</a>
+            <a href="css-justify-content.html">CSS justify-content</a>
+            <a href="css-align-items.html">CSS align-items</a>
+            <a href="css-align-content.html">CSS align-content</a>
+            <a href="css-grid.html">CSS Grid Layout</a>
+            <a href="css-grid-template-columns.html">CSS grid-template-columns</a>
+            <a href="css-grid-gap.html">CSS grid gap</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Effects, Animations &amp; Advanced CSS</span>
+            <a href="css-transitions.html">CSS Transitions</a>
+            <a href="css-transforms.html">CSS Transform</a>
+            <a href="css-animations.html">CSS Animations</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+            <a href="../bootstrap5/bootstrap-5-select.html">Select</a>
+            <a href="../bootstrap5/bootstrap-5-checks-and-radios.html">Checks &amp; Radios</a>
+            <a href="../bootstrap5/bootstrap-5-range.html">Range</a>
+            <a href="../bootstrap5/bootstrap-5-input-group.html">Input Group</a>
+            <a href="../bootstrap5/bootstrap-5-floating-labels.html">Floating Labels</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms Layout</span>
+            <a href="../bootstrap5/bootstrap-5-layout-forms.html">Forms Layout</a>
+            <a href="../bootstrap5/bootstrap-5-layout-utilities.html">Layout Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-layout-form-grid.html">Form Grid</a>
+            <a href="../bootstrap5/bootstrap-5-layout-gutters.html">Layout Gutters</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form.html">Horizontal Form</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form-label-sizing.html">Horizontal Form Label Sizing</a>
+            <a href="../bootstrap5/bootstrap-5-layout-column-sizing.html">Column Sizing</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Components</span>
+            <a href="../bootstrap5/bootstrap-5-accordion.html">Accordion</a>
+            <a href="../bootstrap5/bootstrap-5-alerts.html">Alerts</a>
+            <a href="../bootstrap5/bootstrap-5-badges.html">Badges</a>
+            <a href="../bootstrap5/bootstrap-5-breadcrumb.html">Breadcrumb</a>
+            <a href="../bootstrap5/bootstrap-5-buttons.html">Buttons</a>
+            <a href="../bootstrap5/bootstrap-5-button-group.html">Button Group</a>
+            <a href="../bootstrap5/bootstrap-5-card.html">Card</a>
+            <a href="../bootstrap5/bootstrap-5-carousel.html">Carousel</a>
+            <a href="../bootstrap5/bootstrap-5-close-button.html">Close Button</a>
+            <a href="../bootstrap5/bootstrap-5-collapse.html">Collapse</a>
+            <a href="../bootstrap5/bootstrap-5-dropdowns.html">Dropdowns</a>
+            <a href="../bootstrap5/bootstrap-5-list-group.html">List Group</a>
+            <a href="../bootstrap5/bootstrap-5-modal.html">Modal</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Navbar</span>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand.html">Navbar Brand</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-text.html">Navbar Brand Text</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-image.html">Navbar Brand Image</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-nav.html">Navbar Nav</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-forms.html">Navbar Forms</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-text.html">Navbar Text</a>
+            <a href="../bootstrap5/bootstrap-5-offcanvas.html">Offcanvas</a>
+            <a href="../bootstrap5/bootstrap-5-popovers.html">Popovers</a>
+            <a href="../bootstrap5/bootstrap-5-progress.html">Progress</a>
+            <a href="../bootstrap5/bootstrap-5-scrollspy.html">Scrollspy</a>
+            <a href="../bootstrap5/bootstrap-5-spinners.html">Spinners</a>
+            <a href="../bootstrap5/bootstrap-5-toasts.html">Toasts</a>
+            <a href="../bootstrap5/bootstrap-5-tooltips.html">Tooltips</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Helpers</span>
+            <a href="../bootstrap5/bootstrap-5-clearfix.html">Clearfix</a>
+            <a href="../bootstrap5/bootstrap-5-colored-links.html">Colored Links</a>
+            <a href="../bootstrap5/bootstrap-5-ratios.html">Ratios</a>
+            <a href="../bootstrap5/bootstrap-5-position.html">Position</a>
+            <a href="../bootstrap5/bootstrap-5-visually-hidden.html">Visually Hidden</a>
+            <a href="../bootstrap5/bootstrap-5-stretched-link.html">Stretched Link</a>
+            <a href="../bootstrap5/bootstrap-5-text-truncation.html">Text Truncation</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Extend</span>
+            <a href="../bootstrap5/bootstrap-5-approach.html">Approach</a>
+            <a href="../bootstrap5/bootstrap-5-icons.html">Icons</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+            <a href="../bootstrap5/bootstrap-5-background.html">Background</a>
+            <a href="../bootstrap5/bootstrap-5-borders.html">Borders</a>
+            <a href="../bootstrap5/bootstrap-5-colors.html">Colors</a>
+            <a href="../bootstrap5/bootstrap-5-display.html">Display</a>
+            <a href="../bootstrap5/bootstrap-5-flex.html">Flex</a>
+            <a href="../bootstrap5/bootstrap-5-float.html">Float</a>
+            <a href="../bootstrap5/bootstrap-5-interactions.html">Interactions</a>
+            <a href="../bootstrap5/bootstrap-5-overflow.html">Overflow</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#javascript" class="active">JavaScript</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">JavaScript Basics</span>
+            <a href="../javascript/javascript-introduction.html">Introduction to JavaScript</a>
+            <a href="../javascript/javascript-variables-datatypes.html">Variables &amp; Datatypes</a>
+            <a href="../javascript/javascript-operators.html">JavaScript Operators</a>
+            <a href="../javascript/javascript-control-statements.html">Control Statements</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Array &amp; String</span>
+            <a href="../javascript/javascript-arrays.html">JavaScript Arrays</a>
+            <a href="../javascript/javascript-array-methods.html">Array Methods</a>
+            <a href="../javascript/javascript-strings.html">JavaScript Strings</a>
+            <a href="../javascript/javascript-string-methods.html">String Methods</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Function &amp; Object</span>
+            <a href="../javascript/javascript-functions.html">Functions in JavaScript</a>
+            <a href="../javascript/javascript-function-expressions.html">Function Expression</a>
+            <a href="../javascript/javascript-function-overloading.html">Function Overloading</a>
+            <a href="../javascript/javascript-objects.html">JavaScript Objects</a>
+            <a href="../javascript/javascript-object-constructors.html">Object Constructors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">OOP</span>
+            <a href="../javascript/javascript-oop-introduction.html">OOP Introduction</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">Chuỗi là gì?</a></li>
+        <li><a href="#create">Tạo chuỗi</a></li>
+        <li><a href="#length">length &amp; truy cập</a></li>
+        <li><a href="#immutable">Chuỗi bất biến</a></li>
+        <li><a href="#concat">Nối chuỗi</a></li>
+        <li><a href="#template">Template literals</a></li>
+        <li><a href="#escape">Ký tự thoát</a></li>
+        <li><a href="#case">Hoa / thường / trim</a></li>
+        <li><a href="#search">Tìm kiếm</a></li>
+        <li><a href="#extract">Cắt chuỗi</a></li>
+        <li><a href="#replace">replace / split</a></li>
+        <li><a href="#pad">repeat / pad</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » JavaScript » JavaScript Strings</div>
+      <h1>JavaScript Strings — Chuỗi trong JavaScript</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 23/06/2026</span>
+        <span>534K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Chuỗi (string)</strong> là dãy ký tự dùng để biểu diễn văn bản — tên, câu, mã… Trong JavaScript,
+        chuỗi đặt trong <strong>nháy đơn <code>' '</code></strong>, <strong>nháy kép <code>" "</code></strong> hoặc
+        <strong>backtick <code>` `</code></strong> (template literal).
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> chuỗi là <em>bất biến (immutable)</em> — các phương thức luôn trả về chuỗi
+        <strong>mới</strong>, không sửa chuỗi gốc. Ký tự được đánh chỉ số từ <code>0</code>. Ví dụ dưới chỉ dùng
+        JavaScript, in ra <code>console</code>.
+      </div>
+
+      <h2 id="create">Tạo chuỗi</h2>
+      <p>Ba kiểu dấu nháy đều tạo chuỗi; backtick còn cho phép xuống dòng &amp; chèn biến:</p>
+      <div id="mini-create"></div>
+
+      <h2 id="length"><code>length</code> &amp; truy cập ký tự</h2>
+      <p>Dùng <code>str[i]</code>, <code>charAt(i)</code> hoặc <code>at(i)</code>; <code>length</code> là số ký tự:</p>
+      <figure class="arr-fig">
+        <div class="cells">
+          <div class="cell"><div class="val">H</div><div class="idx">[0]</div></div>
+          <div class="cell"><div class="val">E</div><div class="idx">[1]</div></div>
+          <div class="cell"><div class="val">L</div><div class="idx">[2]</div></div>
+          <div class="cell"><div class="val">L</div><div class="idx">[3]</div></div>
+          <div class="cell"><div class="val">O</div><div class="idx">[4]</div></div>
+        </div>
+        <figcaption>Chuỗi <code>"HELLO"</code> — mỗi ký tự có một <strong>chỉ số</strong> từ 0; <code>"HELLO"[0] = "H"</code>, <code>length = 5</code>.</figcaption>
+      </figure>
+      <div id="mini-length"></div>
+
+      <h2 id="immutable">Chuỗi bất biến (immutable)</h2>
+      <p>Không thể đổi một ký tự tại chỗ — phải tạo chuỗi mới:</p>
+      <div id="mini-immutable"></div>
+
+      <h2 id="concat">Nối chuỗi</h2>
+      <p>Dùng toán tử <code>+</code> hoặc phương thức <code>concat()</code>:</p>
+      <div id="mini-concat"></div>
+
+      <h2 id="template">Template literals (backtick)</h2>
+      <p>Chèn biến/biểu thức bằng <code>${'${...}'}</code> và viết chuỗi nhiều dòng dễ dàng:</p>
+      <div id="mini-template"></div>
+
+      <h2 id="escape">Ký tự thoát (escape)</h2>
+      <p><code>\n</code> xuống dòng, <code>\t</code> tab, <code>\\</code> dấu gạch chéo, <code>\"</code> nháy kép:</p>
+      <div id="mini-escape"></div>
+
+      <h2 id="case">Hoa / thường &amp; cắt khoảng trắng</h2>
+      <p><code>toUpperCase</code>, <code>toLowerCase</code>, <code>trim</code> (bỏ khoảng trắng đầu/cuối):</p>
+      <div id="mini-case"></div>
+
+      <h2 id="search">Tìm kiếm trong chuỗi</h2>
+      <p><code>indexOf</code>, <code>includes</code>, <code>startsWith</code>, <code>endsWith</code>:</p>
+      <div id="mini-search"></div>
+
+      <h2 id="extract">Cắt chuỗi: <code>slice</code> / <code>substring</code></h2>
+      <p>Lấy một đoạn con của chuỗi (đều trả về chuỗi mới):</p>
+      <div id="mini-extract"></div>
+
+      <h2 id="replace">Thay thế &amp; tách: <code>replace</code> / <code>split</code></h2>
+      <p><code>replace</code>/<code>replaceAll</code> thay thế; <code>split</code> tách chuỗi thành mảng:</p>
+      <div id="mini-replace"></div>
+
+      <h2 id="pad"><code>repeat</code> / <code>padStart</code> / <code>padEnd</code></h2>
+      <p>Lặp chuỗi và chèn ký tự cho đủ độ dài (vd canh lề số):</p>
+      <div id="mini-pad"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Ưu tiên <strong>template literals</strong> (backtick) khi cần ghép biến — dễ đọc hơn <code>+</code>.</li>
+        <li>Nhớ chuỗi <strong>bất biến</strong>: luôn gán lại kết quả của phương thức.</li>
+        <li><code>trim()</code> dữ liệu nhập từ người dùng trước khi xử lý.</li>
+        <li>Dùng <code>includes()</code> cho kiểm tra "có chứa" thay vì <code>indexOf() !== -1</code>.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Viết JavaScript ở ô bên trái rồi bấm <strong>Chạy</strong> — kết quả <code>console.log</code> hiển thị bên phải.</p>
+      <div class="tryit jstry jsonly">
+        <div class="tryit-bar">
+          <span>JavaScript Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div class="js-inputs">
+            <div class="seg seg-js"><span class="lbl">Mã JavaScript</span><textarea id="jsInput" spellcheck="false"></textarea></div>
+          </div>
+          <div class="js-result"><span class="lbl">Kết quả (console)</span><iframe id="preview" title="Kết quả xem trước"></iframe></div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        <strong>Chuỗi</strong> là dãy ký tự (nháy đơn/kép/backtick), <strong>bất biến</strong>, đánh chỉ số từ 0. Nối
+        bằng <code>+</code> hoặc <strong>template literals</strong> <code>${'${...}'}</code>; biến đổi với
+        <code>toUpperCase/toLowerCase/trim</code>; tìm kiếm với <code>indexOf/includes/startsWith</code>; cắt với
+        <code>slice/substring</code>; thay thế &amp; tách với <code>replace/split</code>; căn lề với
+        <code>padStart/repeat</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tiếp theo trong nhóm Array &amp; String: <strong>String Methods</strong>, <strong>Template Literals</strong>…
+        (sắp ra mắt). Ôn lại <a href="javascript-array-methods.html"><strong>Array Methods</strong></a>.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học JavaScript</h4>
+        <p>Học JavaScript từ cơ bản đến nâng cao để làm chủ lập trình web.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="javascript-array-methods.html">Array Methods</a></li>
+          <li><a href="javascript-arrays.html">JavaScript Arrays</a></li>
+          <li><a href="javascript-control-statements.html">Control Statements</a></li>
+          <li><a href="../css/css-introduction.html">CSS Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Chủ đề</h5>
+        <ul>
+          <li><a href="../index.html#networks">Networks</a></li>
+          <li><a href="../index.html#html-basic">HTML</a></li>
+          <li><a href="../index.html#html5">HTML5</a></li>
+          <li><a href="../index.html#css">CSS</a></li>
+          <li><a href="../index.html#bootstrap5">Bootstrap 5</a></li>
+          <li><a href="../index.html#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Trình chạy ví dụ JS (kèm HTML/CSS nếu có), bắt console.log -----
+    function buildDoc(html, css, js) {
+      return '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>'
+        + 'body{font-family:Arial,Helvetica,sans-serif;padding:12px;color:#222;line-height:1.6;}'
+        + (css || '')
+        + ' .__console{font-family:Consolas,Monaco,monospace;font-size:12.5px;line-height:1.6;color:#0b3a5b;white-space:pre-wrap;}'
+        + ' .__console:empty{display:none;}'
+        + '</style></head><body>'
+        + (html || '')
+        + '<div class="__console" id="__out"></div>'
+        + '<scr' + 'ipt>(function(){var o=document.getElementById("__out");'
+        + 'function w(){var a=[].slice.call(arguments).map(function(x){'
+        + 'try{return (typeof x==="object"&&x!==null)?JSON.stringify(x):String(x);}catch(e){return String(x);}});'
+        + 'var d=document.createElement("div");d.textContent=a.join(" ");o.appendChild(d);}'
+        + 'console.log=console.info=console.warn=console.error=w;'
+        + 'try{\n' + (js || '') + '\n}catch(e){var d=document.createElement("div");d.style.color="#c0392b";d.textContent="\u26A0 Lỗi: "+(e&&e.message||e);o.appendChild(d);}'
+        + '})();<\/scr' + 'ipt></body></html>';
+    }
+    function makeJSMini(hostId, parts) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const ui = !!(parts.html || parts.css);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini jsmini' + (ui ? '' : ' jsonly');
+      let inputs = '';
+      if (ui) {
+        inputs += '<div class="seg seg-html"><span class="lbl">Mã HTML</span><textarea class="ta-html" spellcheck="false"></textarea></div>';
+        inputs += '<div class="seg seg-css"><span class="lbl">Mã CSS</span><textarea class="ta-css" spellcheck="false"></textarea></div>';
+      }
+      inputs += '<div class="seg seg-js"><span class="lbl">Mã JavaScript</span><textarea class="ta-js" spellcheck="false"></textarea></div>';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>' + (ui ? 'Ví dụ chạy thử (HTML + CSS + JS)' : 'Ví dụ chạy thử (JavaScript)') + '</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes"><div class="js-inputs">' + inputs + '</div>' +
+        '<div class="js-result"><span class="lbl">' + (ui ? 'Kết quả' : 'Kết quả (console)') + '</span><iframe title="Kết quả"></iframe></div></div>';
+      const tH = wrap.querySelector('.ta-html');
+      const tC = wrap.querySelector('.ta-css');
+      const tJ = wrap.querySelector('.ta-js');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = buildDoc(tH ? tH.value : '', tC ? tC.value : '', tJ.value); };
+      const reset = () => { if (tH) tH.value = parts.html || ''; if (tC) tC.value = parts.css || ''; tJ.value = parts.js || ''; run(); };
+      let t;
+      const deb = () => { clearTimeout(t); t = setTimeout(run, 350); };
+      [tH, tC, tJ].forEach(el => el && el.addEventListener('input', deb));
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeJSMini('mini-create', {
+      js: `let a = 'nháy đơn';
+let b = "nháy kép";
+let c = \`backtick\`;
+console.log(a, "|", b, "|", c);
+console.log("Độ dài b:", b.length);`
+    });
+
+    makeJSMini('mini-length', {
+      js: `let s = "HELLO";
+console.log("length:", s.length);   // 5
+console.log("s[0]:", s[0]);         // H
+console.log("charAt(1):", s.charAt(1)); // E
+console.log("at(-1):", s.at(-1));   // O (ký tự cuối)`
+    });
+
+    makeJSMini('mini-immutable', {
+      js: `let s = "hello";
+s[0] = "H";              // không có tác dụng!
+console.log(s);          // "hello" (không đổi)
+s = "H" + s.slice(1);    // tạo chuỗi mới
+console.log(s);          // "Hello"`
+    });
+
+    makeJSMini('mini-concat', {
+      js: `let ten = "An";
+let chao = "Xin chào, " + ten + "!";
+console.log(chao);
+console.log("abc".concat("def", "ghi")); // abcdefghi`
+    });
+
+    makeJSMini('mini-template', {
+      js: `let ten = "An";
+let tuoi = 20;
+console.log(\`Tôi là \${ten}, \${tuoi} tuổi.\`);
+console.log(\`2 + 3 = \${2 + 3}\`);
+let nhieuDong = \`Dòng 1
+Dòng 2\`;
+console.log(nhieuDong);`
+    });
+
+    makeJSMini('mini-escape', {
+      js: `console.log("Dòng 1\\nDòng 2");      // xuống dòng mới
+console.log("Cột1\\tCột2");           // dấu tab
+console.log("Đường dẫn: C:\\\\Users");  // hai dấu gạch chéo thành một
+console.log("Anh ấy nói \\"Hi\\"");     // nháy kép bên trong chuỗi`
+    });
+
+    makeJSMini('mini-case', {
+      js: `let s = "  Hello World  ";
+console.log("upper:", s.toUpperCase());
+console.log("lower:", s.toLowerCase());
+console.log("trim:", "[" + s.trim() + "]"); // bỏ khoảng trắng 2 đầu`
+    });
+
+    makeJSMini('mini-search', {
+      js: `let s = "JavaScript rất thú vị";
+console.log("indexOf:", s.indexOf("rất"));     // 11
+console.log("includes:", s.includes("Script")); // true
+console.log("startsWith:", s.startsWith("Java")); // true
+console.log("endsWith:", s.endsWith("vị"));    // true`
+    });
+
+    makeJSMini('mini-extract', {
+      js: `let s = "JavaScript";
+console.log("slice(0,4):", s.slice(0, 4));   // Java
+console.log("slice(-6):", s.slice(-6));      // Script
+console.log("substring(4,10):", s.substring(4, 10)); // Script
+console.log("gốc không đổi:", s);            // JavaScript`
+    });
+
+    makeJSMini('mini-replace', {
+      js: `let s = "tôi yêu mèo, mèo dễ thương";
+console.log(s.replace("mèo", "chó"));      // chỉ thay đầu tiên
+console.log(s.replaceAll("mèo", "chó"));   // thay tất cả
+let csv = "đỏ,lục,lam";
+console.log("split:", csv.split(","));     // ["đỏ","lục","lam"]`
+    });
+
+    makeJSMini('mini-pad', {
+      js: `console.log("ha".repeat(3));        // hahaha
+console.log("5".padStart(3, "0"));   // "005"
+console.log("5".padEnd(3, "*"));     // "5**"
+console.log(("" + 7).padStart(2, "0")); // "07" (canh giờ/phút)`
+    });
+
+    const sampleJS = `// Chuẩn hoá &amp; xử lý dữ liệu nhập
+let raw = "  nguyEN vAn an  ";
+let ten = raw.trim().toLowerCase();
+console.log("Sau chuẩn hoá:", ten);   // "nguyen van an"
+
+// Viết hoa chữ cái đầu mỗi từ
+let dep = ten.split(" ")
+  .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+  .join(" ");
+console.log("Tên đẹp:", dep);          // "Nguyen Van An"
+
+// Tạo username + email
+let user = ten.replaceAll(" ", ".");
+console.log(\`Username: \${user}\`);
+console.log(\`Email: \${user}@hitech.vn\`);
+console.log("Số ký tự tên:", dep.length);`;
+
+    // ----- Trình soạn trực tiếp (chỉ JavaScript) -----
+    const jsInput = document.getElementById('jsInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = buildDoc('', '', jsInput.value); }
+    function resetCode() { jsInput.value = sampleJS; runCode(); }
+    let tt;
+    jsInput.addEventListener('input', () => { clearTimeout(tt); tt = setTimeout(runCode, 350); });
+    resetCode();
+  </script>
+</body>
+</html>

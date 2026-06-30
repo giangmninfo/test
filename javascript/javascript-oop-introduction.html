@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Introduction to OOP in JavaScript - Lập trình hướng đối tượng - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text-align.html">CSS text-align</a>
+            <a href="css-text-decoration.html">CSS text-decoration</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Design</span>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-float-clear.html">CSS Float &amp; Clear</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Modern Layout Systems</span>
+            <a href="css-flexbox.html">CSS Flexbox</a>
+            <a href="css-justify-content.html">CSS justify-content</a>
+            <a href="css-align-items.html">CSS align-items</a>
+            <a href="css-align-content.html">CSS align-content</a>
+            <a href="css-grid.html">CSS Grid Layout</a>
+            <a href="css-grid-template-columns.html">CSS grid-template-columns</a>
+            <a href="css-grid-gap.html">CSS grid gap</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Effects, Animations &amp; Advanced CSS</span>
+            <a href="css-transitions.html">CSS Transitions</a>
+            <a href="css-transforms.html">CSS Transform</a>
+            <a href="css-animations.html">CSS Animations</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+            <a href="../bootstrap5/bootstrap-5-select.html">Select</a>
+            <a href="../bootstrap5/bootstrap-5-checks-and-radios.html">Checks &amp; Radios</a>
+            <a href="../bootstrap5/bootstrap-5-range.html">Range</a>
+            <a href="../bootstrap5/bootstrap-5-input-group.html">Input Group</a>
+            <a href="../bootstrap5/bootstrap-5-floating-labels.html">Floating Labels</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms Layout</span>
+            <a href="../bootstrap5/bootstrap-5-layout-forms.html">Forms Layout</a>
+            <a href="../bootstrap5/bootstrap-5-layout-utilities.html">Layout Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-layout-form-grid.html">Form Grid</a>
+            <a href="../bootstrap5/bootstrap-5-layout-gutters.html">Layout Gutters</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form.html">Horizontal Form</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form-label-sizing.html">Horizontal Form Label Sizing</a>
+            <a href="../bootstrap5/bootstrap-5-layout-column-sizing.html">Column Sizing</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Components</span>
+            <a href="../bootstrap5/bootstrap-5-accordion.html">Accordion</a>
+            <a href="../bootstrap5/bootstrap-5-alerts.html">Alerts</a>
+            <a href="../bootstrap5/bootstrap-5-badges.html">Badges</a>
+            <a href="../bootstrap5/bootstrap-5-breadcrumb.html">Breadcrumb</a>
+            <a href="../bootstrap5/bootstrap-5-buttons.html">Buttons</a>
+            <a href="../bootstrap5/bootstrap-5-button-group.html">Button Group</a>
+            <a href="../bootstrap5/bootstrap-5-card.html">Card</a>
+            <a href="../bootstrap5/bootstrap-5-carousel.html">Carousel</a>
+            <a href="../bootstrap5/bootstrap-5-close-button.html">Close Button</a>
+            <a href="../bootstrap5/bootstrap-5-collapse.html">Collapse</a>
+            <a href="../bootstrap5/bootstrap-5-dropdowns.html">Dropdowns</a>
+            <a href="../bootstrap5/bootstrap-5-list-group.html">List Group</a>
+            <a href="../bootstrap5/bootstrap-5-modal.html">Modal</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Navbar</span>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand.html">Navbar Brand</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-text.html">Navbar Brand Text</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-image.html">Navbar Brand Image</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-nav.html">Navbar Nav</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-forms.html">Navbar Forms</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-text.html">Navbar Text</a>
+            <a href="../bootstrap5/bootstrap-5-offcanvas.html">Offcanvas</a>
+            <a href="../bootstrap5/bootstrap-5-popovers.html">Popovers</a>
+            <a href="../bootstrap5/bootstrap-5-progress.html">Progress</a>
+            <a href="../bootstrap5/bootstrap-5-scrollspy.html">Scrollspy</a>
+            <a href="../bootstrap5/bootstrap-5-spinners.html">Spinners</a>
+            <a href="../bootstrap5/bootstrap-5-toasts.html">Toasts</a>
+            <a href="../bootstrap5/bootstrap-5-tooltips.html">Tooltips</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Helpers</span>
+            <a href="../bootstrap5/bootstrap-5-clearfix.html">Clearfix</a>
+            <a href="../bootstrap5/bootstrap-5-colored-links.html">Colored Links</a>
+            <a href="../bootstrap5/bootstrap-5-ratios.html">Ratios</a>
+            <a href="../bootstrap5/bootstrap-5-position.html">Position</a>
+            <a href="../bootstrap5/bootstrap-5-visually-hidden.html">Visually Hidden</a>
+            <a href="../bootstrap5/bootstrap-5-stretched-link.html">Stretched Link</a>
+            <a href="../bootstrap5/bootstrap-5-text-truncation.html">Text Truncation</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Extend</span>
+            <a href="../bootstrap5/bootstrap-5-approach.html">Approach</a>
+            <a href="../bootstrap5/bootstrap-5-icons.html">Icons</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+            <a href="../bootstrap5/bootstrap-5-background.html">Background</a>
+            <a href="../bootstrap5/bootstrap-5-borders.html">Borders</a>
+            <a href="../bootstrap5/bootstrap-5-colors.html">Colors</a>
+            <a href="../bootstrap5/bootstrap-5-display.html">Display</a>
+            <a href="../bootstrap5/bootstrap-5-flex.html">Flex</a>
+            <a href="../bootstrap5/bootstrap-5-float.html">Float</a>
+            <a href="../bootstrap5/bootstrap-5-interactions.html">Interactions</a>
+            <a href="../bootstrap5/bootstrap-5-overflow.html">Overflow</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#javascript" class="active">JavaScript</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">JavaScript Basics</span>
+            <a href="../javascript/javascript-introduction.html">Introduction to JavaScript</a>
+            <a href="../javascript/javascript-variables-datatypes.html">Variables &amp; Datatypes</a>
+            <a href="../javascript/javascript-operators.html">JavaScript Operators</a>
+            <a href="../javascript/javascript-control-statements.html">Control Statements</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Array &amp; String</span>
+            <a href="../javascript/javascript-arrays.html">JavaScript Arrays</a>
+            <a href="../javascript/javascript-array-methods.html">Array Methods</a>
+            <a href="../javascript/javascript-strings.html">JavaScript Strings</a>
+            <a href="../javascript/javascript-string-methods.html">String Methods</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Function &amp; Object</span>
+            <a href="../javascript/javascript-functions.html">Functions in JavaScript</a>
+            <a href="../javascript/javascript-function-expressions.html">Function Expression</a>
+            <a href="../javascript/javascript-function-overloading.html">Function Overloading</a>
+            <a href="../javascript/javascript-objects.html">JavaScript Objects</a>
+            <a href="../javascript/javascript-object-constructors.html">Object Constructors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">OOP</span>
+            <a href="../javascript/javascript-oop-introduction.html">OOP Introduction</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">OOP là gì?</a></li>
+        <li><a href="#pillars">Bốn trụ cột OOP</a></li>
+        <li><a href="#class">Lớp (class) &amp; đối tượng</a></li>
+        <li><a href="#constructor">Constructor</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#encap">Đóng gói (encapsulation)</a></li>
+        <li><a href="#inherit">Kế thừa (inheritance)</a></li>
+        <li><a href="#poly">Đa hình (polymorphism)</a></li>
+        <li><a href="#abstract">Trừu tượng &amp; static</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » JavaScript » OOP Introduction</div>
+      <h1>Giới thiệu Lập trình hướng đối tượng (OOP) trong JavaScript</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Cơ bản</span>
+        <span>Cập nhật: 23/06/2026</span>
+        <span>374K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>Lập trình hướng đối tượng (OOP — Object-Oriented Programming)</strong> là cách tổ chức code quanh các
+        <strong>đối tượng</strong> — gói chung <em>dữ liệu</em> (thuộc tính) và <em>hành vi</em> (method). Mục tiêu:
+        code dễ tái sử dụng, dễ mở rộng và dễ bảo trì hơn.
+      </p>
+
+      <div class="note">
+        <strong>Trong JavaScript:</strong> OOP thường dùng cú pháp <code>class</code> (ra mắt từ ES6) — bên dưới vẫn là
+        prototype. Các ví dụ dưới chỉ dùng JavaScript, in ra <code>console</code>.
+      </div>
+
+      <figure>
+        <div class="oopconcept">
+          <div class="oc-title">Object-Oriented Programming</div>
+          <div class="oc-rows">
+            <div class="oc-row"><span class="oc-term">Class</span><span class="oc-desc">Bản thiết kế / khuôn mẫu để tạo ra các đối tượng.</span></div>
+            <div class="oc-row"><span class="oc-term">Object</span><span class="oc-desc">Một thực thể được tạo ra từ class.</span></div>
+            <div class="oc-row"><span class="oc-term">Encapsulation</span><span class="oc-desc">Bảo vệ dữ liệu khỏi việc truy cập trực tiếp.</span></div>
+            <div class="oc-row"><span class="oc-term">Abstraction</span><span class="oc-desc">Ẩn đi những chi tiết không cần thiết.</span></div>
+            <div class="oc-row"><span class="oc-term">Polymorphism</span><span class="oc-desc">Cho phép cùng một method hành xử khác nhau.</span></div>
+            <div class="oc-row"><span class="oc-term">Inheritance</span><span class="oc-desc">Tái sử dụng code từ các class đã có.</span></div>
+          </div>
+        </div>
+        <div class="oopconcept-cap">Các khái niệm cốt lõi của lập trình hướng đối tượng.</div>
+      </figure>
+
+      <h2 id="pillars">Bốn trụ cột của OOP</h2>
+      <figure class="op-fig">
+        <div class="op-cards">
+          <div class="op-card c-blue"><h4>Encapsulation (Đóng gói)</h4><div class="ops">Gói dữ liệu &amp; method vào một đối tượng; ẩn chi tiết bằng trường riêng <code>#</code>.</div></div>
+          <div class="op-card c-green"><h4>Abstraction (Trừu tượng)</h4><div class="ops">Chỉ phơi bày những gì cần dùng; che giấu phần xử lý phức tạp bên trong.</div></div>
+          <div class="op-card c-gold"><h4>Inheritance (Kế thừa)</h4><div class="ops">Lớp con dùng lại &amp; mở rộng lớp cha bằng <code>extends</code> / <code>super</code>.</div></div>
+          <div class="op-card c-pink"><h4>Polymorphism (Đa hình)</h4><div class="ops">Cùng tên method nhưng mỗi lớp xử lý khác nhau (ghi đè method).</div></div>
+        </div>
+        <figcaption>Bốn trụ cột của lập trình hướng đối tượng (OOP).</figcaption>
+      </figure>
+
+      <h2 id="class">Lớp (class) &amp; đối tượng (object)</h2>
+      <p><strong>Class</strong> là "khuôn"; <strong>object</strong> là thực thể được tạo từ khuôn đó bằng <code>new</code>:</p>
+
+      <figure class="classobj">
+        <svg viewBox="0 0 800 340" role="img" aria-label="Car là class; BMW, Mercedes, Audi là object"
+             style="width:100%;max-width:740px;height:auto;display:block;margin:0 auto;font-family:Arial,Helvetica,sans-serif;">
+          <defs>
+            <marker id="co-ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L7,3 L0,6 Z" fill="#222"></path>
+            </marker>
+            <filter id="co-grn"><feColorMatrix type="hueRotate" values="78"></feColorMatrix></filter>
+          </defs>
+
+          <!-- Car (class) -->
+          <rect x="305" y="18" width="190" height="106" rx="8" fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5"></rect>
+          <text x="400" y="44" text-anchor="middle" font-size="20" font-weight="700" fill="#222">Car</text>
+          <text x="400" y="100" text-anchor="middle" font-size="46" filter="url(#co-grn)">&#128663;</text>
+
+          <!-- arrow to Class -->
+          <line x1="500" y1="70" x2="610" y2="70" stroke="#222" stroke-width="2.5" marker-end="url(#co-ah)"></line>
+          <text x="624" y="80" font-size="30" font-weight="800" fill="#1c1c1c">Class</text>
+
+          <!-- branch lines Car -> 3 objects -->
+          <line x1="400" y1="124" x2="120" y2="206" stroke="#222" stroke-width="2.5" marker-end="url(#co-ah)"></line>
+          <line x1="400" y1="124" x2="330" y2="206" stroke="#222" stroke-width="2.5" marker-end="url(#co-ah)"></line>
+          <line x1="400" y1="124" x2="540" y2="206" stroke="#222" stroke-width="2.5" marker-end="url(#co-ah)"></line>
+
+          <!-- object cards -->
+          <rect x="45" y="212" width="150" height="106" rx="8" fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5"></rect>
+          <text x="120" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#222">BMW</text>
+          <text x="120" y="296" text-anchor="middle" font-size="40" filter="url(#co-grn)">&#128663;</text>
+
+          <rect x="255" y="212" width="150" height="106" rx="8" fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5"></rect>
+          <text x="330" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#222">Mercedes</text>
+          <text x="330" y="296" text-anchor="middle" font-size="40" filter="url(#co-grn)">&#128663;</text>
+
+          <rect x="465" y="212" width="150" height="106" rx="8" fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5"></rect>
+          <text x="540" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#222">Audi</text>
+          <text x="540" y="296" text-anchor="middle" font-size="40" filter="url(#co-grn)">&#128663;</text>
+
+          <!-- arrow to Objects -->
+          <line x1="615" y1="265" x2="690" y2="265" stroke="#222" stroke-width="2.5" marker-end="url(#co-ah)"></line>
+          <text x="700" y="275" font-size="30" font-weight="800" fill="#1c1c1c">Objects</text>
+        </svg>
+        <div class="classobj-cap"><strong>Car</strong> là một <strong>class</strong> (bản thiết kế), còn <strong>BMW</strong>, <strong>Mercedes</strong>, <strong>Audi</strong> là các <strong>object</strong> (thực thể) được tạo ra từ class đó.</div>
+      </figure>
+
+      <figure>
+        <div class="instfig">
+          <div class="side">
+            <div class="lbl">Class</div>
+            <div class="dog cls">&#128021;</div>
+            <div class="animal">Dog</div>
+            <div class="cols">
+              <div class="col"><h5>Properties</h5><div class="lines">Name<br>Colour</div></div>
+              <div class="col"><h5>Methods</h5><div class="lines">getName()<br>getColour()</div></div>
+            </div>
+          </div>
+          <div class="create"><div>Create Instance</div><div class="ar">&#10230;</div></div>
+          <div class="side">
+            <div class="lbl">Object</div>
+            <div class="dog obj">&#128021;</div>
+            <div class="animal">Tommy</div>
+            <div class="cols">
+              <div class="col"><h5>Property Values</h5><div class="lines">Name : Tommy<br>Colour : Green</div></div>
+              <div class="col"><h5>Methods</h5><div class="lines">getName()<br>getColour()</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="classobj-cap">Class <strong>Dog</strong> định nghĩa <em>thuộc tính</em> (Name, Colour) &amp; <em>method</em>; tạo một <strong>instance</strong> sẽ ra object <strong>Tommy</strong> với giá trị cụ thể (Name: Tommy, Colour: Green).</div>
+      </figure>
+
+      <div id="mini-class"></div>
+
+      <h2 id="constructor">Constructor</h2>
+      <p><code>constructor()</code> chạy khi tạo object — dùng để khởi tạo thuộc tính:</p>
+      <div id="mini-constructor"></div>
+
+      <h2 id="method">Method</h2>
+      <p>Hàm bên trong class; truy cập thuộc tính qua <code>this</code>:</p>
+      <div id="mini-method"></div>
+
+      <h2 id="encap">Đóng gói (Encapsulation)</h2>
+      <p>Dùng trường <strong>riêng tư</strong> <code>#</code> để ẩn dữ liệu, chỉ cho truy cập qua method:</p>
+      <div id="mini-encap"></div>
+
+      <h2 id="inherit">Kế thừa (Inheritance)</h2>
+      <p><code>extends</code> để lớp con kế thừa lớp cha; <code>super()</code> gọi constructor cha:</p>
+      <div id="mini-inherit"></div>
+
+      <h2 id="poly">Đa hình (Polymorphism)</h2>
+      <p>Lớp con <strong>ghi đè</strong> method của lớp cha — cùng tên, hành vi khác:</p>
+      <div id="mini-poly"></div>
+
+      <h2 id="abstract">Trừu tượng &amp; method <code>static</code></h2>
+      <p>Ẩn chi tiết phức tạp sau method đơn giản; <code>static</code> thuộc về class (không cần object):</p>
+
+      <figure>
+        <div class="absfig">
+          <div class="head">
+            <div class="t">Abstraction (Trừu tượng)</div>
+            <div class="s">Ẩn đi các chi tiết và chỉ phơi bày những thông tin cần thiết</div>
+          </div>
+          <div class="cols">
+            <div class="col">
+              <span class="ar">&#8595;</span>
+              <span class="icon">&#127975;</span>
+              <div class="cap">Ta dùng máy <strong>ATM</strong> mà không cần biết nó xử lý giao dịch bên trong thế nào.</div>
+            </div>
+            <div class="col">
+              <span class="ar">&#8595;</span>
+              <span class="icon">&#9749;</span>
+              <div class="cap">Ta dùng <strong>máy pha cà phê</strong> mà không cần biết cơ chế bên trong của nó.</div>
+            </div>
+          </div>
+        </div>
+        <div class="classobj-cap">Trừu tượng: người dùng chỉ thấy nút bấm / kết quả, còn phần xử lý phức tạp được giấu đi.</div>
+      </figure>
+
+      <div id="mini-static"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Đặt tên class viết hoa chữ cái đầu (<code>NguoiDung</code>, <code>HinhTron</code>).</li>
+        <li>Đóng gói dữ liệu nhạy cảm bằng trường <code>#</code>; cho truy cập qua method (getter/setter).</li>
+        <li>Dùng kế thừa khi có quan hệ "là một" (Chó <em>là một</em> Động vật); ưu tiên thành phần (composition) khi phù hợp.</li>
+        <li>Mỗi class nên có một trách nhiệm rõ ràng.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Viết JavaScript ở ô bên trái rồi bấm <strong>Chạy</strong> — kết quả <code>console.log</code> hiển thị bên phải.</p>
+      <div class="tryit jstry jsonly">
+        <div class="tryit-bar">
+          <span>JavaScript Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div class="js-inputs">
+            <div class="seg seg-js"><span class="lbl">Mã JavaScript</span><textarea id="jsInput" spellcheck="false"></textarea></div>
+          </div>
+          <div class="js-result"><span class="lbl">Kết quả (console)</span><iframe id="preview" title="Kết quả xem trước"></iframe></div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        <strong>OOP</strong> tổ chức code quanh <strong>đối tượng</strong> (gói dữ liệu + hành vi), dựa trên 4 trụ cột:
+        <strong>đóng gói</strong> (encapsulation, trường <code>#</code>), <strong>trừu tượng</strong> (abstraction),
+        <strong>kế thừa</strong> (inheritance, <code>extends</code>/<code>super</code>) và <strong>đa hình</strong>
+        (polymorphism, ghi đè method). Trong JavaScript, OOP dùng cú pháp <code>class</code> với
+        <code>constructor</code>, method, <code>static</code>.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tiếp theo trong nhóm OOP: <strong>JavaScript Classes</strong>, <strong>Inheritance</strong>,
+        <strong>Encapsulation</strong>, <strong>Prototype</strong>… (sắp ra mắt). Ôn lại
+        <a href="javascript-object-constructors.html"><strong>Object Constructors</strong></a>.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học JavaScript</h4>
+        <p>Học JavaScript từ cơ bản đến nâng cao để làm chủ lập trình web.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="javascript-object-constructors.html">Object Constructors</a></li>
+          <li><a href="javascript-objects.html">JavaScript Objects</a></li>
+          <li><a href="javascript-functions.html">Functions in JavaScript</a></li>
+          <li><a href="../css/css-introduction.html">CSS Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Chủ đề</h5>
+        <ul>
+          <li><a href="../index.html#networks">Networks</a></li>
+          <li><a href="../index.html#html-basic">HTML</a></li>
+          <li><a href="../index.html#html5">HTML5</a></li>
+          <li><a href="../index.html#css">CSS</a></li>
+          <li><a href="../index.html#bootstrap5">Bootstrap 5</a></li>
+          <li><a href="../index.html#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Trình chạy ví dụ JS (kèm HTML/CSS nếu có), bắt console.log -----
+    function buildDoc(html, css, js) {
+      return '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>'
+        + 'body{font-family:Arial,Helvetica,sans-serif;padding:12px;color:#222;line-height:1.6;}'
+        + (css || '')
+        + ' .__console{font-family:Consolas,Monaco,monospace;font-size:12.5px;line-height:1.6;color:#0b3a5b;white-space:pre-wrap;}'
+        + ' .__console:empty{display:none;}'
+        + '</style></head><body>'
+        + (html || '')
+        + '<div class="__console" id="__out"></div>'
+        + '<scr' + 'ipt>(function(){var o=document.getElementById("__out");'
+        + 'function w(){var a=[].slice.call(arguments).map(function(x){'
+        + 'try{return (typeof x==="object"&&x!==null)?JSON.stringify(x):String(x);}catch(e){return String(x);}});'
+        + 'var d=document.createElement("div");d.textContent=a.join(" ");o.appendChild(d);}'
+        + 'console.log=console.info=console.warn=console.error=w;'
+        + 'try{\n' + (js || '') + '\n}catch(e){var d=document.createElement("div");d.style.color="#c0392b";d.textContent="\u26A0 Lỗi: "+(e&&e.message||e);o.appendChild(d);}'
+        + '})();<\/scr' + 'ipt></body></html>';
+    }
+    function makeJSMini(hostId, parts) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const ui = !!(parts.html || parts.css);
+      const wrap = document.createElement('div');
+      wrap.className = 'mini jsmini' + (ui ? '' : ' jsonly');
+      let inputs = '';
+      if (ui) {
+        inputs += '<div class="seg seg-html"><span class="lbl">Mã HTML</span><textarea class="ta-html" spellcheck="false"></textarea></div>';
+        inputs += '<div class="seg seg-css"><span class="lbl">Mã CSS</span><textarea class="ta-css" spellcheck="false"></textarea></div>';
+      }
+      inputs += '<div class="seg seg-js"><span class="lbl">Mã JavaScript</span><textarea class="ta-js" spellcheck="false"></textarea></div>';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>' + (ui ? 'Ví dụ chạy thử (HTML + CSS + JS)' : 'Ví dụ chạy thử (JavaScript)') + '</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes"><div class="js-inputs">' + inputs + '</div>' +
+        '<div class="js-result"><span class="lbl">' + (ui ? 'Kết quả' : 'Kết quả (console)') + '</span><iframe title="Kết quả"></iframe></div></div>';
+      const tH = wrap.querySelector('.ta-html');
+      const tC = wrap.querySelector('.ta-css');
+      const tJ = wrap.querySelector('.ta-js');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = buildDoc(tH ? tH.value : '', tC ? tC.value : '', tJ.value); };
+      const reset = () => { if (tH) tH.value = parts.html || ''; if (tC) tC.value = parts.css || ''; tJ.value = parts.js || ''; run(); };
+      let t;
+      const deb = () => { clearTimeout(t); t = setTimeout(run, 350); };
+      [tH, tC, tJ].forEach(el => el && el.addEventListener('input', deb));
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeJSMini('mini-class', {
+      js: `class Nguoi {
+  constructor(ten) {
+    this.ten = ten;
+  }
+}
+const a = new Nguoi("An");   // tạo đối tượng từ class
+console.log("Tên:", a.ten);
+console.log("a là Nguoi?", a instanceof Nguoi); // true`
+    });
+
+    makeJSMini('mini-constructor', {
+      js: `class SanPham {
+  constructor(ten, gia = 0) {
+    this.ten = ten;
+    this.gia = gia;
+  }
+}
+const p = new SanPham("Bút", 5000);
+console.log(p.ten, "-", p.gia, "đ");  // Bút - 5000 đ`
+    });
+
+    makeJSMini('mini-method', {
+      js: `class Nguoi {
+  constructor(ten, tuoi) {
+    this.ten = ten;
+    this.tuoi = tuoi;
+  }
+  gioiThieu() {
+    return "Tôi là " + this.ten + ", " + this.tuoi + " tuổi";
+  }
+}
+const a = new Nguoi("An", 20);
+console.log(a.gioiThieu());`
+    });
+
+    makeJSMini('mini-encap', {
+      js: `class TaiKhoan {
+  #soDu = 0;                 // trường riêng tư (private)
+  constructor(chu) { this.chu = chu; }
+  napTien(t) { this.#soDu += t; }
+  getSoDu() { return this.#soDu; }
+}
+const tk = new TaiKhoan("An");
+tk.napTien(100000);
+console.log("Số dư:", tk.getSoDu());  // 100000
+console.log("Truy cập trực tiếp:", tk.soDu); // undefined (bị ẩn)`
+    });
+
+    makeJSMini('mini-inherit', {
+      js: `class DongVat {
+  constructor(ten) { this.ten = ten; }
+  an() { return this.ten + " đang ăn"; }
+}
+class Cho extends DongVat {
+  sua() { return this.ten + ": Gâu gâu!"; }
+}
+const c = new Cho("Mực");
+console.log(c.an());   // kế thừa từ DongVat
+console.log(c.sua());  // method riêng của Cho`
+    });
+
+    makeJSMini('mini-poly', {
+      js: `class DongVat {
+  keu() { return "..."; }
+}
+class Cho extends DongVat {
+  keu() { return "Gâu gâu"; }   // ghi đè
+}
+class Meo extends DongVat {
+  keu() { return "Meo meo"; }   // ghi đè
+}
+[new Cho(), new Meo(), new DongVat()].forEach(
+  dv => console.log(dv.keu())
+);`
+    });
+
+    makeJSMini('mini-static', {
+      js: `class MathUtil {
+  static binhPhuong(x) { return x * x; }
+  static PI = 3.14159;
+}
+// gọi trực tiếp trên class, không cần new
+console.log("binhPhuong(5):", MathUtil.binhPhuong(5)); // 25
+console.log("PI:", MathUtil.PI);                        // 3.14159`
+    });
+
+    const sampleJS = `// Hệ thống hình học minh hoạ 4 trụ cột OOP
+class Hinh {                       // lớp cha (trừu tượng)
+  constructor(ten) { this.ten = ten; }
+  dienTich() { return 0; }         // sẽ được ghi đè
+  moTa() {
+    return \`\${this.ten} có diện tích \${this.dienTich().toFixed(2)}\`;
+  }
+}
+
+class HinhTron extends Hinh {      // kế thừa
+  #r;                              // đóng gói bán kính
+  constructor(r) { super("Hình tròn"); this.#r = r; }
+  dienTich() { return Math.PI * this.#r * this.#r; } // đa hình
+}
+
+class HinhVuong extends Hinh {
+  constructor(canh) { super("Hình vuông"); this.canh = canh; }
+  dienTich() { return this.canh * this.canh; }       // đa hình
+}
+
+const dsHinh = [new HinhTron(3), new HinhVuong(4)];
+dsHinh.forEach(h => console.log(h.moTa()));
+
+console.log("Tổng diện tích:",
+  dsHinh.reduce((s, h) => s + h.dienTich(), 0).toFixed(2));`;
+
+    // ----- Trình soạn trực tiếp (chỉ JavaScript) -----
+    const jsInput = document.getElementById('jsInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = buildDoc('', '', jsInput.value); }
+    function resetCode() { jsInput.value = sampleJS; runCode(); }
+    let tt;
+    jsInput.addEventListener('input', () => { clearTimeout(tt); tt = setTimeout(runCode, 350); });
+    resetCode();
+  </script>
+</body>
+</html>
