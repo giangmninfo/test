@@ -267,6 +267,38 @@
           <div class="mega-col">
             <span class="mega-h">OOP</span>
             <a href="javascript/javascript-oop-introduction.html">OOP Introduction</a>
+            <a href="javascript/javascript-classes-objects.html">Classes &amp; Objects</a>
+            <a href="javascript/javascript-access-modifiers.html">Access Modifiers</a>
+            <a href="javascript/javascript-constructor-method.html">Constructor Method</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Asynchronous JavaScript</span>
+            <a href="javascript/javascript-asynchronous.html">Asynchronous JS</a>
+            <a href="javascript/javascript-callbacks.html">Callbacks</a>
+            <a href="javascript/javascript-promises.html">Promises</a>
+            <a href="javascript/javascript-event-loop.html">Event Loop</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Exception Handling</span>
+            <a href="javascript/javascript-error-handling.html">Error &amp; Exception Handling</a>
+            <a href="javascript/javascript-errors-throw-catch.html">Throw &amp; Try...Catch</a>
+            <a href="javascript/javascript-custom-errors.html">Custom Errors</a>
+            <a href="javascript/javascript-typeerror-sort-argument.html">TypeError: sort argument</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">DOM</span>
+            <a href="javascript/javascript-dom-introduction.html">DOM Introduction</a>
+            <a href="javascript/javascript-dom-select.html">Selecting Elements</a>
+            <a href="javascript/javascript-custom-events.html">Custom Events</a>
+            <a href="javascript/javascript-addeventlistener.html">addEventListener</a>
+            <a href="javascript/javascript-html-dom.html">HTML DOM</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Advanced Topics</span>
+            <a href="javascript/javascript-closures.html">Closures</a>
+            <a href="javascript/javascript-hoisting.html">Hoisting</a>
+            <a href="javascript/javascript-scope.html">JavaScript Scope</a>
+            <a href="javascript/javascript-higher-order-functions.html">Higher-Order Functions</a>
           </div>
         </div>
       </div>
@@ -995,16 +1027,103 @@
           <h3>OOP Introduction</h3>
           <p>Lập trình hướng đối tượng: 4 trụ cột (đóng gói, trừu tượng, kế thừa, đa hình), class &amp; object, constructor, method, trường riêng #, extends/super, static — ví dụ JS chạy thật.</p>
         </a>
+        <a class="card" href="javascript/javascript-classes-objects.html">
+          <h3>Classes &amp; Objects</h3>
+          <p>Cú pháp class: định nghĩa &amp; tạo instance, constructor, method &amp; this, class field, getter/setter, static, trường riêng #, class expression — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-access-modifiers.html">
+          <h3>Access Modifiers</h3>
+          <p>Mức truy cập trong JS: public (mặc định), private thật sự với #, protected theo quy ước _, getter/setter có kiểm soát, static private, closure — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-constructor-method.html">
+          <h3>Constructor Method</h3>
+          <p>Phương thức constructor(): chạy khi new, khởi tạo this, constructor mặc định, kiểm tra dữ liệu, super() ở lớp con, chỉ một constructor/class, return trong constructor — ví dụ JS chạy thật.</p>
+        </a>
       </div>
 
       <h3 class="subgroup-title">Asynchronous JavaScript</h3>
-      <div class="empty-note sm"><div class="badge-soon">Sắp ra mắt</div></div>
+      <div class="cards">
+        <a class="card" href="javascript/javascript-asynchronous.html">
+          <h3>Asynchronous JS</h3>
+          <p>Lập trình bất đồng bộ: đồng bộ vs async, setTimeout, thứ tự thực thi, callback, Promise (.then/.catch), promise chaining, async/await + try/catch — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-callbacks.html">
+          <h3>Callbacks</h3>
+          <p>Hàm gọi lại: callback đồng bộ vs bất đồng bộ, callback trong array methods, error-first (Node.js), gọi tuần tự, callback hell — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-promises.html">
+          <h3>Promises</h3>
+          <p>Promise: 3 trạng thái (pending/fulfilled/rejected), then/catch/finally, chaining, Promise.all/allSettled/race/any, resolve/reject — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-event-loop.html">
+          <h3>Event Loop</h3>
+          <p>Vòng lặp sự kiện: JS đơn luồng, call stack, Web APIs, task queue (macrotask) vs microtask queue, thứ tự sync → microtask → macrotask — ví dụ JS chạy thật.</p>
+        </a>
+      </div>
 
       <h3 class="subgroup-title">Exception Handling</h3>
-      <div class="empty-note sm"><div class="badge-soon">Sắp ra mắt</div></div>
+      <div class="cards">
+        <a class="card" href="javascript/javascript-error-handling.html">
+          <h3>Error &amp; Exception Handling</h3>
+          <p>Xử lý lỗi: các loại lỗi (Syntax/Reference/Type/Range), try...catch...finally, throw, đối tượng Error, custom error (extends Error), rethrow, bắt lỗi bất đồng bộ — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-errors-throw-catch.html">
+          <h3>Throw &amp; Try...Catch</h3>
+          <p>Ném và bắt lỗi: try...catch, throw (mọi kiểu giá trị), finally luôn chạy, đối tượng Error &amp; bảng 6 giá trị name, ví dụ kiểm tra dữ liệu nhập — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-custom-errors.html">
+          <h3>Custom Errors</h3>
+          <p>Tạo lỗi tuỳ chỉnh: extends Error, super(message), this.name, thuộc tính riêng (code/statusCode), nhiều loại lỗi, phân cấp lỗi (hierarchy), phân biệt bằng instanceof, dùng trong async — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-typeerror-sort-argument.html">
+          <h3>TypeError: sort argument</h3>
+          <p>Lỗi "invalid Array.prototype.sort argument": vì sao xảy ra (truyền non-function vào sort), quên bỏ (), cách sửa bằng hàm so sánh (a,b) và sắp xếp đúng cách — ví dụ JS chạy thật.</p>
+        </a>
+      </div>
 
       <h3 class="subgroup-title">DOM</h3>
-      <div class="empty-note sm"><div class="badge-soon">Sắp ra mắt</div></div>
+      <div class="cards">
+        <a class="card" href="javascript/javascript-dom-introduction.html">
+          <h3>DOM Introduction</h3>
+          <p>Document Object Model: cây DOM, đối tượng document, tìm phần tử (getElementById/querySelector), đổi nội dung (textContent/innerHTML), style &amp; classList, thuộc tính, tạo/xoá phần tử, sự kiện — editor HTML+CSS+JS hiển thị trực tiếp.</p>
+        </a>
+        <a class="card" href="javascript/javascript-dom-select.html">
+          <h3>Selecting Elements</h3>
+          <p>Chọn phần tử DOM: getElementById, getElementsByClassName/TagName, querySelector &amp; querySelectorAll, chọn trong phạm vi một phần tử, HTMLCollection (live) vs NodeList (static) — editor HTML+CSS+JS hiển thị trực tiếp.</p>
+        </a>
+        <a class="card" href="javascript/javascript-custom-events.html">
+          <h3>Custom Events</h3>
+          <p>Sự kiện tuỳ chỉnh: new Event / CustomEvent, dispatchEvent, addEventListener, dữ liệu qua detail, bubbling, gỡ listener, giao tiếp tách rời giữa các phần — editor HTML+CSS+JS hiển thị trực tiếp.</p>
+        </a>
+        <a class="card" href="javascript/javascript-addeventlistener.html">
+          <h3>addEventListener()</h3>
+          <p>Gắn xử lý sự kiện: cú pháp &amp; tham số, đối tượng event, nhiều listener, nhiều loại sự kiện, tuỳ chọn once/capture/passive, removeEventListener, event delegation, so với onclick — editor HTML+CSS+JS hiển thị trực tiếp.</p>
+        </a>
+        <a class="card" href="javascript/javascript-html-dom.html">
+          <h3>JavaScript HTML DOM</h3>
+          <p>Thao tác trang HTML bằng DOM: đổi nội dung (innerHTML/textContent), thuộc tính, CSS (style/classList), sự kiện, điều hướng DOM (parent/children/sibling), thêm/xoá phần tử — editor HTML+CSS+JS hiển thị trực tiếp.</p>
+        </a>
+      </div>
+
+      <h3 class="subgroup-title">Advanced Topics</h3>
+      <div class="cards">
+        <a class="card" href="javascript/javascript-closures.html">
+          <h3>Closures</h3>
+          <p>Bao đóng: lexical scope, hàm trong ghi nhớ biến hàm ngoài, bộ đếm &amp; biến riêng tư, function factory, closure trong vòng lặp (var vs let), memoization — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-hoisting.html">
+          <h3>Hoisting</h3>
+          <p>Kéo khai báo lên đầu phạm vi: function declaration (gọi được trước), var (undefined), let/const &amp; TDZ, function expression, thứ tự ưu tiên, lỗi thường gặp — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-scope.html">
+          <h3>JavaScript Scope</h3>
+          <p>Phạm vi biến: global, function, block (let/const) vs var, scope chain (lồng nhau), lexical scope, che biến (shadowing) — ví dụ JS chạy thật.</p>
+        </a>
+        <a class="card" href="javascript/javascript-higher-order-functions.html">
+          <h3>Higher-Order Functions</h3>
+          <p>Hàm bậc cao: hàm nhận/ trả về hàm, map, filter, reduce, forEach, some/every, HOF trả về hàm chuyên biệt, nối chuỗi filter→map→reduce — ví dụ JS chạy thật.</p>
+        </a>
+      </div>
     </section>
 
   </div>

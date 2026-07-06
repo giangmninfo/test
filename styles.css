@@ -1782,3 +1782,82 @@ footer.site {
 .absfig .col .icon { font-size: 3.4rem; line-height: 1; margin: 6px 0 12px; filter: hue-rotate(80deg) saturate(1.4); }
 .absfig .col .cap { background: #dff0d8; border: 1px solid #bfe0b5; border-radius: 8px; padding: 11px 16px; font-weight: 600; color: #234d18; max-width: 280px; }
 @media (max-width: 560px) { .absfig .cols { flex-direction: column; } .absfig .col + .col { border-left: none; border-top: 1px solid #e0e0e0; padding-top: 10px; } }
+
+/* ---------- Sơ đồ kiến trúc Event Loop ---------- */
+.eloop { display: flex; gap: 16px; align-items: flex-start; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+.eloop .col { display: flex; flex-direction: column; }
+.eloop .dashed { border: 2px dashed #9aa3af; border-radius: 12px; padding: 14px; }
+.eloop .box-title { font-weight: 800; text-align: center; margin-bottom: 12px; font-size: 1.05rem; }
+.eloop .jsbadge { background: #f0b90b; color: #111; font-weight: 800; padding: 2px 7px; border-radius: 4px; font-family: 'Consolas','Monaco',monospace; }
+.eloop .stack-items { display: flex; flex-direction: column; gap: 8px; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; background: #fafafa; min-width: 150px; }
+.eloop .chip { padding: 9px 12px; border-radius: 6px; font-family: 'Consolas','Monaco',monospace; font-weight: 700; text-align: center; font-size: 0.9rem; }
+.eloop .chip.y { background: #ffd21e; color: #5a4b00; }
+.eloop .queue { border: 1px solid #cfd8dc; border-radius: 10px; padding: 12px; margin-bottom: 12px; background: #fff; }
+.eloop .queue h5 { text-align: center; margin: 0 0 10px; font-size: 1.05rem; color: #222; }
+.eloop .qrow { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.eloop .chip.lg { background: #c8e6c9; color: #1b5e20; }
+.eloop .chip.dg { background: #2e9e50; color: #fff; }
+.eloop .chip.pk { background: #fce4ec; color: #880e4f; border: 1px solid #f8bbd0; display: block; margin-bottom: 8px; min-width: 118px; }
+.eloop .eloop-lbl { text-align: center; font-weight: 800; font-size: 1.1rem; color: #222; }
+
+/* ---------- Ảnh minh hoạ trong bài (responsive) ---------- */
+.doc-img { margin: 22px 0; text-align: center; }
+.doc-img img { max-width: 100%; height: auto; display: block; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; }
+.doc-img figcaption { margin-top: 10px; font-size: 0.85rem; color: var(--gfg-muted); }
+
+/* ---------- Bảng tài liệu (doc-table) ---------- */
+.table-wrap { overflow-x: auto; margin: 18px 0; }
+.doc-table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.doc-table th, .doc-table td { border: 1px solid #e2e6ea; padding: 9px 14px; text-align: left; }
+.doc-table thead th { background: #1a73e8; color: #fff; font-weight: 700; }
+.doc-table tbody tr:nth-child(even) { background: #f6f8fb; }
+.doc-table code { background: #eef2f7; }
+
+/* ---------- Sơ đồ DOM Tree (code + cây) ---------- */
+.domtree { display: flex; gap: 18px; align-items: center; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+.domtree .codewin { background: #e8f5e2; border: 1px solid #bfe0b5; border-radius: 12px; overflow: hidden; max-width: 330px; width: 100%; }
+.domtree .codebar { background: #2e8b57; height: 30px; display: flex; align-items: center; justify-content: flex-end; padding: 0 12px; gap: 5px; }
+.domtree .codebar i { width: 9px; height: 9px; border-radius: 50%; background: #fff; opacity: 0.85; display: inline-block; }
+.domtree pre.code { margin: 0; padding: 14px 16px; font-family: 'Consolas','Monaco',monospace; font-size: 0.82rem; color: #2c6b3f; line-height: 1.55; white-space: pre; overflow-x: auto; }
+.domtree .dt-arrow { color: #2e8b57; font-size: 2rem; font-weight: 800; line-height: 1; }
+.domtree .tree { flex: 1; min-width: 280px; max-width: 430px; }
+.domtree .tree-title { text-align: center; color: #2e8b57; font-weight: 800; font-size: 1.2rem; margin-bottom: 8px; }
+.domtree .tree svg { width: 100%; height: auto; display: block; }
+.domtree-cap { text-align: center; color: var(--gfg-muted); font-size: 0.85rem; margin-top: 12px; }
+
+/* ---------- Sơ đồ HTML chú thích vai trò (root/container/child) ---------- */
+.domanno-fig { margin: 24px 0; }
+.domanno-fig .codewin { background: #e8f5e2; border: 1px solid #bfe0b5; border-radius: 12px; overflow: hidden; max-width: 640px; margin: 0 auto; }
+.domanno-fig .codebar { background: #2e8b57; height: 32px; display: flex; align-items: center; justify-content: flex-end; padding: 0 14px; gap: 6px; }
+.domanno-fig .codebar i { width: 10px; height: 10px; border-radius: 50%; background: #fff; opacity: 0.85; }
+.domanno { padding: 14px 16px; font-family: 'Consolas','Monaco',monospace; font-size: 0.9rem; overflow-x: auto; }
+.domanno .ln { display: flex; align-items: center; gap: 10px; line-height: 1.95; white-space: nowrap; }
+.domanno .ln code { color: #2c6b3f; background: none; padding: 0; }
+.domanno .tag { font-family: Arial, Helvetica, sans-serif; font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 10px; white-space: nowrap; }
+.domanno .tag::before { content: "\2192  "; }
+.domanno .tag.root { background: #1a73e8; color: #fff; }
+.domanno .tag.cont { background: #f6c445; color: #5a4600; }
+.domanno .tag.child { background: #2e8b57; color: #fff; }
+.domanno-legend { display: flex; flex-direction: column; gap: 6px; max-width: 640px; margin: 14px auto 0; font-size: 0.88rem; color: #333; }
+.domanno-legend span { display: flex; align-items: center; gap: 9px; }
+.domanno-legend i { width: 14px; height: 14px; border-radius: 3px; flex: none; }
+.domanno-legend i.root { background: #1a73e8; }
+.domanno-legend i.cont { background: #f6c445; }
+.domanno-legend i.child { background: #2e8b57; }
+
+/* ---------- Sơ đồ kế thừa interface (Document/Node/EventTarget) ---------- */
+.inherit-fig { margin: 22px 0; }
+.inherit-fig svg { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+.inherit-fig figcaption { text-align: center; color: var(--gfg-muted); font-size: 0.85rem; margin-top: 10px; }
+
+/* ---------- Sơ đồ minh hoạ "Declaration moves to top" (hoisting) ---------- */
+.hoistmove { margin: 24px 0; }
+.hoistmove .hm-title { background: #cdeac0; border: 1px solid #9bce85; text-align: center; font-weight: 800; font-size: 1.35rem; color: #1c1c1c; padding: 12px 16px; border-radius: 4px; margin-bottom: 18px; }
+.hoistmove .hm-body { display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; }
+.hoistmove .hm-label { font-size: 1.05rem; color: #222; text-align: center; line-height: 1.4; }
+.hoistmove .hm-arrow { width: 120px; height: 260px; flex: none; }
+.hoistmove .hm-code { display: flex; flex-direction: column; gap: 22px; }
+.hoistmove .hm-line { background: #e8f5e2; padding: 10px 18px; font-family: 'Consolas','Monaco',monospace; font-size: 1.05rem; color: #2c3e2f; border-radius: 3px; }
+.hoistmove .hm-line.dim { color: #9db3a2; }
+.hoistmove figcaption { text-align: center; color: var(--gfg-muted); font-size: 0.85rem; margin-top: 12px; }
+@media (max-width: 560px) { .hoistmove .hm-arrow { width: 70px; height: 210px; } }

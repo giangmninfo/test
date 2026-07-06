@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DOM (Document Object Model) - Mô hình đối tượng tài liệu - HITech</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <span class="logo-mark">H</span>
+        HITech
+      </a>
+      <div class="nav-search">
+        <input type="text" placeholder="Tìm kiếm bài viết, khóa học..." aria-label="Search" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" class="nav-cta">Sign In</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Sub category bar ===== -->
+  <nav class="subbar">
+    <div class="subbar-inner">
+      <div class="subbar-item">
+        <a href="../index.html#html-basic">HTML</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML Basic</span>
+            <a href="../html/html-introduction.html">HTML Introduction</a>
+            <a href="../html/html-editors.html">HTML Editors</a>
+            <a href="../html/html-basics.html">HTML Basics</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Structure &amp; Elements</span>
+            <a href="../html/html-attributes.html">HTML Attributes</a>
+            <a href="../html/html-headings.html">HTML Headings</a>
+            <a href="../html/html-paragraphs.html">HTML Paragraphs</a>
+            <a href="../html/html-text-formatting.html">HTML Text Formatting</a>
+            <a href="../html/html-block-inline.html">Block &amp; Inline Elements</a>
+            <a href="../html/html-charsets.html">HTML Charsets</a>
+            <a href="../html/html-meta-tags-seo.html">Meta Tags cho SEO</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">List</span>
+            <a href="../html/html-lists.html">HTML Lists</a>
+            <a href="../html/html-ordered-lists.html">Ordered Lists</a>
+            <a href="../html/html-unordered-lists.html">Unordered Lists</a>
+            <a href="../html/html-description-lists.html">Description Lists</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Visuals &amp; Media</span>
+            <a href="../html/html-colors.html">HTML Colors</a>
+            <a href="../html/html-links.html">HTML Links</a>
+            <a href="../html/html-images.html">HTML Images</a>
+            <a href="../html/html5-video.html">HTML5 Video</a>
+            <a href="../html/html-favicon.html">HTML Favicon</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Designs</span>
+            <a href="../html/html-tables.html">HTML Tables</a>
+            <a href="../html/html-iframes.html">HTML Iframes</a>
+            <a href="../html/html-layout.html">HTML Layout</a>
+            <a href="../html/html-file-paths.html">HTML File Paths</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Projects &amp; Advanced Topics</span>
+            <a href="../html/html-semantic-elements.html">Semantic Elements</a>
+            <a href="../html/html-forms.html">HTML Forms</a>
+            <a href="../html/html-url-encoding.html">HTML URL Encoding</a>
+            <a href="../html/html-responsive-web-design.html">Responsive Web Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#html5">HTML5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">HTML5 Basic</span>
+            <a href="../html5/html5-introduction.html">HTML5 Introduction</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#css">CSS</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">CSS Basic</span>
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Styling &amp; Properties</span>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-borders.html">CSS Borders</a>
+            <a href="css-margins-padding.html">CSS Margins &amp; Padding</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-height-width.html">CSS Height &amp; Width</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Text &amp; Fonts</span>
+            <a href="css-text-formatting.html">CSS Text Formatting</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text-align.html">CSS text-align</a>
+            <a href="css-text-decoration.html">CSS text-decoration</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Layouts &amp; Design</span>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-float-clear.html">CSS Float &amp; Clear</a>
+            <a href="css-overflow.html">CSS Overflow</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Modern Layout Systems</span>
+            <a href="css-flexbox.html">CSS Flexbox</a>
+            <a href="css-justify-content.html">CSS justify-content</a>
+            <a href="css-align-items.html">CSS align-items</a>
+            <a href="css-align-content.html">CSS align-content</a>
+            <a href="css-grid.html">CSS Grid Layout</a>
+            <a href="css-grid-template-columns.html">CSS grid-template-columns</a>
+            <a href="css-grid-gap.html">CSS grid gap</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Effects, Animations &amp; Advanced CSS</span>
+            <a href="css-transitions.html">CSS Transitions</a>
+            <a href="css-transforms.html">CSS Transform</a>
+            <a href="css-animations.html">CSS Animations</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#bootstrap5">Bootstrap 5</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">Basics</span>
+            <a href="../bootstrap5/bootstrap-5.html">Bootstrap 5 Introduction</a>
+            <a href="../bootstrap5/bootstrap-5-layout-breakpoints.html">Layout Breakpoints</a>
+          <a href="../bootstrap5/bootstrap-5-layout-containers.html">Layout Containers</a>
+          <a href="../bootstrap5/bootstrap-5-layout-grid-system.html">Grid System</a>
+          <a href="../bootstrap5/bootstrap-5-columns.html">Columns</a>
+          <a href="../bootstrap5/bootstrap-5-gutters.html">Gutters</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Content</span>
+            <a href="../bootstrap5/bootstrap-5-reboot.html">Reboot</a>
+            <a href="../bootstrap5/bootstrap-5-typography.html">Typography</a>
+            <a href="../bootstrap5/bootstrap-5-images.html">Images</a>
+            <a href="../bootstrap5/bootstrap-5-tables.html">Tables</a>
+            <a href="../bootstrap5/bootstrap-5-figures.html">Figures</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms</span>
+            <a href="../bootstrap5/bootstrap-5-forms.html">Forms</a>
+            <a href="../bootstrap5/bootstrap-5-form-controls.html">Form Controls</a>
+            <a href="../bootstrap5/bootstrap-5-select.html">Select</a>
+            <a href="../bootstrap5/bootstrap-5-checks-and-radios.html">Checks &amp; Radios</a>
+            <a href="../bootstrap5/bootstrap-5-range.html">Range</a>
+            <a href="../bootstrap5/bootstrap-5-input-group.html">Input Group</a>
+            <a href="../bootstrap5/bootstrap-5-floating-labels.html">Floating Labels</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Forms Layout</span>
+            <a href="../bootstrap5/bootstrap-5-layout-forms.html">Forms Layout</a>
+            <a href="../bootstrap5/bootstrap-5-layout-utilities.html">Layout Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-layout-form-grid.html">Form Grid</a>
+            <a href="../bootstrap5/bootstrap-5-layout-gutters.html">Layout Gutters</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form.html">Horizontal Form</a>
+            <a href="../bootstrap5/bootstrap-5-layout-horizontal-form-label-sizing.html">Horizontal Form Label Sizing</a>
+            <a href="../bootstrap5/bootstrap-5-layout-column-sizing.html">Column Sizing</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Components</span>
+            <a href="../bootstrap5/bootstrap-5-accordion.html">Accordion</a>
+            <a href="../bootstrap5/bootstrap-5-alerts.html">Alerts</a>
+            <a href="../bootstrap5/bootstrap-5-badges.html">Badges</a>
+            <a href="../bootstrap5/bootstrap-5-breadcrumb.html">Breadcrumb</a>
+            <a href="../bootstrap5/bootstrap-5-buttons.html">Buttons</a>
+            <a href="../bootstrap5/bootstrap-5-button-group.html">Button Group</a>
+            <a href="../bootstrap5/bootstrap-5-card.html">Card</a>
+            <a href="../bootstrap5/bootstrap-5-carousel.html">Carousel</a>
+            <a href="../bootstrap5/bootstrap-5-close-button.html">Close Button</a>
+            <a href="../bootstrap5/bootstrap-5-collapse.html">Collapse</a>
+            <a href="../bootstrap5/bootstrap-5-dropdowns.html">Dropdowns</a>
+            <a href="../bootstrap5/bootstrap-5-list-group.html">List Group</a>
+            <a href="../bootstrap5/bootstrap-5-modal.html">Modal</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Navbar</span>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand.html">Navbar Brand</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-text.html">Navbar Brand Text</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-brand-image.html">Navbar Brand Image</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-nav.html">Navbar Nav</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-forms.html">Navbar Forms</a>
+            <a href="../bootstrap5/bootstrap-5-navbar-text.html">Navbar Text</a>
+            <a href="../bootstrap5/bootstrap-5-offcanvas.html">Offcanvas</a>
+            <a href="../bootstrap5/bootstrap-5-popovers.html">Popovers</a>
+            <a href="../bootstrap5/bootstrap-5-progress.html">Progress</a>
+            <a href="../bootstrap5/bootstrap-5-scrollspy.html">Scrollspy</a>
+            <a href="../bootstrap5/bootstrap-5-spinners.html">Spinners</a>
+            <a href="../bootstrap5/bootstrap-5-toasts.html">Toasts</a>
+            <a href="../bootstrap5/bootstrap-5-tooltips.html">Tooltips</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Helpers</span>
+            <a href="../bootstrap5/bootstrap-5-clearfix.html">Clearfix</a>
+            <a href="../bootstrap5/bootstrap-5-colored-links.html">Colored Links</a>
+            <a href="../bootstrap5/bootstrap-5-ratios.html">Ratios</a>
+            <a href="../bootstrap5/bootstrap-5-position.html">Position</a>
+            <a href="../bootstrap5/bootstrap-5-visually-hidden.html">Visually Hidden</a>
+            <a href="../bootstrap5/bootstrap-5-stretched-link.html">Stretched Link</a>
+            <a href="../bootstrap5/bootstrap-5-text-truncation.html">Text Truncation</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Extend</span>
+            <a href="../bootstrap5/bootstrap-5-approach.html">Approach</a>
+            <a href="../bootstrap5/bootstrap-5-icons.html">Icons</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Utilities</span>
+            <a href="../bootstrap5/bootstrap-5-utilities.html">Utilities</a>
+            <a href="../bootstrap5/bootstrap-5-z-index.html">Z-index</a>
+            <a href="../bootstrap5/bootstrap-5-background.html">Background</a>
+            <a href="../bootstrap5/bootstrap-5-borders.html">Borders</a>
+            <a href="../bootstrap5/bootstrap-5-colors.html">Colors</a>
+            <a href="../bootstrap5/bootstrap-5-display.html">Display</a>
+            <a href="../bootstrap5/bootstrap-5-flex.html">Flex</a>
+            <a href="../bootstrap5/bootstrap-5-float.html">Float</a>
+            <a href="../bootstrap5/bootstrap-5-interactions.html">Interactions</a>
+            <a href="../bootstrap5/bootstrap-5-overflow.html">Overflow</a>
+          </div>
+        </div>
+      </div>
+      <div class="subbar-item">
+        <a href="../index.html#javascript" class="active">JavaScript</a>
+        <div class="mega">
+          <div class="mega-col">
+            <span class="mega-h">JavaScript Basics</span>
+            <a href="../javascript/javascript-introduction.html">Introduction to JavaScript</a>
+            <a href="../javascript/javascript-variables-datatypes.html">Variables &amp; Datatypes</a>
+            <a href="../javascript/javascript-operators.html">JavaScript Operators</a>
+            <a href="../javascript/javascript-control-statements.html">Control Statements</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Array &amp; String</span>
+            <a href="../javascript/javascript-arrays.html">JavaScript Arrays</a>
+            <a href="../javascript/javascript-array-methods.html">Array Methods</a>
+            <a href="../javascript/javascript-strings.html">JavaScript Strings</a>
+            <a href="../javascript/javascript-string-methods.html">String Methods</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Function &amp; Object</span>
+            <a href="../javascript/javascript-functions.html">Functions in JavaScript</a>
+            <a href="../javascript/javascript-function-expressions.html">Function Expression</a>
+            <a href="../javascript/javascript-function-overloading.html">Function Overloading</a>
+            <a href="../javascript/javascript-objects.html">JavaScript Objects</a>
+            <a href="../javascript/javascript-object-constructors.html">Object Constructors</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">OOP</span>
+            <a href="../javascript/javascript-oop-introduction.html">OOP Introduction</a>
+            <a href="../javascript/javascript-classes-objects.html">Classes &amp; Objects</a>
+            <a href="../javascript/javascript-access-modifiers.html">Access Modifiers</a>
+            <a href="../javascript/javascript-constructor-method.html">Constructor Method</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Asynchronous JavaScript</span>
+            <a href="../javascript/javascript-asynchronous.html">Asynchronous JS</a>
+            <a href="../javascript/javascript-callbacks.html">Callbacks</a>
+            <a href="../javascript/javascript-promises.html">Promises</a>
+            <a href="../javascript/javascript-event-loop.html">Event Loop</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Exception Handling</span>
+            <a href="../javascript/javascript-error-handling.html">Error &amp; Exception Handling</a>
+            <a href="../javascript/javascript-errors-throw-catch.html">Throw &amp; Try...Catch</a>
+            <a href="../javascript/javascript-custom-errors.html">Custom Errors</a>
+            <a href="../javascript/javascript-typeerror-sort-argument.html">TypeError: sort argument</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">DOM</span>
+            <a href="../javascript/javascript-dom-introduction.html">DOM Introduction</a>
+            <a href="../javascript/javascript-dom-select.html">Selecting Elements</a>
+            <a href="../javascript/javascript-custom-events.html">Custom Events</a>
+            <a href="../javascript/javascript-addeventlistener.html">addEventListener</a>
+            <a href="../javascript/javascript-html-dom.html">HTML DOM</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-h">Advanced Topics</span>
+            <a href="../javascript/javascript-closures.html">Closures</a>
+            <a href="../javascript/javascript-hoisting.html">Hoisting</a>
+            <a href="../javascript/javascript-scope.html">JavaScript Scope</a>
+            <a href="../javascript/javascript-higher-order-functions.html">Higher-Order Functions</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Web Technologies</a>
+      <a href="#">Computer Networks</a>
+      <a href="#">DSA</a>
+      <a href="#">Python</a>
+      <a href="#">Java</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>Mục lục</h3>
+      <ul>
+        <li><a href="#intro" class="active">DOM là gì?</a></li>
+        <li><a href="#tree">Cây DOM (DOM tree)</a></li>
+        <li><a href="#document">Đối tượng document</a></li>
+        <li><a href="#groups">Các nhóm thao tác</a></li>
+        <li><a href="#select">Tìm/chọn phần tử</a></li>
+        <li><a href="#content">Thay đổi nội dung</a></li>
+        <li><a href="#style">Đổi style &amp; class</a></li>
+        <li><a href="#attr">Thuộc tính (attributes)</a></li>
+        <li><a href="#create">Tạo &amp; xoá phần tử</a></li>
+        <li><a href="#event">Bắt sự kiện</a></li>
+        <li><a href="#best">Thực hành tốt</a></li>
+        <li><a href="#tryit">Thử viết code</a></li>
+        <li><a href="#summary">Tóm tắt</a></li>
+      </ul>
+    </aside>
+
+    <main class="article">
+      <div class="crumbs">Home » JavaScript » DOM Introduction</div>
+      <h1>DOM (Document Object Model) — Mô hình đối tượng tài liệu</h1>
+      <div class="meta">
+        <span class="lvl">Cấp độ: Trung cấp</span>
+        <span>Cập nhật: 30/06/2026</span>
+        <span>603K lượt đọc</span>
+        <div class="actions">
+          <button onclick="toggleLike(this)">Like</button>
+          <button>Lưu</button>
+          <button>Cải thiện</button>
+        </div>
+      </div>
+
+      <p id="intro">
+        <strong>DOM (Document Object Model)</strong> là cách trình duyệt biểu diễn một trang HTML dưới dạng
+        <strong>cây các đối tượng</strong>. Nhờ DOM, JavaScript có thể <strong>đọc và thay đổi</strong> nội dung, cấu
+        trúc, kiểu dáng của trang <em>sau khi</em> trang đã tải — giúp trang web trở nên "sống động", tương tác.
+      </p>
+
+      <div class="note">
+        <strong>Ghi nhớ:</strong> mỗi thẻ HTML trở thành một <em>node (nút)</em> trong cây DOM; JavaScript truy cập cây
+        này qua đối tượng toàn cục <code>document</code>. Các ví dụ dưới dùng <strong>HTML + CSS + JS</strong> và hiển
+        thị kết quả trực tiếp.
+      </div>
+
+      <h2 id="tree">Cây DOM (DOM tree)</h2>
+      <p>Một tài liệu HTML được tổ chức thành cây phân cấp: <code>document</code> &#8594; <code>html</code> &#8594;
+        <code>head</code>/<code>body</code> &#8594; các phần tử con… Mỗi nút có thể có nút cha, nút con và nút anh em.</p>
+
+      <figure class="domtree-fig">
+        <div class="domtree">
+          <div class="codewin">
+            <div class="codebar"><i></i><i></i><i></i></div>
+<pre class="code">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Webpage Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;h1&gt;This is Heading&lt;/h1&gt;
+      &lt;p&gt;Some Text Content&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;List Item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          </div>
+          <span class="dt-arrow">&#187;</span>
+          <div class="tree">
+            <div class="tree-title">The "DOM Tree"</div>
+            <svg viewBox="0 0 440 268" role="img" aria-label="Cây DOM: Document, HTML, Head, Body, Meta, Title, H1, H2"
+                 style="font-family:Arial,Helvetica,sans-serif;">
+              <!-- connectors -->
+              <g stroke="#7bbf86" stroke-width="2" fill="none">
+                <line x1="220" y1="54" x2="220" y2="76"></line>
+                <line x1="220" y1="112" x2="120" y2="150"></line>
+                <line x1="220" y1="112" x2="320" y2="150"></line>
+                <line x1="120" y1="186" x2="66" y2="222"></line>
+                <line x1="120" y1="186" x2="168" y2="222"></line>
+                <line x1="320" y1="186" x2="296" y2="222"></line>
+                <line x1="320" y1="186" x2="394" y2="222"></line>
+              </g>
+              <!-- nodes -->
+              <g>
+                <rect x="160" y="20" width="120" height="34" rx="8" fill="#d9f0d0" stroke="#7bbf86"></rect>
+                <text x="220" y="42" text-anchor="middle" font-size="15" font-weight="700" fill="#1c3a24">Document</text>
+
+                <rect x="178" y="78" width="84" height="34" rx="8" fill="#d9f0d0" stroke="#7bbf86"></rect>
+                <text x="220" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#1c3a24">HTML</text>
+
+                <rect x="74" y="150" width="92" height="36" rx="8" fill="#d9f0d0" stroke="#7bbf86"></rect>
+                <text x="120" y="173" text-anchor="middle" font-size="15" font-weight="700" fill="#1c3a24">Head</text>
+                <rect x="274" y="150" width="92" height="36" rx="8" fill="#d9f0d0" stroke="#7bbf86"></rect>
+                <text x="320" y="173" text-anchor="middle" font-size="15" font-weight="700" fill="#1c3a24">Body</text>
+
+                <rect x="20" y="222" width="92" height="34" rx="8" fill="#eafae4" stroke="#7bbf86"></rect>
+                <text x="66" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#1c3a24">Meta</text>
+                <rect x="122" y="222" width="92" height="34" rx="8" fill="#eafae4" stroke="#7bbf86"></rect>
+                <text x="168" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#1c3a24">Title</text>
+                <rect x="250" y="222" width="92" height="34" rx="8" fill="#eafae4" stroke="#7bbf86"></rect>
+                <text x="296" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#1c3a24">H1</text>
+                <rect x="348" y="222" width="88" height="34" rx="8" fill="#eafae4" stroke="#7bbf86"></rect>
+                <text x="392" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#1c3a24">H2</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="domtree-cap">Trình duyệt phân tích HTML thành <strong>cây DOM</strong>: mỗi thẻ là một nút, có quan hệ cha–con (Document &#8594; HTML &#8594; Head/Body &#8594; …).</div>
+      </figure>
+
+      <p>Xét vai trò từng thẻ trong cùng đoạn HTML: thẻ <strong>gốc</strong>, thẻ <strong>chứa (container)</strong> và thẻ <strong>con (child)</strong>:</p>
+      <figure class="domanno-fig">
+        <div class="codewin">
+          <div class="codebar"><i></i><i></i><i></i></div>
+          <div class="domanno">
+            <div class="ln"><code>&lt;html&gt;</code><span class="tag root">Root Element</span></div>
+            <div class="ln" style="padding-left:1.4em"><code>&lt;head&gt;</code><span class="tag cont">Container element</span></div>
+            <div class="ln" style="padding-left:2.8em"><code>&lt;title&gt;Gfg&lt;/title&gt;</code><span class="tag child">Child Element</span></div>
+            <div class="ln" style="padding-left:1.4em"><code>&lt;/head&gt;</code></div>
+            <div class="ln" style="padding-left:1.4em"><code>&lt;body&gt;</code><span class="tag cont">Container element</span></div>
+            <div class="ln" style="padding-left:2.8em"><code>&lt;div&gt;</code><span class="tag cont">Container element</span></div>
+            <div class="ln" style="padding-left:4.2em"><code>&lt;h1&gt;Heading&lt;/h1&gt;</code><span class="tag child">Child Element</span></div>
+            <div class="ln" style="padding-left:4.2em"><code>&lt;p&gt;Text&lt;/p&gt;</code><span class="tag child">Child Element</span></div>
+            <div class="ln" style="padding-left:4.2em"><code>&lt;ul&gt;</code><span class="tag cont">Container element</span></div>
+            <div class="ln" style="padding-left:5.6em"><code>&lt;li&gt;List&lt;/li&gt;</code><span class="tag child">Child Element</span></div>
+            <div class="ln" style="padding-left:4.2em"><code>&lt;/ul&gt;</code></div>
+            <div class="ln" style="padding-left:2.8em"><code>&lt;/div&gt;</code></div>
+            <div class="ln" style="padding-left:1.4em"><code>&lt;/body&gt;</code></div>
+            <div class="ln"><code>&lt;/html&gt;</code></div>
+          </div>
+        </div>
+        <div class="domanno-legend">
+          <span><i class="root"></i><strong>Root Element</strong> — thẻ gốc <code>&lt;html&gt;</code>, bao toàn bộ trang.</span>
+          <span><i class="cont"></i><strong>Container element</strong> — thẻ chứa thẻ khác bên trong (<code>head</code>, <code>body</code>, <code>div</code>, <code>ul</code>).</span>
+          <span><i class="child"></i><strong>Child Element</strong> — thẻ nằm bên trong một thẻ cha (<code>title</code>, <code>h1</code>, <code>p</code>, <code>li</code>).</span>
+        </div>
+      </figure>
+
+      <div class="table-wrap">
+        <table class="doc-table">
+          <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th></tr></thead>
+          <tbody>
+            <tr><td>Document</td><td>Toàn bộ tài liệu — gốc của cây DOM.</td></tr>
+            <tr><td>Element node</td><td>Một thẻ HTML (vd <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>).</td></tr>
+            <tr><td>Text node</td><td>Đoạn văn bản bên trong phần tử.</td></tr>
+            <tr><td>Attribute</td><td>Thuộc tính của phần tử (vd <code>id</code>, <code>class</code>).</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="document">Đối tượng <code>document</code></h2>
+      <p><code>document</code> là "cửa ngõ" vào DOM — mọi thao tác tìm, sửa, tạo phần tử đều bắt đầu từ đây.
+        Về mặt kỹ thuật, <code>Document</code> <strong>kế thừa</strong> từ <code>Node</code>, và <code>Node</code> kế
+        thừa từ <code>EventTarget</code> — nhờ đó <code>document</code> vừa là một nút trong cây DOM, vừa nhận/bắt được
+        sự kiện:</p>
+
+      <figure class="inherit-fig">
+        <svg viewBox="0 0 760 360" role="img" aria-label="Document kế thừa Node, Node kế thừa EventTarget"
+             style="font-family:Arial,Helvetica,sans-serif;">
+          <defs>
+            <marker id="ih-ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#222"></path>
+            </marker>
+          </defs>
+          <!-- boxes -->
+          <rect x="40" y="52" width="230" height="140" rx="6" fill="#cdd8f3" stroke="#a9bced"></rect>
+          <text x="155" y="112" text-anchor="middle" font-size="26" font-weight="800" fill="#1c2430">Event</text>
+          <text x="155" y="144" text-anchor="middle" font-size="26" font-weight="800" fill="#1c2430">Target</text>
+
+          <rect x="470" y="52" width="240" height="140" rx="18" fill="#fbe0a8" stroke="#e6c46a"></rect>
+          <text x="590" y="132" text-anchor="middle" font-size="27" font-weight="800" fill="#1c2430">Node</text>
+
+          <rect x="110" y="270" width="460" height="70" rx="35" fill="#cdeac0" stroke="#9bce85"></rect>
+          <text x="340" y="313" text-anchor="middle" font-size="26" font-weight="800" fill="#1c2430">Document</text>
+
+          <!-- arrows: Node -> EventTarget ; Document -> Node -->
+          <line x1="470" y1="122" x2="278" y2="122" stroke="#222" stroke-width="2.5" marker-end="url(#ih-ah)"></line>
+          <path d="M 570 305 H 715 V 200" fill="none" stroke="#222" stroke-width="2.5" marker-end="url(#ih-ah)"></path>
+        </svg>
+        <figcaption>Chuỗi kế thừa trong DOM: <strong>Document</strong> &#8594; <strong>Node</strong> &#8594; <strong>EventTarget</strong> (mũi tên trỏ về "lớp cha" mà nó kế thừa).</figcaption>
+      </figure>
+
+      <figure class="inherit-fig">
+        <svg viewBox="0 0 780 390" role="img" aria-label="HTMLTableElement kế thừa HTMLElement, ... Document kế thừa Node kế thừa EventTarget"
+             style="font-family:Arial,Helvetica,sans-serif;">
+          <defs>
+            <marker id="ih2-ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#222"></path>
+            </marker>
+          </defs>
+
+          <!-- top row -->
+          <rect x="28" y="70" width="212" height="82" rx="6" fill="#cdd8f3" stroke="#a9bced"></rect>
+          <text x="134" y="118" text-anchor="middle" font-size="22" font-weight="800" fill="#1c2430">Event Target</text>
+
+          <rect x="300" y="62" width="150" height="98" rx="18" fill="#fbe0a8" stroke="#e6c46a"></rect>
+          <text x="375" y="118" text-anchor="middle" font-size="24" font-weight="800" fill="#1c2430">Node</text>
+
+          <rect x="500" y="70" width="230" height="82" rx="41" fill="#cdeac0" stroke="#9bce85"></rect>
+          <text x="615" y="118" text-anchor="middle" font-size="24" font-weight="800" fill="#1c2430">Document</text>
+
+          <!-- bottom row -->
+          <polygon points="36,288 93,223 207,223 264,288 207,353 93,353" fill="#ecccf0" stroke="#d7a9e0"></polygon>
+          <text x="150" y="272" text-anchor="middle" font-size="21" font-weight="800" fill="#1c2430">HTML</text>
+          <text x="150" y="297" text-anchor="middle" font-size="21" font-weight="800" fill="#1c2430">Table</text>
+          <text x="150" y="322" text-anchor="middle" font-size="21" font-weight="800" fill="#1c2430">Element</text>
+
+          <polygon points="470.0,214.0 454.0,232.1 431.0,224.5 426.2,248.2 402.5,253.0 410.1,276.0 392.0,292.0 410.1,308.0 402.5,331.0 426.2,335.8 431.0,359.5 454.0,351.9 470.0,370.0 486.0,351.9 509.0,359.5 513.8,335.8 537.5,331.0 529.9,308.0 548.0,292.0 529.9,276.0 537.5,253.0 513.8,248.2 509.0,224.5 486.0,232.1" fill="#fbe0d6" stroke="#f2c3b0"></polygon>
+          <text x="470" y="286" text-anchor="middle" font-size="21" font-weight="800" fill="#1c2430">HTML</text>
+          <text x="470" y="311" text-anchor="middle" font-size="21" font-weight="800" fill="#1c2430">Element</text>
+
+          <!-- arrows -->
+          <line x1="300" y1="111" x2="248" y2="111" stroke="#222" stroke-width="2.5" marker-end="url(#ih2-ah)"></line>
+          <line x1="500" y1="111" x2="458" y2="111" stroke="#222" stroke-width="2.5" marker-end="url(#ih2-ah)"></line>
+          <line x1="272" y1="288" x2="384" y2="290" stroke="#222" stroke-width="2.5" marker-end="url(#ih2-ah)"></line>
+          <path d="M 556 292 H 755 V 111 H 734" fill="none" stroke="#222" stroke-width="2.5" marker-end="url(#ih2-ah)"></path>
+        </svg>
+        <figcaption>Chuỗi kế thừa đầy đủ hơn: một phần tử cụ thể như <strong>HTMLTableElement</strong> &#8594; <strong>HTMLElement</strong> &#8594; … &#8594; <strong>Node</strong> &#8594; <strong>EventTarget</strong>; <strong>Document</strong> cũng kế thừa từ <strong>Node</strong>.</figcaption>
+      </figure>
+
+
+      <div id="mini-document"></div>
+
+      <h2 id="groups">Các nhóm thao tác DOM</h2>
+      <figure class="op-fig">
+        <div class="op-cards">
+          <div class="op-card c-blue"><h4>Tìm phần tử</h4><div class="ops">getElementById<br>querySelector / querySelectorAll</div></div>
+          <div class="op-card c-green"><h4>Đổi nội dung</h4><div class="ops">textContent<br>innerHTML</div></div>
+          <div class="op-card c-gold"><h4>Đổi style &amp; thuộc tính</h4><div class="ops">element.style<br>setAttribute / classList</div></div>
+          <div class="op-card c-pink"><h4>Thêm / xoá &amp; sự kiện</h4><div class="ops">createElement / append / remove<br>addEventListener</div></div>
+        </div>
+        <figcaption>Những nhóm thao tác DOM thường dùng nhất trong JavaScript.</figcaption>
+      </figure>
+
+      <h2 id="select">Tìm / chọn phần tử</h2>
+      <p><code>getElementById</code>, <code>querySelector</code> (một phần tử), <code>querySelectorAll</code> (danh sách):</p>
+      <div id="mini-select"></div>
+
+      <h2 id="content">Thay đổi nội dung</h2>
+      <p><code>textContent</code> (chỉ chữ) và <code>innerHTML</code> (cả thẻ HTML):</p>
+      <div id="mini-content"></div>
+
+      <h2 id="style">Đổi style &amp; class</h2>
+      <p><code>element.style</code> đổi CSS trực tiếp; <code>classList</code> thêm/xoá class:</p>
+      <div id="mini-style"></div>
+
+      <h2 id="attr">Thuộc tính (attributes)</h2>
+      <p><code>setAttribute</code>, <code>getAttribute</code>, và truy cập trực tiếp (vd <code>img.src</code>):</p>
+      <div id="mini-attr"></div>
+
+      <h2 id="create">Tạo &amp; xoá phần tử</h2>
+      <p><code>createElement</code> + <code>append</code> để thêm; <code>remove</code> để xoá:</p>
+      <div id="mini-create"></div>
+
+      <h2 id="event">Bắt sự kiện người dùng</h2>
+      <p><code>addEventListener</code> phản hồi khi người dùng bấm, gõ phím, di chuột…:</p>
+      <div id="mini-event"></div>
+
+      <h2 id="best">Thực hành tốt</h2>
+      <ul>
+        <li>Ưu tiên <code>textContent</code> hơn <code>innerHTML</code> khi chỉ cần chữ (an toàn hơn).</li>
+        <li>Đổi giao diện qua <code>classList</code> thay vì gán nhiều <code>style</code> lẻ.</li>
+        <li>Dùng <code>querySelector</code>/<code>querySelectorAll</code> với cú pháp CSS quen thuộc.</li>
+        <li>Gắn sự kiện bằng <code>addEventListener</code> thay vì thuộc tính <code>onclick</code> trong HTML.</li>
+      </ul>
+
+      <h2 id="tryit">Thử viết code ngay (Try it yourself)</h2>
+      <p>Sửa <strong>Mã HTML</strong>, <strong>Mã CSS</strong>, <strong>Mã JavaScript</strong> rồi bấm
+        <strong>Chạy</strong> — kết quả hiển thị trực tiếp (kèm console.log nếu có).</p>
+      <div class="tryit jstry">
+        <div class="tryit-bar">
+          <span>HTML + CSS + JS Editor</span>
+          <span>
+            <button onclick="runCode()">Chạy</button>
+            <button onclick="resetCode()">Đặt lại</button>
+          </span>
+        </div>
+        <div class="tryit-panes">
+          <div class="js-inputs">
+            <div class="seg seg-html"><span class="lbl">Mã HTML</span><textarea id="htmlInput" spellcheck="false"></textarea></div>
+            <div class="seg seg-css"><span class="lbl">Mã CSS</span><textarea id="cssInput" spellcheck="false"></textarea></div>
+            <div class="seg seg-js"><span class="lbl">Mã JavaScript</span><textarea id="jsInput" spellcheck="false"></textarea></div>
+          </div>
+          <div class="js-result"><span class="lbl">Kết quả</span><iframe id="preview" title="Kết quả xem trước"></iframe></div>
+        </div>
+      </div>
+
+      <h2 id="summary">Tóm tắt</h2>
+      <p>
+        <strong>DOM</strong> là cây đối tượng biểu diễn trang HTML, truy cập qua <code>document</code>. JavaScript dùng
+        DOM để <strong>tìm phần tử</strong> (<code>getElementById</code>, <code>querySelector</code>), <strong>đổi nội
+        dung</strong> (<code>textContent</code>, <code>innerHTML</code>), <strong>đổi style/class</strong>
+        (<code>style</code>, <code>classList</code>), <strong>đổi thuộc tính</strong> (<code>setAttribute</code>),
+        <strong>tạo/xoá phần tử</strong> (<code>createElement</code>, <code>remove</code>) và <strong>bắt sự
+        kiện</strong> (<code>addEventListener</code>) — giúp trang web tương tác, sống động.
+      </p>
+
+      <div class="note">
+        <strong>Bước tiếp theo:</strong> Tiếp theo trong nhóm DOM: <strong>Selecting Elements</strong>, <strong>Events</strong>,
+        <strong>Manipulating Elements</strong>… (sắp ra mắt). Ôn lại
+        <a href="javascript-functions.html"><strong>Functions in JavaScript</strong></a>.
+      </div>
+    </main>
+
+    <aside class="rail">
+      <div class="ad">
+        <h4>Khóa học JavaScript</h4>
+        <p>Học JavaScript từ cơ bản đến nâng cao để làm chủ lập trình web.</p>
+        <button>Đăng ký ngay</button>
+      </div>
+      <div class="rail-card">
+        <h4>Bài viết liên quan</h4>
+        <ul>
+          <li><a href="javascript-classes-objects.html">Classes &amp; Objects</a></li>
+          <li><a href="javascript-functions.html">Functions in JavaScript</a></li>
+          <li><a href="javascript-arrays.html">JavaScript Arrays</a></li>
+          <li><a href="../css/css-introduction.html">CSS Introduction</a></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h4>Chủ đề phổ biến</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <div>
+        <h5>HITech</h5>
+        <p style="font-size:0.85rem;">Một cổng thông tin khoa học máy tính (mô phỏng giao diện cho mục đích học tập).</p>
+      </div>
+      <div>
+        <h5>Chủ đề</h5>
+        <ul>
+          <li><a href="../index.html#networks">Networks</a></li>
+          <li><a href="../index.html#html-basic">HTML</a></li>
+          <li><a href="../index.html#html5">HTML5</a></li>
+          <li><a href="../index.html#css">CSS</a></li>
+          <li><a href="../index.html#bootstrap5">Bootstrap 5</a></li>
+          <li><a href="../index.html#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Khóa học</h5>
+        <ul>
+          <li><a href="#">DSA</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HITech (bản mô phỏng) — Trang demo dùng cho mục đích học tập.</div>
+  </footer>
+
+  <script>
+    // ----- Mục lục: highlight & cuộn mượt -----
+    const tocLinks = Array.from(document.querySelectorAll('aside.toc a'));
+    const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function onScroll() {
+      let current = targets[0];
+      const offset = 120;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top - offset <= 0) current = el;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + (current && current.id));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    tocLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    function toggleLike(btn) {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Đã thích' : 'Like';
+    }
+
+    // ----- Trình chạy ví dụ: HTML + CSS + JS, kèm bắt console.log -----
+    function buildDoc(html, css, js) {
+      return '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>'
+        + 'body{font-family:Arial,Helvetica,sans-serif;padding:12px;color:#222;line-height:1.6;}'
+        + (css || '')
+        + ' .__console{margin-top:12px;border-top:1px dashed #c4c9d4;padding-top:8px;'
+        + 'font-family:Consolas,Monaco,monospace;font-size:12.5px;line-height:1.6;color:#0b3a5b;white-space:pre-wrap;}'
+        + ' .__console:empty{display:none;}'
+        + '</style></head><body>'
+        + (html || '')
+        + '<div class="__console" id="__out"></div>'
+        + '<scr' + 'ipt>(function(){var o=document.getElementById("__out");'
+        + 'function w(){var a=[].slice.call(arguments).map(function(x){'
+        + 'try{return (typeof x==="object"&&x!==null)?JSON.stringify(x):String(x);}catch(e){return String(x);}});'
+        + 'var d=document.createElement("div");d.textContent=a.join(" ");o.appendChild(d);}'
+        + 'console.log=console.info=console.warn=console.error=w;'
+        + 'try{\n' + (js || '') + '\n}catch(e){var d=document.createElement("div");d.style.color="#c0392b";d.textContent="\u26A0 Lỗi: "+(e&&e.message||e);o.appendChild(d);}'
+        + '})();<\/scr' + 'ipt></body></html>';
+    }
+    function makeJSMini(hostId, parts) {
+      const host = document.getElementById(hostId);
+      if (!host) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'mini jsmini';
+      wrap.innerHTML =
+        '<div class="mini-bar"><span>Ví dụ chạy thử (HTML + CSS + JS)</span>' +
+        '<span><button data-run>Chạy</button><button data-reset>Đặt lại</button></span></div>' +
+        '<div class="mini-panes">' +
+          '<div class="js-inputs">' +
+            '<div class="seg seg-html"><span class="lbl">Mã HTML</span><textarea class="ta-html" spellcheck="false"></textarea></div>' +
+            '<div class="seg seg-css"><span class="lbl">Mã CSS</span><textarea class="ta-css" spellcheck="false"></textarea></div>' +
+            '<div class="seg seg-js"><span class="lbl">Mã JavaScript</span><textarea class="ta-js" spellcheck="false"></textarea></div>' +
+          '</div>' +
+          '<div class="js-result"><span class="lbl">Kết quả</span><iframe title="Kết quả"></iframe></div>' +
+        '</div>';
+      const tH = wrap.querySelector('.ta-html');
+      const tC = wrap.querySelector('.ta-css');
+      const tJ = wrap.querySelector('.ta-js');
+      const fr = wrap.querySelector('iframe');
+      const run = () => { fr.srcdoc = buildDoc(tH.value, tC.value, tJ.value); };
+      const reset = () => { tH.value = parts.html || ''; tC.value = parts.css || ''; tJ.value = parts.js || ''; run(); };
+      let t;
+      const deb = () => { clearTimeout(t); t = setTimeout(run, 350); };
+      tH.addEventListener('input', deb); tC.addEventListener('input', deb); tJ.addEventListener('input', deb);
+      wrap.querySelector('[data-run]').addEventListener('click', run);
+      wrap.querySelector('[data-reset]').addEventListener('click', reset);
+      host.appendChild(wrap);
+      reset();
+    }
+
+    makeJSMini('mini-document', {
+      html: `<p id="demo">Chưa có gì.</p>`,
+      css: `#demo { padding:10px; background:#e8f0fe; border-radius:8px; font-weight:600; }`,
+      js: `// document là cửa ngõ vào DOM
+console.log("Tiêu đề trang:", document.title);
+const p = document.getElementById("demo");
+p.textContent = "Xin chào từ DOM!";
+console.log("Đã đổi nội dung thẻ #demo");`
+    });
+
+    makeJSMini('mini-select', {
+      html: `<ul>
+  <li class="item">Táo</li>
+  <li class="item">Cam</li>
+  <li class="item">Xoài</li>
+</ul>
+<p id="out"></p>`,
+      css: `.item { padding:4px; }
+#out { margin-top:8px; color:#1a73e8; font-weight:600; }`,
+      js: `const dau = document.querySelector(".item");        // phần tử đầu tiên
+const tatCa = document.querySelectorAll(".item");   // tất cả
+dau.style.color = "red";
+document.getElementById("out").textContent =
+  "Có " + tatCa.length + " mục. Mục đầu: " + dau.textContent;`
+    });
+
+    makeJSMini('mini-content', {
+      html: `<div id="box">Nội dung gốc</div>`,
+      css: `#box { padding:12px; border:1px solid #ccc; border-radius:8px; }`,
+      js: `const box = document.getElementById("box");
+box.textContent = "Đổi bằng textContent (chỉ chữ)";
+// innerHTML chèn cả thẻ HTML:
+box.innerHTML += "<br><b style='color:#1a73e8'>Thêm dòng in đậm</b>";`
+    });
+
+    makeJSMini('mini-style', {
+      html: `<p id="t">Bấm nút để đổi giao diện</p>
+<button id="btn">Đổi style</button>`,
+      css: `#t { padding:10px; border-radius:8px; transition:.2s; }
+.noibat { background:#1a73e8; color:#fff; font-weight:700; }`,
+      js: `const t = document.getElementById("t");
+document.getElementById("btn").addEventListener("click", function () {
+  t.style.padding = "16px";
+  t.classList.toggle("noibat");   // thêm/xoá class
+});`
+    });
+
+    makeJSMini('mini-attr', {
+      html: `<img id="anh" width="120" alt="ảnh" />
+<p id="info"></p>`,
+      css: `img { border:2px solid #1a73e8; border-radius:8px; background:#f0f0f0; }`,
+      js: `const anh = document.getElementById("anh");
+anh.setAttribute("src", "https://via.placeholder.com/120");
+anh.setAttribute("alt", "Ảnh mẫu");
+document.getElementById("info").textContent =
+  "src = " + anh.getAttribute("src");`
+    });
+
+    makeJSMini('mini-create', {
+      html: `<ul id="ds"></ul>
+<button id="them">Thêm mục</button>`,
+      css: `#ds li { padding:4px 8px; }
+button { margin-top:8px; }`,
+      js: `const ds = document.getElementById("ds");
+let dem = 0;
+document.getElementById("them").addEventListener("click", function () {
+  dem++;
+  const li = document.createElement("li");   // tạo phần tử
+  li.textContent = "Mục số " + dem;
+  ds.appendChild(li);                          // thêm vào cây DOM
+});`
+    });
+
+    makeJSMini('mini-event', {
+      html: `<button id="dem">Đã bấm: 0</button>
+<input id="ten" placeholder="Gõ tên..." />
+<p id="chao"></p>`,
+      css: `button, input { padding:8px; margin:4px 0; display:block; }
+#chao { color:#1a73e8; font-weight:600; }`,
+      js: `let n = 0;
+const nut = document.getElementById("dem");
+nut.addEventListener("click", function () {
+  n++;
+  nut.textContent = "Đã bấm: " + n;
+});
+document.getElementById("ten").addEventListener("input", function (e) {
+  document.getElementById("chao").textContent =
+    e.target.value ? "Xin chào, " + e.target.value + "!" : "";
+});`
+    });
+
+    const sampleHTML = `<h3 id="tieude">Danh sách công việc</h3>
+<input id="nhap" placeholder="Nhập việc cần làm..." />
+<button id="them">Thêm</button>
+<ul id="ds"></ul>
+<p id="tong"></p>`;
+    const sampleCSS = `#tieude { color:#1a73e8; }
+input, button { padding:8px; font-size:14px; }
+#ds li { padding:6px; border-bottom:1px solid #eee; cursor:pointer; }
+#ds li.xong { text-decoration:line-through; color:#999; }
+#tong { font-weight:600; }`;
+    const sampleJS = `const ds = document.getElementById("ds");
+const nhap = document.getElementById("nhap");
+const tong = document.getElementById("tong");
+
+function capNhat() {
+  tong.textContent = "Tổng số việc: " + ds.children.length;
+}
+document.getElementById("them").addEventListener("click", function () {
+  const v = nhap.value.trim();
+  if (!v) return;
+  const li = document.createElement("li");
+  li.textContent = v;
+  li.addEventListener("click", function () { li.classList.toggle("xong"); }); // click = xong
+  ds.appendChild(li);
+  nhap.value = "";
+  capNhat();
+});
+capNhat();
+console.log("Ứng dụng To-do đã sẵn sàng!");`;
+    // ----- Trình soạn trực tiếp (HTML + CSS + JS) -----
+    const htmlInput = document.getElementById('htmlInput');
+    const cssInput = document.getElementById('cssInput');
+    const jsInput = document.getElementById('jsInput');
+    const preview = document.getElementById('preview');
+    function runCode() { preview.srcdoc = buildDoc(htmlInput.value, cssInput.value, jsInput.value); }
+    function resetCode() { htmlInput.value = sampleHTML; cssInput.value = sampleCSS; jsInput.value = sampleJS; runCode(); }
+    let tt;
+    [htmlInput, cssInput, jsInput].forEach(el => el.addEventListener('input', () => { clearTimeout(tt); tt = setTimeout(runCode, 350); }));
+    resetCode();
+  </script>
+</body>
+</html>
